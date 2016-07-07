@@ -1,0 +1,82 @@
+<!-- 
+################################################################################
+#
+# File Name: search.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Search Archived Data</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='search' %}{% endblock %}
+{% block content%}
+
+
+<form method='POST'>  {% csrf_token %}
+    <h3>Search by Materials Components</h3>
+    <!--Polymer name: <input type='text' name='polymer'><br>-->
+    Select from available polymers:
+    <select name="polymer" id="polymer_selection" required aria-required="true" >
+    <option value ='NULL' selected >Choose polymer</option>
+    {% for item in  AllPolymers %}
+    <option value='{{item}}' >{{item}}</option>
+    {% endfor %}
+    </select><br>
+    
+	
+    <!--Particle name: <input type='text' name='polymer'><br>-->
+    Select from available particles:
+    <select name="particle" id="particle_selection" required aria-required="true" >
+    <option value ='NULL' selected >Choose particle</option>
+    {% for item in  AllParticles %}
+    <option value='{{item}}' >{{item}}</option>
+    {% endfor %}
+    </select><br>
+	
+<!--    <h3>Search by Property Input</h3>
+    <p>Select from property list. </p>
+    <select name="polymer" id="mol1_selection" required aria-required="true" >  
+    <option value='' >Choose Property</option>  
+    <option value="epoxy" selected> 1.Dielectric Permittivity </option>
+    <option value="epoxy" selected> 2.Elastic Modulus </option>
+    </select>
+    <input type='number' value='num'><br>
+    
+    
+    <select name="polymer" id="mol1_selection" required aria-required="true" >  
+    <option value='' >Choose Property</option>  
+    <option value="epoxy" selected> 1.Dielectric Permittivity </option>
+    <option value="epoxy" selected> 2.Elastic Modulus </option>
+    </select>
+    <input type='number' value='num'><br>-->
+    
+    
+    <input type='submit' value='Submit'>
+</form>
+<hr>
+<p>There are {{QueryMatchCt}} entries that meet the search criteria.</p><br>
+
+{% if QueryMatchTitle %}
+	<ul>
+	{% for t in QueryMatchTitle %}
+		<!--<form action="/search/search_result" method="post">-->
+		<!--	<button type="submit" name={{t}} value={{t}}>{{t}}</button>-->
+		<!--</form>-->
+		<li><a href="/search/search_result/?titleId={{t}}" >{{t}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No matched result found</p>
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='FEA2D' %}{% endblock %}
+{% block content%}
+
+<p> Enter job ID<br><input type='text' name='job_ID' value="{{jobid}}" required>
+</p><br>
+<p>System will run your job automatically once computation resource is available. Please remember your job ID and you can check the status of your job at: <a href="/FEA2D/DielectricFEA2DCheckProgress" > Job Progress Checking Tool </a>using your job ID</p>
+
+
+{% endblock %}

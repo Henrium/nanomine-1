@@ -1,0 +1,42 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+MATLAB is now connected to localhost:3053
+
+Run the commands below to access the COMSOL ModelUtil commands:
+import com.comsol.model.util.*
+  Columns 1 through 6
+
+    10000110    10000111    10000109    10000105    10000110    10000097
+
+  Columns 7 through 12
+
+    10000108    10000032    10000102    10000105    10000101    10000108
+
+  Columns 13 through 15
+
+    10000100    10000058    10000032
+
+
+ans =
+
+double
+
+{Error using +
+Matrix dimensions must agree.
+
+Error in runtest (line 5)
+disp('DOS: ' + const.DOS)
+
+Error in run (line 71)
+runtest(const);
+} 
+>> 

@@ -1,0 +1,72 @@
+{% comment %}
+<!--
+################################################################################
+#
+# File Name: menu.html
+# Application: templates
+# Description: 
+#
+# Author: Sharief Youssef
+#         sharief.youssef@nist.gov
+#
+# 		  Guillaume SOUSA AMARAL
+#		  guillaume.sousa@nist.gov
+#
+# Sponsor: National Institute of Standards and Technology (NIST)
+#
+################################################################################
+-->
+{% endcomment %}
+<ul class="tabbed">
+	<li class="{% if active_tab == 'tab1' %} current_page_item {% endif %}"><a href="/">Home</a></li>
+	
+	<!-- HZ 101415	Nanomine - convert curation tabs to dropdown-->
+	<li class="dropdown">
+	  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Database <span class="caret"></span></a>
+	   <ul class="dropdown-menu" role="menu">
+		<li class="{% if active_tab == 'tab2' %} current_page_item {% endif %}"><a style="color:black" href="/curate">Data Curation</a></li>
+		<li class="{% if active_tab == 'tab3' %} current_page_item {% endif %}"><a style="color:black" href="/explore">Data Exploration</a></li>
+		<li class="{% if active_tab == 'tab4' %} current_page_item {% endif %}"><a style="color:black" href="/compose">Composer</a></li>
+	   </ul>
+	</li>
+	
+<!--	<li class="{% if active_tab == 'tab2' %} current_page_item {% endif %}"><a href="/curate">Data Curation</a></li>
+	<li class="{% if active_tab == 'tab3' %} current_page_item {% endif %}"><a href="/explore">Data Exploration</a></li>
+	<li class="{% if active_tab == 'tab4' %} current_page_item {% endif %}"><a href="/compose">Composer</a></li>-->
+	
+	<li class="{% if active_tab == 'tab5' %} current_page_item {% endif %}"><a href="/stats_tool">Module Tools</a></li>
+	<li class="{% if active_tab == 'tab6' %} current_page_item {% endif %}"><a href="/simulate_tool">Simulation</a></li>
+	
+	{% if active_tab == 'login' %}
+	<li class="current_page_item"><a href="/login">Login</a></li>
+	{% elif active_tab == 'options' %}
+	<li class="current_page_item"><a href="/all-options">All Options</a></li>
+	{% elif active_tab == 'all' %}
+	<li class="current_page_item"><a href="/browse-all">Browse All</a></li>
+	{% elif active_tab == 'contact' %}
+	<li class="current_page_item"><a href="/contact">Contact</a></li>
+	{% elif active_tab == 'profile' %}
+	<li class="current_page_item"><a href="/my-profile">My Profile</a></li>
+	{% elif active_tab == 'privacy' %}
+	<li class="current_page_item"><a href="/privacy-policy">Privacy Policy</a></li>
+	{% elif active_tab == 'terms' %}
+	<li class="current_page_item"><a href="/terms-of-use">Terms of Use</a></li>
+	{% elif active_tab == 'request' %}
+	<li class="current_page_item"><a href="request-new-account">Request New Account</a></li>
+	{% elif active_tab == 'help' %}
+	<li class="current_page_item"><a href="/help">Help</a></li>
+	
+	<!--Added for NanoMine tools tabs-->
+	{% elif active_tab == 'FEA2D' %}
+	<li class="current_page_item"><a href="/FEA2D">Dielectrics 2D FEA</a></li>
+	{% elif active_tab == 'niblack' %}
+	<li class="current_page_item"><a href="/niblack">Image Binarization</a></li>	
+	{% elif active_tab == 'descchar' %}
+	<li class="current_page_item"><a href="/descchar">Microstructure Characterization</a></li>
+	{% elif active_tab == 'dynamfit' %}
+	<li class="current_page_item"><a href="/dynamfit">Dynamfit</a></li>
+	{% elif active_tab == 'MCFEA' %}
+	<li class="current_page.item"><a href="/MCFEA">Monte Carlo and FEA</a></li>
+	
+	{% endif %}
+</ul>

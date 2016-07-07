@@ -1,0 +1,327 @@
+[30/Jun/2016 17:26:14] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
+    formString += generateForm(request)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
+    edit_data_tree = etree.XML(str(form_data.xml_data))
+UnicodeEncodeError: 'ascii' codec can't encode character u'\u2018' in position 1554: ordinal not in range(128)
+[30/Jun/2016 17:26:20] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
+    message= e.message.replace('"', '\'')
+AttributeError: 'NoneType' object has no attribute 'replace'
+[30/Jun/2016 17:26:23] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
+    message= e.message.replace('"', '\'')
+AttributeError: 'NoneType' object has no attribute 'replace'
+[30/Jun/2016 17:26:24] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
+    message= e.message.replace('"', '\'')
+AttributeError: 'NoneType' object has no attribute 'replace'
+[30/Jun/2016 17:49:30] ERROR [django.request:231] Internal Server Error: /modules/diffusion/upload-excel
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/modules/diffusion/views.py", line 13, in upload_excel_view
+    return ExcelUploaderModule().render(request)
+  File "/home/NANOMINE/Develop/mdcs/modules/models.py", line 37, in render
+    return self._post(request)
+  File "/home/NANOMINE/Develop/mdcs/modules/models.py", line 82, in _post
+    raise ModuleError('Something went wrong during module update: ' + e.message)
+ModuleError: 'Something went wrong during module update: Data not properly sent to server. Please set "file" in POST data.'
+[30/Jun/2016 17:56:23] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd775a95950>.
+[30/Jun/2016 18:06:55] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7780ebd10>.
+[30/Jun/2016 18:06:58] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747fa150>.
+[30/Jun/2016 18:07:04] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747fa090>.
+[30/Jun/2016 18:07:13] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf31090>.
+[30/Jun/2016 18:07:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf31a10>.
+[30/Jun/2016 18:14:34] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd744334150>.
+[30/Jun/2016 18:14:42] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747b7750>.
+[30/Jun/2016 18:14:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd74583bf50>.
+[30/Jun/2016 18:14:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7725f1610>.
+[30/Jun/2016 18:20:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7449ccc10>.
+[30/Jun/2016 18:20:55] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7449cc8d0>.
+[30/Jun/2016 18:20:59] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747b7d10>.
+[30/Jun/2016 18:21:01] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7725f1190>.
+[30/Jun/2016 18:24:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760dc4990>.
+[30/Jun/2016 18:24:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77111db90>.
+[30/Jun/2016 18:26:21] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dc70290>.
+[30/Jun/2016 18:26:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dd87e50>.
+[30/Jun/2016 18:26:26] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dd87210>.
+[30/Jun/2016 18:26:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7ba1d0>.
+[30/Jun/2016 18:29:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7ba750>.
+[30/Jun/2016 18:29:26] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd771b693d0>.
+[30/Jun/2016 18:29:28] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd74583b550>.
+[30/Jun/2016 18:29:29] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd74583b710>.
+[30/Jun/2016 18:29:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd74583b750>.
+[30/Jun/2016 18:31:33] ERROR [django.request:231] Internal Server Error: /curate/save_form
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 79, in save_form
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[30/Jun/2016 18:31:35] ERROR [django.request:231] Internal Server Error: /curate/view-data
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 165, in curate_view_data
+    form_data = FormData.objects.get(pk=ObjectId(form_data_id))
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[30/Jun/2016 18:31:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7551c7a90>.
+[30/Jun/2016 18:31:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7b7fd0>.
+[30/Jun/2016 18:32:22] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd771b54c10>.
+[30/Jun/2016 18:32:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78c8fbc50>.
+[30/Jun/2016 18:32:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dd90590>.
+[30/Jun/2016 18:32:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7780eba90>.
+[30/Jun/2016 18:32:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7baf10>.
+[30/Jun/2016 18:32:32] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7ba410>.
+[30/Jun/2016 18:32:32] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dd90cd0>.
+[30/Jun/2016 18:32:58] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747dccd0>.
+[30/Jun/2016 18:33:00] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd772d37bd0>.
+[30/Jun/2016 18:33:00] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd748693550>.
+[30/Jun/2016 18:33:00] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd748693c90>.
+[30/Jun/2016 18:33:07] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd748693850>.
+[30/Jun/2016 18:33:07] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf31a90>.
+[30/Jun/2016 18:33:07] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7443fc090>.
+[30/Jun/2016 18:33:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd748693110>.
+[30/Jun/2016 18:33:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747b7750>.
+[30/Jun/2016 18:33:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd775a95450>.
+[30/Jun/2016 18:33:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf31d50>.
+[30/Jun/2016 18:33:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd775a95a10>.
+[30/Jun/2016 18:33:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747dc790>.
+[30/Jun/2016 18:33:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd772d37fd0>.
+[30/Jun/2016 18:33:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7449cc3d0>.
+[30/Jun/2016 18:33:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7449ccf50>.
+[30/Jun/2016 18:33:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd772d37090>.
+[30/Jun/2016 18:33:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7bad90>.
+[30/Jun/2016 18:33:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7bacd0>.
+[30/Jun/2016 18:34:00] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7449cc310>.
+[30/Jun/2016 18:34:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7baf90>.
+[30/Jun/2016 18:34:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7b7450>.
+[30/Jun/2016 18:34:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747f92d0>.
+[30/Jun/2016 18:34:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747f9390>.
+[30/Jun/2016 18:34:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78c6c58d0>.
+[30/Jun/2016 18:34:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dd87750>.
+[30/Jun/2016 18:34:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dd87f50>.
+[30/Jun/2016 18:34:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd744334c90>.
+[30/Jun/2016 18:42:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7383cf190>.
+[30/Jun/2016 18:42:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7383cf2d0>.
+[30/Jun/2016 18:42:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747f98d0>.
+[30/Jun/2016 18:42:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747f9510>.
+[30/Jun/2016 18:43:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7551c7ed0>.
+[30/Jun/2016 18:43:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747e5150>.
+[30/Jun/2016 18:43:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c17a910>.
+[30/Jun/2016 18:43:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7ba2d0>.
+[30/Jun/2016 18:43:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7449ccbd0>.
+[30/Jun/2016 18:43:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dc6aa50>.
+[30/Jun/2016 18:43:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747dccd0>.
+[30/Jun/2016 18:43:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747dc6d0>.
+[30/Jun/2016 18:43:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd748693190>.
+[30/Jun/2016 18:43:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7443fcad0>.
+[30/Jun/2016 18:43:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf31290>.
+[30/Jun/2016 18:43:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd775a95b50>.
+[30/Jun/2016 18:48:06] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120-precomposed.png
+[30/Jun/2016 18:48:06] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120.png
+[30/Jun/2016 18:48:06] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[30/Jun/2016 18:48:06] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[30/Jun/2016 18:48:06] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[30/Jun/2016 18:48:06] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Jun/2016 18:49:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7443fcdd0>.
+[30/Jun/2016 18:49:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd744334750>.
+[30/Jun/2016 18:49:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760dc4350>.
+[30/Jun/2016 18:49:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7383ebd50>.
+[30/Jun/2016 18:50:54] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760dc47d0>.
+[30/Jun/2016 18:50:54] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7383ebed0>.
+[30/Jun/2016 18:50:54] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dc708d0>.
+[30/Jun/2016 18:50:54] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dc702d0>.
+[30/Jun/2016 18:50:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd744334110>.
+[30/Jun/2016 18:50:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c164e50>.
+[30/Jun/2016 18:50:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78c8fea10>.
+[30/Jun/2016 18:50:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd784654dd0>.
+[30/Jun/2016 18:51:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760dc4c50>.
+[30/Jun/2016 18:51:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78c6cc650>.
+[30/Jun/2016 18:51:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78c6cc250>.
+[30/Jun/2016 18:51:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd775a95f10>.
+[30/Jun/2016 18:51:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7443fcc90>.
+[30/Jun/2016 18:51:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf31990>.
+[30/Jun/2016 18:51:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf31d90>.
+[30/Jun/2016 18:51:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf31650>.
+[30/Jun/2016 18:51:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd748693910>.
+[30/Jun/2016 18:51:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd748693d10>.
+[30/Jun/2016 18:51:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760db7bd0>.
+[30/Jun/2016 18:51:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747dc210>.
+[30/Jun/2016 18:52:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7449cca50>.
+[30/Jun/2016 18:52:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747dc0d0>.
+[30/Jun/2016 18:52:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd772d37c10>.
+[30/Jun/2016 18:52:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7780ebd90>.
+[30/Jun/2016 18:53:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7449ccad0>.
+[30/Jun/2016 18:53:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760db7ed0>.
+[30/Jun/2016 18:53:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747dc550>.
+[30/Jun/2016 18:53:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd748693110>.
+[30/Jun/2016 18:54:10] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760dbc590>.
+[30/Jun/2016 18:54:10] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747b7350>.
+[30/Jun/2016 18:54:10] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf319d0>.
+[30/Jun/2016 18:54:10] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf311d0>.
+[30/Jun/2016 18:54:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf318d0>.
+[30/Jun/2016 18:54:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7443fcd50>.
+[30/Jun/2016 18:54:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7443fc3d0>.
+[30/Jun/2016 18:54:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7443fc410>.
+[30/Jun/2016 18:55:34] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78cf310d0>.
+[30/Jun/2016 18:55:34] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7748d71d0>.
+[30/Jun/2016 18:55:34] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7748d7790>.
+[30/Jun/2016 18:55:34] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dc70a10>.
+[30/Jun/2016 18:55:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd74583bc10>.
+[30/Jun/2016 18:55:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78c6cced0>.
+[30/Jun/2016 18:55:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760dc4c50>.
+[30/Jun/2016 18:55:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd760dc4350>.
+[30/Jun/2016 18:55:43] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7780eb7d0>.
+[30/Jun/2016 18:55:43] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7780ebb90>.
+[30/Jun/2016 18:55:43] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dd90f50>.
+[30/Jun/2016 18:55:43] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd78dd90c10>.
+[30/Jun/2016 18:55:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd771b69410>.
+[30/Jun/2016 18:55:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7ba5d0>.
+[30/Jun/2016 18:55:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd77c7baa10>.
+[30/Jun/2016 18:55:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fd7747e57d0>.
+[01/Jul/2016 02:53:55] WARNING [django.request:143] Not Found: /apple-touch-icon-152x152-precomposed.png
+[01/Jul/2016 02:53:55] WARNING [django.request:143] Not Found: /apple-touch-icon-152x152.png
+[01/Jul/2016 02:53:55] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[01/Jul/2016 02:53:55] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[01/Jul/2016 02:53:55] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[01/Jul/2016 02:53:55] WARNING [django.request:143] Not Found: /favicon.ico
+[01/Jul/2016 14:40:40] WARNING [django.request:143] Not Found: /favicon.ico
+[01/Jul/2016 14:51:34] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[01/Jul/2016 14:51:34] WARNING [django.request:143] Not Found: /favicon.ico
+[01/Jul/2016 14:51:35] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[01/Jul/2016 14:51:36] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[01/Jul/2016 14:51:36] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[01/Jul/2016 14:57:30] ERROR [django.request:231] Internal Server Error: /modules/curator/blob-hoster
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/modules/curator/views.py", line 4, in blob_hoster
+    return BlobHosterModule().render(request)
+  File "/home/NANOMINE/Develop/mdcs/modules/models.py", line 37, in render
+    return self._post(request)
+  File "/home/NANOMINE/Develop/mdcs/modules/models.py", line 82, in _post
+    raise ModuleError('Something went wrong during module update: ' + e.message)
+ModuleError: 'Something went wrong during module update: Data not properly sent to server. Please "file" in POST data.'
+[01/Jul/2016 15:59:09] ERROR [django.request:231] Internal Server Error: /FEA2D/DielectricFEA2DValidateInput
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/FEA2D/views.py", line 111, in validate
+    out1['Polymer'] = polymer
+NameError: global name 'polymer' is not defined
+[01/Jul/2016 15:59:50] ERROR [django.request:231] Internal Server Error: /MCFEA/MCFEAValidateInput
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/MCFEA/views.py", line 60, in validate
+    out1['Nominal field'] = field
+NameError: global name 'field' is not defined
+[01/Jul/2016 17:56:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3ffc90>.
+[01/Jul/2016 17:56:06] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c093d50>.
+[01/Jul/2016 17:56:11] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf2d910>.
+[01/Jul/2016 17:56:14] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c08be10>.
+[01/Jul/2016 17:56:18] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ccaf250>.
+[01/Jul/2016 17:56:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ccaf0d0>.
+[01/Jul/2016 17:57:02] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c507210>.
+[01/Jul/2016 17:57:06] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf25690>.
+[01/Jul/2016 18:00:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ca6aad0>.
+[01/Jul/2016 18:00:56] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf25d10>.
+[01/Jul/2016 18:01:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35983eaad0>.
+[01/Jul/2016 18:01:16] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35983ea590>.
+[01/Jul/2016 18:02:17] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x2b838d0>.
+[01/Jul/2016 18:02:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c3a0910>.
+[01/Jul/2016 18:02:21] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c4f1c10>.
+[01/Jul/2016 18:03:36] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c4f17d0>.
+[01/Jul/2016 18:03:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c0920d0>.
+[01/Jul/2016 18:03:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c0920d0>.
+[01/Jul/2016 18:04:45] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3598072bd0>.
+[01/Jul/2016 18:05:23] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c090210>.
+[01/Jul/2016 18:05:29] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c39b090>.
+[01/Jul/2016 18:05:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35a0747490>.
+[01/Jul/2016 18:05:56] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf2df10>.
+[01/Jul/2016 18:05:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c08b190>.
+[01/Jul/2016 18:06:36] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c4f1ed0>.
+[01/Jul/2016 18:06:55] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c3a01d0>.
+[01/Jul/2016 18:06:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c4f1a90>.
+[01/Jul/2016 18:07:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c4f1c50>.
+[01/Jul/2016 18:08:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c3a00d0>.
+[01/Jul/2016 18:18:47] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c0909d0>.
+[01/Jul/2016 18:18:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c39bf10>.
+[01/Jul/2016 18:18:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c39be90>.
+[01/Jul/2016 18:18:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf25610>.
+[01/Jul/2016 18:20:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c40b7d0>.
+[01/Jul/2016 18:20:56] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c20b650>.
+[01/Jul/2016 18:45:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c39b0d0>.
+[01/Jul/2016 18:45:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c3a4090>.
+[01/Jul/2016 18:45:43] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35983f0bd0>.
+[01/Jul/2016 18:49:25] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359cc89850>.
+[01/Jul/2016 18:49:34] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e8fd0>.
+[01/Jul/2016 18:49:36] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ccaf050>.
+[01/Jul/2016 18:50:39] WARNING [django.request:143] Not Found: /curate/save_data
+[01/Jul/2016 18:51:11] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e4850>.
+[01/Jul/2016 18:51:13] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e4cd0>.
+[01/Jul/2016 18:51:15] WARNING [django.request:143] Not Found: /curate/save_data
+[01/Jul/2016 18:51:17] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e4f50>.
+[01/Jul/2016 18:52:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35a0723450>.
+[01/Jul/2016 18:52:08] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c4f1ed0>.
+[01/Jul/2016 18:52:17] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf1c350>.
+[01/Jul/2016 18:52:32] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c40b890>.
+[01/Jul/2016 18:52:36] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c0b1390>.
+[01/Jul/2016 18:53:31] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e4250>.
+[01/Jul/2016 18:53:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c0b10d0>.
+[01/Jul/2016 18:54:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e80d0>.
+[01/Jul/2016 18:54:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e8a50>.
+[01/Jul/2016 18:54:42] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c08bf50>.
+[01/Jul/2016 18:59:25] WARNING [django.request:143] Not Found: /curate/save_data
+[01/Jul/2016 19:04:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e1a50>.
+[01/Jul/2016 19:04:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35983ea590>.
+[01/Jul/2016 19:04:35] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358d756310>.
+[01/Jul/2016 19:04:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf255d0>.
+[01/Jul/2016 19:04:46] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ca6a590>.
+[01/Jul/2016 19:05:13] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e8ad0>.
+[01/Jul/2016 19:05:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3fffd0>.
+[01/Jul/2016 19:05:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ca6a410>.
+[01/Jul/2016 19:05:29] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c20bf50>.
+[01/Jul/2016 19:05:31] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c20bf50>.
+[01/Jul/2016 19:05:56] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ca6a410>.
+[01/Jul/2016 19:05:58] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ccaf310>.
+[01/Jul/2016 19:06:10] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c40bad0>.
+[01/Jul/2016 19:06:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf2df50>.
+[01/Jul/2016 19:13:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358d735050>.
+[01/Jul/2016 19:17:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c3a4310>.
+[01/Jul/2016 19:18:11] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e1690>.
+[01/Jul/2016 19:18:17] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c40be50>.
+[01/Jul/2016 19:18:20] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c40ba90>.
+[01/Jul/2016 19:18:28] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c0adc10>.
+[01/Jul/2016 19:18:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c3a0a10>.
+[01/Jul/2016 19:18:33] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35980728d0>.
+[01/Jul/2016 19:18:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35a0de9e10>.
+[01/Jul/2016 19:18:54] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358d735590>.
+[01/Jul/2016 19:19:04] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ccaf4d0>.
+[01/Jul/2016 19:19:06] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf2de10>.
+[01/Jul/2016 19:19:08] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf49650>.
+[01/Jul/2016 19:19:10] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[01/Jul/2016 19:19:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c40b490>.
+[01/Jul/2016 19:19:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c0a66d0>.
+[01/Jul/2016 19:20:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c20b150>.
+[01/Jul/2016 19:20:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ca8fcd0>.
+[01/Jul/2016 19:30:31] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e4690>.
+[01/Jul/2016 19:30:39] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf251d0>.

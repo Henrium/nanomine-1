@@ -1,0 +1,31 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+/home/NANOMINE/ONR/web/20150818194225_8
+AC mode is selected. Begin applying dielectric permittivity spectroscopy Prony series to polymer data.
+Ratio of physical length to pixel: 0.46296nm-per-pixel
+X dimension:
+    0.0013
+
+X max:
+   9.3275e-04
+
+X min:
+   2.1633e-04
+
+Y max:
+   9.3994e-04
+
+Y min:
+   2.1689e-04
+
+Number of clusters in FEA geometry: 26
+Actual VF in simulation window: 0.0013717
+Corrected VF in simulation window: 0.01
