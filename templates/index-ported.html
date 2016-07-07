@@ -1,0 +1,114 @@
+<!-- 
+################################################################################
+#
+# File Name: index.html
+# Application: templates
+# Description: 
+#
+# Author: Sharief Youssef
+#         sharief.youssef@nist.gov
+#
+#		  Guillaume SOUSA AMARAL
+#		  guillaume.sousa@nist.gov
+#
+# Sponsor: National Institute of Standards and Technology
+#
+################################################################################
+-->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block menu %}{% include 'menu.html' with active_tab='tab1' %}{% endblock %}
+
+
+{% block title %}	
+<div class="left" style="width: 400px">		
+<h1><span>Polymer Nanocomposite Materials Data Curator</span></h1>						
+<br/>
+<p class="large">SYSTEM UNDER MAINTENANCE. CONTACT SITE ADMIN WITH ANY QUESTION.
+	This system allows for the curation of polymer nanocomposite material data in a repository using predefined templates.</p>
+<p class="large">This base system is being developed at the National Institute of Standards and Technology and customized at Northwestern University and Rensselaer Polytechnic Institute. </p>
+<p class="large">Nanocomposite data and analysis techniques come from research funded by the ONR and NSF. </p>
+</div>
+
+<div class="right">
+	<img src="{% static 'resources/img/mgi_diagram.jpg' %}" width="262" height="260" alt="" />
+</div>
+
+<div class="left" style="float: left">
+	<br><br>
+	<img src="{% static 'resources/img/ONR.jpg' %}" width="250" height="250" alt="" />
+	<img src="{% static 'resources/img/RPI_logo.jpg' %}" width="150" height="150" alt="" />
+</div>
+
+
+<div class="right" style="float: right">
+<br><br>
+	<img src="static/img/NU_Logo_purple.bmp" width="200" height="200" alt="" />
+	<img src="static/img/NSF_logo.jpg" width="150" height="200" alt="" />
+</div>
+
+<div class="clearer">&nbsp;</div>
+{% endblock %}
+
+{% block content %}
+<div class="separator-vertical">
+	<div class="col2 left">
+	
+		<h2 class="left">Available Options</h2>
+		<div class="right more large"><a href="all-options">All Options &#187;</a></div>
+		
+		<div class="clearer">&nbsp;</div>
+	
+		<div class="content-separator"></div>
+	
+		<img src="static/img/edit-big.png" width="64" height="64" alt="" class="left bordered" />
+	
+		<h3><a href="curate">Curate your Materials Data</a></h3>
+		
+		<p>Click here to select a form template and then fill out the corresponding form.</p>
+	
+		<div class="clearer">&nbsp;</div>
+	
+		<div class="content-separator"></div>
+		
+		<img src="static/img/search-big.png" width="64" height="64" alt="" class="left bordered" />
+	
+		<h3><a href="explore">Explore the repository</a></h3>
+		
+		<p>Click here to search for Material Data in the repository using flexible queries.</p>
+	
+		<div class="clearer">&nbsp;</div>
+		<div class="content-separator"></div>
+		
+		<img src="static/img/edit-big.png" width="64" height="64" alt="" class="left bordered" />
+	
+		<h3><a href="compose">Compose a template</a></h3>
+		
+		<p>Click here to compose your own template.</p>
+	
+		<div class="clearer">&nbsp;</div>
+	
+	</div>
+	
+	<div class="col2 right">
+	
+		<h2 class="left">Most Recent Templates</h2>
+		<div class="right more large"><a href="browse-all">Browse All &#187;</a></div>
+	
+		<div class="clearer">&nbsp;</div>
+		<ul class="nice-list">
+			{% if templates %}
+				{% for template in templates %}
+				<li><span></span> {{ template.title }}  | {{ template.filename }}</li>
+				{% endfor %}
+			{% endif %}
+		</ul>
+								
+	</div>
+	
+	<div class="clearer">&nbsp;</div>
+
+</div>
+{% endblock %}

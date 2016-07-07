@@ -1,0 +1,109 @@
+<!-- 
+################################################################################
+#
+# File Name: search_result.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Sept 23, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Search Archived Data</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='search' %}{% endblock %}
+{% block content%}
+
+<h3>{{QueryMsg}}</h3>
+<hr>
+{% if DictDataSource %}
+    <h4>Data source</h4>
+    <div>Title: {{PaperTitle}}</div>
+    <div>Authors: {{Author}}</div>
+    <div>Journal: {{Journal}}</div>
+    <div>Year of Publication: {{Year}}</div>
+    <hr>
+{% endif %}
+
+{% if DictMaterials %}
+    <h4>Materials</h4>
+    {% if DictPolymer %}
+	<h5>Polymer</h5>
+	{% for pk,pv in DictPolymer.items %}
+		<div>{{pk}}: {{pv}}</div>
+	{% endfor%}
+	<br>
+{% endif %}
+    
+    {% if DictParticle %}
+	
+	<h5>Particle</h5>
+	
+	{% if ParticleStructure %}
+	    <div>Chemical Structure: {{ParticleStructure}}</div>
+	{% endif %}
+	{% if ParticleName %}
+	    <div>Chemical Name: {{ParticleName}}</div>
+	{% endif %}
+	{% if ParticleTradeName %}
+	    <div>Title: {{ParticleTradeName}}</div>
+	{% endif %}
+	{% if ParticleCystalPhase %}
+	    <div>Crystal Phase: {{ParticleCystalPhase}}</div>
+	{% endif %}
+	{% if ParticleVF %}
+	    <div>Volume Fraction: {{ParticleVF}}</div>
+	{% endif %}
+	{% if ParticleWF %}
+	    <div>Weight Fraction: {{ParticleWF}}</div>
+	{% endif %}
+	{% if PartSizeVal and PartSizeUnit%}
+	    <div>Particle Size: {{PartSizeVal}} {{PartSizeUnit}} </div>
+	{% endif %}
+	{% if ParticleSSAVal and ParticleSSAUnit %}
+	    <div>Specific Surface Area: {{ParticleSSAVal}} {{ParticleSSAUnit}} </div>
+	{% endif %}
+	<br>
+{% endif %}
+    
+    {% if DictSurfTreat %}
+	
+	<h5>Surface Treatment</h5>
+	
+	{% if SurfTreatName %}
+	    <div>Chemical Name: {{SurfTreatName}}</div>
+	{% endif %}
+	{% if SurfTreatStructure %}
+	    <div>Abbreviation: {{SurfTreatStructure}}</div>
+	{% endif %}
+	{% if SurfTreatFract %}
+	    <div>Composition Fraction: {{SurfTreatFract}}</div>
+	{% endif %}
+	
+{% endif %}
+    
+    
+    {% if DictStructure %}
+	<hr>
+	<h4>Microstructure</h4>
+	
+	{% if ImgBlob %}
+	    <img src={{ImgBlob}} style="width:304px;height:228px;">
+	{% endif %}
+	{% if ScaleBarRatio %}
+	    <div>Physical length per pixel: {{ScaleBarRatio}} {{ScaleBarUnit}}</div>
+	{% endif %}
+	{% if ImgGraphType%}
+	    <div>Microscopy Type: {{ImgGraphType}}</div>
+	{% endif %}
+	
+    {% endif %}
+{% endif %}
+
+
+{% endblock %}

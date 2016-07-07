@@ -1,0 +1,53 @@
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='FEA2D' %}{% endblock %}
+{% block content%}
+<!--<h1>2D Dielectric Permittivity Simulation Using FEA</h1>-->
+
+<hr>
+<h3>Confirm Input Parameters</h3><br>
+{% for key, value in data1 %}
+    <tr>
+        <td> {{ key }}: </td> <td> {{ value }} </td> <br>
+    </tr>
+{% endfor %}
+<br>
+{% if method == 'two' %}
+    <h3>Total Free Energy for Each Dispersion Phase</h3>
+    {% for key, value in data2 %}
+    <tr>
+        <td> {{ key }}: </td> <td> {{ value }} </td> K<sub>B</sub>T <br>
+    </tr>
+{% endfor %}
+    <br>
+        <div>According to energy computation, nanocomposite dispersion in your model is {{phase}}</div>
+    <br>
+        <h3>Reconstructed Microstructure</h3><br>
+        <img src={{structimg}} alt="Structure image" style="width:400px"><br> 
+    <div>This result is obtained from grafted polymer nanocomposite energetics. Click <a href="http://puma.mech.northwestern.edu/nanomine/PNC_calc/">here</a> for a more detailed energy calculation. </div>
+{% endif %}    
+
+
+{% if method == 'one' %}
+    <h3>Microstructure in Simulation in RVE Size</h3><br>
+    <p>Size length of this structure is ~ 1 &mu;m. Black: matrix. White: particles. </p>
+    <img src={{binimg}} alt="Binary Image" style="width:400px"><br>
+    
+    <h3>Original TEM Image</h3><br>
+    <img src={{temimg}} alt="TEM Image" style="width:400px"><br>   
+{% endif %}
+<br>
+<input type='submit' value='Predict Properties' onclick="msg3(), window.open('/FEA2D/DielectricFEA2DRun','newwindow')">
+<br>
+    <br>
+<p>Do not refresh this page. Please click <a href="/FEA2D">here</a> to submit new parameters.</p>
+<script>
+    function msg3() {
+        alert("Your job will now be submitted.");
+        return true;
+    }
+</script>
+{% endblock %}

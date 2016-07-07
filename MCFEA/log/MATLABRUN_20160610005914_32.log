@@ -1,0 +1,41 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+MATLAB is now connected to localhost:3046
+
+Run the commands below to access the COMSOL ModelUtil commands:
+import com.comsol.model.util.*
+
+FEA =
+
+     0
+
+line
+
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.167416 seconds.
+now assembling No.1 cluster
+{Undefined function or variable 'random_unit_vector'.
+
+Error in MC_generate_np_dist_nooverlap (line 278)
+                add = d*random_unit_vector';
+
+Error in hopping_statistic_loop_main_FEA_dialogue (line 181)
+            [core_coord,NP_cell] =
+            MC_generate_np_dist_nooverlap(vf,NP_radius,mean_num_NP,dev,lx,ly,lz,type);
+            
+Error in run (line 70)
+hopping_statistic_loop_main_FEA_dialogue(const);
+} 
+>> 

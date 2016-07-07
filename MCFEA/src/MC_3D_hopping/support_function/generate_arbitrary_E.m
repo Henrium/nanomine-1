@@ -1,0 +1,50 @@
+% Author Yanhui Huang, 31/MAY/2016 @RPI
+% generate_arbitrary_E E = generate_arbitrary_E(E_range,probability,lx,ly,lz)
+% construct energy landscape from an arbitray DOS
+%   E_range = 0 - E_min;
+%   E, a matrix of size [ly,lx,lz];
+%   probability = a vector, specifying the probability at each energy point,
+%   continous
+%   Example,
+%   E_range = -1.1;
+%   probability = [0, 1, 10, 2, 0, 0, 4, 5, 3, 1, 0];
+
+
+function E = generate_arbitrary_E(E_range,probability,lx,ly,lz)
+
+tic
+% probability density function is based on this data
+
+x = 0 : E_range/(length(probability)-1) : E_range;
+
+% do spline interpolation for smoothing
+xq = 0 : E_range/(length(probability)-1)/20 : E_range;
+pdf = interp1(x, probability, xq, 'spline');
+
+% remove negative elements due to the spline interpolation
+pdf(pdf < 0) = 0;
+
+% normalize the function to have an area of 1.0 under it
+pdf = pdf / sum(pdf);
+
+% the integral of PDF is the cumulative distribution function
+cdf = cumsum(pdf);
+
+
+% remove non-unique elements
+[cdf, mask] = unique(cdf);
+xq = xq(mask);
+
+% create an array of 2500 random numbers
+randomValues = rand(1, lx*ly*lz);
+
+% inverse interpolation to achieve P(x) -> x projection of the random values
+projection = interp1(cdf, xq, randomValues);
+
+% To visualize the result, create a histogram from the projection:
+
+% hist(projection, 50);
+
+E = reshape(projection,[ly,lx,lz]);
+toc
+end

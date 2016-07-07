@@ -1,0 +1,73 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+/home/NANOMINE/ONR/web/20150823195550_16
+AC mode is selected. Begin applying dielectric permittivity spectroscopy Prony series to polymer data.
+/home/NANOMINE/ONR/web/20150823195550_16
+AC mode is selected. Begin applying dielectric permittivity spectroscopy Prony series to polymer data.
+Ratio of physical length to pixel: 0.95602nm-per-pixel
+X dimension:
+    0.0013
+
+X max:
+   71.0037
+
+X min:
+   71.0037
+
+Y max:
+  190.4740
+
+Y min:
+  190.4740
+
+Number of clusters in FEA geometry: 1
+Actual VF in simulation window: 134448815442.8752
+Corrected VF in simulation window: 0.01
+AC mode: define polymer and interphase dielectric permittivity.
+/home/NANOMINE/ONR/web/20150823195550_16
+AC mode is selected. Begin applying dielectric permittivity spectroscopy Prony series to polymer data.
+Ratio of physical length to pixel: 0.95602nm-per-pixel
+X dimension:
+    0.0013
+
+X max:
+   71.0037
+
+X min:
+   71.0037
+
+Y max:
+  190.4740
+
+Y min:
+  190.4740
+
+Number of clusters in FEA geometry: 1
+Actual VF in simulation window: 134448815442.8752
+Corrected VF in simulation window: 0.01
+AC mode: define polymer and interphase dielectric permittivity.
+Use 1-to-1 mapping of filler microstructure ...
+Ellipse1
+EllipseIF1-1
+EllipseIF2-1
+Finished building unions and differences on fillers, interphase, and rectangular simulation block.
+Found all boundary indices
+Created material
+created EC physics
+Finished meshing
+created study
+Finished computing solution
+Write imaginary composite permittivity to file:
+./HZ_2D_comsolbuild_AC_recon_23-Aug-2015_IP10+50_run_1_CompPermImag.csv
+Write real composite permittivity to file:
+./HZ_2D_comsolbuild_AC_recon_23-Aug-2015_IP10+50_run_1_CompPermReal.csv
+Job done. Output result to .mph file
+Elapsed time is 21.224119 seconds.

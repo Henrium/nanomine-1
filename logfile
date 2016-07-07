@@ -1,0 +1,404 @@
+[01/Jul/2016 19:30:42] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf2d190>.
+[01/Jul/2016 19:30:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359ca8f310>.
+[01/Jul/2016 19:30:46] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c0a6f90>.
+[01/Jul/2016 19:30:56] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf200d0>.
+[01/Jul/2016 19:30:58] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e82d0>.
+[01/Jul/2016 19:31:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf20c10>.
+[01/Jul/2016 19:31:11] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c40b190>.
+[01/Jul/2016 19:31:13] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c08b050>.
+[01/Jul/2016 19:31:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf20850>.
+[01/Jul/2016 19:31:31] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c4f1e10>.
+[01/Jul/2016 19:31:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c40b750>.
+[01/Jul/2016 19:31:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358dc03490>.
+[01/Jul/2016 19:35:32] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35a0722f90>.
+[01/Jul/2016 19:37:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f35a0de9490>.
+[01/Jul/2016 19:37:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c507490>.
+[01/Jul/2016 19:37:59] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e1790>.
+[01/Jul/2016 19:38:00] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e4850>.
+[01/Jul/2016 19:38:13] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e4a10>.
+[01/Jul/2016 19:38:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c20be90>.
+[01/Jul/2016 19:38:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c20bb90>.
+[01/Jul/2016 19:38:28] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c886390>.
+[01/Jul/2016 19:38:31] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358cf49510>.
+[01/Jul/2016 19:38:32] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c3a0350>.
+[01/Jul/2016 19:38:58] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c3a0190>.
+[01/Jul/2016 19:38:59] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e4f10>.
+[01/Jul/2016 19:39:11] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f359c3e1390>.
+[01/Jul/2016 19:39:13] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f358c208250>.
+[01/Jul/2016 20:21:28] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120-precomposed.png
+[01/Jul/2016 20:21:29] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120.png
+[01/Jul/2016 20:21:30] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[01/Jul/2016 20:21:31] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[01/Jul/2016 20:21:33] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[01/Jul/2016 20:21:34] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Jul/2016 04:51:10] WARNING [django.request:143] Not Found: /robots.txt
+[02/Jul/2016 12:51:52] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Jul/2016 18:44:49] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Jul/2016 21:19:43] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Jul/2016 11:42:25] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[03/Jul/2016 14:13:36] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Jul/2016 14:13:36] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[03/Jul/2016 14:13:36] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[03/Jul/2016 14:13:36] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[03/Jul/2016 14:13:36] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[04/Jul/2016 01:37:14] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Jul/2016 13:50:38] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Jul/2016 15:42:01] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Jul/2016 15:42:01] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[04/Jul/2016 15:42:01] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[04/Jul/2016 15:42:01] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[04/Jul/2016 15:42:01] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[04/Jul/2016 15:59:54] WARNING [django.request:143] Not Found: /robots.txt
+[04/Jul/2016 19:35:50] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[04/Jul/2016 19:35:50] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Jul/2016 19:35:50] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[04/Jul/2016 19:54:57] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
+    formString += generateForm(request)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
+    edit_data_tree = etree.XML(str(form_data.xml_data))
+UnicodeEncodeError: 'ascii' codec can't encode character u'\u2013' in position 224: ordinal not in range(128)
+[04/Jul/2016 19:55:00] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
+    message= e.message.replace('"', '\'')
+AttributeError: 'NoneType' object has no attribute 'replace'
+[04/Jul/2016 21:39:32] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[04/Jul/2016 21:39:32] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Jul/2016 21:39:32] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[04/Jul/2016 22:55:50] WARNING [django.request:143] Not Found: /favicon.ico
+[05/Jul/2016 04:02:10] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[05/Jul/2016 14:32:27] WARNING [django.request:143] Not Found: /favicon.ico
+[05/Jul/2016 15:00:36] WARNING [django.request:143] Not Found: /favicon.ico
+[05/Jul/2016 15:00:36] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[05/Jul/2016 15:00:37] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[05/Jul/2016 16:21:13] WARNING [django.request:143] Not Found: /favicon.ico
+[05/Jul/2016 17:48:39] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7ea3dbf10>.
+[05/Jul/2016 17:49:16] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7eb443b10>.
+[05/Jul/2016 17:49:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x119f510>.
+[05/Jul/2016 17:49:21] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7eb4430d0>.
+[05/Jul/2016 18:12:02] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d8b7f910>.
+[05/Jul/2016 18:20:15] ERROR [django.request:231] Internal Server Error: /curate/remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1381, in remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:20:15] ERROR [django.request:231] Internal Server Error: /curate/remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1381, in remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:20:15] ERROR [django.request:231] Internal Server Error: /curate/remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1381, in remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:20:15] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1346, in can_remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:20:17] ERROR [django.request:231] Internal Server Error: /curate/remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1381, in remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:20:17] ERROR [django.request:231] Internal Server Error: /curate/remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1381, in remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:20:45] WARNING [django.request:143] Not Found: /curate/save_data
+[05/Jul/2016 18:36:37] ERROR [django.request:231] Internal Server Error: /curate/remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1381, in remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:36:38] ERROR [django.request:231] Internal Server Error: /curate/remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1381, in remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:36:38] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1346, in can_remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:36:38] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1346, in can_remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 18:38:02] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa80df21810>.
+[05/Jul/2016 18:39:26] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808d59690>.
+[05/Jul/2016 18:39:29] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808d59750>.
+[05/Jul/2016 18:39:35] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa80cb3be90>.
+[05/Jul/2016 18:39:37] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808acde90>.
+[05/Jul/2016 18:39:39] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa811e9bc10>.
+[05/Jul/2016 18:39:58] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa811e7f650>.
+[05/Jul/2016 20:07:47] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fc1f4ed0>.
+[05/Jul/2016 20:07:52] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa811e791d0>.
+[05/Jul/2016 20:08:04] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808d7d810>.
+[05/Jul/2016 20:10:10] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1346, in can_remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 20:10:10] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1346, in can_remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[05/Jul/2016 20:14:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa810a80890>.
+[05/Jul/2016 20:14:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa810a80d90>.
+[05/Jul/2016 20:14:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f89ff090>.
+[05/Jul/2016 20:14:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa810aae150>.
+[05/Jul/2016 20:14:33] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f89ffb50>.
+[05/Jul/2016 20:14:33] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9306810>.
+[05/Jul/2016 20:14:35] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f89ff0d0>.
+[05/Jul/2016 20:14:35] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fc1f4e50>.
+[05/Jul/2016 20:14:42] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa811e8d890>.
+[05/Jul/2016 20:14:42] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa810a80090>.
+[05/Jul/2016 20:14:54] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa812678e90>.
+[05/Jul/2016 20:14:54] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa810aaebd0>.
+[05/Jul/2016 20:15:33] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa812678d10>.
+[05/Jul/2016 20:15:33] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d933e6d0>.
+[05/Jul/2016 20:15:37] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d933ead0>.
+[05/Jul/2016 20:15:37] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d933ec10>.
+[05/Jul/2016 20:17:10] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa812678490>.
+[05/Jul/2016 20:17:14] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9306b10>.
+[05/Jul/2016 20:17:16] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fce7dc10>.
+[05/Jul/2016 20:17:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f89ffbd0>.
+[05/Jul/2016 20:17:21] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f8190c90>.
+[05/Jul/2016 20:17:29] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f81973d0>.
+[05/Jul/2016 20:18:22] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f9142d90>.
+[05/Jul/2016 20:18:26] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d933e6d0>.
+[05/Jul/2016 20:18:33] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f9142cd0>.
+[05/Jul/2016 20:18:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a6f690>.
+[05/Jul/2016 20:18:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f89e30d0>.
+[05/Jul/2016 20:18:46] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9d3c750>.
+[05/Jul/2016 20:18:46] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa810aae3d0>.
+[05/Jul/2016 20:19:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a828d0>.
+[05/Jul/2016 20:19:27] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a82e90>.
+[05/Jul/2016 20:19:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9d4d990>.
+[05/Jul/2016 20:19:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f89e3b90>.
+[05/Jul/2016 20:19:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9d4da10>.
+[05/Jul/2016 20:19:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9d4d910>.
+[05/Jul/2016 20:20:08] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f89e3a10>.
+[05/Jul/2016 20:20:08] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a6f190>.
+[05/Jul/2016 20:22:37] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a82310>.
+[05/Jul/2016 20:23:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f855cfd0>.
+[05/Jul/2016 20:23:23] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f855cc10>.
+[05/Jul/2016 20:23:33] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f855c210>.
+[05/Jul/2016 20:24:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f8dc8710>.
+[05/Jul/2016 20:24:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9313b50>.
+[05/Jul/2016 20:24:04] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa810aaed10>.
+[05/Jul/2016 20:24:04] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a88590>.
+[05/Jul/2016 20:24:06] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a888d0>.
+[05/Jul/2016 20:24:06] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f8dc8bd0>.
+[05/Jul/2016 20:24:08] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fce6e110>.
+[05/Jul/2016 20:24:08] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a6f410>.
+[05/Jul/2016 20:30:46] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f8dc8d90>.
+[05/Jul/2016 20:30:46] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f89e34d0>.
+[05/Jul/2016 20:30:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f855cc10>.
+[05/Jul/2016 20:30:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fce5f110>.
+[05/Jul/2016 20:32:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7f913cf10>.
+[05/Jul/2016 20:34:23] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1344, in can_remove
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:25] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1344, in can_remove
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:27] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1344, in can_remove
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:28] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1344, in can_remove
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:41] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1344, in can_remove
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:42] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1344, in can_remove
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:42] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1344, in can_remove
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:50] ERROR [django.request:231] Internal Server Error: /curate/save_form
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 79, in save_form
+    form_data = FormData.objects.get(id=form_data_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:55] ERROR [django.request:231] Internal Server Error: /curate/view-data
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 165, in curate_view_data
+    form_data = FormData.objects.get(pk=ObjectId(form_data_id))
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:34:56] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fe10de50>.
+[05/Jul/2016 20:34:58] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9333410>.
+[05/Jul/2016 20:35:03] ERROR [django.request:231] Internal Server Error: /curate/view-data
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 165, in curate_view_data
+    form_data = FormData.objects.get(pk=ObjectId(form_data_id))
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[05/Jul/2016 20:35:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9d07890>.
+[05/Jul/2016 20:35:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fd1b8910>.
+[05/Jul/2016 20:35:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d87e1a90>.
+[05/Jul/2016 20:35:18] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9cec0d0>.
+[05/Jul/2016 20:35:18] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa80cc1ccd0>.
+[05/Jul/2016 20:35:21] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d87e1b50>.
+[05/Jul/2016 20:35:21] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fd1b8d10>.
+[05/Jul/2016 20:35:23] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa80cc1c950>.
+[05/Jul/2016 20:35:23] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fe100ed0>.
+[05/Jul/2016 20:35:25] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7fe100cd0>.
+[05/Jul/2016 20:35:25] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa7d9d07590>.
+[05/Jul/2016 20:35:26] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa808a88790>.
+[05/Jul/2016 20:35:26] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fa80cc1c150>.
+[05/Jul/2016 22:15:21] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Jul/2016 03:31:37] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Jul/2016 08:28:32] WARNING [django.request:143] Not Found: /robots.txt
+[06/Jul/2016 13:36:06] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120-precomposed.png
+[06/Jul/2016 13:36:07] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120.png
+[06/Jul/2016 13:36:07] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[06/Jul/2016 13:36:07] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[06/Jul/2016 13:36:07] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[06/Jul/2016 13:36:07] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Jul/2016 14:37:49] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Jul/2016 14:51:50] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Jul/2016 14:58:25] ERROR [django.request:231] Internal Server Error: /DynamfitRun
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/Dynamfit/views.py", line 145, in runmodel
+    XFF = link2result + '/' + datafile + '.XFF'
+NameError: global name 'link2result' is not defined
+[06/Jul/2016 14:58:35] ERROR [django.request:231] Internal Server Error: /DynamfitRun
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/Dynamfit/views.py", line 145, in runmodel
+    XFF = link2result + '/' + datafile + '.XFF'
+NameError: global name 'link2result' is not defined
+[06/Jul/2016 16:44:22] ERROR [django.request:231] Internal Server Error: /MCFEA/MCFEAValidateInput
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/MCFEA/views.py", line 60, in validate
+    out1['Nominal field'] = field
+NameError: global name 'field' is not defined
+[06/Jul/2016 19:20:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f0b9b6437d0>.
+[06/Jul/2016 19:20:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f0b891cb7d0>.
+[06/Jul/2016 19:21:45] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f0b9af00dd0>.
+[06/Jul/2016 20:23:46] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[06/Jul/2016 22:51:53] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Jul/2016 22:51:53] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[06/Jul/2016 22:51:53] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[06/Jul/2016 22:51:56] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[06/Jul/2016 22:51:57] WARNING [django.request:143] Not Found: /apple-touch-icon.png
