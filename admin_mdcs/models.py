@@ -29,6 +29,8 @@ from mgi.rights import default_group
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from django.db import models
+
 ################################################################################
 #
 # Function Name: add_default_group(request)
@@ -194,3 +196,10 @@ def api_permission_required(content_type, permission, raise_exception=False):
 
         return wrapper
     return _check_group
+
+
+class Subscription(models.Model):
+    email = models.EmailField(max_length=254, unique=True)
+    is_active = models.BooleanField(default=False)
+    def __str__(self):
+        return self.email

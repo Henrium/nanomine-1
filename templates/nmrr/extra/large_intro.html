@@ -54,6 +54,7 @@
             </h5>
             <form action="#" method="post" role="form">
                 {% csrf_token %}
+                {{form}}
                 <!--<div class="input-group">-->
                 <input type="text" placeholder="youremail@mail.com"  class="button button-slider" name="email">
                 <input type="hidden" name="status" value="active">
@@ -62,7 +63,7 @@
             </form>
             <div>
                 Thanks, {{email}}!
-                You have been subscribed to NanoMine updates!
+                You have been subscribed to NanoMine updates! {{form}}.
             </div>
             <br/><br/><br/><br/>
         </div>

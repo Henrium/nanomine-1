@@ -370,3 +370,4 @@ Traceback (most recent call last):
     raise MultiValueDictKeyError(repr(key))
 MultiValueDictKeyError: "u'email'"
 [04/Aug/2016 01:26:50] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Aug/2016 03:04:19] WARNING [django.request:143] Not Found: /admin/admin_mdcs

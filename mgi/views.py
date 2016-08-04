@@ -29,6 +29,7 @@ from django.db.models import Q
 import mgi.rights as RIGHTS
 from itertools import chain
 
+from admin_mdcs.forms import SubscriptionForm
 
 ################################################################################
 #
@@ -45,6 +46,11 @@ def home(request):
     context = RequestContext(request, {
         'templates': Template.objects(user=None).order_by('-id')[:7]
     })
+    
+    form = SubscriptionForm()
+    
+    context.push({"form": form})
+    
     if request.method == "POST":
         if request.POST[u'email']:
             context.push({"email": request.POST[u'email']})

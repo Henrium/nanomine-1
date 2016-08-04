@@ -148,6 +148,7 @@ INSTALLED_APPS = (
     'Dynamfit',
     'AUTOFIT',
     'RECON',
+    # HZ
 )
 
 OAUTH2_PROVIDER = {

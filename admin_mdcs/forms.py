@@ -16,6 +16,8 @@
 
 from django import forms
 
+from .models import Subscription
+
 # list of possible protocols available in the form
 PROTOCOLS = (('http', 'HTTP'),
             ('https', 'HTTPS'))
@@ -111,4 +113,10 @@ class UploadResultXSLTForm(forms.Form):
     result_name = forms.CharField(label='Enter XSLT name', max_length=100, required=True)
     result_xslt_file = forms.FileField(label='Select a file',required=True)
 
+class SubscriptionForm(forms.Form):
+    class Meta:
+        model = Subscription
+        fields = ['email']
+        
     
+        
