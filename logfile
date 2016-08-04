@@ -371,3 +371,10 @@ Traceback (most recent call last):
 MultiValueDictKeyError: "u'email'"
 [04/Aug/2016 01:26:50] WARNING [django.request:143] Not Found: /favicon.ico
 [04/Aug/2016 03:04:19] WARNING [django.request:143] Not Found: /admin/admin_mdcs
+[04/Aug/2016 03:21:02] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 50, in home
+    context.push({"form": form})
+UnboundLocalError: local variable 'form' referenced before assignment

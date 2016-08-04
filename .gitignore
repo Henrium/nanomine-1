@@ -1,6 +1,7 @@
-data
+data/
 AUTOFIT/src_code
 *.log
+logfile.*
 
 MCFEA/src_modified_2
 docs

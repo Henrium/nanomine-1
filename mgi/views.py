@@ -46,12 +46,10 @@ def home(request):
     context = RequestContext(request, {
         'templates': Template.objects(user=None).order_by('-id')[:7]
     })
-    
-    form = SubscriptionForm()
-    
-    context.push({"form": form})
-    
+        
     if request.method == "POST":
+        form = SubscriptionForm(request.POST)
+        print(form)
         if request.POST[u'email']:
             context.push({"email": request.POST[u'email']})
     
