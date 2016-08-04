@@ -19,7 +19,17 @@
 {% block menu %}{% include 'menu.html' with active_tab='dynamfit' %}{% endblock %}
 {% block content%}
 
-<p><h3>Outputs </h3>Prony Series Coefficients (the program writes three files.)</p>
+<p><h3>Outputs </h3>
+
+<h4>Epsilon Prime</h4>
+	<div class="col-lg-4">
+		<img src="{{E_link}}">
+	</div>
+<h4>Epsilon Double Prime</h4>
+	<div class="col-lg-4">
+		<img src="{{EE_link}}">
+	</div>
+<p>Prony Series Coefficients (the program writes three files.)</p>
 <h5>File #.XPR</h5>
 <p>
     This file contains the Prony series terms. It consists of N lines of data with each line containing (&#947<sub>i</sub>, P-SVD<sub>i</sub>, RMS-SVD, P-Sign<sub>i</sub>, RMS-Sign), where &#947<sub>i</sub> are the relaxation times (constant term has &#947<sub>i</sub> set to 10<sup>50</sup>, P-SVD<sub>i</sub> and P-Sign<sub>i</sub>are the Prony series coefficients for the linear (SVD) and sign controlled method, respectively, and RMS-SVD  and RMS-Sign are the RMS percent errors between the obtained fit and the entire data for the linear (SVD) and sign controlled method, respectively. Note that the RMS errors are provided on every line; this is a simplification to keep all lines in the file identical in size. 

@@ -636,7 +636,7 @@ def runmodel(request):
 ##################################
 
 def check(request):
-        if request.user.is_authenticated():
+	if request.user.is_authenticated():
 		# job progress checker. default job ID taken from current view. 
 		
 		# Standalone view. NO GLOBAL VARIABLE SHOULD BE USED HERE!

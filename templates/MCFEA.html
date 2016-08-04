@@ -16,13 +16,16 @@
 {% load staticfiles %}
 
 
-{% block title %}<h1><span>Monte Carlo and FEA</span></h1>{% endblock %}
+{% block title %}<h1><span>Charge transport prediction in nanodielectrics using combined Monte Carlo and FEA</span></h1>{% endblock %}
 {% block menu %}{% include 'menu.html' with active_tab='MCFEA' %}{% endblock %}
 {% block content%}
 
-<p>This module simulates the charge transport in dielectric polymers and their nanocomposites by compling finite element analysis and Monte Carlo. </p><br>
-<h5>**Please input your variable step by step, then click "Validate Input".</h5><br>
-	
+<p>This simulation tool models the electronic charge transport in dielectric polymers and their nanocomposites using a combined Monte Carlo (MC) and
+finite element (FE) approach. The charges are assumed to transport in the polymer by hopping among localized electronic states that are homogenously
+distributed in a 3D lattice grid with 1 nm spacing. The hopping probability between two states is described by the Miller-Abraham formula based on the
+distance and energy difference.</p><br>
+<h5>**Please input your variable step by step, then click "Validate Input".</h5>
+<h5>**Click <a href="http://puma.mech.northwestern.edu/nanomine/MCFEA/media/note for each step.docx" download>here</a> to download note for each step.</h5><br>
 <form method='POST'>  {% csrf_token %}
 
 <h4>Step 1: Enter the nominal field (in V/m). </h4>
@@ -178,7 +181,12 @@ function noNPFun() {
 <br>
 	
 	
-	<h4>Reference will be listed here......</h4>
+	<h4>Reference</h4>
 	<p>Yanhui Huang, Linda. S. Schadler,<i><a href="http://arxiv.org/abs/1606.02683">On the Nature of High Field Charge Transport in Reinforced Silicone Dielectrics: Experiment and Simulation</a></i>, 2016</p>
-	
+	<p>Köhler, A.; Bässler, H., <i><a href="https://books.google.com/books?hl=en&lr=&id=GXemBgAAQBAJ&oi=fnd&pg=PR9&dq=Electronic+Processes+in+Organic+Semiconductors:+An+Introduction&ots=2Os9sQifKW&sig=cGxgODnKI6Lm0Be2I5JngP4fusE#v=onepage&q=Electronic%20Processes%20in%20Organic%20Semiconductors%3A%20An%20Introduction&f=false">
+		Electronic Processes in Organic Semiconductors: An Introduction.</a></i> John Wiley & Sons: 2015.</p>
+	<p>Choulis, S. A.; Nelson, J.; Kim, Y.; Poplavskyy, D.; Kreouzis, T.; Durrant, J. R.; Bradley, D. D. C., <i><a href="http://scitation.aip.org/content/aip/journal/apl/83/18/10.1063/1.1624636">
+		Investigation of transport properties in polymer/fullerene blends using time-of-flight photocurrent measurements. </a></i>Applied Physics Letters 2003, 83 (18), 3812-3814;</p>
+	<p>Koughia, K.; Shakoor, Z.; Kasap, S. O.; Marshall, J. M., <i><a href="http://scitation.aip.org/content/aip/journal/jap/97/3/10.1063/1.1835560">
+		Density of localized electronic states in a-Se from electron time-of-flight photocurrent measurements.</a></i> Journal of Applied Physics 2005, 97 (3), 033706.</p>
 {% endblock %}

@@ -14,8 +14,8 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns('',
                        #url(r'^$', views.index, name='index'),
                        url(r'^$', 'Dynamfit.views.home', name='home'),
-                       #url(r'^DynamfitUpload$', 'Dynamfit.views.upload', name='upload'),
+                       url(r'^DynamfitExampleRun$', 'Dynamfit.views.samplerun', name='samplerun'),
                        url(r'^DynamfitRun$',  'Dynamfit.views.runmodel', name='runmodel'),
-                        # url(r'^DielectricFEA2DResultSample$', 'FEA2D.views.sample', name='resultSample'),
-                        # url(r'^DielectricFEA2DCheckProgress$', 'FEA2D.views.check', name='check'),                       
+                       url(r'^DynamfitExample$', 'Dynamfit.views.sample', name='sample'),
+                       url(r'^DynamfitExampleInput$', 'Dynamfit.views.sampleinput', name='sampleinput'),                       
                        )    

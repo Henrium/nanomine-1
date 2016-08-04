@@ -194,8 +194,7 @@ def curate_enter_data_downloadxsd(request):
             return redirect('/curate/select-template')
         else:
             templateID = request.session['currentTemplateID']
-
-            templateObject = Template.objects.get(pk=ObjectId(templateID))
+	    templateObject = Template.objects.get(pk=ObjectId(templateID))
             template_filename = templateObject.filename
             
             xsdDocData = templateObject.content
