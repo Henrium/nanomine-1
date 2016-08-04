@@ -1,10 +1,10 @@
 ._.DS_Store
 .DS_Store
-./*.log
+*.log
 db.sqlite3
 logfile.*
-./data/*
-docs/*
-MCFEA/src_modified_2/*
-./AUTOFIT/src_code/*
+./data/
+docs/
+MCFEA/src_modified_2/
+./AUTOFIT/src_code/
 
