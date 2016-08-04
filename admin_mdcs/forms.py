@@ -118,5 +118,6 @@ class SubscriptionForm(forms.Form):
         model = Subscription
         fields = ['email']
         
+        
     
         

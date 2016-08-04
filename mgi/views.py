@@ -49,6 +49,7 @@ def home(request):
         
     if request.method == "POST":
         form = SubscriptionForm(request.POST)
+        print(request.POST)
         print(form)
         if request.POST[u'email']:
             context.push({"email": request.POST[u'email']})

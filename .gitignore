@@ -1,11 +1,12 @@
-data/
-AUTOFIT/src_code
+db.sqlite3
 *.log
 logfile.*
 
-MCFEA/src_modified_2
-docs
-db.sqlite3
+./data
+./AUTOFIT/src_code
 
-niblack/media
-niblack/mfiles/niblack/imgs
+./MCFEA/src_modified_2
+./docs
+
+./niblack/media
+./niblack/mfiles/niblack/imgs
