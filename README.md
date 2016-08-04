@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Materials Data Curation System
 ==============================
 
@@ -31,3 +32,6 @@ The MDCS allows integration of modules to provide better user interfaces for ent
 -	ConstituentsType
 -	ChemicalElement
 -	Table
+=======
+Host: puma.mech.northwestern.edu
+>>>>>>> 12ea4ef5f016afb7712d57c29cf962cf429c1076
