@@ -1,0 +1,49 @@
+<!-- 
+################################################################################
+#
+# File Name: descchar.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Descriptor Characterization</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+
+<h4>The binary image you just uploaded is rendered as JPG below</h4>
+
+<!--display file name from .mat-->
+<p>File: {{ name }}</p>
+<!--display JPG from apache path-->
+<img src= 'http://puma.mech.northwestern.edu/nm/image.jpg' style="max-height:300px; max-width:300px" />
+
+<h4><a href="http://puma.mech.northwestern.edu/nm/ch_result.mat">Download complete characterized descriptors</a></h4>
+<hr>
+   
+<h4>Sample descriptor results (mean values)</h4>
+<br>Number of fillers:
+<b>{{n}}</b>
+<br>Nearest center distance (nm):
+<b>{{ncd}}</b>
+<br>Equivalent radius (nm):
+<b>{{rc}}</b>
+<br>Area weighted aspect ratio:
+<b>{{ar}}</b>
+
+<br>Roundness:
+<b>{{rnds}}</b>
+<br>Eccentricity:
+<b>{{eccen}}</b>
+<br>Orientation Angle (rad):
+<b>{{ornang}}</b>
+
+{% endblock %}

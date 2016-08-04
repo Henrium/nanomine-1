@@ -91,11 +91,11 @@ HANDLE_SERVER_USER = ''
 HANDLE_SERVER_PSWD = ''
 
 # Customization: MGI
-CUSTOM_TITLE = 'Materials Data'
-CUSTOM_SUBTITLE = 'Part of the Materials Genome Initiative'
+CUSTOM_TITLE = 'NanoMine'
+CUSTOM_SUBTITLE = 'Material Informatics for Polymer Nanocomposites'
 CUSTOM_DATA = 'Materials Data'
-CUSTOM_CURATE = 'Data Curation'
-CUSTOM_EXPLORE = 'Data Exploration'
+CUSTOM_CURATE = 'Curate Data'
+CUSTOM_EXPLORE = 'Search Data'
 CUSTOM_COMPOSE = 'Composer'
 
 #CURATE
@@ -140,6 +140,14 @@ INSTALLED_APPS = (
     'explore',
     'compose',
     'modules',
+    ## ZJY 072716
+    'descchar',
+    'niblack',
+    'FEA2D',
+    'MCFEA',
+    'Dynamfit',
+    'AUTOFIT',
+    'RECON',
 )
 
 OAUTH2_PROVIDER = {

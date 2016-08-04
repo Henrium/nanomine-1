@@ -1,0 +1,67 @@
+<!-- 
+################################################################################
+#
+# File Name: DynamfitRun.html
+# Application: templates
+# Description: 
+#
+# Modified by: Zijiang Yang, June 07, 2016
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dynamfit - Prony Series coefficient fitting</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+
+<p><h3>Outputs </h3>
+
+<h4>Epsilon Prime</h4>
+	<div class="col-lg-4">
+		<img src="{{E_link}}">
+	</div>
+<h4>Epsilon Double Prime</h4>
+	<div class="col-lg-4">
+		<img src="{{EE_link}}">
+	</div>
+<p>Prony Series Coefficients (the program writes three files.)</p>
+<h5>File #.XPR</h5>
+<p>
+    This file contains the Prony series terms. It consists of N lines of data with each line containing (&#947<sub>i</sub>, P-SVD<sub>i</sub>, RMS-SVD, P-Sign<sub>i</sub>, RMS-Sign), where &#947<sub>i</sub> are the relaxation times (constant term has &#947<sub>i</sub> set to 10<sup>50</sup>, P-SVD<sub>i</sub> and P-Sign<sub>i</sub>are the Prony series coefficients for the linear (SVD) and sign controlled method, respectively, and RMS-SVD  and RMS-Sign are the RMS percent errors between the obtained fit and the entire data for the linear (SVD) and sign controlled method, respectively. Note that the RMS errors are provided on every line; this is a simplification to keep all lines in the file identical in size. 
+</p>
+
+
+<h5>File #.XFF</h5>
+
+<p>
+    This file contains the predicted frequency domain response obtained by the program. It consists of U lines of data, where U is the number of points specified by the user for the response predictions. Each line contains
+    
+    (&#969<sub>i</sub>, X<sup>'</sup>-SVD<sub>i</sub>, X-SVD<sub>i</sub>, X-Sign<sub>i</sub>, X-Sign<sub>i</sub>),  where &#969<sub>i</sub> are the frequency points of evaluation (U points evenly spaced in the log domain between &#969<sub>min</sub> and &#969<sub>max</sub>,
+    </p>
+
+
+<h5>File #.XTF</h5>
+<p>
+    This file contains the predicted time domain response obtained by the program. It consists of U lines of data, where U is the number of points specified by the user for the response predictions. Each line contains (t<sub>i</sub>, X-SVD<sub>i</sub>, X-Sign<sub>i</sub>, where t<sub>i</sub> are the time points of evaluation (U points evenly spaced in the log domain between t<sub>min</sub> = 2 &#960/ &#969 <sub>min</sub>), and X-SVD<sub>i</sub> and X-Sign<sub>i</sub> are the predicted time domain values from the Prony series obtained by the linear (SVD) and sign controlled method, respectively.
+    
+</p>
+
+<p>
+	These Prony Series coefficients associated with the elastic parameters of nanoparticles are then imported into the material section of finite element simulation. 
+</p>
+
+<h3>Your results are ready to download</h3><br>
+
+<p>Click <a href="{{XPR_link}}">here</a> to download #.XPR file.</p>
+<p>Click <a href="{{XFF_link}}">here</a> to download #.XFF file.</p>
+<p>Click <a href="{{XTF_link}}">here</a> to download #.XTF file.</p>
+
+
+<p>Do not refresh this page. Otherwise your job will be re-submitted. Please click <a href="/dynamfit">here</a> to submit new parameters for a new job.</p>
+
+{% endblock %}

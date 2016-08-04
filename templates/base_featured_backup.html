@@ -1,0 +1,66 @@
+{% extends 'base/default.html' %}
+{% comment %}
+<!--
+################################################################################
+#
+# File Name: base_featured.html
+# Application: templates
+# Description:
+#
+# Author: Sharief Youssef
+#         sharief.youssef@nist.gov
+#
+#		  Guillaume SOUSA AMARAL
+#		  guillaume.sousa@nist.gov
+#
+# Sponsor: National Institute of Standards and Technology
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% block container %}
+<div class="content">
+    <div id="featured-wrapper">
+        <div id="featured">
+            {% block messages %}
+                {% if messages %}
+                    <ul class="messagelist">
+                        {% for message in messages %}
+                        <li style="display:block">
+                            <div class="alert">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <i class="icon disable-selection"></i> {{message}}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endblock messages %}
+
+            {% block title %}<h1>{{title}}</h1>{% endblock %}
+            <div class="clearer">&nbsp;</div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="model_selection">
+            {% block content %}
+                {% block object-tools %}{% endblock %}
+                {{content}}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80515948-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+{% endblock %}

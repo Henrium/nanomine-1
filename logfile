@@ -1,3 +1,372 @@
-[13/Jun/2016 20:06:23] WARNING [django.request:143] Not Found: /favicon.ico
-[13/Jun/2016 20:47:46] WARNING [django.request:143] Not Found: /favicon.ico
-[14/Jun/2016 14:27:37] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Aug/2016 20:16:59] ERROR [django.request:231] Internal Server Error: /curate/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/admin_mdcs/models.py", line 117, in wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 63, in index
+    return HttpResponse(template.render(context))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'admin_menu' appears more than once
+[02/Aug/2016 20:17:00] ERROR [django.request:231] Internal Server Error: /curate/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/admin_mdcs/models.py", line 117, in wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 63, in index
+    return HttpResponse(template.render(context))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'admin_menu' appears more than once
+[02/Aug/2016 20:35:19] ERROR [django.request:231] Internal Server Error: /curate/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/admin_mdcs/models.py", line 117, in wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 63, in index
+    return HttpResponse(template.render(context))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 171, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+TemplateSyntaxError: 'block' tag with name 'admin_menu' appears more than once
+[02/Aug/2016 23:07:08] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120-precomposed.png
+[02/Aug/2016 23:07:09] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120.png
+[02/Aug/2016 23:07:09] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[02/Aug/2016 23:07:09] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[02/Aug/2016 23:07:09] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[02/Aug/2016 23:07:10] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Aug/2016 23:57:46] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 01:58:00] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 03:09:29] ERROR [django.request:231] Internal Server Error: /curate/view-data
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/admin_mdcs/models.py", line 117, in wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 223, in curate_view_data
+    form_data = FormData.objects.get(pk=ObjectId(form_data_id))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[03/Aug/2016 03:09:31] ERROR [django.request:231] Internal Server Error: /curate/view-data
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/admin_mdcs/models.py", line 117, in wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 223, in curate_view_data
+    form_data = FormData.objects.get(pk=ObjectId(form_data_id))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormData matching query does not exist.
+[03/Aug/2016 03:10:26] WARNING [django.request:143] Not Found: /dashboard
+[03/Aug/2016 03:10:34] WARNING [django.request:143] Not Found: /dashboard
+[03/Aug/2016 03:11:06] WARNING [django.request:143] Not Found: /dashboard
+[03/Aug/2016 03:22:20] WARNING [django.request:143] Not Found: /dashboard
+[03/Aug/2016 03:24:51] WARNING [django.request:143] Not Found: /my-profile/resources
+[03/Aug/2016 03:43:02] WARNING [django.request:143] Not Found: /explore/sadfasdfasdfasd
+[03/Aug/2016 14:48:13] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 14:52:07] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 15:37:59] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 15:47:15] WARNING [django.request:143] Not Found: /autofit
+[03/Aug/2016 16:07:00] ERROR [django.request:231] Internal Server Error: /notify/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in notify
+    template = loader.get_template('notify.html')
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 203, in do_extends
+    raise TemplateSyntaxError("'%s' cannot appear more than once in the same template" % bits[0])
+TemplateSyntaxError: 'extends' cannot appear more than once in the same template
+[03/Aug/2016 17:18:42] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /
+[03/Aug/2016 17:19:39] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /
+[03/Aug/2016 17:33:54] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
+    context.append('d');
+AttributeError: 'RequestContext' object has no attribute 'append'
+[03/Aug/2016 17:33:56] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
+    context.append('d');
+AttributeError: 'RequestContext' object has no attribute 'append'
+[03/Aug/2016 17:36:28] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
+    print(Template.objects(user=None).order_by('-id')[1].ToString())
+AttributeError: 'Template' object has no attribute 'ToString'
+[03/Aug/2016 17:38:29] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 58, in home
+    return HttpResponse(template.render(context))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 146, in render
+    context.render_context.push()
+AttributeError: 'dict' object has no attribute 'render_context'
+[03/Aug/2016 17:38:35] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 58, in home
+    return HttpResponse(template.render(context))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 146, in render
+    context.render_context.push()
+AttributeError: 'dict' object has no attribute 'render_context'
+[03/Aug/2016 17:44:58] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 56, in home
+    return HttpResponse(template.render(context))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'email', expected 'endblock'
+[03/Aug/2016 17:51:41] WARNING [django.request:143] Not Found: /explore/sdfasdfa
+[03/Aug/2016 18:19:29] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 20:14:40] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 46, in home
+    print(request.POST.email)
+AttributeError: 'QueryDict' object has no attribute 'email'
+[03/Aug/2016 20:19:36] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 46
+    continue
+SyntaxError: 'continue' not properly in loop
+[03/Aug/2016 20:22:45] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 53, in home
+    context.push({"email": request.POST[u'email']})
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/datastructures.py", line 319, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "u'email'"
+[03/Aug/2016 20:22:46] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 53, in home
+    context.push({"email": request.POST[u'email']})
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/datastructures.py", line 319, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "u'email'"
+[03/Aug/2016 20:22:50] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 53, in home
+    context.push({"email": request.POST[u'email']})
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/datastructures.py", line 319, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "u'email'"
+[04/Aug/2016 01:26:50] WARNING [django.request:143] Not Found: /favicon.ico

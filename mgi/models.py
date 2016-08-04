@@ -473,4 +473,3 @@ class XMLdata():
             results.append(result)
         return results
 
-

@@ -1,0 +1,64 @@
+<!-- 
+################################################################################
+#
+# File Name: niblack.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dynamic Binarization</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+	
+
+<h3>Description</h3>
+<br>
+	<p>Upload a grayscale micrograph image in TIF format and perform dynamic niblack binarization with user input local window size. </p>
+	
+<!--<h3>Existing image files:</h3>-->
+<!-- List of uploaded documents -->
+<!--{% if documents %}
+	<ul>
+	{% for document in documents %}
+		<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No documents.</p>
+{% endif %}-->
+
+<!-- Upload form. Note enctype attribute! -->
+<form action="{% url "niblack" %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+	<p><input type="submit" value="Run" /></p>
+</form>
+
+<form> 
+	<INPUT type="button" value="See Results" onClick="window.open('/niblack_view','newwindow','width=800,height=800')"> 
+</form>
+
+<hr>
+	<h4>Reference</h4>
+	<p>Khurshid, Khurram, et al., <i><a href="http://spie.org/Publications/Proceedings/Paper/10.1117/12.805827">Comparison of Niblack inspired Binarization methods for ancient documents</a></i>, SPIE Electronic Imaging. International Society for Optics and Photonics, 2009.</p>
+	
+
+
+
+
+
+{% endblock %}

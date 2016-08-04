@@ -1,0 +1,254 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2015 The MathWorks, Inc.
+                   R2015a (8.5.0.197613) 64-bit (glnxa64)
+                             February 12, 2015
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+	Academic License
+
+
+MATLAB is now connected to localhost:2213
+
+Run the commands below to access the COMSOL ModelUtil commands:
+import com.comsol.model.util.*
+AC mode is selected. Begin applying dielectric permittivity spectroscopy Prony series to polymer data.
+Ratio of physical length to pixel: 0.46296nm-per-pixel
+X dimension:
+   9.9537e-04
+
+X max:
+   8.8665e-04
+
+X min:
+   1.1030e-04
+
+Y max:
+   8.5309e-04
+
+Y min:
+   1.0602e-04
+
+Number of clusters in FEA geometry: 67
+Actual VF in simulation window: 0.010093
+Corrected VF in simulation window: 0.01
+AC mode: define polymer and interphase dielectric permittivity.
+Use 1-to-1 mapping of filler microstructure ...
+Ellipse1
+Ellipse2
+Ellipse3
+Ellipse4
+Ellipse5
+Ellipse6
+Ellipse7
+Ellipse8
+Ellipse9
+Ellipse10
+Ellipse11
+Ellipse12
+Ellipse13
+Ellipse14
+Ellipse15
+Ellipse16
+Ellipse17
+Ellipse18
+Ellipse19
+Ellipse20
+Ellipse21
+Ellipse22
+Ellipse23
+Ellipse24
+Ellipse25
+Ellipse26
+Ellipse27
+Ellipse28
+Ellipse29
+Ellipse30
+Ellipse31
+Ellipse32
+Ellipse33
+Ellipse34
+Ellipse35
+Ellipse36
+Ellipse37
+Ellipse38
+Ellipse39
+Ellipse40
+Ellipse41
+Ellipse42
+Ellipse43
+Ellipse44
+Ellipse45
+Ellipse46
+Ellipse47
+Ellipse48
+Ellipse49
+Ellipse50
+Ellipse51
+Ellipse52
+Ellipse53
+Ellipse54
+Ellipse55
+Ellipse56
+Ellipse57
+Ellipse58
+Ellipse59
+Ellipse60
+Ellipse61
+Ellipse62
+Ellipse63
+Ellipse64
+Ellipse65
+Ellipse66
+Ellipse67
+EllipseIF1-1
+EllipseIF1-2
+EllipseIF1-3
+EllipseIF1-4
+EllipseIF1-5
+EllipseIF1-6
+EllipseIF1-7
+EllipseIF1-8
+EllipseIF1-9
+EllipseIF1-10
+EllipseIF1-11
+EllipseIF1-12
+EllipseIF1-13
+EllipseIF1-14
+EllipseIF1-15
+EllipseIF1-16
+EllipseIF1-17
+EllipseIF1-18
+EllipseIF1-19
+EllipseIF1-20
+EllipseIF1-21
+EllipseIF1-22
+EllipseIF1-23
+EllipseIF1-24
+EllipseIF1-25
+EllipseIF1-26
+EllipseIF1-27
+EllipseIF1-28
+EllipseIF1-29
+EllipseIF1-30
+EllipseIF1-31
+EllipseIF1-32
+EllipseIF1-33
+EllipseIF1-34
+EllipseIF1-35
+EllipseIF1-36
+EllipseIF1-37
+EllipseIF1-38
+EllipseIF1-39
+EllipseIF1-40
+EllipseIF1-41
+EllipseIF1-42
+EllipseIF1-43
+EllipseIF1-44
+EllipseIF1-45
+EllipseIF1-46
+EllipseIF1-47
+EllipseIF1-48
+EllipseIF1-49
+EllipseIF1-50
+EllipseIF1-51
+EllipseIF1-52
+EllipseIF1-53
+EllipseIF1-54
+EllipseIF1-55
+EllipseIF1-56
+EllipseIF1-57
+EllipseIF1-58
+EllipseIF1-59
+EllipseIF1-60
+EllipseIF1-61
+EllipseIF1-62
+EllipseIF1-63
+EllipseIF1-64
+EllipseIF1-65
+EllipseIF1-66
+EllipseIF1-67
+EllipseIF2-1
+EllipseIF2-2
+EllipseIF2-3
+EllipseIF2-4
+EllipseIF2-5
+EllipseIF2-6
+EllipseIF2-7
+EllipseIF2-8
+EllipseIF2-9
+EllipseIF2-10
+EllipseIF2-11
+EllipseIF2-12
+EllipseIF2-13
+EllipseIF2-14
+EllipseIF2-15
+EllipseIF2-16
+EllipseIF2-17
+EllipseIF2-18
+EllipseIF2-19
+EllipseIF2-20
+EllipseIF2-21
+EllipseIF2-22
+EllipseIF2-23
+EllipseIF2-24
+EllipseIF2-25
+EllipseIF2-26
+EllipseIF2-27
+EllipseIF2-28
+EllipseIF2-29
+EllipseIF2-30
+EllipseIF2-31
+EllipseIF2-32
+EllipseIF2-33
+EllipseIF2-34
+EllipseIF2-35
+EllipseIF2-36
+EllipseIF2-37
+EllipseIF2-38
+EllipseIF2-39
+EllipseIF2-40
+EllipseIF2-41
+EllipseIF2-42
+EllipseIF2-43
+EllipseIF2-44
+EllipseIF2-45
+EllipseIF2-46
+EllipseIF2-47
+EllipseIF2-48
+EllipseIF2-49
+EllipseIF2-50
+EllipseIF2-51
+EllipseIF2-52
+EllipseIF2-53
+EllipseIF2-54
+EllipseIF2-55
+EllipseIF2-56
+EllipseIF2-57
+EllipseIF2-58
+EllipseIF2-59
+EllipseIF2-60
+EllipseIF2-61
+EllipseIF2-62
+EllipseIF2-63
+EllipseIF2-64
+EllipseIF2-65
+EllipseIF2-66
+EllipseIF2-67
+Finished building unions and differences on fillers, interphase, and rectangular simulation block.
+Found all boundary indices
+Created material
+created EC physics
+Finished meshing
+created study
+Finished computing solution
+Write imaginary composite permittivity to file:
+CompPermImag.csv
+Write real composite permittivity to file:
+CompPermReal.csv
+Job done. Output result to .mph file
+Elapsed time is 166.217407 seconds.

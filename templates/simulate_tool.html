@@ -1,0 +1,90 @@
+
+
+{% extends 'base_featured.html' %}
+
+{% load staticfiles %}
+
+{% comment %}
+<!-- 
+################################################################################
+#
+# File Name: simulate_tool.html
+# Application: templates
+# Description: index pages for simulation tools
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
+
+{% block title %}
+<h3><span>Material Property Simulation</span></h3>
+{% endblock %}
+
+{% block description%}
+Material property simulation modules
+{% endblock %}
+
+{% block content%}
+
+<style>
+  .left {
+    float: left
+  }
+  .right {
+    float: right
+  }
+  .content-separator {
+    clear: both
+  }
+</style>
+
+<div class="left" style="width: 800px">
+
+<div class="content-separator"></div>
+
+<div>
+<div class="float left" style="width: 300px">
+  <img src= {% static 'resources/img/prop_simu.png' %}  />
+</div>
+
+<div class="float right" style="width: 400px">
+  <h4><span><a href="http://reccr.chem.rpi.edu/polymerizer/index.html">Polymerizer</a></span></h4> 
+  <p>Polymerizer is an online server to predict surface energy for nanocomposites, including the work of adhesion, wetting angle and the work of spreading. The current website implementation uses selectable literature particle surface energies. This server also converts the property-encoded surfaces into images for display. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR). </p>
+</div>
+
+</div>
+
+<div class="content-separator"></div>
+
+<div>
+<div class="float left" style="width: 300px">
+  <img src={% static 'resources/img/FEA_dielectrics.png' %} />
+</div>
+
+<div class="float right" style="width: 400px">
+  <h4><span><a href="/FEA2D">Dielectric Permittivity FEA</a></span> </h4> 
+  <p>This module simulates the dielectric spectroscopy in nanocomposites with explicit implementation of microstructure dispersion as well as interphase relaxation model. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
+</div>
+</div>
+
+<div class="content-separator"></div>
+
+<div>
+<div class="float left" style="width: 300px">
+  <img src={% static 'resources/img/MCFEA.jpg' %} />
+</div>
+
+<div class="float right" style="width: 400px">
+  <h4><span><a href="/MCFEA">Monte Carlo and FEA</a></span> </h4> 
+  <p>This module simulates the charge transport in dielectric polymers and their nanocomposites by compling finite element analysis and Monte Carlo. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

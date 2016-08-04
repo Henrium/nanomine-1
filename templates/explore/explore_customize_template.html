@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load auth_extras %}
+
+{% comment %}
+<!--
+################################################################################
+#
+# File Name: explore_customize_template.html
+# Application: templates
+# Description: 
+#
+# Author: Sharief Youssef
+#         sharief.youssef@nist.gov
+#
+#		  Guillaume Sousa Amaral
+#		  guillaume.sousa@nist.gov
+#
+# Sponsor: National Institute of Standards and Technology (NIST)
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'resources/css/exploreTabs.css' %}"  media="screen" />
+<link rel="stylesheet" type="text/css" href="{% static 'resources/css/explore.css' %}"  media="screen" />
+{% endblock %}
+
+{% block title %}<h1>Select Fields</h1>{% endblock %}
+{% block description %}
+Select the fields that you want to use in your query by clicking on the checkboxes. Only the checked fields will be
+available in the query screen. When you are done, please click on Perform Search to access the Query Builder.
+{% endblock %}
+
+{% block menu %}{% include 'menu.html' with active_tab='options' %}{% endblock %}
+{% block submenu %}	
+<ul id="subnav-tab-1" class="tabbed">
+    <li class="current_page_item">
+    	<a href="/explore">Query by Example</a>
+   	</li>
+    <li>
+        <div style="cursor:pointer">
+            <a href="/explore/keyword">Search by Keyword</a>
+        </div>
+    </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="toolbar">
+	<div class="btn-group pull-right">
+		<button class="btn clear-fields"><i class="icon-file"></i> Clear fields</button>
+  	</div>
+	<br/><br/>
+</div>
+<div id="xsdForm"></div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="box">		    
+    <div class="content">
+       <div class="box-content">
+           <ul class="nice-list">
+               {% include 'explore/menu/menu-items.html' with step='s2' %}
+           </ul>
+       </div>
+    </div> 			
+</div>
+{% endblock %}
+
+{% block popups %}
+<div id="dialog-cleared-message" title="Fields Cleared" style="display:none;">
+    <p></p>
+    <p>
+        <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 10px 0;"></span>
+        Form fields are cleared.
+    </p>
+</div>
+
+<div id="dialog-saved-message" title="Form Saved" style="display:none;">
+    <p></p>
+    <p>
+        <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 10px 0;"></span>
+        Form fields are saved.
+    </p>
+</div>
+{% endblock %}
+
+{% block extrajs %}
+<script src="{% static 'inc/controllers/js/explore.js' %}"></script>
+<script>
+verifyTemplateIsSelectedCustomize();
+</script>
+{% endblock %}

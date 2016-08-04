@@ -1,0 +1,386 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2015 The MathWorks, Inc.
+                   R2015a (8.5.0.197613) 64-bit (glnxa64)
+                             February 12, 2015
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+	Academic License
+
+
+MATLAB is now connected to localhost:3008
+
+Run the commands below to access the COMSOL ModelUtil commands:
+import com.comsol.model.util.*
+
+FEA =
+
+     0
+
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.112760 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.412952 seconds.
+5 NP overlap removed
+finished generating NP grid coordinates, take 4.9367 secs
+Now constructing the energy landscape...
+Elapsed time is 0.714386 seconds.
+Start the Monte Carlo Hopping...
+double trap prevented
+double trap prevented
+double trap prevented
+double trap prevented
+double trap prevented
+double trap prevented
+double trap prevented
+double trap prevented
+trap_count = 43
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003242 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.054296 seconds.
+4 NP overlap removed
+finished generating NP grid coordinates, take 5.0211 secs
+Now constructing the energy landscape...
+Elapsed time is 0.747191 seconds.
+Start the Monte Carlo Hopping...
+trap_count = 24
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003062 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.052773 seconds.
+3 NP overlap removed
+finished generating NP grid coordinates, take 4.9091 secs
+Now constructing the energy landscape...
+Elapsed time is 0.728057 seconds.
+Start the Monte Carlo Hopping...
+double trap prevented
+double trap prevented
+trap_count = 45
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003109 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.053069 seconds.
+4 NP overlap removed
+finished generating NP grid coordinates, take 5.0542 secs
+Now constructing the energy landscape...
+Elapsed time is 0.740510 seconds.
+Start the Monte Carlo Hopping...
+trap_count = 35
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003412 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.056973 seconds.
+6 NP overlap removed
+finished generating NP grid coordinates, take 4.9498 secs
+Now constructing the energy landscape...
+Elapsed time is 0.747097 seconds.
+Start the Monte Carlo Hopping...
+double trap prevented
+double trap prevented
+double trap prevented
+double trap prevented
+trap_count = 42
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003221 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.054202 seconds.
+3 NP overlap removed
+finished generating NP grid coordinates, take 5.0609 secs
+Now constructing the energy landscape...
+Elapsed time is 0.719052 seconds.
+Start the Monte Carlo Hopping...
+double trap prevented
+double trap prevented
+double trap prevented
+double trap prevented
+trap_count = 59
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003192 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.053561 seconds.
+23 NP overlap removed
+finished generating NP grid coordinates, take 4.8982 secs
+Now constructing the energy landscape...
+Elapsed time is 0.734338 seconds.
+Start the Monte Carlo Hopping...
+double trap prevented
+double trap prevented
+double trap prevented
+Elapsed time is 136.863562 seconds.
+the average traveling distance now is 468
+the minimum traveling time now is 644
+
+trap_count = 52
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003273 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.055882 seconds.
+13 NP overlap removed
+finished generating NP grid coordinates, take 5.0541 secs
+Now constructing the energy landscape...
+Elapsed time is 0.725339 seconds.
+Start the Monte Carlo Hopping...
+double trap prevented
+Elapsed time is 124.463984 seconds.
+the average traveling distance now is 457
+the minimum traveling time now is 142
+
+trap_count = 41
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003438 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.057318 seconds.
+6 NP overlap removed
+finished generating NP grid coordinates, take 5.0058 secs
+Now constructing the energy landscape...
+Elapsed time is 0.706119 seconds.
+Start the Monte Carlo Hopping...
+double trap prevented
+double trap prevented
+double trap prevented
+trap_count = 44
+line
+611.465
+the total number of NP is 600
+the total number of clusters is 20
+now generating the center of each cluster
+Elapsed time is 0.003085 seconds.
+now assembling No.1 cluster
+now assembling No.2 cluster
+now assembling No.3 cluster
+now assembling No.4 cluster
+now assembling No.5 cluster
+now assembling No.6 cluster
+now assembling No.7 cluster
+now assembling No.8 cluster
+now assembling No.9 cluster
+now assembling No.10 cluster
+now assembling No.11 cluster
+now assembling No.12 cluster
+now assembling No.13 cluster
+now assembling No.14 cluster
+now assembling No.15 cluster
+now assembling No.16 cluster
+now assembling No.17 cluster
+now assembling No.18 cluster
+now assembling No.19 cluster
+now assembling No.20 cluster
+Elapsed time is 0.052759 seconds.
+2 NP overlap removed
+finished generating NP grid coordinates, take 4.9911 secs
+Now constructing the energy landscape...
+Elapsed time is 0.717873 seconds.
+Start the Monte Carlo Hopping...
+trap_count = 26

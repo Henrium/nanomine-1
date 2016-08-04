@@ -1,0 +1,171 @@
+<!-- 
+################################################################################
+#
+# File Name: DielectricFEA2D.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends "base_featured.html" %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
+
+{% block content%}
+
+<h3>Finite Element Simulation of Dielectric Permittivity Spectroscopy with Explicit Microstructure Dispersion and Interphase Model
+</h3><br>
+<p>This simulation incorporates interphase model that are direclty correlated with experimental data.
+The microstructure used in the simulation can be obtained with either existing micrographs stored in the database, or
+reconstructed from free energy calculation.</p><br>
+
+	
+<form method='POST'>  {% csrf_token %}
+
+<h4>Choose from list of polymers, particle, and surface treatment. </h4>
+
+<table border="1" style="border:solid black; border-collapse:collapse ">
+<td>
+<select name="polymer" id="mol1_selection" required aria-required="true" >  
+<option value='' >Choose Polymer</option>  
+<option value="epoxy" selected> 1.Epoxy</option>
+</select>
+</td>
+<td>
+<select name="particle" id="mol2_selection" required aria-required="true">  
+<option value='' >Choose Particle</option>  
+<option value="SiO2" selected> 1.Silica nanoparticles </option>
+</select>
+</td>
+<td>
+<select name="graft" id="mol3_selection" required aria-required="true">  
+<option value='' >Choose Particle Surface Treatment</option>  
+<option value="bare" selected> 0.No surface treatment</option>
+<option value="monoPGMA"> 1.monomodal PGMA</option>
+<option value="ferroPGMA"> 2.bimodal PGMA-ferrocene</option>
+<option value="terthiophenePGMA"> 3.bimodal PGMA-terthiophene</option>
+<option value="monothiophenePGMA"> 4.bimodal PGMA-monothiophene</option>
+<option value="anthraenePGMA"> 5.bimodal PGMA-anthraene</option>
+</select>
+</td>
+</table>
+<br>
+    
+
+<h4>Enter particle volume fraction and interphase thickness </h4>
+<table border="1" style=" border:solid black; border-collapse:collapse ">
+<tr>
+<td>Volume Fraction<br><input type="number" name="vf" value='0.01' max='0.1' min='0.005' step="0.005" required></td>
+<td>Interphase Thickness (nm)<br><input type="number" name="ipthick" value='50' max='80' min='10' step="1" required>
+</td>
+</tr>
+</table>
+    
+<!--<input type='submit' value='Validate Input' onclick="msg1(), window.open('/DielectricFEA2DValidateInput','newwindow')">-->
+<hr>
+
+
+<h3>Generate Polymer Nanocomposite Microstructure </h3>
+
+<!--<input type="radio" name="method"  value="two">Choose this method to get microstructure for simulation. <br>-->
+<!--<form method='POST' action='/DielectricFEA2DValidateInput2/' target='_blank'>  {% csrf_token %}-->
+<input type="radio" name="method" value="one" checked="checked">Option One: Use Existing Microstructure of Samples in Database<br>
+<input type="radio" name="method" value="two">Option Two (advanced option, under testing): Predict Microstructure Using Dispersion Phase Diagram. Enter values below:
+<br><br>
+	
+<h4> Grafted Layer Basics </h4>
+<table border="1" style=" border:solid black; border-collapse:collapse ">
+<tr>
+	<td> Short Brush Dieletric Constant<br><input type='text' name='eps_shortbrush' value='2.5' required>
+</td>
+	<td> Short Brush Refrative Index<br><input type='text' name='n_shortbrush' value='1.5917'>
+</td>
+	<td> Volumn Fraction <br><input type='text' name='v_shortbrush' value='1'>
+</td>
+</tr>
+<tr> 
+	<td> Functional Group Dielectric Constant<br><input type='text' name='eps_funcG' value='1'>
+</td>
+	<td> Functional Group Refrative Index<br><input type='text' name='n_funcG' value='0'>
+</td>
+	<td> Volumn Fraction <br><input type='text' name='v_funcG' value='0'>
+</td>
+</tr>	
+<tr>
+	<td> Number of Grafted Chains per Particle <br><input type='text' name='n_p' value='33.2055'>
+</td>
+	<td> Short Brush Radius of Gyration (nm) <br><input type='text' name='Rg' value='2.16'>
+</td>
+	<td> Short Brush Kuhn Length (nm) <br><input type='text' name='b' value='1.34'>
+</td>
+</tr>
+<tr>
+	<td> Degree of Polymerization of the Short Brush <br><input type='text' name='N' value='72'>
+</td>
+	<td> Monomer Size of the Short Brush(nm) <br><input type='text' name='a' value='0.56'>
+</td>
+<td>
+</td>
+</tr>
+</table>
+<h4> Particle Basics</h4>
+<table border="1" style="border:solid black; border-collapse:collapse ">
+<tr>
+	<td> Particle Dielectric Constant <br><input type='text' name='eps_particle' value='3.75'>
+</td>
+	<td> Particle Refractive Index <br><input type='text' name='n_particle' value='1.4585'>
+</td>
+	<td> Particle Radius(nm) <br> <input type='text' name='R' value='7.5'>
+</td>
+</tr>
+</table>
+
+<h4> Polymer Matrix Basics </h4>
+<table border="1" style=" border:solid black; border-collapse:collapse ">
+<tr>
+	<td> Polymer Matrix Dielectric Constant <br><input type='text' name='eps_poly' value='2.5'>
+</td>
+	<td> Polymer Refractive Index <br><input type='text' name='n_poly' value='1.5917'>
+</td>
+	<td> Degree of Polymerization of the Polymer<br><input type='text' name='P' value='960'>
+</td>
+</tr>
+</table>	 	
+<h4> Default Value </h4>
+
+<table border="1" style="border:solid black; border-collapse:collapse ">
+<tr>
+	<td> Shortest Particle-Particle Surface Distance(nm)<br><input type='text' name='d' value='0.165'>
+</td>
+</tr>
+</table>
+<br>
+<!--<input type='submit' value='Validate Input' onclick="msg2(), window.open('/DielectricFEA2DValidateInput','newwindow')">-->
+<input type='submit' value='Validate Input' onclick="window.open('/FEA2D/DielectricFEA2DValidateInput','newwindow')">
+
+</form>
+
+<br>
+<p><a href="/FEA2D/DielectricFEA2DResultSample">Sample Result</a></p>
+
+<h5> This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</h5><br>
+
+<div class="row">
+ <div class="col-md-6">
+   <img class="featurette-image img-responsive" src="/static/resources/img/ONR.jpg"" alt="ONR_logo" width="300" height="300">
+ </div>
+</div>
+<br>
+	
+	
+	<h4>Reference</h4>
+	<p>Natarajan, Bharath et al., <i><a href="http://pubs.acs.org/doi/abs/10.1021/ma400553c">Thermomechanical Properties of Bimodal Brush Modified Nanoparticle Composites</a></i>, Macromolecules, 2013, 46(12)</p>
+	
+{% endblock %}

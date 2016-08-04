@@ -1,0 +1,29 @@
+function E = generate_1_gaussian_2_linear_n1(T,E_cut,E_min_1,E_min_2,ratio,lx,ly,lz)
+
+tic
+
+k=1.38e-23;
+e=1.6e-19;
+cut_R=(1+erf(E_cut/k/sqrt(2)*e/T))/3;
+
+E=zeros(ly,lx,lz);
+for i=1:1:lx*ly*lz
+    R=rand;
+
+    if R <= ratio*cut_R
+            E(i)= R/(ratio*cut_R)*(E_min_1-E_min_2)+E_min_2;   
+    elseif R > ratio*cut_R && R <= cut_R
+            E(i)= (R-ratio*cut_R)/((1-ratio)*cut_R)*(E_cut-E_min_1)+E_min_1;
+    elseif R > cut_R*3 
+    %R = 1-(1-R)/(1-cut_R)*(1-cut_R/10);
+    E(i) = erfinv(R-1)*k*T*sqrt(2)/e;
+    end
+    
+end
+
+
+%E1=E(:);
+
+%figure;hist(E1,20);
+toc
+end

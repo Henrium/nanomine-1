@@ -1,0 +1,147 @@
+{% extends 'nmrr/base/default.html' %}
+{% comment %}
+<!--
+################################################################################
+#
+# File Name: base.html
+# Application: templates
+# Description:
+#
+# Author: Sharief Youssef
+#         sharief.youssef@nist.gov
+#
+#		  Guillaume SOUSA AMARAL
+#		  guillaume.sousa@nist.gov
+#
+# Sponsor: National Institute of Standards and Technology
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% block intro %}
+<div id="intro">
+    <div class="width" style="height:80px">
+        <div class="intro-content" style="padding:20px 40px">
+            <h2>
+                {{CUSTOM_TITLE}}
+                <sup><span class="alpha">beta</span></sup>
+            </h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block menu %}
+    {% include 'menu.html' %}
+{% endblock %}
+
+{% block admin_menu %}
+    {% block submenu %}{% endblock %}
+{% endblock%}
+
+{% block container %}
+
+{% block popups %}{% endblock %}
+<style>       
+    /* Content */
+    
+    /*.content {font-size: 1.1em;}*/
+    /*#content-wrapper {background: #F6F6F6 url('/static/resources/img/content-wrapper.gif') repeat-y center top;}*/
+    /*.content#content-two-columns {background: url('/static/resources/img/content-two-columns.gif') repeat-y left top;}*/
+    
+    /* Main */
+    
+    #main-wrapper {
+        float: right;
+        width: 860px;
+    }
+    #main {padding: 0px;}
+    
+    #main .text-separator, #featured .text-separator {
+        color: #AAA;
+        padding: 0 5px;
+    }
+    
+    
+    /* Sidebar */
+    
+    #sidebar-wrapper {
+        float: left;
+        width: 219px;
+    }
+    
+    .box {
+	background: url('/static/resources/img/box.gif') no-repeat left top;
+	border-bottom: 1px solid #DFDFDA;
+	border-top: 1px solid #FFF;
+	padding: 16px 20px 0;
+    }
+    .box a {color: #951;}
+    .box a:hover {color: #310;}
+    .box-title {	
+        color: #665;
+        font: normal 1.6em sans-serif;
+    }
+    .box-content {padding: 8px 0;}
+    
+    ul.nice-list {
+        background: #FCFCFC;
+        border-top: 1px solid #F0F0F0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    ul.nice-list li {
+        border-bottom: 1px solid #F0F0F0;
+        list-style: none;
+        padding: 0px 0px;
+        height: 50px;
+    }
+    ul.nice-list li a {text-decoration: none;font-size:14px;}
+    ul.nice-list li a:hover {text-decoration: underline;}
+    ul.nice-list span {color: #666;}
+    
+    #sidebar ul.nice-list li,#sidebar ul.nice-list {border-color: #E0E0E0;}
+    
+    .l-img {
+        float: left;
+        height: 40px;
+    }
+    
+    .r-txt {
+        height: 40px;
+        padding-top: 10px;
+        padding-left: 50px;
+    }
+    
+    .r-txt a {
+        cursor: pointer;
+    }
+    
+    .r-txt-selected {
+        font-weight: bold;
+        height: 40px;
+        padding-top: 10px;
+        padding-left: 50px;
+    }
+</style>
+<div class="content" id="content-two-columns">
+    <div id="main-wrapper">
+        <div id="main">
+            <div class="post">
+                <div class="post-title">{% block title %}{% endblock %}</div>
+                <div class="post-body">
+                    <p class="large">{% block description %}{% endblock %}</p>
+                </div>
+            </div>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <div id="sidebar-wrapper">
+        <div id="sidebar">
+        {% block sidebar %}{% endblock %}
+        </div>
+    </div>
+    <div class="clearer">&nbsp;</div>
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!-- 
+################################################################################
+#
+# File Name: descchar.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Descriptor Characterization</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+	
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<!--<div class="jumbotron">
+	<div class="container">
+	<h1>Module: microstructure descriptor characterization</h1>
+	<p>This demonstration shows the feature to upload a binary image file for material microstructure and concurrently characterize microstructure information. The algorithm used in this module is based on Xu, et al 2014. Click button below for more information. </p>
+	<p><a class="btn btn-primary btn-lg" href="http://www.sciencedirect.com/science/article/pii/S0927025613008057" role="button">Learn more &raquo;</a></p>
+	</div>
+</div>-->
+<h3>Description</h3>
+<br>
+	<p>You can upload a binary image file and obtain statistical descriptors of the microstructure. This tool is currently implemented as part of the NanoMine prototype analysis tools. You do not have to log in to use this feature. </p>
+
+<h4>Instructions</h4>
+
+<p>Step One: upload binary image file below. Note: the image file should be stored as a single MAT file (MATLAB data file) that contains a 2-dimensional matrix named 'img_out'. </p>
+<p>Step Two: after uploading the file, click 'Run' below. If the file structure is valid, the page will be shown as 'loading', which indicates that the program is running. </p>
+<p>Step Three: when the program finished, your uploaded file will be shown at the bottom of the list under 'Existing Image Files'. </p>
+<p>Step Four: to view descriptor results, click 'View Image and Result'. If incorrect image is shown, refresh the pop-up
+'page. If you click this button without uploading an image, results from a previous run will be shown. </p>
+<p>Note: multiple failed jobs (mostly caused by invalid file format) will cause the backend program to stall. Refresh the page or contact admin if correct results cannot be obtained after several trials. </p>
+<br>
+
+<h5>Existing image files:</h5>
+<!-- List of uploaded documents -->
+{% if documents %}
+	<ul>
+	{% for document in documents %}
+		<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No documents.</p>
+{% endif %}
+
+<!-- Upload form. Note enctype attribute! -->
+<form action="{% url "descchar" %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+	<p><input type="submit" value="Run" /></p>
+</form>
+
+<form> 
+	<INPUT type="button" value="View image and result" onClick="window.open('/descchar_view','newwindow','width=800,height=800')"> 
+</form>
+
+<hr>
+	
+	
+	<h4>Reference</h4>
+	<p>Hongyi Xu, et al., <i><a href="http://www.sciencedirect.com/science/article/pii/S0927025613008057">Descriptor-based methodology for statistical characterization and 3D reconstruction of microstructural materials</a></i>, Computational Materials Science (2014)</p>
+	
+{% endblock %}

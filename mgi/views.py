@@ -40,10 +40,22 @@ from itertools import chain
 #
 ################################################################################
 def home(request):
-    template = loader.get_template('index.html')
+    template = loader.get_template('index-new.html')
 
     context = RequestContext(request, {
         'templates': Template.objects(user=None).order_by('-id')[:7]
+    })
+    if request.method == "POST":
+        if request.POST[u'email']:
+            context.push({"email": request.POST[u'email']})
+    
+    return HttpResponse(template.render(context))
+
+
+def notify(request):
+    template = loader.get_template('notify.html')
+    context = RequestContext(request, {
+        '': '',
     })
     return HttpResponse(template.render(context))
 
@@ -231,6 +243,59 @@ def my_profile_my_forms(request):
         detailed_forms.append({'form': form, 'template_name': Template.objects().get(pk=form.template).title})
     return render(request, 'profile/my_profile_my_forms.html', {'forms':detailed_forms})
 
+################################################################################
+#
+# Function Name: my_profile_resources(request)
+# Inputs:        request -
+# Outputs:       My Resources Page
+# Exceptions:    None
+# Description:
+#
+################################################################################
+@login_required(login_url='/login')
+def my_profile_resources(request):
+    template = loader.get_template('profile/my_profile_resources.html')
+    if 'template' in request.GET:
+        template_name = request.GET['template']
+        if template_name == 'all':
+            context = RequestContext(request, {
+                'XMLdatas': XMLdata.find({'iduser' : str(request.user.id)}),
+            })
+        else :
+            if template_name == 'datacollection':
+                templateNamesQuery = list(chain(Template.objects.filter(title=template_name).values_list('id'), Template.objects.filter(title='repository').values_list('id'), Template.objects.filter(title='database').values_list('id'), Template.objects.filter(title='projectarchive').values_list('id')))
+            else :
+                templateNamesQuery = Template.objects.filter(title=template_name).values_list('id')
+            templateNames = []
+            for templateQuery in templateNamesQuery:
+                templateNames.append(str(templateQuery))
+
+            context = RequestContext(request, {
+                'XMLdatas': XMLdata.find({'iduser' : str(request.user.id), 'schema':{"$in" : templateNames}}), 'template': template_name
+            })
+    else :
+        context = RequestContext(request, {
+                'XMLdatas': XMLdata.find({'iduser' : str(request.user.id)}),
+        })
+    return HttpResponse(template.render(context))
+
+
+################################################################################
+#
+# Function Name: dashboard(request)
+# Inputs:        request -
+# Outputs:       My Profile Page
+# Exceptions:    None
+# Description:   Page that allows to look at user's profile information
+#
+################################################################################
+@login_required(login_url='/login')
+def dashboard(request):
+    template = loader.get_template('dashboard.html')
+    context = RequestContext(request, {
+        '': '',
+    })
+    return HttpResponse(template.render(context))
 
 ################################################################################
 #
@@ -316,3 +381,37 @@ def help(request):
         'help': help
     })
     return HttpResponse(template.render(context))
+
+
+
+######## ADDED 072716, ZJ Yang, NanoMine ####################################
+
+################################################################################
+#
+# Function Name: simulate_tool(request)
+# Inputs:        request - 
+# Outputs:       simulate_tool index Page
+# Exceptions:    None
+# Description:   Page that provides links to simulate_tool
+#
+################################################################################
+def simulate_tool(request):
+    if request.user.is_authenticated():        
+        template = loader.get_template('simulate_tool.html')
+        context = RequestContext(request, {
+        '': '',
+        })
+        return HttpResponse(template.render(context))
+    else:
+        return redirect('/login')
+
+
+def stats_tool(request):
+    if request.user.is_authenticated():        
+        template = loader.get_template('stats_tool.html')
+        context = RequestContext(request, {
+        '': '',
+        })
+        return HttpResponse(template.render(context))
+    else:
+        return redirect('/login')

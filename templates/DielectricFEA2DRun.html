@@ -1,0 +1,15 @@
+{% extends "base_featured.html" %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab7' %}{% endblock %}
+{% block content%}
+
+<h3>Your job has now been submitted. </h3><br>
+
+<p>Your job ID is: {{jobid}}. Please save it for future reference. </p>
+<p>Your job may be currently running or queued. Check the status of your job at: <a href="/FEA2D/DielectricFEA2DCheckProgress" > Job Progress Checking Tool </a></p>
+<p>Do not refresh this page. Otherwise your job will be re-submitted. Please click <a href="/FEA2D">here</a> to submit new parameters for a new job.</p>
+
+{% endblock %}
