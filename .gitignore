@@ -3,7 +3,7 @@ AUTOFIT/src_code
 *.log
 
 MCFEA/src_modified_2
-docs/*
+docs
 db.sqlite3
 
 niblack/media
