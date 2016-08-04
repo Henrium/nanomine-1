@@ -334,30 +334,10 @@ def check(request):
 		# job progress checker. default job ID taken from current view.
 		# Standaline view. NO GLOBAL VARIABLE SHOULD BE USED HERE
 		FINISH = 0
-		show1={}
-		show2 = {}
-		show3={}
 
 		en_img = ''
 		tra_img = ''
 		out_csv = ''
-
-
-	#	field_read = ''
-	#	DOS_read = ''
-	#	T0_read = ''
-	#	probability_read = ''
-	#	E_range_read = ''
-	#	include_NP_read = ''
-	#	NP_energy_read = ''
-	#	mean_num_NP_read = ''
-	#	dev_read = ''
-	#	NP_radius_read = ''
-	#	vf_read = ''
-	#	ttype_read = ''
-	#	FEA_read = ''
-	#	rec_t_read = ''
-	#	n_read = ''
 	
 		try:
 			JOBID
@@ -374,83 +354,6 @@ def check(request):
 			WORKDING_DIR = ParentDir+str(jobID)
 			ApacheCaseDir = '/var/www/html/nanomine/MCFEA/'+str(jobID)
 
-
-
-			show1['Nominal field'] = field
-			show1['Shape of density of states function'] = DOS
-
-
-			if DOS == "gaussian":
-				show2['T0'] = T0
-			elif DOS == "exponential":
-				show2['T0'] = T0
-			else:
-				show2['deepest energy with 0 as reference'] = probability
-				show2['probability'] = E_range
-			show2['whether to include nanoparticles'] = include_NP
-
-
-			if include_NP == "YES":
-				show3['NP energy'] = NP_energy
-				show3['average size of cluster'] = mean_num_NP
-				show3['standard deviation of distribution'] = dev
-				show3['Particle radius'] = NP_radius
-				show3['Volume fraction'] = vf
-				show3['Agglomerates type'] = ttype
-				show3['Whether to couple with the finite element'] = FEA
-			else:
-				show3['Particle radius'] = 2.5
-			show3['Data points of transport time to record'] = rec_t
-			show3['Repeat time'] = n
-
-
-	#		INPUT1_FILE = WORKDING_DIR + '/input1_field.word'
-	#		if os.path.exists(INPUT1_FILE)	:
-	#			f = open(INPUT1_FILE, 'r')
-	#			field_read = f.read()
-	#			f.close()
-	#		INPUT2_FILE = WORKDING_DIR + '/input2_DOS.word'
-	#		if os.path.exists(INPUT2_FILE):		
-	#			f = open(INPUT2_FILE, 'r')
-	#			DOS_read = f.read()
-	#			f.close()
-	#		INPUT3_FILE = WORKDING_DIR +'/input3_file.word'
-	#		if os.path.exists(INPUT3_FILE):
-	#			f = open(INPUT3_FILE, 'r')
-	#			T0_read = fgets(f)		
-	#			probability_read = fgets(f)
-	#			E_range_read = fgets(f)
-	#			f.close()
-	#		INPUT4_FILE = WORKDING_DIR + '/input4.word'
-	#		if os.path.exists(INPUT4_FILE):
-	#			f = open(INPUT4_FILE, 'r')
-	#			include_NP_temp = read()
-	#			f.close()
-	#			if include_NP_temp == 1:
-	#				include_NP_read = "YES"
-	#			else:
-	#				include_NP_read = "NO"
-	#		INPUT5_FILE = WORKDING_DIR + '/input5_file.word'
-	#		if os.path.exists(INPUT5_FILE):			
-	#			f = open(INPUT5_FILE, 'r')
-	#			NP_energy_read = fgets(f)
-	#			mean_num_NP_read = fgets(f)
-	#			dev_read = fgets(f)
-	#			NP_radius_read = fgets(f)
-	#			vf_read = fgets(f)
-	#			ttype_read = fgets(f)
-	#			FEA_temp = fgets(f)
-	#			f.close()
-	#			if FEA_temp == 1:
-	#				FEA_read = "YES"
-	#			else:
-	#				FEA_read = "NO"
-	#		INPUT6_FILE = WORKDING_DIR + '/input6_file.word'
-	#		if os.path.exists(INPUT6_FILE):
-	#			f = open(INPUT6_FILE, 'r')
-	#			rec_t_read = fgets(f)
-	#			n_read = fgets(f)
-	#			f.close()		
 
 
 			# Status flags
@@ -471,9 +374,6 @@ def check(request):
 
 		return render_to_response("MCFEACheckProgress.html", 
 					  {'defaultID': defaultJobID,
-					   'data1': sorted(show1.iteritems()),
-					   'data2': sorted(show2.iteritems()),
-					   'data3': sorted(show3.iteritems()),
 					   'en_img': en_img, 'tra_img': tra_img, 'out_csv': out_csv, 'finish': FINISH},
 					  context_instance=RequestContext(request))
 	else:

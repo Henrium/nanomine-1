@@ -1,0 +1,27 @@
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dynamfit - Prony Series coeficient fitting</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='dynamfit' %}{% endblock %}
+{% block content%}
+
+<h3>Result comparison</h3><br>
+
+<b>The blue curve used parameters as following:</b><br>
+<p>Weighting parameter (factor for weighting X' and X'' data): 1.0</p>
+<p>Standard deviation:                                         1 </p>
+<p>Number of elements to use:                                  20</p>
+<p>Compliance method (1) or modulus method (2):                2</p><br>
+
+
+<h4>Epsilon Prime</h4>
+	<div class="col-lg-4">
+		<img src="{{ E_link }}">
+	</div>
+
+<h4>Epsilon Double Prime</h4>
+	<div class="col-lg-4">
+		<img src="{{ EE_link }}">
+	</div>
+{% endblock %}

@@ -42,7 +42,7 @@
 		{{ form.docfile.errors }}
 		{{ form.docfile }}
 	</p>
-<p>Enter upper case of upload filename you upload. </p>
+<p>Enter upper case of upload filename you upload (WITHOUT extension). </p>
 <input type='text' name='datafile' required><br>
 
 <p><b>2. Factor For Weighting X' and X'' data:</b></p>
@@ -56,20 +56,18 @@
 <p>use the data point values (1) or unity (2):</p><input type='text' name='std' value='1' required></p>
 
 <p><b>4. Enter the number of elements to use (should larger than 2 and should NOT be too large):</b></p>
-<input type='text' name='NumEle' value='28' required>
+<input type='text' name='NumEle' value='20' required>
 
-<p><b>5. Enter (1) for compliance, (2) for modulus:</b></p><input type='text' name='mtd' value='1' required><br><br>
+<p><b>5. Enter (1) for compliance, (2) for modulus:</b></p><input type='text' name='mtd' value='2' required><br><br>
 <!--
 <input type='submit' value='Run' onclick="window.open('/dynamfit/DynamfitRun','newwindow')">
 -->
-<input type='submit' value='Run'>
-<br>
+<p><input type='submit' value='Run'> Please wait about 1 minute to run the simulation</p>
 </form>
-<br>
 <form>
-
 <b>After simulation is finished, you can download you result</b>
 <input type='button' value='Download result' onClick="window.open('/DynamfitRun','newwindow')"><br><br>
+<h4>For very beginner, please click <input type='button' value='example of dynamfit' onClick="window.open('/DynamfitExample','newwindow')"> to get familiar with this tool.</h4><br>
 <h3>For advanced use, please click <a href="http://puma.mech.northwestern.edu/nanomine/Dynamfit/dynamfit.exe" download>here</a> to download the program.</h3>
 </form>
 

@@ -125,11 +125,12 @@ INSTALLED_APPS = (
     'niblack',
     'FEA2D',
     'search',
-    'MCFEA',
     ## YZJ 160606
+    'MCFEA',
     'Dynamfit',
+    'AUTOFIT',
+    'RECON',
 )
-
 OAUTH2_PROVIDER = {
     # this is the list of available scopes
     'SCOPES': {'read': 'Read scope', 'write': 'Write scope'},
