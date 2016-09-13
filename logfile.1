@@ -1,529 +1,4 @@
-[26/Jul/2016 13:41:31] ERROR [django.request:231] Internal Server Error: /logout
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 125, in logout_view
-    return redirect('/login')
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/shortcuts.py", line 74, in redirect
-    return redirect_class(resolve_url(to, *args, **kwargs))
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/shortcuts.py", line 158, in resolve_url
-    return urlresolvers.reverse(to, args=args, kwargs=kwargs)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 546, in reverse
-    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 410, in _reverse_with_prefix
-    self._populate()
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 303, in _populate
-    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/home/NANOMINE/usr/local/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/NANOMINE/Develop/mdcs/AUTOFIT/views.py", line 198
-    else:
-        ^
-IndentationError: unindent does not match any outer indentation level
-[26/Jul/2016 13:53:36] WARNING [django.request:143] Not Found: /favicon.ico
-[26/Jul/2016 15:06:09] ERROR [django.request:231] Internal Server Error: /AUTOFITRun
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/AUTOFIT/views.py", line 112, in runmodel
-    callbin2 = "runbin('"+binary_file+"', '"+str(actuallength)+"','"+str(DiToPi)+"','"+str(vf_expt)+"'"
-NameError: global name 'vf_expt' is not defined
-[26/Jul/2016 15:11:03] ERROR [django.request:231] Internal Server Error: /AUTOFITRun
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/AUTOFIT/views.py", line 112, in runmodel
-    callbin2 = "runbin('"+binary_file+"', '"+str(actuallength)+"','"+str(DiToPi)+"','"+str(vf_expt)+"'"
-NameError: global name 'vf_expt' is not defined
-[26/Jul/2016 15:11:46] ERROR [django.request:231] Internal Server Error: /AUTOFITRun
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/AUTOFIT/views.py", line 112, in runmodel
-    callbin2 = "runbin('"+binary_file+"', '"+str(actuallength)+"','"+str(DiToPi)+"','"+str(vf_expt)+"'"
-NameError: global name 'vf_expt' is not defined
-[26/Jul/2016 15:13:32] WARNING [django.request:143] Not Found: /favicon.ico
-[26/Jul/2016 15:57:28] WARNING [django.request:143] Not Found: /favicon.ico
-[26/Jul/2016 16:22:53] ERROR [django.request:231] Internal Server Error: /AUTOFITRun
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/AUTOFIT/views.py", line 75, in runmodel
-    WorkingDir = ParentDir + timestamp + '_' + str(int(count[0]))
-NameError: global name 'timestamp' is not defined
-[26/Jul/2016 18:59:13] ERROR [django.request:231] Internal Server Error: /AUTOFITCheck
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/AUTOFIT/views.py", line 201, in check
-    'real_img':real_file, 'img_img':img_file, 'out_csv':out_file, 'finish':FINISH},
-UnboundLocalError: local variable 'real_file' referenced before assignment
-[26/Jul/2016 19:08:30] ERROR [django.request:231] Internal Server Error: /AUTOFIT/
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/home/NANOMINE/usr/local/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/NANOMINE/Develop/mdcs/AUTOFIT/views.py", line 135
-    callopt = "cd "+WorkingDir+";"+
-                                  ^
-SyntaxError: invalid syntax
-[26/Jul/2016 19:43:17] WARNING [django.request:143] Not Found: /favicon.ico
-[27/Jul/2016 00:06:27] WARNING [django.request:143] Not Found: /favicon.ico
-[27/Jul/2016 05:32:35] WARNING [django.request:143] Not Found: /robots.txt
-[27/Jul/2016 14:53:27] WARNING [django.request:143] Not Found: /favicon.ico
-[27/Jul/2016 15:10:29] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed801bdb90>.
-[27/Jul/2016 15:10:43] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed801bdb50>.
-[27/Jul/2016 15:10:47] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed8018d150>.
-[27/Jul/2016 15:10:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed801bf810>.
-[27/Jul/2016 15:10:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed801bdd90>.
-[27/Jul/2016 15:10:56] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed989a40d0>.
-[27/Jul/2016 15:25:00] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed84803490>.
-[27/Jul/2016 16:21:32] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed8481af10>.
-[27/Jul/2016 17:10:26] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:10:31] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:10:32] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:10:35] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:10:38] ERROR [django.request:231] Internal Server Error: /curate/save_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 78, in save_form
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:35] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:36] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:36] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:36] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:36] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:36] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:37] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:37] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:11:39] ERROR [django.request:231] Internal Server Error: /curate/generate
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1508, in generate_absent
-    form_data_id = request.session['curateFormData']
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/contrib/sessions/backends/base.py", line 49, in __getitem__
-    return self._session[key]
-KeyError: 'curateFormData'
-[27/Jul/2016 17:21:38] WARNING [django.request:143] Not Found: /favicon.ico
-[27/Jul/2016 19:39:10] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Jul/2016 00:02:02] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Jul/2016 01:46:11] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Jul/2016 13:34:30] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Jul/2016 13:56:08] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Jul/2016 14:22:18] ERROR [django.request:231] Internal Server Error: /RECONCheck
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/RECON/views.py", line 174, in check
-    'out8':out8, 'finish':FINISH, 'type':ttype},
-NameError: global name 'ttype' is not defined
-[28/Jul/2016 16:55:44] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[28/Jul/2016 17:17:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed80195e10>.
-[28/Jul/2016 17:17:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed80195f50>.
-[28/Jul/2016 17:20:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed8d91f850>.
-[28/Jul/2016 17:20:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed8c673a90>.
-[28/Jul/2016 17:21:01] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed80195d90>.
-[28/Jul/2016 17:21:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed80195650>.
-[28/Jul/2016 17:21:08] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed8c66b590>.
-[28/Jul/2016 17:43:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed812ccc90>.
-[28/Jul/2016 17:43:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed8c6719d0>.
-[28/Jul/2016 17:43:45] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed846dad50>.
-[28/Jul/2016 17:43:46] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed801c15d0>.
-[28/Jul/2016 17:43:47] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed845911d0>.
-[28/Jul/2016 17:43:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fed8c671810>.
-[28/Jul/2016 17:49:37] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Jul/2016 17:49:37] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[28/Jul/2016 17:49:37] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[28/Jul/2016 18:19:30] ERROR [django.request:231] Internal Server Error: /MCFEA/MCFEAValidateInput
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/MCFEA/views.py", line 60, in validate
-    out1['Nominal field'] = field
-NameError: global name 'field' is not defined
-[28/Jul/2016 18:27:56] ERROR [django.request:231] Internal Server Error: /RECONCheck
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/RECON/views.py", line 190, in check
-    'out8':out8, 'finish':FINISH, 'type':TYPE},
-UnboundLocalError: local variable 'TYPE' referenced before assignment
-[28/Jul/2016 18:29:09] ERROR [django.request:231] Internal Server Error: /RECONCheck
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/RECON/views.py", line 190, in check
-    'out8':out8, 'finish':FINISH, 'type':TYPE},
-UnboundLocalError: local variable 'TYPE' referenced before assignment
-[28/Jul/2016 18:53:01] ERROR [django.request:231] Internal Server Error: /RECONCheck
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/RECON/views.py", line 173, in check
-    cpcp = 'cp '+WorkingDir+'/'+FILE+'_results/* '+ApacheCaseDir
-NameError: global name 'WorkingDir' is not defined
-[28/Jul/2016 19:03:19] ERROR [django.request:231] Internal Server Error: /RECONCheck
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/RECON/views.py", line 173, in check
-    cpcp = 'cp '+WorkingDir+'/'+FILE+'_results/* '+ApacheCaseDir
-NameError: global name 'WorkingDir' is not defined
-[28/Jul/2016 19:11:40] ERROR [django.request:231] Internal Server Error: /MCFEA/MCFEAValidateInput
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/MCFEA/views.py", line 60, in validate
-    out1['Nominal field'] = field
-NameError: global name 'field' is not defined
-[28/Jul/2016 19:56:55] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2212' in position 370: ordinal not in range(128)
-[28/Jul/2016 19:58:11] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2212' in position 370: ordinal not in range(128)
-[28/Jul/2016 19:58:29] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2212' in position 370: ordinal not in range(128)
-[28/Jul/2016 19:58:49] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2212' in position 370: ordinal not in range(128)
-[28/Jul/2016 19:58:57] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 19:59:13] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2212' in position 370: ordinal not in range(128)
-[28/Jul/2016 20:00:23] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2212' in position 370: ordinal not in range(128)
-[28/Jul/2016 20:01:13] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 20:01:16] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 20:01:20] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 20:01:20] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 20:01:20] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 20:01:21] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 20:01:22] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 20:02:31] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2212' in position 370: ordinal not in range(128)
-[28/Jul/2016 20:03:03] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-  File "lxml.etree.pyx", line 3072, in lxml.etree.XML (src/lxml/lxml.etree.c:70242)
-  File "parser.pxi", line 1828, in lxml.etree._parseMemoryDocument (src/lxml/lxml.etree.c:106307)
-  File "parser.pxi", line 1716, in lxml.etree._parseDoc (src/lxml/lxml.etree.c:105098)
-  File "parser.pxi", line 1086, in lxml.etree._BaseParser._parseDoc (src/lxml/lxml.etree.c:99780)
-  File "parser.pxi", line 580, in lxml.etree._ParserContext._handleParseResultDoc (src/lxml/lxml.etree.c:94254)
-  File "parser.pxi", line 690, in lxml.etree._handleParseResult (src/lxml/lxml.etree.c:95690)
-  File "parser.pxi", line 631, in lxml.etree._raiseParseError (src/lxml/lxml.etree.c:94969)
-XMLSyntaxError: None
-[28/Jul/2016 20:03:26] ERROR [django.request:231] Internal Server Error: /curate/validate_xml_data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 107, in validate_xml_data
-    message= e.message.replace('"', '\'')
-AttributeError: 'NoneType' object has no attribute 'replace'
-[28/Jul/2016 20:03:43] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\u2212' in position 370: ordinal not in range(128)
-[28/Jul/2016 23:25:10] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Jul/2016 23:57:51] ERROR [django.request:231] Internal Server Error: /curate/generate_xsd_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 2051, in generate_xsd_form
-    formString += generateForm(request)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1948, in generateForm
-    edit_data_tree = etree.XML(str(form_data.xml_data))
-UnicodeEncodeError: 'ascii' codec can't encode character u'\ufeff' in position 0: ordinal not in range(128)
-[29/Jul/2016 00:34:23] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[29/Jul/2016 11:51:55] WARNING [django.request:143] Not Found: /robots.txt
-[29/Jul/2016 14:30:00] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[29/Jul/2016 14:30:00] WARNING [django.request:143] Not Found: /favicon.ico
-[29/Jul/2016 14:30:00] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[29/Jul/2016 14:40:29] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[29/Jul/2016 14:40:29] WARNING [django.request:143] Not Found: /favicon.ico
-[29/Jul/2016 14:40:30] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[29/Jul/2016 14:40:31] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[29/Jul/2016 14:40:33] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[29/Jul/2016 15:09:02] WARNING [django.request:143] Not Found: /c/
-[29/Jul/2016 15:11:54] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[29/Jul/2016 15:11:54] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[29/Jul/2016 15:52:05] WARNING [django.request:143] Not Found: /favicon.ico
-[29/Jul/2016 23:50:35] WARNING [django.request:143] Not Found: /c/
-[30/Jul/2016 02:45:39] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Jul/2016 04:39:25] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Jul/2016 06:24:19] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120-precomposed.png
-[30/Jul/2016 06:24:20] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120.png
-[30/Jul/2016 06:24:20] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[30/Jul/2016 06:24:20] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[30/Jul/2016 06:24:20] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[30/Jul/2016 06:24:20] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Jul/2016 22:43:50] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Jul/2016 22:43:50] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[30/Jul/2016 22:43:50] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[30/Jul/2016 22:43:51] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[30/Jul/2016 22:43:51] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[31/Jul/2016 15:34:05] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Aug/2016 00:36:05] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Aug/2016 00:37:07] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Aug/2016 01:32:25] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[01/Aug/2016 02:59:54] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Aug/2016 13:41:46] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Aug/2016 16:36:34] ERROR [django.request:231] Internal Server Error: /modules/diffusion/upload-excel
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/modules/diffusion/views.py", line 13, in upload_excel_view
-    return ExcelUploaderModule().render(request)
-  File "/home/NANOMINE/Develop/mdcs/modules/models.py", line 37, in render
-    return self._post(request)
-  File "/home/NANOMINE/Develop/mdcs/modules/models.py", line 82, in _post
-    raise ModuleError('Something went wrong during module update: ' + e.message)
-ModuleError: 'Something went wrong during module update: Data not properly sent to server. Please set "file" in POST data.'
-[01/Aug/2016 16:58:28] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Aug/2016 17:00:32] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Aug/2016 17:54:03] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Aug/2016 18:18:53] ERROR [django.request:231] Internal Server Error: /curate/save_form
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 79, in save_form
-    form_data = FormData.objects.get(id=form_data_id)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
-    raise queryset._document.DoesNotExist(msg)
-DoesNotExist: FormData matching query does not exist.
-[01/Aug/2016 18:20:10] ERROR [django.request:231] Internal Server Error: /curate/view-data
-Traceback (most recent call last):
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/curate/views.py", line 165, in curate_view_data
-    form_data = FormData.objects.get(pk=ObjectId(form_data_id))
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
-    raise queryset._document.DoesNotExist(msg)
-DoesNotExist: FormData matching query does not exist.
-[01/Aug/2016 18:34:48] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[01/Aug/2016 18:34:48] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[01/Aug/2016 18:34:48] ERROR [django.request:231] Internal Server Error: /curate/
+[01/Aug/2016 18:34:50] ERROR [django.request:231] Internal Server Error: /curate/
 Traceback (most recent call last):
   File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
@@ -568,48 +43,460 @@ Traceback (most recent call last):
   File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 171, in do_block
     raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
 TemplateSyntaxError: 'block' tag with name 'sidebar' appears more than once
-[01/Aug/2016 18:34:49] ERROR [django.request:231] Internal Server Error: /explore/results
+[01/Aug/2016 19:11:01] WARNING [django.request:143] Not Found: /curate/save_data
+[01/Aug/2016 19:12:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6595dee10>.
+[01/Aug/2016 19:12:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6595ded10>.
+[01/Aug/2016 19:12:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6480521d0>.
+[01/Aug/2016 19:12:55] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb64806e890>.
+[01/Aug/2016 19:12:57] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb65a105890>.
+[01/Aug/2016 19:12:59] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb64f751b90>.
+[01/Aug/2016 19:13:22] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb658a0b990>.
+[01/Aug/2016 19:13:24] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb658a5a490>.
+[01/Aug/2016 19:13:28] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb658a0b790>.
+[01/Aug/2016 19:13:46] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb65949ba50>.
+[01/Aug/2016 19:13:49] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb65949b910>.
+[01/Aug/2016 19:13:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb648065f50>.
+[01/Aug/2016 19:14:15] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb64f751ad0>.
+[01/Aug/2016 19:14:17] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb65949b650>.
+[01/Aug/2016 19:14:19] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6594ade50>.
+[01/Aug/2016 19:27:59] ERROR [django.request:231] Internal Server Error: /modules/curator/blob-hoster
 Traceback (most recent call last):
   File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/explore/views.py", line 175, in explore_results
-    return HttpResponse(template.render(context))
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 104, in render
-    compiled_parent = self.get_parent(context)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in get_parent
-    return get_template(parent)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 171, in do_block
-    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
-TemplateSyntaxError: 'block' tag with name 'sidebar' appears more than once
+  File "/home/NANOMINE/Develop/mdcs/modules/curator/views.py", line 4, in blob_hoster
+    return BlobHosterModule().render(request)
+  File "/home/NANOMINE/Develop/mdcs/modules/models.py", line 37, in render
+    return self._post(request)
+  File "/home/NANOMINE/Develop/mdcs/modules/models.py", line 82, in _post
+    raise ModuleError('Something went wrong during module update: ' + e.message)
+ModuleError: 'Something went wrong during module update: Data not properly sent to server. Please "file" in POST data.'
+[01/Aug/2016 19:28:07] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb64d0d61d0>.
+[01/Aug/2016 19:28:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb64d0d6c50>.
+[01/Aug/2016 22:53:47] WARNING [django.request:143] Not Found: /favicon.ico
+[01/Aug/2016 23:17:28] WARNING [django.request:143] Not Found: /robots.txt
+[01/Aug/2016 23:17:28] WARNING [django.request:143] Not Found: /sitemap.xml
+[02/Aug/2016 13:53:24] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Aug/2016 15:33:25] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[02/Aug/2016 15:33:25] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Aug/2016 15:33:26] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[02/Aug/2016 15:33:27] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[02/Aug/2016 15:33:28] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[02/Aug/2016 17:45:06] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Aug/2016 19:07:21] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[02/Aug/2016 19:07:21] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Aug/2016 19:07:21] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[02/Aug/2016 19:21:49] WARNING [django.request:143] Not Found: /dashboard
+[02/Aug/2016 20:17:50] WARNING [django.request:143] Not Found: /favicon.ico
+[02/Aug/2016 23:57:47] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 03:17:39] WARNING [django.request:143] Not Found: /dashboard
+[03/Aug/2016 03:17:41] WARNING [django.request:143] Not Found: /dashboard
+[03/Aug/2016 14:48:44] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 15:28:20] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 18:19:19] WARNING [django.request:143] Not Found: /favicon.ico
+[03/Aug/2016 19:11:43] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Aug/2016 00:55:23] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Aug/2016 00:58:30] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Aug/2016 00:58:30] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[04/Aug/2016 00:58:30] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[04/Aug/2016 00:58:30] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[04/Aug/2016 00:58:30] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[04/Aug/2016 01:21:35] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Aug/2016 08:23:20] WARNING [django.request:143] Not Found: /irj/portal
+[04/Aug/2016 10:14:00] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[04/Aug/2016 13:46:04] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Aug/2016 13:57:15] WARNING [django.request:143] Not Found: /favicon.ico
+[04/Aug/2016 16:31:59] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6595e5350>.
+[04/Aug/2016 16:32:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6595de190>.
+[04/Aug/2016 16:32:09] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb60ad2e450>.
+[04/Aug/2016 16:32:10] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6595e5390>.
+[04/Aug/2016 16:32:11] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb658a07b50>.
+[04/Aug/2016 16:32:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6594b2f10>.
+[04/Aug/2016 16:32:20] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb6595de610>.
+[05/Aug/2016 02:58:50] WARNING [django.request:143] Not Found: /favicon.ico
+[05/Aug/2016 13:46:52] WARNING [django.request:143] Not Found: /favicon.ico
+[05/Aug/2016 16:02:12] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /login
+[05/Aug/2016 16:02:18] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /login
+[05/Aug/2016 16:04:44] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /modules/diffusion/upload-excel
+[05/Aug/2016 16:05:17] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /curate/generate
+[05/Aug/2016 16:05:21] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /curate/generate
+[05/Aug/2016 16:05:26] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /modules/diffusion/upload-excel
+[05/Aug/2016 16:05:29] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /curate/generate
+[05/Aug/2016 16:05:36] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /curate/enter-data/download_current_xml
+[05/Aug/2016 16:05:37] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /curate/enter-data/download_current_xml
+[05/Aug/2016 21:56:35] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Aug/2016 01:20:59] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Aug/2016 02:33:33] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[06/Aug/2016 03:27:19] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Aug/2016 05:21:42] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Aug/2016 08:39:11] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[06/Aug/2016 13:41:38] WARNING [django.request:143] Not Found: /favicon.ico
+[07/Aug/2016 01:39:12] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[07/Aug/2016 01:39:12] WARNING [django.request:143] Not Found: /favicon.ico
+[07/Aug/2016 01:39:13] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[07/Aug/2016 01:39:13] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[07/Aug/2016 01:39:13] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[07/Aug/2016 10:01:52] WARNING [django.request:143] Not Found: /stalker_portal/c/
+[07/Aug/2016 15:05:19] WARNING [django.request:143] Not Found: /favicon.ico
+[07/Aug/2016 23:35:56] WARNING [django.request:143] Not Found: /apple-touch-icon-152x152-precomposed.png
+[07/Aug/2016 23:35:57] WARNING [django.request:143] Not Found: /apple-touch-icon-152x152.png
+[07/Aug/2016 23:35:57] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[07/Aug/2016 23:35:57] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[07/Aug/2016 23:35:57] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[07/Aug/2016 23:35:57] WARNING [django.request:143] Not Found: /favicon.ico
+[08/Aug/2016 03:46:03] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[08/Aug/2016 03:46:04] WARNING [django.request:143] Not Found: /favicon.ico
+[08/Aug/2016 03:46:04] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[08/Aug/2016 03:46:04] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[08/Aug/2016 03:46:04] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[08/Aug/2016 16:39:06] WARNING [django.request:143] Not Found: /favicon.ico
+[08/Aug/2016 17:40:38] ERROR [django.request:231] Internal Server Error: /curate/generate
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1510, in generate_absent
+    form_element_id = form_data.elements[tagID]
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/base/datastructures.py", line 25, in __getitem__
+    value = super(BaseDict, self).__getitem__(*args, **kwargs)
+KeyError: 'element141'
+[08/Aug/2016 17:40:41] ERROR [django.request:231] Internal Server Error: /curate/generate
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1510, in generate_absent
+    form_element_id = form_data.elements[tagID]
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/base/datastructures.py", line 25, in __getitem__
+    value = super(BaseDict, self).__getitem__(*args, **kwargs)
+KeyError: 'element141'
+[08/Aug/2016 17:40:42] ERROR [django.request:231] Internal Server Error: /curate/generate
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1510, in generate_absent
+    form_element_id = form_data.elements[tagID]
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/base/datastructures.py", line 25, in __getitem__
+    value = super(BaseDict, self).__getitem__(*args, **kwargs)
+KeyError: 'element141'
+[08/Aug/2016 17:40:45] ERROR [django.request:231] Internal Server Error: /curate/generate
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1510, in generate_absent
+    form_element_id = form_data.elements[tagID]
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/base/datastructures.py", line 25, in __getitem__
+    value = super(BaseDict, self).__getitem__(*args, **kwargs)
+KeyError: 'element141'
+[08/Aug/2016 17:40:45] ERROR [django.request:231] Internal Server Error: /curate/generate
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1510, in generate_absent
+    form_element_id = form_data.elements[tagID]
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/base/datastructures.py", line 25, in __getitem__
+    value = super(BaseDict, self).__getitem__(*args, **kwargs)
+KeyError: 'element141'
+[08/Aug/2016 17:40:45] ERROR [django.request:231] Internal Server Error: /curate/generate
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1510, in generate_absent
+    form_element_id = form_data.elements[tagID]
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/base/datastructures.py", line 25, in __getitem__
+    value = super(BaseDict, self).__getitem__(*args, **kwargs)
+KeyError: 'element141'
+[08/Aug/2016 17:56:17] WARNING [django.request:143] Not Found: /robots.txt
+[08/Aug/2016 19:11:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d20b190>.
+[08/Aug/2016 19:11:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d20b910>.
+[08/Aug/2016 19:11:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d20bc90>.
+[08/Aug/2016 19:11:54] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f27dc4c74d0>.
+[08/Aug/2016 19:12:26] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d1f4790>.
+[08/Aug/2016 19:12:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d213a10>.
+[08/Aug/2016 19:13:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d1f4210>.
+[08/Aug/2016 19:14:04] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d1f3990>.
+[08/Aug/2016 19:14:10] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d1f4c90>.
+[08/Aug/2016 19:14:12] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f27dc4c7fd0>.
+[08/Aug/2016 19:14:16] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f27dc4c7690>.
+[08/Aug/2016 19:14:39] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d1f3410>.
+[08/Aug/2016 19:14:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f27dc4e4490>.
+[08/Aug/2016 19:14:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d1f4090>.
+[08/Aug/2016 19:15:32] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x29e9790>.
+[08/Aug/2016 19:16:13] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f27e0a45710>.
+[08/Aug/2016 19:16:14] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d1e3e10>.
+[08/Aug/2016 19:16:17] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d20b050>.
+[08/Aug/2016 19:16:30] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280008ef50>.
+[08/Aug/2016 19:16:43] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f2818814a90>.
+[08/Aug/2016 19:16:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f2800083390>.
+[08/Aug/2016 19:17:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f27dc4e4950>.
+[08/Aug/2016 19:29:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f2800e36310>.
+[08/Aug/2016 19:42:00] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x31a81d0>.
+[08/Aug/2016 19:46:02] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f281b3f9cd0>.
+[08/Aug/2016 19:47:11] WARNING [django.request:143] Not Found: /curate/save_data
+[09/Aug/2016 11:05:09] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[09/Aug/2016 15:12:16] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[09/Aug/2016 15:12:16] WARNING [django.request:143] Not Found: /favicon.ico
+[09/Aug/2016 15:12:16] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[09/Aug/2016 15:20:04] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[09/Aug/2016 15:20:04] WARNING [django.request:143] Not Found: /favicon.ico
+[09/Aug/2016 15:20:04] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[09/Aug/2016 15:20:07] INFO [requests.packages.urllib3.connectionpool:180] Starting new HTTP connection (1): localhost
+[09/Aug/2016 15:20:19] DEBUG [requests.packages.urllib3.connectionpool:350] "GET /rest/explore/select/all?dataformat=json HTTP/1.1" 200 None
+[09/Aug/2016 15:20:20] ERROR [django.request:231] Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/search/views.py", line 36, in home
+    PolymerName = doc['content']['PolymerNanocomposite']['MATERIALS']['Polymer']['ChemicalName']
+TypeError: 'NoneType' object is not subscriptable
+[09/Aug/2016 15:20:59] INFO [requests.packages.urllib3.connectionpool:180] Starting new HTTP connection (1): localhost
+[09/Aug/2016 15:21:19] DEBUG [requests.packages.urllib3.connectionpool:350] "GET /rest/explore/select/all?dataformat=json HTTP/1.1" 200 None
+[09/Aug/2016 15:21:23] ERROR [django.request:231] Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/search/views.py", line 36, in home
+    PolymerName = doc['content']['PolymerNanocomposite']['MATERIALS']['Polymer']['ChemicalName']
+TypeError: 'NoneType' object is not subscriptable
+[09/Aug/2016 15:28:28] ERROR [django.request:231] Internal Server Error: /explore/get_results_by_instance
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/explore/ajax.py", line 960, in get_results_by_instance
+    results.append({'title':instanceResult['title'], 'content':xmltodict.unparse(instanceResult['content'])})
+KeyError: 'title'
+[10/Aug/2016 05:17:53] WARNING [django.request:143] Not Found: /robots.txt
+[10/Aug/2016 13:50:04] WARNING [django.request:143] Not Found: /favicon.ico
+[10/Aug/2016 14:11:18] WARNING [django.request:143] Not Found: /robots.txt
+[10/Aug/2016 14:11:18] WARNING [django.request:143] Not Found: /sitemap.xml
+[11/Aug/2016 02:57:37] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[11/Aug/2016 03:23:27] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[11/Aug/2016 03:53:22] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[11/Aug/2016 03:53:22] WARNING [django.request:143] Not Found: /favicon.ico
+[11/Aug/2016 03:53:22] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[11/Aug/2016 18:52:10] WARNING [django.request:143] Not Found: /favicon.ico
+[11/Aug/2016 19:20:56] WARNING [django.request:143] Not Found: /favicon.ico
+[12/Aug/2016 07:30:12] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[12/Aug/2016 14:27:16] WARNING [django.request:143] Not Found: /favicon.ico
+[12/Aug/2016 19:40:45] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[12/Aug/2016 19:49:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280d1dd790>.
+[12/Aug/2016 19:50:11] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280c9fcf10>.
+[12/Aug/2016 19:50:47] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f28087da990>.
+[12/Aug/2016 19:50:52] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f281b3d5d10>.
+[12/Aug/2016 19:50:53] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f275b6e0e90>.
+[12/Aug/2016 19:50:55] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280c9fe550>.
+[12/Aug/2016 19:50:56] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f28087dad10>.
+[12/Aug/2016 20:18:45] WARNING [django.request:143] Not Found: /favicon.ico
+[12/Aug/2016 20:19:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280009fbd0>.
+[12/Aug/2016 20:19:39] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280c9fedd0>.
+[12/Aug/2016 20:19:42] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f2800087d10>.
+[12/Aug/2016 20:19:43] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f2800e36050>.
+[12/Aug/2016 20:19:44] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f280009f550>.
+[12/Aug/2016 20:19:48] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f2800087350>.
+[12/Aug/2016 20:36:56] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1346, in can_remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[12/Aug/2016 20:37:01] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1346, in can_remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[12/Aug/2016 20:37:01] ERROR [django.request:231] Internal Server Error: /curate/can_remove
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/curate/ajax.py", line 1346, in can_remove
+    form_element = FormElement.objects.get(id=form_element_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 186, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: FormElement matching query does not exist.
+[13/Aug/2016 12:03:29] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[14/Aug/2016 13:22:27] WARNING [django.request:143] Not Found: /favicon.ico
+[14/Aug/2016 16:36:16] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[15/Aug/2016 09:26:13] WARNING [django.request:143] Not Found: /robots.txt
+[15/Aug/2016 09:26:13] WARNING [django.request:143] Not Found: /sitemap.xml
+[15/Aug/2016 13:36:13] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[15/Aug/2016 13:36:13] WARNING [django.request:143] Not Found: /favicon.ico
+[15/Aug/2016 13:36:13] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[15/Aug/2016 21:07:18] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[16/Aug/2016 14:05:04] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[16/Aug/2016 16:49:28] WARNING [django.request:143] Not Found: /favicon.ico
+[16/Aug/2016 16:49:41] WARNING [django.request:143] Not Found: /favicon.ico
+[17/Aug/2016 01:22:06] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f27c4841ad0>.
+[17/Aug/2016 01:22:13] WARNING [django.request:143] Not Found: /favicon.ico
+[17/Aug/2016 01:22:28] WARNING [django.request:143] Not Found: /rest/templates/select/all
+[17/Aug/2016 01:23:31] WARNING [django.request:143] Not Found: /api
+[17/Aug/2016 01:23:34] WARNING [django.request:143] Not Found: /api/docs
+[17/Aug/2016 01:23:57] WARNING [django.request:143] Not Found: /api
+[17/Aug/2016 01:25:27] ERROR [django.request:231] Internal Server Error: /rest/explore/select/all
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/rest_framework/views.py", line 397, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/rest_framework/decorators.py", line 49, in handler
+    return func(*args, **kwargs)
+  File "/home/NANOMINE/Develop/mdcs/api/views.py", line 255, in explore
+    jsonDoc['content'] = xmltodict.unparse(jsonDoc['content'])
+KeyError: 'content'
+[17/Aug/2016 01:39:11] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[17/Aug/2016 17:44:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f2800e3bc50>.
+[17/Aug/2016 17:44:40] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f2800e3b050>.
+[17/Aug/2016 18:39:16] ERROR [django.request:231] Internal Server Error: /logout
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 125, in logout_view
+    return redirect('/login')
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/shortcuts.py", line 74, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/shortcuts.py", line 158, in resolve_url
+    return urlresolvers.reverse(to, args=args, kwargs=kwargs)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 546, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 410, in _reverse_with_prefix
+    self._populate()
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 303, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 118, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import XMLCONV.views.runmodel. View does not exist in module XMLCONV.views.
+[17/Aug/2016 19:49:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e4a4350>.
+[17/Aug/2016 19:49:50] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e4a4890>.
+[17/Aug/2016 19:50:02] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e47e450>.
+[17/Aug/2016 19:50:03] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e8427d0>.
+[17/Aug/2016 19:50:05] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e842ad0>.
+[17/Aug/2016 19:50:07] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e842c50>.
+[17/Aug/2016 19:50:08] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e4a4a90>.
+[17/Aug/2016 20:15:02] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e215490>.
+[17/Aug/2016 20:15:25] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5d253810>.
+[17/Aug/2016 20:15:33] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5d6cb350>.
+[17/Aug/2016 20:15:38] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e239890>.
+[17/Aug/2016 20:15:39] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5e480f90>.
+[17/Aug/2016 20:15:41] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7f3e5d4ff210>.
+[17/Aug/2016 21:02:02] WARNING [django.request:143] Not Found: /favicon.ico
+[17/Aug/2016 21:21:49] WARNING [django.request:143] Not Found: /favicon.ico
+[18/Aug/2016 06:12:08] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[18/Aug/2016 06:22:44] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[18/Aug/2016 15:04:22] WARNING [django.request:143] Not Found: /favicon.ico
+[18/Aug/2016 21:56:19] WARNING [django.request:143] Not Found: /favicon.ico
+[19/Aug/2016 01:39:44] WARNING [django.request:143] Not Found: /http://ebooks.cambridge.org/
+[19/Aug/2016 10:46:35] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[19/Aug/2016 20:33:51] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[19/Aug/2016 20:33:51] WARNING [django.request:143] Not Found: /favicon.ico
+[19/Aug/2016 20:33:51] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[19/Aug/2016 22:40:07] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[20/Aug/2016 04:47:10] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
+[20/Aug/2016 04:47:10] WARNING [django.request:143] Not Found: /favicon.ico
+[20/Aug/2016 04:47:10] WARNING [django.request:143] Not Found: /apple-touch-icon.png
+[20/Aug/2016 15:20:37] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
+[20/Aug/2016 20:58:29] ERROR [django.request:231] Internal Server Error: /XMLCONV/
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/XMLCONV/views.py", line 33, in home
+    newdoc.save()
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 590, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 618, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 699, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 732, in _do_insert
+    using=using, raw=raw)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 921, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 920, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 81, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 485, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: XMLCONV_document
+[20/Aug/2016 21:00:53] ERROR [django.request:231] Internal Server Error: /XMLCONV/
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/XMLCONV/views.py", line 33, in home
+    newdoc.save()
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 590, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 618, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 699, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 732, in _do_insert
+    using=using, raw=raw)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 921, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 920, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 81, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 485, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: XMLCONV_document
+[20/Aug/2016 21:03:49] ERROR [django.request:231] Internal Server Error: /XMLCONV/
+Traceback (most recent call last):
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs/XMLCONV/views.py", line 33, in home
+    newdoc.save()
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 590, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 618, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 699, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 732, in _do_insert
+    using=using, raw=raw)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 921, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 920, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 81, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/usr/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 485, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: XMLCONV_document
