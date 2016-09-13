@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'Dynamfit',
     'AUTOFIT',
     'RECON',
+    'XMLCONV',
 )
 OAUTH2_PROVIDER = {
     # this is the list of available scopes
