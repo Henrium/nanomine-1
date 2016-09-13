@@ -472,4 +472,3 @@ class XMLdata():
         for result in cursor:
             results.append(result)
         return results
-

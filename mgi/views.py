@@ -15,7 +15,7 @@
 ################################################################################
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, logout
 from django.template import RequestContext, loader
 from django.shortcuts import redirect
@@ -29,7 +29,9 @@ from django.db.models import Q
 import mgi.rights as RIGHTS
 from itertools import chain
 
-from admin_mdcs.forms import SubscriptionForm
+from signups.models import SignUp
+from signups.forms import SignUpForm
+from django.contrib import messages
 
 ################################################################################
 #
@@ -46,13 +48,17 @@ def home(request):
     context = RequestContext(request, {
         'templates': Template.objects(user=None).order_by('-id')[:7]
     })
-        
+              
     if request.method == "POST":
-        form = SubscriptionForm(request.POST)
-        print(request.POST)
-        print(form)
         if request.POST[u'email']:
-            context.push({"email": request.POST[u'email']})
+            if SignUp.objects.filter(email=request.POST[u'email']).exists():
+                messages.success(request, 'Thank you AGAIN, ' + request.POST[u'email'] + '!')
+                return HttpResponseRedirect('/')
+            else:
+                new_signup = SignUp(email=request.POST[u'email'])
+                new_signup.save()
+                messages.success(request, 'Thank you, ' + request.POST[u'email'] + '!')
+                return HttpResponseRedirect('/')
     
     return HttpResponse(template.render(context))
 
@@ -62,6 +68,18 @@ def notify(request):
     context = RequestContext(request, {
         '': '',
     })
+    
+    if request.method == "POST":
+        if request.POST[u'email']:
+            if SignUp.objects.filter(email=request.POST[u'email']).exists():
+                messages.success(request, 'Thank you AGAIN, ' + request.POST[u'email'] + '!')
+                return HttpResponseRedirect('/notify')
+            else:
+                new_signup = SignUp(email=request.POST[u'email'])
+                new_signup.save()
+                messages.success(request, 'Thank you, ' + request.POST[u'email'] + '!')
+                return HttpResponseRedirect('/notify')
+            
     return HttpResponse(template.render(context))
 
 

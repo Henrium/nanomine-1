@@ -104,7 +104,7 @@ def home(request):
 				mtd = request.POST['mtd']
 
 
-				cpfile = 'cp ./Dynamfit/media/'+datafile+'.X_T '+ WorkingDir		
+				cpfile = 'mv ./Dynamfit/media/'+datafile+'.X_T '+ WorkingDir		
 				os.system(cpfile)
 	
 				# run model

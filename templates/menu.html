@@ -35,25 +35,32 @@
             <li><a href="http://reccr.chem.rpi.edu/polymerizer/index.html">Polymerizer</a></li>
             <li><a href="/FEA2D">Dielectric FEA</a></li>
             <li><a href="/MCFEA">Monte Carlo & FEA</a></li>
+            <li><a href="/AUTOFIT">AUTOFIT</a></li>
         </ul>
     </li>
     <li class="{% if active_tab == 'stats_tool' %} selected {% endif %}">
         <a href="/stats_tool">Module Tools<i class="fa fa-angle-double-right"></i></a>
         <ul>
-            <li><a href="/descchar">Descriptor Characterization
-</a></li>
             <li><a href="/niblack">Niblack Binarization</a></li>
+            <li><a href="/descchar">Descriptor Characterization</a></li>
+            <li><a href="/RECON">3D Reconstruction</a></li>
             <li><a href="/dynamfit">Dynamfit</a></li>
+            <li><a href="/XMLCONV"> Excel-XML Converter</a></li>
         </ul>
     </li>
 
+    {% if active_tab == 'help' %}
+    <li class="{% if active_tab == 'help' %} selected {% endif %}"><a href="/help">Help</a></li>
+    {% endif %}
+
+    {% if active_tab == 'contact' %}
+    <li class="{% if active_tab == 'contact' %} selected {% endif %}"><a href="/contact">Contact</a></li>
+    {% endif %}
+    
     {% if user.is_authenticated %}
     <li class="{% if active_tab == 'dashboard' %} selected {% endif %}"><a href="/dashboard">Dashboard</a></li>
     <li><a href="/logout">Logout</a></li>
     {% else %}
     <li class="{% if active_tab == 'login' %} selected {% endif %}"><a href="/login">Login</a></li>
     {% endif %}
-
-    <li class="{% if active_tab == 'help' %} selected {% endif %}"><a href="/help">Help</a></li>
-    <li class="{% if active_tab == 'contact' %} selected {% endif %}"><a href="/contact">Contact</a></li>
 </ul>

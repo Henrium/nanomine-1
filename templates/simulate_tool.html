@@ -54,7 +54,7 @@ Material property simulation modules
 
 <div class="float right" style="width: 400px">
   <h4><span><a href="http://reccr.chem.rpi.edu/polymerizer/index.html">Polymerizer</a></span></h4> 
-  <p>Polymerizer is an online server to predict surface energy for nanocomposites, including the work of adhesion, wetting angle and the work of spreading. The current website implementation uses selectable literature particle surface energies. This server also converts the property-encoded surfaces into images for display. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR). </p>
+  <p>Polymerizer is an online application for prediction of surface energy for nanocomposites featuring user-defined polymer structure input and structure-property MQSPR. This web app is in collaboration with and maintained by Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR). </p>
 </div>
 
 </div>
@@ -67,8 +67,8 @@ Material property simulation modules
 </div>
 
 <div class="float right" style="width: 400px">
-  <h4><span><a href="/FEA2D">Dielectric Permittivity FEA</a></span> </h4> 
-  <p>This module simulates the dielectric spectroscopy in nanocomposites with explicit implementation of microstructure dispersion as well as interphase relaxation model. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
+  <h4><span><a href="/FEA2D">Prediction of Dielectric Constant in Nanodielectrics</a></span> </h4> 
+  <p>This web app simulates the dielectric spectroscopy in nanocomposites with explicit implementation of microstructure dispersion as well as interphase relaxation model. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
 </div>
 </div>
 
@@ -80,11 +80,29 @@ Material property simulation modules
 </div>
 
 <div class="float right" style="width: 400px">
-  <h4><span><a href="/MCFEA">Monte Carlo and FEA</a></span> </h4> 
-  <p>This module simulates the charge transport in dielectric polymers and their nanocomposites by compling finite element analysis and Monte Carlo. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
+  <h4><span><a href="/MCFEA">Integration of Monte Carlo and Finite Element Analysis in Nanodielectrics</a></span> </h4> 
+  <p>This web app simulates the charge transport in dielectric polymers and their nanocomposites by compling finite element analysis and Monte Carlo. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
 </div>
 </div>
 
+
+<div class="content-separator"></div>
+
+<div>
+<div class="float left" style="width: 300px">
+  <img src={% static 'resources/img/FEA_dielectrics.png' %} />
 </div>
+
+<div class="float right" style="width: 400px">
+  <h4><span><a href="/AUTOFIT">Automatic Fitting of Interphase Relaxation Model in Nanocomposites</a></span> </h4> 
+  <p>This algorithm derives interphase relaxation properties in nanocomposites using an inverse method that starts from composite properties and microstructure. It integrates finite element analysis and metamodeling optimization that predicts the interphase properties that results in minimal error between simulated properties from FEA and experimental composite properties. </p>
+</div>
+</div>
+
+
+
+</div>
+
+
 
 {% endblock %}

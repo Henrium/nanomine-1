@@ -304,7 +304,7 @@ header h1 {
 
 header h1 a {
     color: #F5F8FA;
-    padding: 20px 25px;
+    padding: 5px 25px;
 	background-color: #699BBA;
    font-size: 0.8em;
     border-bottom: none;
@@ -317,7 +317,7 @@ header h1 a {
 
 nav#main {
 	float: right;
-	margin-top: 0px;
+	margin-top: 17px;
 }
 
 nav ul {
@@ -404,6 +404,9 @@ nav ul li li a:hover, nav ul li.sfHover li a:hover {
 }
 .sf-menu {
 	line-height:	1.0;
+}
+.sf-menu {
+	font-size: 22px
 }
 .sf-menu ul {
 	position:		absolute;

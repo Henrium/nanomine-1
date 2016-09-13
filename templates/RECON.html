@@ -15,12 +15,13 @@
 {% load staticfiles %}
 
 
-{% block title %}<h1><span>3D descriptor_based microstructure characterization and reconstruction</span></h1>{% endblock %}
-{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab7' %}{% endblock %}
+{% block title %}<h1><span>3D Descriptor based Microstructure Reconstruction</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
 {% block content%}
 
 <br>
-<h3>Description.........</h3>
+<h3>Description</h3>
+<p>Using geometry descriptors as input, this tool predicts and outputs 3D microstructure of nanocomposites with statistically equivalent dispersion states as with the given descriptors. More technical details can be found from the reference at the bottom of the page.</p>
 <br>
 
 <form method='POST' enctype='multipart/form-data' action="{% url "RECON" %}"> {% csrf_token %}
@@ -56,8 +57,8 @@
 <p><a href="/RECONSample">Sample Result</a></p>
 </form>
 <hr>
-	<h4>Reference.............</h4>
-	<p>Bradshaw et al., <i><a href="http://link.springer.com/article/10.1023/A:1009772018066">A Sign Control Method for Fitting and Interconverting Material Functions for Linearly Viscoelastic Solids</a></i>, Mechanics of Time-Dependent Materials. 1997 1(1)</p>
+	<h4>Reference</h4>
+	<p>Hongyi Xu, et al.,  <i><a href="http://www.sciencedirect.com/science/article/pii/S0927025613008057">Descriptor-based methodology for statistical characterization and 3D reconstruction of microstructural materials</a></i>, Computational Materials Science (2014)</p>
 
 
 <script>

@@ -148,7 +148,9 @@ INSTALLED_APPS = (
     'Dynamfit',
     'AUTOFIT',
     'RECON',
+    'XMLCONV',
     # HZ
+    'signups',
 )
 
 OAUTH2_PROVIDER = {

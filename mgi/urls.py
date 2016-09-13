@@ -50,6 +50,7 @@ urlpatterns = patterns('',
     url(r'^RECONRun$', 'RECON.views.runmodel', name='RECON_runmodel'),
     url(r'^RECONCheck$', 'RECON.views.check', name='RECON_check'),
     url(r'^RECONSample$', 'RECON.views.sample', name='RECON_sample'),
+    url(r'^XMLCONV/', 'XMLCONV.views.home', name='XMLCONV'),
     # search
     url(r'^search/', 'search.views.index', name='search'),
     url(r'^notify/', 'mgi.views.notify', name='notify'),

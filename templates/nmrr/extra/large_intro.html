@@ -52,19 +52,21 @@
             <h5>
                 Subscribe to receive updates on NanoMine:
             </h5>
-            <form action="#" method="post" role="form">
+            <form action="" method="post" role="form">
                 {% csrf_token %}
-                {{form}}
+                {{ form.as_p }}
                 <!--<div class="input-group">-->
                 <input type="text" placeholder="youremail@mail.com"  class="button button-slider" name="email">
                 <input type="hidden" name="status" value="active">
-                <!--<a href="/" class="button button-slider" onclick="document.forms[0].submit();return false;">Subscribe</a>-->
                 <input type="submit" class="button-slider form-button" value="Submit" style="font-family: 'Arial'">
             </form>
-            <div>
-                Thanks, {{email}}!
-                You have been subscribed to NanoMine updates! {{form}}.
-            </div>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <div>{{ message }}</div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
             <br/><br/><br/><br/>
         </div>
     </div>

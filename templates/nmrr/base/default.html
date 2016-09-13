@@ -23,16 +23,27 @@
 {% block theme %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/nmrr/styles.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/nmrr/dialog.css' %}"/>
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
 {% endblock %}
 
 {% block body %}
+<!--<style>-->
+<!--	.small {-->
+<!--    font-variant: small-caps;-->
+<!--	!important-->
+<!--}-->
+<!--</style>-->
+
 <div id="container">
 	<!-- Header -->
     {% if not is_popup %}
         <header>
 		<div class="width">
 		<h1>
-			<a href="http://nanomine.northwestern.edu:8000"><img src="{% static 'img/NIST_logo.svg' %}" width="150"></a>
+			<a href="/" style="font-size: 55px !important;"><span>N<span style="font-size: 45px !important;">ano</span></span><span style="color: black">M<span style="font-size: 45px !important;">ine</span></span></a>
+			<!--<a href="/"><img src="{% static 'img/NIST_logo.svg' %}" width="150"></a>-->
+			<!--<a href="/">NanoMine</a>-->
 		</h1>
 		<nav id="main">
 			<!--<ul class="sf-menu dropdown sf-js-enabled sf-shadow">-->
@@ -41,6 +52,16 @@
 		</div>
 
 		<div class="clear"></div>
+		
+<!--		<div class="navbar-header">-->
+<!--            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">-->
+<!--                <span class="icon-bar"></span>-->
+<!--                <span class="icon-bar"></span>-->
+<!--                <span class="icon-bar"></span>-->
+<!--            </button>-->
+<!--            <a class="navbar-brand" href="/">Viberr</a>-->
+<!--        </div>-->
+<!--		-->
 		</header>
         {% block intro %}{% endblock %}
 	{% endif %}

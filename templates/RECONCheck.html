@@ -17,7 +17,7 @@
 
 
 {% block title %}<h1><span>3D descriptor_based microstructure characterization and reconstruction</span></h1>{% endblock %}
-{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab7' %}{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
 {% block content%}
 
 <h3>Check Job Progress </h3><br>
@@ -30,7 +30,7 @@
 
 {% if finish == 0 %}
 	<p>Simulation may take about a hour. Please wait.</p>
-	<img src="http://puma.mech.northwestern.edu/nanomine/DielectricFEA2D/busy.gif" alt="Busy" style="width:50px"><br>
+	<img src="http://nanomine.northwestern.edu/nanomine/DielectricFEA2D/busy.gif" alt="Busy" style="width:50px"><br>
 {% endif %}
 
 {% if finish == 1 %}
