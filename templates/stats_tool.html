@@ -1,0 +1,121 @@
+<!-- 
+################################################################################
+#
+# File Name: stats_tool.html
+# Application: templates
+# Description: index pages for stats tools
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends "mdcs/extra/one_column.html" %}
+{% load staticfiles %}
+{% load auth_extras %}
+
+{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+	
+{% block title %}<h1><span>Statistical Learning and Analysis Module Tools</span></h1>
+
+{% endblock %}
+
+{% block content%}
+
+<style>
+  .left {
+    float: left
+  }
+  .right {
+    float: right
+  }
+  .content-separator {
+    clear: both
+  }
+</style>
+
+<div class="" style="width: 850px">
+  <p class="large">Statistical learning and analysis modules include web and downloadable packages that can be used to pre-process and analyze structure and material property data. Each of the modules will specify required format of input and output data, and provide a brief introduction of mechanism of the algorithm. </p>
+
+<div class="content-separator" style="clear: both"></div>
+
+<div>
+	<div class="left" style="width: 400px; float: left">
+		<br/><br/><img src=  {% static 'resources/img/stats_tool_pic.png' %}/>
+	</div>
+	<div class="right" style="width: 400px; float: right">
+		<h4><span><a href="/niblack">Niblack Binarization</a></span> </h4> 
+		<p>Descriptor Characterization is a modular tool that takes input from a micrograph image of a microstructure of material and generate statistical descriptors that can characterize the structure information. More details to follow. </p>
+	</div>
+</div>
+
+<div class="content-separator" style="clear: both"></div>
+
+<div>
+	<div class="left" style="width: 300px; float: left">
+		<img src={% static 'resources/img/3drecon_pic.png' %} />
+	</div>
+	
+	<div class="right" style="width: 400px; float: right">
+		<h4><span><a href="/descchar">Descriptor Characterization</a></span> </h4> 
+		<p>Descriptor Characterization is a modular tool that takes input from a micrograph image of a microstructure of material and generate statistical descriptors that can characterize the structure information. More details to follow. </p>
+	</div>
+</div>
+
+<div class="content-separator" style="clear: both"></div>
+
+<div>
+	<div class="left" style="width: 300px; float: left">
+		<img src={% static 'resources/img/recon_tool.PNG' %} />
+	</div>
+	
+	<div class="right" style="width: 400px; float: right">
+		<h4><span><a href="/RECON">3D Microstructure Reconstruction</a></span> </h4> 
+		<p>This program provides a statistically equivalent 3D reconstructed microstructure based on user input geometric descriptors. Reconstructed 3D coordinates of filler particles can be downloaded after running this program. </p>
+	</div>
+</div>
+
+
+<div class="content-separator" style="clear: both"></div>
+
+<div>
+<div class="left" style="width: 400px; float: left">
+	<img src= {% static 'resources/img/dynamfit.png' %}   />
+</div>
+<div class="right" style="width: 400px; float: right">
+  <h4><span><a href="/dynamfit">Dynamfit</a></span> </h4> 
+  <p>Dynamfit is a sign control algorithm for Prony Series fitting. This program fits viscoelastic mastercurve from DMA experiments by Prony Series so that the Prony Series coefficients can be used as baseline properties of the matrix for FEA simulation of nanocomposites. </p>
+</div>
+</div>
+
+<div class="content-separator" style="clear: both"></div>
+
+<div>
+	<div class="left" style="width: 300px; float: left">
+		<img src={% static 'resources/img/workflow.png' %} />
+	</div>
+	
+	<div class="right" style="width: 400px; float: right">
+		<h4><span><a href="/XMLCONV">Excel Uploader</a></span> </h4> 
+		<p>To be moved to data curation. </p>
+	</div>
+</div>
+
+<div class="content-separator"></div>
+
+<div>
+<div class="float left" style="width: 300px">
+  <img src={% static 'resources/img/webtool_tuneshifting.png' %} />
+</div>
+
+<div class="float right" style="width: 400px">
+  <h4><span><a href="/AUTOFIT">Automatic Fitting of Interphase Relaxation Model in Nanocomposites</a></span> </h4> 
+  <p>This algorithm derives interphase relaxation properties in nanocomposites using an inverse method that starts from composite properties and microstructure. It integrates finite element analysis and metamodeling optimization that predicts the interphase properties that results in minimal error between simulated properties from FEA and experimental composite properties. </p>
+</div>
+</div>
+
+<div class="content-separator"></div>
+
+
+{% endblock %}
