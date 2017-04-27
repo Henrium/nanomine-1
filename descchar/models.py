@@ -5,8 +5,7 @@ from django.utils.encoding import smart_unicode
 class Document(models.Model):
     
     # update count
-    f = open('./descchar/RunCount.num', 'r+')
+    f = open('./descchar/RunCount.num', 'r')
     count = f.readlines()
 
-    # docfile = models.FileField(upload_to='/home/NANOMINE/nmdata/descchar/documents/%Y/%m/%d')
     docfile = models.FileField(upload_to='./descchar/media/documents/%Y/%m/%d/'+count[0])

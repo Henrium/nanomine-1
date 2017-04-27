@@ -1,0 +1,541 @@
+[29/Mar/2017 17:49:06] WARNING [django.request:170] Not Found: /favicon.ico
+[29/Mar/2017 19:09:51] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[30/Mar/2017 23:28:02] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[01/Apr/2017 03:43:15] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[01/Apr/2017 05:42:37] WARNING [django.request:170] Not Found: /cgi-bin/nobody/Machine.cgi
+[02/Apr/2017 07:57:40] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[02/Apr/2017 14:26:28] WARNING [django.request:170] Not Found: /onvif/device_service
+[03/Apr/2017 08:56:15] WARNING [django.request:170] Not Found: /http:/www.ip138.com/
+[03/Apr/2017 12:15:22] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[03/Apr/2017 17:36:15] WARNING [django.request:170] Not Found: /favicon.ico
+[04/Apr/2017 16:33:12] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[04/Apr/2017 16:35:50] WARNING [django.request:170] Not Found: /favicon.ico
+[04/Apr/2017 16:37:37] ERROR [django.request:256] Internal Server Error: /explore/generate_xsd_tree_for_querying_data
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/explore/ajax.py", line 274, in generate_xsd_tree_for_querying_data
+    renderer = DefaultRenderer(None, {})
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/utils/XSDParser/renderer/__init__.py", line 262, in __init__
+    raise TypeError("xsd_data type should be a SchemaElement")
+TypeError: xsd_data type should be a SchemaElement
+[04/Apr/2017 16:44:01] ERROR [django.request:256] Internal Server Error: /explore/get_results_by_instance
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/explore/ajax.py", line 533, in get_results_by_instance
+    template = Template.objects().get(pk=selected_template_id)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 242, in get
+    raise queryset._document.DoesNotExist(msg)
+DoesNotExist: Template matching query does not exist.
+[05/Apr/2017 20:50:59] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[07/Apr/2017 01:06:58] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[08/Apr/2017 04:23:35] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[09/Apr/2017 08:41:12] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[10/Apr/2017 12:58:40] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[11/Apr/2017 11:44:22] WARNING [django.request:170] Not Found: /favicon.ico
+[11/Apr/2017 17:11:36] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[12/Apr/2017 10:26:47] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 33, in home
+    newdoc.save()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/base.py", line 734, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/base.py", line 762, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/base.py", line 846, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/base.py", line 885, in _do_insert
+    using=using, raw=raw)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/utils.py", line 98, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 318, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: xmlconv_document
+[12/Apr/2017 10:32:06] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 33, in home
+    newdoc.save()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/base.py", line 734, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/base.py", line 762, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/base.py", line 846, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/base.py", line 885, in _do_insert
+    using=using, raw=raw)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/utils.py", line 98, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 318, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: xmlconv_document
+[12/Apr/2017 11:02:19] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/src/data/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20170212160219_1/src/data/ID.txt'
+[12/Apr/2017 11:13:47] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20171312161347_2/src/data/ID.txt'
+[12/Apr/2017 11:15:39] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20171512161539_3/ID.txt'
+[12/Apr/2017 11:18:05] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20171812161805_4/ID.txt'
+[12/Apr/2017 11:22:41] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 83, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20172212162241_5/ID.txt'
+[12/Apr/2017 11:24:05] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20172412162405_6/ID.txt'
+[12/Apr/2017 11:24:33] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20172412162433_7/ID.txt'
+[12/Apr/2017 11:25:16] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20172512162516_8/ID.txt'
+[12/Apr/2017 11:27:25] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20172712162725_9/ID.txt'
+[12/Apr/2017 11:29:03] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20172912162903_10/ID.txt'
+[12/Apr/2017 11:29:24] ERROR [django.request:256] Internal Server Error: /xmlconv/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/xmlconv/views.py", line 82, in home
+    with open(WorkingDir + '/ID.txt') as _f:
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/xmlconv/archive/20172912162924_11/ID.txt'
+[12/Apr/2017 14:07:06] WARNING [django.request:170] Not Found: /descchar
+[12/Apr/2017 14:07:46] ERROR [django.request:256] Internal Server Error: /descchar
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/middleware/common.py", line 75, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 239, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 246, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 105, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 55
+    else:
+       ^
+SyntaxError: invalid syntax
+[12/Apr/2017 14:08:47] ERROR [django.request:256] Internal Server Error: /descchar
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/middleware/common.py", line 75, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 239, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 246, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 105, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 30
+    print ('!!!!! METHOD CORRECT!!!!!')
+        ^
+IndentationError: expected an indented block
+[12/Apr/2017 14:10:41] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/mgi/middleware.py", line 163, in process_request
+    self.url = reverse('password_change')
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 432, in _reverse_with_prefix
+    self._populate()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 325, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 246, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 126, in get_callable
+    (lookup_view, mod_name))
+ViewDoesNotExist: Could not import 'descchar.views.check'. View does not exist in module descchar.views.
+[12/Apr/2017 14:12:37] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 20, in home
+    with open('/home/NANOMINE/nmdata/descchar/documents') as f:
+IOError: [Errno 21] Is a directory: '/home/NANOMINE/nmdata/descchar/documents'
+[12/Apr/2017 14:13:21] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/mgi/middleware.py", line 159, in process_request
+    resolve(request.path_info)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 239, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 246, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 105, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 23
+    print ('!!!!! METHOD CORRECT!!!!!')
+        ^
+IndentationError: expected an indented block
+[12/Apr/2017 14:14:27] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/mgi/middleware.py", line 159, in process_request
+    resolve(request.path_info)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 239, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 246, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 105, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 48
+    else:
+        ^
+IndentationError: unindent does not match any outer indentation level
+[12/Apr/2017 14:14:42] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/mgi/middleware.py", line 159, in process_request
+    resolve(request.path_info)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 239, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 246, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 105, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 48
+    else:
+        ^
+IndentationError: unindent does not match any outer indentation level
+[12/Apr/2017 14:14:50] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/mgi/middleware.py", line 159, in process_request
+    resolve(request.path_info)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 239, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 246, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 105, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 48
+    else:
+        ^
+IndentationError: unindent does not match any outer indentation level
+[12/Apr/2017 14:17:16] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/mgi/middleware.py", line 159, in process_request
+    resolve(request.path_info)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 367, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 239, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 246, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 105, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 48
+    else:
+       ^
+SyntaxError: invalid syntax
+[12/Apr/2017 14:21:12] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 31, in home
+    if form.is_valid():
+UnboundLocalError: local variable 'form' referenced before assignment
+[12/Apr/2017 14:23:00] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 62, in home
+    context_instance=RequestContext(request))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/shortcuts.py", line 89, in render
+    using=using)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 115, in render_to_string
+    template_name, context, context_instance, dirs, dictionary)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/engine.py", line 221, in render_to_string
+    return t.render(context_instance)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 210, in render
+    return self._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 919, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 919, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 919, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 919, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 919, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 919, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 919, in render_node
+    return node.render(context)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/defaulttags.py", line 328, in render
+    if match:
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/query.py", line 170, in __nonzero__
+    return type(self).__bool__(self)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/query.py", line 166, in __bool__
+    self._fetch_all()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/utils.py", line 98, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 318, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: descchar_document
+[12/Apr/2017 14:23:57] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 103, in check
+    }, context_instance=RequestContext(request))
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/shortcuts.py", line 45, in render_to_response
+    using=using)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 137, in render_to_string
+    raise TemplateDoesNotExist(template_name)
+TemplateDoesNotExist: descchar_view.html
+[12/Apr/2017 21:26:58] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[13/Apr/2017 10:02:24] WARNING [django.request:170] Not Found: /recordings/index.php
+[13/Apr/2017 15:38:37] ERROR [django.security.SuspiciousFileOperation:204] The joined path (/home/NANOMINE/nmdata/descchar/documents/2017/04/13/run_descchar.m) is located outside of the base path component (/home/NANOMINE/Develop/mdcs-v1.5_rc1)
+[13/Apr/2017 16:36:10] DEBUG [paramiko.transport:282] starting thread (client mode): 0xbc061290L
+[13/Apr/2017 16:36:10] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+[13/Apr/2017 16:36:11] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] Compression agreed: none
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] Switch to new keys ...
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
+[13/Apr/2017 16:36:11] DEBUG [paramiko.transport:282] userauth is OK
+[13/Apr/2017 16:36:11] INFO [paramiko.transport:282] Authentication (publickey) successful!
+[13/Apr/2017 16:56:23] DEBUG [paramiko.transport:282] EOF in transport thread
+[13/Apr/2017 16:56:33] DEBUG [paramiko.transport:282] starting thread (client mode): 0x12d404d0L
+[13/Apr/2017 16:56:33] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
+[13/Apr/2017 16:56:33] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+[13/Apr/2017 16:56:33] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
+[13/Apr/2017 16:56:33] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+[13/Apr/2017 16:56:33] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
+[13/Apr/2017 16:56:33] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
+[13/Apr/2017 16:56:33] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
+[13/Apr/2017 16:56:33] DEBUG [paramiko.transport:282] Compression agreed: none
+[13/Apr/2017 16:56:34] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+[13/Apr/2017 16:56:34] DEBUG [paramiko.transport:282] Switch to new keys ...
+[13/Apr/2017 16:56:34] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
+[13/Apr/2017 16:56:34] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
+[13/Apr/2017 16:56:34] DEBUG [paramiko.transport:282] userauth is OK
+[13/Apr/2017 16:56:34] INFO [paramiko.transport:282] Authentication (publickey) successful!
+[13/Apr/2017 16:56:34] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
+[13/Apr/2017 16:56:35] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
+[13/Apr/2017 16:56:35] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
+[13/Apr/2017 16:56:35] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
+[13/Apr/2017 17:09:03] DEBUG [paramiko.transport:282] EOF in transport thread
+[13/Apr/2017 17:09:21] DEBUG [paramiko.transport:282] starting thread (client mode): 0x1132b350L
+[13/Apr/2017 17:09:21] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
+[13/Apr/2017 17:09:21] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+[13/Apr/2017 17:09:21] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] Compression agreed: none
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] Switch to new keys ...
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
+[13/Apr/2017 17:09:22] DEBUG [paramiko.transport:282] userauth is OK
+[13/Apr/2017 17:09:22] INFO [paramiko.transport:282] Authentication (publickey) successful!
+[13/Apr/2017 17:09:23] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
+[13/Apr/2017 17:09:23] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
+[13/Apr/2017 17:09:23] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
+[13/Apr/2017 17:09:23] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
+[13/Apr/2017 17:10:26] DEBUG [paramiko.transport:282] EOF in transport thread
+[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] starting thread (client mode): 0x7b254b10L
+[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
+[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+[13/Apr/2017 17:10:50] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)

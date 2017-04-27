@@ -1,256 +1,223 @@
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:10:50] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:10:51] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:10:51] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:10:51] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:10:51] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:10:52] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:10:52] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:15:02] DEBUG [paramiko.transport:282] EOF in transport thread
-[13/Apr/2017 17:16:01] DEBUG [paramiko.transport:282] starting thread (client mode): 0xba7f0550L
-[13/Apr/2017 17:16:01] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
-[13/Apr/2017 17:16:01] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
-[13/Apr/2017 17:16:01] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:16:02] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:16:02] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:16:03] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:16:03] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:16:03] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:16:03] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:16:06] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
-[13/Apr/2017 17:16:06] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
-[13/Apr/2017 17:18:30] DEBUG [paramiko.transport:282] EOF in transport thread
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] starting thread (client mode): 0xff4ea4d0L
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
-[13/Apr/2017 17:18:47] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:18:47] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:18:47] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:18:48] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:18:48] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:18:48] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:18:48] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:18:51] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
-[13/Apr/2017 17:18:51] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
-[13/Apr/2017 17:20:54] DEBUG [paramiko.transport:282] EOF in transport thread
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] starting thread (client mode): 0x94974150L
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
-[13/Apr/2017 17:21:05] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:21:05] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:21:06] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:21:06] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:21:06] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:21:06] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:21:06] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:21:09] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
-[13/Apr/2017 17:21:09] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
-[13/Apr/2017 17:22:25] DEBUG [paramiko.transport:282] EOF in transport thread
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] starting thread (client mode): 0x3e8b5190L
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
-[13/Apr/2017 17:22:36] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:22:36] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:22:36] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:22:37] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:22:37] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:22:37] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:22:37] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:32:52] DEBUG [paramiko.transport:282] EOF in transport thread
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] starting thread (client mode): 0xc3cd9d0L
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
-[13/Apr/2017 17:33:08] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:33:08] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:33:08] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:33:10] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:33:10] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:33:10] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:33:10] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:34:30] ERROR [django.request:256] Internal Server Error: /descchar/
+[26/Apr/2017 22:13:41] ERROR [django.request:256] Internal Server Error: /descchar/
 Traceback (most recent call last):
   File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 60, in home
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 71, in home
     os.system('cp '+uploaded_file[0]+' '+ DocPath+'/'+str(run_id)+'.mat')
 IndexError: list index out of range
-[13/Apr/2017 17:34:39] ERROR [django.request:256] Internal Server Error: /descchar/
+[26/Apr/2017 22:14:08] ERROR [django.request:256] Internal Server Error: /descchar/
 Traceback (most recent call last):
   File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 60, in home
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 71, in home
     os.system('cp '+uploaded_file[0]+' '+ DocPath+'/'+str(run_id)+'.mat')
 IndexError: list index out of range
-[13/Apr/2017 17:34:45] ERROR [django.request:256] Internal Server Error: /descchar/
+[26/Apr/2017 22:15:06] ERROR [django.request:256] Internal Server Error: /descchar/
 Traceback (most recent call last):
   File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 60, in home
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 71, in home
     os.system('cp '+uploaded_file[0]+' '+ DocPath+'/'+str(run_id)+'.mat')
 IndexError: list index out of range
-[13/Apr/2017 17:36:03] ERROR [django.request:256] Internal Server Error: /descchar/
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] starting thread (client mode): 0x6f69fcd0L
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+[26/Apr/2017 22:19:25] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] Compression agreed: none
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] Switch to new keys ...
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
+[26/Apr/2017 22:19:25] DEBUG [paramiko.transport:282] userauth is OK
+[26/Apr/2017 22:19:25] INFO [paramiko.transport:282] Authentication (publickey) successful!
+[26/Apr/2017 22:19:27] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
+[26/Apr/2017 22:19:27] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
+[26/Apr/2017 22:19:27] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
+[26/Apr/2017 22:19:27] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
+[26/Apr/2017 22:19:40] DEBUG [paramiko.transport:282] [chan 0] Unhandled channel request "exit-signal"
+[26/Apr/2017 22:19:40] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
+[26/Apr/2017 22:19:40] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
+[26/Apr/2017 22:20:39] DEBUG [paramiko.transport:282] EOF in transport thread
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] starting thread (client mode): 0xf542b810L
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+[26/Apr/2017 22:20:50] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] Compression agreed: none
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] Switch to new keys ...
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
+[26/Apr/2017 22:20:50] DEBUG [paramiko.transport:282] userauth is OK
+[26/Apr/2017 22:20:51] INFO [paramiko.transport:282] Authentication (publickey) successful!
+[26/Apr/2017 22:20:52] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
+[26/Apr/2017 22:20:52] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
+[26/Apr/2017 22:20:52] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
+[26/Apr/2017 22:20:52] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
+[26/Apr/2017 22:21:05] DEBUG [paramiko.transport:282] [chan 0] Unhandled channel request "exit-signal"
+[26/Apr/2017 22:21:05] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
+[26/Apr/2017 22:21:05] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
+[26/Apr/2017 22:21:31] DEBUG [paramiko.transport:282] EOF in transport thread
+[26/Apr/2017 22:21:42] ERROR [django.request:256] Internal Server Error: /descchar/
 Traceback (most recent call last):
   File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 60, in home
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 64, in home
+    f.write(run_id+','+count[0], '\n')
+TypeError: function takes exactly 1 argument (2 given)
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] starting thread (client mode): 0x16a0d810L
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+[26/Apr/2017 22:21:59] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] Compression agreed: none
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] Switch to new keys ...
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
+[26/Apr/2017 22:21:59] DEBUG [paramiko.transport:282] userauth is OK
+[26/Apr/2017 22:21:59] INFO [paramiko.transport:282] Authentication (publickey) successful!
+[26/Apr/2017 22:22:01] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
+[26/Apr/2017 22:22:01] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
+[26/Apr/2017 22:22:01] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
+[26/Apr/2017 22:22:01] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
+[26/Apr/2017 22:22:14] DEBUG [paramiko.transport:282] [chan 0] Unhandled channel request "exit-signal"
+[26/Apr/2017 22:22:14] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
+[26/Apr/2017 22:22:14] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
+[26/Apr/2017 22:22:26] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 71, in home
     os.system('cp '+uploaded_file[0]+' '+ DocPath+'/'+str(run_id)+'.mat')
 IndexError: list index out of range
-[13/Apr/2017 17:38:54] DEBUG [paramiko.transport:282] EOF in transport thread
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] starting thread (client mode): 0x311a9850L
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
-[13/Apr/2017 17:39:04] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:39:04] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:39:04] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:39:06] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:39:06] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:39:06] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:39:06] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:39:17] DEBUG [paramiko.transport:282] [chan 0] Unhandled channel request "exit-signal"
-[13/Apr/2017 17:39:17] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
-[13/Apr/2017 17:39:17] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
-[13/Apr/2017 17:52:00] DEBUG [paramiko.transport:282] EOF in transport thread
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] starting thread (client mode): 0x8378e790L
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
-[13/Apr/2017 17:52:25] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:52:25] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:52:25] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:52:27] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:52:27] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:52:27] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:52:27] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:52:38] DEBUG [paramiko.transport:282] [chan 0] Unhandled channel request "exit-signal"
-[13/Apr/2017 17:52:38] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
-[13/Apr/2017 17:52:38] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
-[13/Apr/2017 17:53:47] DEBUG [paramiko.transport:282] EOF in transport thread
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] starting thread (client mode): 0x510c1590L
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
-[13/Apr/2017 17:54:01] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] Compression agreed: none
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] Switch to new keys ...
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
-[13/Apr/2017 17:54:01] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
-[13/Apr/2017 17:54:02] DEBUG [paramiko.transport:282] userauth is OK
-[13/Apr/2017 17:54:02] INFO [paramiko.transport:282] Authentication (publickey) successful!
-[13/Apr/2017 17:54:03] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
-[13/Apr/2017 17:54:03] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
-[13/Apr/2017 17:54:03] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
-[13/Apr/2017 17:54:03] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
-[13/Apr/2017 17:54:14] DEBUG [paramiko.transport:282] [chan 0] Unhandled channel request "exit-signal"
-[13/Apr/2017 17:54:14] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
-[13/Apr/2017 17:54:14] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
-[14/Apr/2017 01:44:24] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[15/Apr/2017 06:00:42] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[16/Apr/2017 10:17:47] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[17/Apr/2017 14:37:38] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[18/Apr/2017 18:57:20] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[19/Apr/2017 01:17:09] WARNING [django.request:170] Not Found: /recordings/index.php
-[19/Apr/2017 12:54:41] WARNING [django.request:170] Not Found: /favicon.ico
-[19/Apr/2017 13:05:04] WARNING [django.request:170] Not Found: /favicon.ico
-[19/Apr/2017 23:16:55] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[21/Apr/2017 03:36:19] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[21/Apr/2017 04:03:30] WARNING [django.request:170] Not Found: /HNAP1/
-[22/Apr/2017 07:55:39] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[23/Apr/2017 12:14:57] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[24/Apr/2017 12:47:51] WARNING [django.request:170] Not Found: /recordings/index.php
-[24/Apr/2017 14:13:28] WARNING [django.request:170] Not Found: /favicon.ico
-[24/Apr/2017 14:15:54] WARNING [django.request:170] Not Found: /favicon.ico
-[24/Apr/2017 16:35:48] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[25/Apr/2017 20:57:19] WARNING [django.request:170] Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
-[26/Apr/2017 16:33:13] WARNING [django.request:170] Not Found: /favicon.ico
-[26/Apr/2017 16:34:16] ERROR [django.request:256] Internal Server Error: /descchar_view
+[26/Apr/2017 22:22:39] ERROR [django.request:256] Internal Server Error: /descchar/
 Traceback (most recent call last):
   File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 112, in check
-    if os.path.isfile(DesccharParent
-NameError: global name 'DesccharParent' is not defined
-[26/Apr/2017 16:39:27] WARNING [django.request:170] Not Found: /apple-touch-icon-precomposed.png
-[26/Apr/2017 16:39:27] WARNING [django.request:170] Not Found: /apple-touch-icon.png
-[26/Apr/2017 16:39:28] WARNING [django.request:170] Not Found: /favicon.ico
-[26/Apr/2017 16:39:28] WARNING [django.request:170] Not Found: /apple-touch-icon-precomposed.png
-[26/Apr/2017 16:39:29] WARNING [django.request:170] Not Found: /apple-touch-icon.png
-[26/Apr/2017 16:39:29] WARNING [django.request:170] Not Found: /favicon.ico
-[26/Apr/2017 16:39:29] WARNING [django.request:170] Not Found: /apple-touch-icon-precomposed.png
-[26/Apr/2017 16:39:30] WARNING [django.request:170] Not Found: /apple-touch-icon.png
-[26/Apr/2017 16:39:30] WARNING [django.request:170] Not Found: /favicon.ico
-[26/Apr/2017 16:39:30] WARNING [django.request:170] Not Found: /apple-touch-icon-precomposed.png
-[26/Apr/2017 16:39:31] WARNING [django.request:170] Not Found: /apple-touch-icon.png
-[26/Apr/2017 16:39:31] WARNING [django.request:170] Not Found: /favicon.ico
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 71, in home
+    os.system('cp '+uploaded_file[0]+' '+ DocPath+'/'+str(run_id)+'.mat')
+IndexError: list index out of range
+[26/Apr/2017 22:23:24] ERROR [django.request:256] Internal Server Error: /descchar/
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 71, in home
+    os.system('cp '+uploaded_file[0]+' '+ DocPath+'/'+str(run_id)+'.mat')
+IndexError: list index out of range
+[26/Apr/2017 22:23:46] DEBUG [paramiko.transport:282] EOF in transport thread
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] starting thread (client mode): 0x650c1fd0L
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] Local version/idstring: SSH-2.0-paramiko_2.1.2
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+[26/Apr/2017 22:24:02] INFO [paramiko.transport:282] Connected (version 2.0, client OpenSSH_6.6.1)
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] Kex agreed: diffie-hellman-group1-sha1
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] Cipher agreed: aes128-ctr
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] MAC agreed: hmac-sha2-256
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] Compression agreed: none
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] Switch to new keys ...
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] Adding ssh-rsa host key for 129.105.90.149: 3be932e37fd6c127bb6880a6ce0bab88
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] Trying discovered key 175016a8e15c3b3b3130d9f0396baec2 in /home/NANOMINE/.ssh/id_rsa
+[26/Apr/2017 22:24:02] DEBUG [paramiko.transport:282] userauth is OK
+[26/Apr/2017 22:24:02] INFO [paramiko.transport:282] Authentication (publickey) successful!
+[26/Apr/2017 22:24:04] DEBUG [paramiko.transport:282] [chan 0] Max packet in: 32768 bytes
+[26/Apr/2017 22:24:04] DEBUG [paramiko.transport:282] [chan 0] Max packet out: 32768 bytes
+[26/Apr/2017 22:24:04] DEBUG [paramiko.transport:282] Secsh channel 0 opened.
+[26/Apr/2017 22:24:04] DEBUG [paramiko.transport:282] [chan 0] Sesch channel 0 request ok
+[26/Apr/2017 22:24:16] DEBUG [paramiko.transport:282] [chan 0] Unhandled channel request "exit-signal"
+[26/Apr/2017 22:24:16] DEBUG [paramiko.transport:282] [chan 0] EOF received (0)
+[26/Apr/2017 22:24:16] DEBUG [paramiko.transport:282] [chan 0] EOF sent (0)
+[26/Apr/2017 22:27:10] DEBUG [paramiko.transport:282] EOF in transport thread
+[26/Apr/2017 22:32:22] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 133, in check
+    url_img = url_parent_server+run_id+'/image.jpg'
+UnboundLocalError: local variable 'run_id' referenced before assignment
+[26/Apr/2017 22:32:34] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 152, in check
+    'url_char': url_char_res,
+UnboundLocalError: local variable 'url_char_res' referenced before assignment
+[26/Apr/2017 22:33:04] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 154, in check
+    'job_id_num': count,
+UnboundLocalError: local variable 'count' referenced before assignment
+[26/Apr/2017 22:33:17] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 154, in check
+    'url_char': url_char_res,
+UnboundLocalError: local variable 'count' referenced before assignment
+[26/Apr/2017 22:33:40] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 154, in check
+    'url_char': url_char_res,
+UnboundLocalError: local variable 'count' referenced before assignment
+[26/Apr/2017 22:33:54] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 140, in check
+    mat = scipy.io.loadmat('/home/NANOMINE/nmdata/descchar/ch_result.mat'
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/scipy/io/matlab/mio.py", line 135, in loadmat
+    MR = mat_reader_factory(file_name, appendmat, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/scipy/io/matlab/mio.py", line 58, in mat_reader_factory
+    byte_stream = _open_file(file_name, appendmat)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/scipy/io/matlab/mio.py", line 23, in _open_file
+    return open(file_like, 'rb')
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/descchar/ch_result.mat'
+[26/Apr/2017 22:33:57] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 140, in check
+    mat = scipy.io.loadmat('/home/NANOMINE/nmdata/descchar/ch_result.mat'
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/scipy/io/matlab/mio.py", line 135, in loadmat
+    MR = mat_reader_factory(file_name, appendmat, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/scipy/io/matlab/mio.py", line 58, in mat_reader_factory
+    byte_stream = _open_file(file_name, appendmat)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/scipy/io/matlab/mio.py", line 23, in _open_file
+    return open(file_like, 'rb')
+IOError: [Errno 2] No such file or directory: '/home/NANOMINE/nmdata/descchar/ch_result.mat'
+[26/Apr/2017 22:39:12] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 135, in check
+    url_img = url_parent_server+run_id+'/image.jpg'
+UnboundLocalError: local variable 'run_id' referenced before assignment
+[26/Apr/2017 22:39:21] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 135, in check
+    url_img = url_parent_server+run_id+'/image.jpg'
+UnboundLocalError: local variable 'run_id' referenced before assignment
+[26/Apr/2017 22:40:32] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 135, in check
+    
+UnboundLocalError: local variable 'run_id' referenced before assignment
