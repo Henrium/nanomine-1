@@ -2,8 +2,6 @@
 {% load staticfiles %}
 {% load auth_extras %}
 
-
-
 {% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
 {% block title %}<h1><span>Descriptor Characterization</span></h1>{% endblock %}
 {% block content%}
@@ -43,7 +41,7 @@
 </form>
 
 <form> 
-	<INPUT type="button" value="View image and result" onClick="window.open('/descchar_view','newwindow','width=800,height=800')"> 
+	<INPUT type="button" value="Job Checker" onClick="window.open('/descchar_view','newwindow','width=800,height=800')"> 
 </form>
 
 <hr>
@@ -53,7 +51,7 @@
 <p>Hongyi Xu, et al., <i><a href="http://www.sciencedirect.com/science/article/pii/S0927025613008057">Descriptor-based methodology for statistical characterization and 3D reconstruction of microstructural materials</a></i>, Computational Materials Science (2014)</p>
 <script>
     function msg3() {
-        alert("If you have selected a local file, your image is now being uploaded. Image processing starts after this pop-up windows is closed. Your unique job ID for this image is {{run_count}}. You can check the status of this job at the 'DescChar Job Checker' page.");
+        alert("Your unique job ID for this image is {{run_count}}. If you have selected a local file, your image is now being uploaded. Image processing starts after this pop-up windows is closed, and will finish when page loading is done. You can check the status of this job at the 'Job Checker' from this page.");
 		return true;
     }
 </script>

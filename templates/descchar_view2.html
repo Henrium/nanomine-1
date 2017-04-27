@@ -1,0 +1,14 @@
+{% extends "mdcs/extra/one_column.html" %}
+{% load staticfiles %}
+{% load auth_extras %}
+
+{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+{% block title %}<h1><span>Descriptor Characterization Job Checker</span></h1>{% endblock %}
+{% block content%}
+
+<form>
+  Job ID: <input type="text" name="job_id"><br>
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
