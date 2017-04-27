@@ -221,3 +221,5 @@ Traceback (most recent call last):
   File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 135, in check
     
 UnboundLocalError: local variable 'run_id' referenced before assignment
+[26/Apr/2017 22:50:35] WARNING [django.request:170] Not Found: /stats_tool
+[26/Apr/2017 22:58:02] WARNING [django.request:170] Not Found: /niblack

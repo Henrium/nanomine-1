@@ -1,0 +1,93 @@
+
+{% extends "mdcs/extra/one_column.html" %}
+{% load staticfiles %}
+{% load auth_extras %}
+
+{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+
+{% comment %}
+<!-- 
+################################################################################
+#
+# File Name: simulate_tool.html
+# Application: templates
+# Description: index pages for simulation tools
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% block title %}
+<h1><span>Material Property Simulation</span></h1>
+{% endblock %}
+
+{% block content%}
+
+<style>
+  .left {
+    float: left
+  }
+  .right {
+    float: right
+  }
+  .content-separator {
+    clear: both
+  }
+</style>
+
+<div class="" style="width: 850px">
+  <p class="large">We provide online version of physics-based simulation tools that take advantage of our most recent development in viscoelasticity and dielectric relaxation theories for interphase analysis in nanocomposites, statistical structure-property correlation models, as well as materials optimization methods. </p>
+
+<div class="content-separator" style="clear: both"></div>
+
+
+
+
+<div>
+<div class="float left" style="width: 300px">
+  <img src= {% static 'resources/img/prop_simu.png' %}  />
+</div>
+
+<div class="float right" style="width: 400px">
+  <h4><span><a href="http://reccr.chem.rpi.edu/polymerizer/index.html">Polymerizer</a></span></h4> 
+  <p>Polymerizer is an online application for prediction of surface energy for nanocomposites featuring user-defined polymer structure input and structure-property MQSPR. This web app is in collaboration with and maintained by Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR). </p>
+</div>
+
+</div>
+
+<div class="content-separator"></div>
+
+<div>
+<div class="float left" style="width: 300px">
+  <img src={% static 'resources/img/FEA_dielectrics.png' %} />
+</div>
+
+<div class="float right" style="width: 400px">
+  <h4><span><a href="/FEA2D">Prediction of Dielectric Constant in Nanodielectrics</a></span> </h4> 
+  <p>This web app simulates the dielectric spectroscopy in nanocomposites with explicit implementation of microstructure dispersion as well as interphase relaxation model. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
+</div>
+</div>
+
+<div class="content-separator"></div>
+
+<div>
+<div class="float left" style="width: 300px">
+  <img src={% static 'resources/img/MCFEA.jpg' %} />
+</div>
+
+<div class="float right" style="width: 400px">
+  <h4><span><a href="/MCFEA">Integration of Monte Carlo and Finite Element Analysis in Nanodielectrics</a></span> </h4> 
+  <p>This web app simulates the charge transport in dielectric polymers and their nanocomposites by compling finite element analysis and Monte Carlo. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
+</div>
+</div>
+
+
+
+
+<div class="content-separator"></div>
+
+
+{% endblock %}<div class="content-separator"></div>

@@ -48,6 +48,8 @@ urlpatterns = patterns('',
     url(r'^xmlconv/', 'xmlconv.views.home', name='xmlconv'),
     url(r'^descchar/', 'descchar.views.home',name='descchar'),
     url(r'^descchar_view$', 'descchar.views.check', name='descchar-check'),
+    url(r'^stats_tool/', 'mgi.views.stats_tool', name='stats_tool'),
+    url(r'^simulate_tool/', 'mgi.views.simulate_tool', name='simulate_tool'),
 )+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

@@ -48,7 +48,26 @@ def home(request):
     })
     return HttpResponse(template.render(context))
 
+def stats_tool(request):
+    if request.user.is_authenticated():        
+        template = loader.get_template('stats_tool.html')
+        context = RequestContext(request, {
+        '': '',
+        })
+        return HttpResponse(template.render(context))
+    else:
+        return redirect('/login')
 
+def simulate_tool(request):
+    if request.user.is_authenticated():        
+        template = loader.get_template('simulate_tool.html')
+        context = RequestContext(request, {
+        '': '',
+        })
+        return HttpResponse(template.render(context))
+    else:
+        return redirect('/login')
+    
 ################################################################################
 #
 # Function Name: all_options(request)
