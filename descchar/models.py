@@ -4,8 +4,9 @@ from django.utils.encoding import smart_unicode
                 
 class Document(models.Model):
     
-    # update count
+    # find count
     f = open('./descchar/RunCount.num', 'r')
     count = f.readlines()
-
+    f.close()
+    
     docfile = models.FileField(upload_to='./descchar/media/documents/%Y/%m/%d/'+count[0])

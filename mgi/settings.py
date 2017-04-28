@@ -242,7 +242,8 @@ INSTALLED_APPS = (
     # NM, last added 041217
     'xmlconv', # Excel to XML converter, 'uploader'
     'descchar', # descriptor characterization
-    'dynamfit'
+    'dynamfit',
+    'niblack',
 )
 
 OAUTH2_PROVIDER = {
