@@ -9,10 +9,11 @@
 <p>Enter the Job Id that you want to look up:</p>
 <form method='POST'>  {% csrf_token %}
   Job ID: <input type="text" name="job_id"><br>
-  <input type="submit" value="Submit" onClick="window.open('/descchar_view','width=800,height=800')">
-
+  <input type="submit" value="Submit" >
 </form>
-  <br>
+<br>
+
+{% if job_found %}
 
 <!--display file name from .mat-->
 <p>The internal unique job ID: {{ job_id_num }}</p>
@@ -38,5 +39,9 @@
 <b>{{eccen}}</b>
 <br>Orientation Angle (rad):
 <b>{{ornang}}</b>
+
+{% else %}
+	<p>Job ID not found. Please verify number entered or submit a new job <a href="/descchar">here</a>. </p>
+{% endif %}
 
 {% endblock %}
