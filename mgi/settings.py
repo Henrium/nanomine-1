@@ -241,7 +241,8 @@ INSTALLED_APPS = (
     'password_policies',
     # NM, last added 041217
     'xmlconv', # Excel to XML converter, 'uploader'
-    'descchar' # descriptor characterization 
+    'descchar', # descriptor characterization
+    'dynamfit'
 )
 
 OAUTH2_PROVIDER = {

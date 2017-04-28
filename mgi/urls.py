@@ -50,6 +50,11 @@ urlpatterns = patterns('',
     url(r'^descchar_view$', 'descchar.views.check', name='descchar-check'),
     url(r'^stats_tool/', 'mgi.views.stats_tool', name='stats_tool'),
     url(r'^simulate_tool/', 'mgi.views.simulate_tool', name='simulate_tool'),
+    url(r'^dynamfit/', 'dynamfit.views.home', name='dynamfit'),
+    url(r'^DynamfitRun$', 'dynamfit.views.runmodel', name='dynamfit_runmodel'),
+    url(r'^DynamfitExample$', 'dynamfit.views.sample', name='dynamfit_sample'),
+    url(r'^DynamfitExampleInput$', 'dynamfit.views.sampleinput', name='dynamfit_sampleinput'),
+    url(r'^DynamfitExampleRun$', 'dynamfit.views.samplerun', name='dynamfit_samplerun'),
 )+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
