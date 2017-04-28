@@ -122,6 +122,7 @@ def check(request):
         url_char_res = ''
         count = None
         run_id_found = False
+        run_id = ''
         if len(request.POST) != 0:
             count = request.POST['job_id']
             with open('./descchar/run_id_lookup', 'r') as f:
@@ -134,7 +135,8 @@ def check(request):
                     break
                 # no match found
                 run_id = 'not found'
-                
+            del table_content
+            
             if run_id_found:
                 # url to image on titan server
                 url_parent_server = 'http://nanomine.northwestern.edu/nanomine/descchar/'
