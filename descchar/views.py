@@ -120,11 +120,16 @@ def check(request):
         ornang = ''
         filename = ''
         url_char_res = ''
-        count = None
+        count = 0
         run_id_found = False
         run_id = ''
         if len(request.POST) != 0:
             count = request.POST['job_id']
+            # assign dummy 0 if no job_id is entered
+            try:
+                int(count)
+            except ValueError:
+                count = 0
             with open('./descchar/run_id_lookup', 'r') as f:
                 table_content = f.readlines()
             for l in table_content:
@@ -160,7 +165,7 @@ def check(request):
             'url_img': url_img,
             'url_char': url_char_res,
             'job_id_num': run_id,
-                        'name': filename,
+            'name': filename,
             'n': n,
             'ar': ar,
             'rc': rc,
@@ -168,6 +173,7 @@ def check(request):
             'rnds': rnds,
             'eccen': eccen,
             'ornang': ornang,
+            'job_found': run_id_found,
             }, context_instance=RequestContext(request))
     else:
         return redirect('/login')
