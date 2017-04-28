@@ -1,0 +1,46 @@
+<!-- 
+################################################################################
+#
+# File Name: DynamfitValidateinput.html
+# Application: templates
+# Description: 
+#
+# Modified by: Zijiang Yang, June 07, 2016
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dynamfit - Prony Series coefficient fitting</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+
+<hr>
+<h3>Upload your file</h3><br>
+<!-- Upload form. Note enctype attribute! -->
+<form action="{% url "dynamfit" %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+<br>
+
+<input type='submit' value='Upload'>
+</form>
+<br>
+    <br>
+<p>Do not refresh this page. Please click <a href="/dynamfit">here</a> to submit new parameters.</p>
+<script>
+    function msg3() {
+        alert("Your job will now be submitted.");
+        return true;
+    }
+</script>
+{% endblock %}
