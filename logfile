@@ -116,3 +116,38 @@ Traceback (most recent call last):
     "from '%s'" % (token[upto:], token))
 TemplateSyntaxError: Could not parse the remainder: '% if job_found %' from '% if job_found %'
 [27/Apr/2017 20:16:06] WARNING [django.request:170] Not Found: /Dynamfit
+[27/Apr/2017 21:41:15] ERROR [django.request:256] Internal Server Error: /descchar_view
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/descchar/views.py", line 132, in check
+    if int( tp.split(',')[-1] ) == int(count):
+ValueError: invalid literal for int() with base 10: ''
+[27/Apr/2017 21:41:51] ERROR [django.request:256] Internal Server Error: /DynamfitRun
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/dynamfit/views.py", line 193, in runmodel
+    if int( tp.split(',')[-2] ) == int(count):
+ValueError: invalid literal for int() with base 10: ''
+[27/Apr/2017 21:42:42] ERROR [django.request:256] Internal Server Error: /DynamfitRun
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/dynamfit/views.py", line 193, in runmodel
+    if int( tp.split(',')[-2] ) == int(count):
+ValueError: invalid literal for int() with base 10: ''
+[27/Apr/2017 21:43:18] ERROR [django.request:256] Internal Server Error: /DynamfitRun
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/dynamfit/views.py", line 193, in runmodel
+    if int( tp.split(',')[-2] ) == int(count):
+ValueError: invalid literal for int() with base 10: ''
+[27/Apr/2017 21:46:06] ERROR [django.request:256] Internal Server Error: /DynamfitRun
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/NANOMINE/Develop/mdcs-v1.5_rc1/dynamfit/views.py", line 193, in runmodel
+    count = 0
+ValueError: invalid literal for int() with base 10: ''

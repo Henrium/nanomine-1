@@ -176,7 +176,7 @@ def runmodel(request):
     if request.user.is_authenticated():
         
         # initialize empty strings
-        count = None
+        count = 0
         run_id_found = False
         run_id = ''
         url_XFF = ''
@@ -186,6 +186,11 @@ def runmodel(request):
         url_img_epp = ''
         if len(request.POST) != 0:
             count = request.POST['job_id']
+            # assign dummy 0 if no job_id is entered
+            try:
+                int(count)
+            except ValueError:
+                count = 0
             with open('./dynamfit/run_id_lookup', 'r') as f:
                 table_content = f.readlines()
             for l in table_content:
@@ -221,29 +226,6 @@ def runmodel(request):
             }, context_instance=RequestContext(request))
     else:
         return redirect('/login')
-    
-# def runmodel(request):
-#     if request.user.is_authenticated():
-# 
-#         # time.sleep(5)
-#         # os.system('cp '+WorkingDir+'/E.jpg '+ ApacheCaseDir)
-#         # os.system('cp '+WorkingDir+'/EE.jpg '+ ApacheCaseDir)
-# 
-#         Eprime = link2result + '/' + 'E.jpg'
-#         EEprime = link2result + '/' + 'EE.jpg'
-#         XFF = link2result + '/' + datafile + '.XFF'
-#         XPR = link2result + '/' + datafile + '.XPR'
-#         XTF = link2result + '/' + datafile + '.XTF'
-# 
-#         return render_to_response('DynamfitRun.html', {
-#             'E_link': Eprime,
-#             'EE_link': EEprime,
-#             'XFF_link': XFF,
-#             'XPR_link': XPR,
-#             'XTF_link': XTF,
-#             }, context_instance=RequestContext(request))
-#     else:
-#         return redirect('/login')
 
 
 def sample(request):
