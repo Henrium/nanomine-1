@@ -6,13 +6,10 @@
 {% block title %}<h1><span>Dynamfit Job Checker</span></h1>{% endblock %}
 {% block content%}
 
-<!--<p><h3>Outputs </h3>-->
-
 <p>Enter the Job Id that you want to look up:</p>
 <form method='POST'>  {% csrf_token %}
   Job ID: <input type="text" name="job_id"><br>
   <input type="submit" value="Submit" >
-<!--onClick="window.open('/DynamfitRun')"-->
 </form>
   <br>
 

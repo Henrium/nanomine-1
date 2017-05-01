@@ -21,15 +21,25 @@
 		{{ form.docfile.errors }}
 		{{ form.docfile }}
 	</p>
-	<p><input type="submit" value="Run" /></p>
+	<p><input type="submit" value="Run" onclick="msg3();"></p>
 </form>
 
 <form> 
-	<INPUT type="button" value="See Results" onClick="window.open('/niblack_view','newwindow','width=800,height=800')"> 
+	<INPUT type="button" value="See Results" onClick="window.open('/niblack_view','newwindow')"> 
 </form>
 
 <hr>
 	<h4>Reference</h4>
 	<p>Khurshid, Khurram, et al., <i><a href="http://spie.org/Publications/Proceedings/Paper/10.1117/12.805827">Comparison of Niblack inspired Binarization methods for ancient documents</a></i>, SPIE Electronic Imaging. International Society for Optics and Photonics, 2009.</p>
 	<p>Add Irene paper..</p>
+
+
+<script>
+
+function msg3() {
+	alert("Your unique job ID for this image is {{run_count}}. If you have selected a local file, your image is now being uploaded. Processing starts after this pop-up windows is closed, and will finish when page loading is done. This usually takes about a few seconds. You can check the status of this job at the 'Job Checker' from this page.");
+	return true;
+    }
+
+</script>
 {% endblock %}
