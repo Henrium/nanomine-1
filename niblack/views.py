@@ -22,11 +22,16 @@ import time
 # 2. check view ask for run_id and compares grayscale with binary result on same page
 # 3. check view - if run_id valid - ask for adjust window size - continue to run
 
+# common path and urls
 ServerNiblackParent = '/home/NANOMINE/ONR/niblack_web/archive/' # on Titan
 ServerNiblackSrc = '/home/NANOMINE/ONR/niblack_web/src/'
 HttpDir = '/var/www/html/nanomine/niblack/' # on titan
 TitanServerIP = '129.105.90.149' # todo: move this to ENV
 SCPSink = 'NANOMINE@'+TitanServerIP+':~/ONR/niblack_web/archive/'
+
+LocalUrlRoot = 'http://54.190.30.121/nanomine/niblack/'
+LocalNiblackParent = '/home/NANOMINE/nmdata/niblack/archive/' # on web server
+url_img_not_found = 'http://nanomine.northwestern.edu/nanomine/image-not-found.jpg'
 
 def home(request):
     if request.user.is_authenticated():
@@ -73,6 +78,7 @@ def home(request):
                 # make new folder for image
                 stdin, stdout, stderr = ssh.exec_command('mkdir '+ServerNiblackParent+run_id) # data folder
                 os.system('mkdir '+HttpDir+run_id) # www folder
+                os.system('mkdir '+LocalNiblackParent+run_id) # local data folder
                 # copy source files to new folder
                 stdin, stdout, stderr = ssh.exec_command('cp -r '+ServerNiblackSrc+'* '+ServerNiblackParent+run_id+'/')
                 # SCP uploaded image to titan server
@@ -87,83 +93,129 @@ def home(request):
                 os.system(cmd_server_copy_to_http)
                 print cmd_server_copy_to_http
                 
+                # copy niblack summary to local data folder
+                cmd_scp_summary = 'scp '+SCPSink+run_id+'/NiblackSummary.mat '+LocalNiblackParent+run_id
+                os.system(cmd_scp_summary)
+                
                 return HttpResponseRedirect(reverse('niblack.views.home'
                         ))
         else:
             form = DocumentForm()  # A empty, unbound form
 
-        # Load documents for the list page
-        documents = Document.objects.all()
-
-        # Render list page with the documents and the form
         return render_to_response('niblack.html',
-                                  {'documents': documents,
-                                  'form': form},
+                                  {
+                                  'form': form,
+                                  'run_count': count[0]},
                                   context_instance=RequestContext(request))
     else:
         return redirect('/login')
 
 
 def check(request):
+    '''Check previous niblack run and config next run if any'''
     if request.user.is_authenticated():
-
-        # Perform dynamic binarization
-
-        # Load summary parameters
-
-        if os.path.isfile('./niblack/mfiles/niblack/imgs/NiblackSummary.mat'
-                          ):
-            mat = \
-                scipy.io.loadmat('./niblack/mfiles/niblack/imgs/NiblackSummary.mat'
-                                 )
-            fname = mat['fname'][0]
-            img_size = int(mat['img_size'])
-            win_size = int(mat['win_size'])  # adjusted window size
-        else:
-            fname = ''
-            img_size = ''
-            win_size = ''
-
-        # Get adjust win size value from form
-
+        
+        # initialize null values to prevent valueerror
+        fname = ''
+        img_size = ''
+        win_size = ''
+        count = 0
+        run_id_found = False
+        run_id = ''
+        # init img url to not found img
+        url_jpg_before = url_img_not_found
+        url_jpg_after = url_img_not_found
+        count = '' # init with empty JID to send to html
         if request.method == 'POST':
-            form = NiblackAdjustForm(request.POST)
-            if form.is_valid():
-                adjust = request.POST['adjust']
-
-            # adjust = NiblackAdjust(AdjustValue)
-
-                print 'User input adjust win size:'
-                print request.POST['adjust']
-
-                f1 = open('./niblack/mfiles/adjust', 'w')
-                s = str(adjust)
-                f1.write(s)
-                f1.close()
-
-                f2 = open('./niblack/mfiles/winsize', 'w')
-                s2 = str(win_size)
-                print s2
-                f2.write(s2)
-                f2.close()
-
-            # Run MATLAB when form is valid
-
-                os.system('matlab -nodesktop -nodisplay -nojvm -nosplash -r "cd niblack/mfiles;run_niblack;exit"'
-                          )
-                os.system('mv ./niblack/media/documents/jpg/NBbefore.tif /var/www/html/nm/NBbefore.tif'
-                          )
-                os.system('mv ./niblack/media/documents/jpg/NBafter.jpg /var/www/html/nm/NBafter.jpg'
-                          )
-        else:
-
-            form = NiblackAdjustForm()
+            count = request.POST['job_id']
+            # assign dummy 0 if no job_id is entered
+            try:
+                int(count)
+            except ValueError:
+                count = 0
+            with open('./niblack/run_id_lookup', 'r') as f:
+                table_content = f.readlines()
+            for l in table_content:
+                tp = l.strip('\n') # tuple of run_id, count
+                if int( tp.split(',')[-1] ) == int(count):
+                    run_id = str(tp.split(',')[0])
+                    run_id_found = True
+                    print 'JID found'
+                    break
+                # no match found
+                run_id = 'not found'
+            del table_content
+            
+            if run_id_found:
+                # pass JPG url for display
+                url_parent_server = LocalUrlRoot
+                url_jpg_before = url_parent_server+run_id+'/NBbefore.jpg'
+                url_jpg_after = url_parent_server+run_id+'/NBafter.jpg'
+                
+                # read summary from last run
+                LocalSummaryMat = LocalNiblackParent+run_id+'/NiblackSummary.mat'
+                print 'local summary mat file loc:', LocalSummaryMat
+                if os.path.isfile(LocalSummaryMat):
+                    mat = scipy.io.loadmat(LocalSummaryMat)
+                    fname = mat['fname'][0]
+                    img_size = int(mat['img_size'])
+                    win_size = int(mat['win_size'])  # adjusted window size
+            
+                # Get adjust win size value from form
+                try:
+                    adjust = request.POST['val_adjust']
+                except:
+                    adjust = ''
+                if adjust != '':
+                    # if there is input for adjust
+                    # todo: add sanity check. avoid non integer input
+                    
+                    print 'User input adjust win size:'
+                    print adjust
+                    
+                    # write param for next run to passed to server
+                    with open(LocalNiblackParent+run_id+'/adjust', 'w') as f:
+                        f.write(str(adjust))
+                    with open(LocalNiblackParent+run_id+'/winsize', 'w') as f:
+                        f.write(str(win_size))
+                    
+                    print win_size
+                    
+                    # send the files to server
+                    cmd_scp_adjust_to_server = 'scp '+LocalNiblackParent+run_id+'/adjust '+SCPSink+run_id+'/mfiles'
+                    os.system(cmd_scp_adjust_to_server)
+                    cmd_scp_win_size_to_server = 'scp '+LocalNiblackParent+run_id+'/winsize '+SCPSink+run_id+'/mfiles'
+                    os.system(cmd_scp_win_size_to_server)
+                    
+                    # Run MATLAB for next run
+                    # connect to titan server
+                    ssh = paramiko.SSHClient()
+                    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                    ssh.load_system_host_keys()
+                    ssh.connect(TitanServerIP, username='NANOMINE')
+                    stdin, stdout, stderr = ssh.exec_command('matlab -nodesktop -nodisplay -nojvm -nosplash -r "cd '+ServerNiblackParent+run_id+'/mfiles;run_niblack;exit"')
+                    
+                    # copy result JPGs to www folder
+                    time.sleep(20) # leave at least 20 s for processing
+                    cmd_server_copy_to_http = 'scp -r '+SCPSink+run_id+'/*.jpg '+HttpDir+run_id 
+                    os.system(cmd_server_copy_to_http)
+                    print cmd_server_copy_to_http
+                    
+                    # copy niblack summary to local data folder
+                    cmd_scp_summary = 'scp '+SCPSink+run_id+'/NiblackSummary.mat '+LocalNiblackParent+run_id
+                    os.system(cmd_scp_summary)
+                else:
+                    # if not valid, prompt for new form
+                    form = NiblackAdjustForm()
 
         return render_to_response('niblack_result.html', {
-            'fname': fname,
+            'job_id_init': count,
+            'fname': fname.upper(),
             'img_pix_size': img_size,
             'win_size': win_size,
-            'form': form,
+            'url_before': url_jpg_before,
+            'url_after': url_jpg_after,
+            'job_found':run_id_found,
             }, context_instance=RequestContext(request))
     else:
         return redirect('/login')
