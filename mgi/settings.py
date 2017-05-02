@@ -244,6 +244,7 @@ INSTALLED_APPS = (
     'descchar', # descriptor characterization
     'dynamfit',
     'niblack',
+    'dielec2d',
 )
 
 OAUTH2_PROVIDER = {
