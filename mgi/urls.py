@@ -56,7 +56,8 @@ urlpatterns = patterns('',
     url(r'^DynamfitExampleInput$', 'dynamfit.views.sampleinput', name='dynamfit_sampleinput'),
     url(r'^DynamfitExampleRun$', 'dynamfit.views.samplerun', name='dynamfit_samplerun'),
     url(r'^niblack/', 'niblack.views.home',name='niblack'),
-    url(r'^niblack_view$', 'niblack.views.check', name='niblack-check'), 
+    url(r'^niblack_view$', 'niblack.views.check', name='niblack-check'),
+    url(r'^dielec2d/', include('dielec2d.urls')),
 )+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

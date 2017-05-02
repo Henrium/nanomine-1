@@ -1,0 +1,12 @@
+{% extends "base_featured.html" %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab7' %}{% endblock %}
+{% block content%}
+
+<h3>System busy. Please re-submit your job later. </h3><br>
+
+<p>All computation resource is currently being used. Please re-submit your job <a href="/FEA2D">here</a> later. We apologize for the inconvenience. </p>
+{% endblock %}
