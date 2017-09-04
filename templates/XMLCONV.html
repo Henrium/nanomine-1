@@ -15,7 +15,7 @@
 {% load staticfiles %}
 
 
-{% block title %}<h1><span>Excel-XML Converter</span></h1>{% endblock %}
+{% block title %}<h1><span>Data Uploader</span></h1>{% endblock %}
 {% block menu %}{% include 'menu.html' with active_tab='tab8' %}{% endblock %}
 {% block content%}
 
@@ -23,13 +23,13 @@
 <br>
 <h3>Description</h3>
 <br>
-<p>.......................</p>
+<p>Instead of using the online data curation form where you enter individual fields and values, you can consolidate all your data for a given sample into a single Excel spreadsheet and upload using just one-click. </p>
 <br>
 
-<p>Step 1: Click <a href="http://nanomine.northwestern.edu/nanomine/XMLCONV/template.xlsx" download>here</a> to download excel template.
- (Click <a href="http://nanomine.northwestern.edu/nanomine/XMLCONV/example.xlsx" download>here</a> to see a example of how to fill up each section)</p>
-<p>Step 2: Change the file name and fill all the section properly.</p>
-<p>Step 3: Upload excel file and all the image files, then click run to save your data into database.</p>
+<p>Step 1: Click <a href="http://nanomine.northwestern.edu/nanomine/XMLCONV/template.xlsx" download>here</a> to download the blank MS Excel template.
+ (Click <a href="http://nanomine.northwestern.edu/nanomine/XMLCONV/example.xlsx" download>here</a> to see an example)</p>
+<p>Step 2: Change the file name and fill in all the sections properly.</p>
+<p>Step 3: Upload the Excel file and all related image files, then click Run to save your data into database.</p>
 
 <form method='POST' enctype='multipart/form-data'> {% csrf_token %}
 

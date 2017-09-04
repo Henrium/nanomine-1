@@ -151,6 +151,8 @@ INSTALLED_APPS = (
     'XMLCONV',
     # HZ
     'signups',
+    # HZ 032317
+    'httpproxy',
 )
 
 OAUTH2_PROVIDER = {

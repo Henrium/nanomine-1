@@ -1,653 +1,103 @@
-[04/Aug/2016 04:39:15] ERROR [django.request:231] Internal Server Error: /
+[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] GET http://localhost:8080/blazegraph/namespace?describe-each-named-graph=false
+[23/Mar/2017 20:15:22] DEBUG [httpproxy.views:170] Response body: 
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<rdf:Description rdf:nodeID="node1bbu6fn0ox52">
+	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+	<title xmlns="http://purl.org/dc/terms/">kb</title>
+	<Namespace xmlns="http://www.bigdata.com/rdf#/features/KB/">kb</Namespace>
+	<sparqlEndpoint xmlns="http://rdfs.org/ns/void#" rdf:resource="http://localhost:8080/blazegraph/namespace/kb/sparql"/>
+	<uriRegexPattern xmlns="http://rdfs.org/ns/void#">^.*</uriRegexPattern>
+</rdf:Description>
+
+</rdf:RDF>
+[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] POST http://localhost:8080/blazegraph/namespace/kb/sparql
+[23/Mar/2017 20:15:22] ERROR [django.request:231] Internal Server Error: /namespace/kb/sparql
 Traceback (most recent call last):
   File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 56, in home
-    return HttpResponseRedirect(template.render(context))
-NameError: global name 'HttpResponseRedirect' is not defined
-[04/Aug/2016 04:39:35] WARNING [django.request:143] Not Found: /
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 82, in dispatch
+    response = super(HttpProxy, self).dispatch(request, *args, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/views/generic/base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 147, in post
+    return self.get_response(body=request.body, headers=headers)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 166, in get_response
+    response = urllib.request.urlopen(request)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 435, in open
+    response = meth(req, response)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 548, in http_response
+    'http', request, response, code, msg, hdrs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 473, in error
+    return self._call_chain(*args)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 556, in http_error_default
+    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+HTTPError: HTTP Error 501: Not Implemented
+[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] GET http://localhost:8080/blazegraph/namespace?describe-each-named-graph=false
+[23/Mar/2017 20:15:22] DEBUG [httpproxy.views:170] Response body: 
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
+<rdf:Description rdf:nodeID="node1bbu6fn0ox53">
+	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+	<title xmlns="http://purl.org/dc/terms/">kb</title>
+	<Namespace xmlns="http://www.bigdata.com/rdf#/features/KB/">kb</Namespace>
+	<sparqlEndpoint xmlns="http://rdfs.org/ns/void#" rdf:resource="http://localhost:8080/blazegraph/namespace/kb/sparql"/>
+	<uriRegexPattern xmlns="http://rdfs.org/ns/void#">^.*</uriRegexPattern>
+</rdf:Description>
 
+</rdf:RDF>
+[23/Mar/2017 20:15:22] WARNING [django.request:143] Not Found: /status
+[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] GET http://localhost:8080/blazegraph/namespace?describe-each-named-graph=false
+[23/Mar/2017 20:15:22] DEBUG [httpproxy.views:170] Response body: 
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<rdf:Description rdf:nodeID="node1bbu6fn0ox54">
+	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+	<title xmlns="http://purl.org/dc/terms/">kb</title>
+	<Namespace xmlns="http://www.bigdata.com/rdf#/features/KB/">kb</Namespace>
+	<sparqlEndpoint xmlns="http://rdfs.org/ns/void#" rdf:resource="http://localhost:8080/blazegraph/namespace/kb/sparql"/>
+	<uriRegexPattern xmlns="http://rdfs.org/ns/void#">^.*</uriRegexPattern>
+</rdf:Description>
 
-    <meta charset="UTF-8">
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-	<meta name="author" content=""/>
-	<meta name="robots" content="NONE,NOARCHIVE"/>
-
-	<title>NanoMine Curation System</title>
-
-    <link rel="stylesheet" type="text/css" href="/static/libs/reset/2.0/reset.css"  />
-    <link rel="stylesheet" type="text/css" href="/static/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/resources/css/lib/bootstrap.min.css"  media="screen" />
-	<link rel="stylesheet" type="text/css" href="/static/resources/css/icons.css" media="screen" />
-    <link rel="stylesheet" type="text/css"
-          href="/static/resources/lib/jquery-ui/themes/smoothness/jquery-ui.css"/>
-
-    
-<link rel="stylesheet" type="text/css" href="/static/css/nmrr/styles.css"/>
-<link rel="stylesheet" type="text/css" href="/static/css/nmrr/dialog.css"/>
-
-    
-
-    <!--nmrr added-->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!--nmrr added end-->
-</head>
-<body>
-    
-<div id="container">
-	<!-- Header -->
-    
-        <header>
-		<div class="width">
-		<h1>
-			<a href="http://nanomine.northwestern.edu:8000"><img src="/static/img/NIST_logo.svg" width="150"></a>
-		</h1>
-		<nav id="main">
-			<!--<ul class="sf-menu dropdown sf-js-enabled sf-shadow">-->
-			
-
-
-<ul class="dropdown sf-menu">
-    <li class=" selected "><a href="/">Home</a></li>
-    <li class="">
-        <a href="/all-options">Database<i class="fa fa-angle-double-right"></i></a>
-        <ul>
-            <li><a href="/explore">Search Data</a></li>
-            <li><a href="/curate">Curate Data</a></li>
-            <li><a href="/search">Search</a></li>
-            <li><a href="
-[04/Aug/2016 04:39:54] WARNING [django.request:143] Not Found: /
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta charset="UTF-8">
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-	<meta name="author" content=""/>
-	<meta name="robots" content="NONE,NOARCHIVE"/>
-
-	<title>NanoMine Curation System</title>
-
-    <link rel="stylesheet" type="text/css" href="/static/libs/reset/2.0/reset.css"  />
-    <link rel="stylesheet" type="text/css" href="/static/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/resources/css/lib/bootstrap.min.css"  media="screen" />
-	<link rel="stylesheet" type="text/css" href="/static/resources/css/icons.css" media="screen" />
-    <link rel="stylesheet" type="text/css"
-          href="/static/resources/lib/jquery-ui/themes/smoothness/jquery-ui.css"/>
-
-    
-<link rel="stylesheet" type="text/css" href="/static/css/nmrr/styles.css"/>
-<link rel="stylesheet" type="text/css" href="/static/css/nmrr/dialog.css"/>
-
-    
-
-    <!--nmrr added-->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!--nmrr added end-->
-</head>
-<body>
-    
-<div id="container">
-	<!-- Header -->
-    
-        <header>
-		<div class="width">
-		<h1>
-			<a href="http://nanomine.northwestern.edu:8000"><img src="/static/img/NIST_logo.svg" width="150"></a>
-		</h1>
-		<nav id="main">
-			<!--<ul class="sf-menu dropdown sf-js-enabled sf-shadow">-->
-			
-
-
-<ul class="dropdown sf-menu">
-    <li class=" selected "><a href="/">Home</a></li>
-    <li class="">
-        <a href="/all-options">Database<i class="fa fa-angle-double-right"></i></a>
-        <ul>
-            <li><a href="/explore">Search Data</a></li>
-            <li><a href="/curate">Curate Data</a></li>
-            <li><a href="/search">Search</a></li>
-            <li><a href="
-[04/Aug/2016 04:41:42] WARNING [django.request:143] Not Found: /home
-[04/Aug/2016 04:42:01] WARNING [django.request:143] Not Found: /home
-[04/Aug/2016 04:49:38] ERROR [django.request:231] Internal Server Error: /
+</rdf:RDF>
+[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] POST http://localhost:8080/blazegraph/namespace/kb/sparql
+[23/Mar/2017 20:15:22] ERROR [django.request:231] Internal Server Error: /namespace/kb/sparql
 Traceback (most recent call last):
   File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
-    if SignUp.Objects.find(email=request.POST[u'email']):
-AttributeError: type object 'SignUp' has no attribute 'Objects'
-[04/Aug/2016 04:50:19] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
-    if SignUp.Objects.get(email=request.POST[u'email']):
-AttributeError: type object 'SignUp' has no attribute 'Objects'
-[04/Aug/2016 04:50:30] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
-    if SignUp.Objects.get(email=request.POST[u'email']):
-AttributeError: type object 'SignUp' has no attribute 'Objects'
-[04/Aug/2016 04:50:54] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
-    if SignUp.objects.get(email=request.POST[u'email']):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/query.py", line 357, in get
-    self.model._meta.object_name)
-DoesNotExist: SignUp matching query does not exist.
-[04/Aug/2016 04:51:16] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
-    if SignUp.objects.find(email=request.POST[u'email']):
-AttributeError: 'Manager' object has no attribute 'find'
-[04/Aug/2016 04:51:22] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
-    if SignUp.objects.find(email=request.POST[u'email']):
-AttributeError: 'Manager' object has no attribute 'find'
-[04/Aug/2016 04:54:05] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 53
-    new_signup = SignUp.objects.find(email=request.POST[u'email']):
-                                                                  ^
-SyntaxError: invalid syntax
-[04/Aug/2016 04:57:16] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 50, in home
-    print(context['email'])
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/context.py", line 70, in __getitem__
-    raise KeyError(key)
-KeyError: 'email'
-[04/Aug/2016 05:34:07] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
-    if SignUp.objects.get(email='zhonghao1014@gmail.com'):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/query.py", line 361, in get
-    num if num <= MAX_GET_RESULTS else 'more than %s' % MAX_GET_RESULTS
-MultipleObjectsReturned: get() returned more than one SignUp -- it returned 7!
-[04/Aug/2016 05:34:21] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 52, in home
-    if SignUp.objects.exists(email='zhonghao1014@gmail.com'):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-TypeError: exists() got an unexpected keyword argument 'email'
-[04/Aug/2016 10:17:09] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[04/Aug/2016 13:46:04] WARNING [django.request:143] Not Found: /favicon.ico
-[04/Aug/2016 14:58:44] WARNING [django.request:143] Not Found: /favicon.ico
-[04/Aug/2016 18:30:51] WARNING [django.request:143] Not Found: /favicon.ico
-[04/Aug/2016 19:35:41] WARNING [django.request:143] Not Found: /irj/portal
-[04/Aug/2016 22:09:45] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 63, in home
-    return HttpResponse(template.render(context))
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/defaulttags.py", line 312, in render
-    return nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/defaulttags.py", line 458, in render
-    six.reraise(*exc_info)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/defaulttags.py", line 444, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 542, in reverse
-    key)
-NoReverseMatch: u'music' is not a registered namespace
-[04/Aug/2016 22:16:07] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 63, in home
-    return HttpResponse(template.render(context))
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/defaulttags.py", line 312, in render
-    return nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/defaulttags.py", line 458, in render
-    six.reraise(*exc_info)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/defaulttags.py", line 444, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 542, in reverse
-    key)
-NoReverseMatch: u'music' is not a registered namespace
-[04/Aug/2016 22:20:34] ERROR [django.request:231] Internal Server Error: /
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/Develop/mdcs/mgi/views.py", line 63, in home
-    return HttpResponse(template.render(context))
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 148, in render
-    return self._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 126, in render
-    return compiled_parent._render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
-    return self.nodelist.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 844, in render
-    bit = self.render_node(node, context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 858, in render_node
-    return node.render(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 104, in render
-    compiled_parent = self.get_parent(context)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in get_parent
-    return get_template(parent)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
-    template, origin = find_template(template_name, dirs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 132, in find_template
-    source, display_name = loader(name, dirs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 44, in __call__
-    return self.load_template(template_name, template_dirs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 50, in load_template
-    template = get_template_from_string(source, origin, template_name)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
-    return Template(source, origin, name)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 132, in __init__
-    self.nodelist = compile_string(template_string, origin)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 162, in compile_string
-    return parser.parse()
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
-    nodelist = parser.parse()
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
-    nodelist = parser.parse(('endblock',))
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/defaulttags.py", line 975, in do_if
-    nodelist = parser.parse(('elif', 'else', 'endif'))
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/base.py", line 290, in parse
-    compiled_result = compile_func(self, token)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/template/loader_tags.py", line 171, in do_block
-    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
-TemplateSyntaxError: 'block' tag with name 'menu' appears more than once
-[05/Aug/2016 00:45:07] WARNING [django.request:143] Not Found: /favicon.ico
-[05/Aug/2016 03:30:33] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120-precomposed.png
-[05/Aug/2016 03:30:33] WARNING [django.request:143] Not Found: /apple-touch-icon-120x120.png
-[05/Aug/2016 03:30:34] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[05/Aug/2016 03:30:34] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[05/Aug/2016 03:30:34] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[05/Aug/2016 03:30:34] WARNING [django.request:143] Not Found: /favicon.ico
-[05/Aug/2016 13:46:52] WARNING [django.request:143] Not Found: /favicon.ico
-[05/Aug/2016 19:10:21] WARNING [django.request:143] Not Found: /favicon.ico
-[05/Aug/2016 19:23:42] WARNING [django.request:143] Not Found: /favicon.ico
-[05/Aug/2016 21:56:35] WARNING [django.request:143] Not Found: /favicon.ico
-[06/Aug/2016 02:04:33] WARNING [django.request:143] Not Found: /favicon.ico
-[06/Aug/2016 02:12:06] WARNING [django.request:143] Not Found: /favicon.ico
-[06/Aug/2016 02:36:42] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[06/Aug/2016 08:21:02] WARNING [django.request:143] Not Found: /robots.txt
-[06/Aug/2016 08:21:02] WARNING [django.request:143] Not Found: /sitemap.xml
-[06/Aug/2016 08:40:40] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[07/Aug/2016 00:18:11] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Aug/2016 01:39:13] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Aug/2016 01:39:13] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[07/Aug/2016 01:39:13] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[07/Aug/2016 01:39:13] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[07/Aug/2016 01:39:13] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[07/Aug/2016 01:42:26] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[07/Aug/2016 01:42:26] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[07/Aug/2016 02:46:58] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[07/Aug/2016 02:46:58] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Aug/2016 02:46:59] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[07/Aug/2016 07:51:01] WARNING [django.request:143] Not Found: /CHANGELOG.txt
-[07/Aug/2016 07:51:01] WARNING [django.request:143] Not Found: /downloader/index.php
-[07/Aug/2016 07:51:01] WARNING [django.request:143] Not Found: /language/Swedish${IFS}&&echo${IFS}UZLo>DKSY&&tar${IFS}/string.js
-[07/Aug/2016 07:51:07] WARNING [django.request:143] Not Found: /../../../../../../../mnt/mtd/DKSY
-[07/Aug/2016 07:51:07] WARNING [django.request:143] Not Found: /readme.html
-[07/Aug/2016 07:51:07] WARNING [django.request:143] Not Found: /skin/frontend/default/default/css/styles.css
-[07/Aug/2016 07:57:10] WARNING [django.request:143] Not Found: /robots.txt
-[07/Aug/2016 09:54:12] WARNING [django.request:143] Not Found: /stalker_portal/c/
-[07/Aug/2016 15:07:32] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[07/Aug/2016 15:07:32] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Aug/2016 15:07:32] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[07/Aug/2016 15:07:33] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[07/Aug/2016 15:07:33] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[07/Aug/2016 15:07:46] WARNING [django.request:143] Not Found: /favicon.ico
-[08/Aug/2016 02:36:08] WARNING [django.request:143] Not Found: /robots.txt
-[08/Aug/2016 13:23:02] WARNING [django.request:143] Not Found: /favicon.ico
-[08/Aug/2016 13:23:02] WARNING [django.request:143] Not Found: /favicon.ico
-[08/Aug/2016 23:47:25] WARNING [django.request:143] Not Found: /favicon.ico
-[08/Aug/2016 23:47:25] WARNING [django.request:143] Not Found: /favicon.ico
-[09/Aug/2016 11:08:17] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[09/Aug/2016 15:06:02] WARNING [django.request:143] Not Found: /favicon.ico
-[09/Aug/2016 22:23:21] WARNING [django.request:143] Not Found: /favicon.ico
-[09/Aug/2016 22:23:21] WARNING [django.request:143] Not Found: /favicon.ico
-[09/Aug/2016 23:04:46] WARNING [django.request:143] Not Found: /robots.txt
-[10/Aug/2016 01:56:11] WARNING [django.request:143] Not Found: /favicon.ico
-[10/Aug/2016 22:45:31] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Aug/2016 02:59:06] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[11/Aug/2016 03:26:35] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[11/Aug/2016 03:34:28] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Aug/2016 03:34:28] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[11/Aug/2016 03:34:28] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[11/Aug/2016 12:45:10] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Aug/2016 12:45:10] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Aug/2016 14:01:47] WARNING [django.request:143] Not Found: /robots.txt
-[11/Aug/2016 14:01:47] WARNING [django.request:143] Not Found: /sitemap.xml
-[11/Aug/2016 14:12:06] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Aug/2016 14:14:01] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Aug/2016 14:14:01] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[11/Aug/2016 14:14:01] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[11/Aug/2016 14:14:01] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[11/Aug/2016 14:14:01] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[11/Aug/2016 15:23:36] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Aug/2016 15:27:36] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Aug/2016 15:27:36] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[11/Aug/2016 15:27:36] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[11/Aug/2016 19:48:19] WARNING [django.request:143] Not Found: /favicon.ico
-[12/Aug/2016 01:55:48] WARNING [django.request:143] Not Found: /favicon.ico
-[12/Aug/2016 03:06:42] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[12/Aug/2016 03:06:42] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[12/Aug/2016 07:31:41] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[12/Aug/2016 13:19:18] WARNING [django.request:143] Not Found: /favicon.ico
-[12/Aug/2016 19:43:53] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[13/Aug/2016 03:22:34] WARNING [django.request:143] Not Found: /favicon.ico
-[13/Aug/2016 12:04:58] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[14/Aug/2016 16:37:45] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[14/Aug/2016 17:45:07] WARNING [django.request:143] Not Found: /robots.txt
-[15/Aug/2016 02:46:28] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Aug/2016 03:21:00] WARNING [django.request:143] Not Found: /apple-touch-icon-152x152-precomposed.png
-[15/Aug/2016 03:21:00] WARNING [django.request:143] Not Found: /apple-touch-icon-152x152.png
-[15/Aug/2016 03:21:00] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[15/Aug/2016 03:21:00] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[15/Aug/2016 03:21:00] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[15/Aug/2016 03:21:00] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Aug/2016 14:11:03] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Aug/2016 16:36:28] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Aug/2016 16:46:54] WARNING [django.request:143] Not Found: /favicon.ico
-[15/Aug/2016 21:08:47] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[16/Aug/2016 01:35:35] WARNING [django.request:143] Not Found: /favicon.ico
-[16/Aug/2016 14:08:13] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[16/Aug/2016 14:53:54] WARNING [django.request:143] Not Found: /favicon.ico
-[16/Aug/2016 15:00:39] WARNING [django.request:143] Not Found: /favicon.ico
-[16/Aug/2016 15:28:18] WARNING [django.request:143] Not Found: /favicon.ico
-[16/Aug/2016 15:28:18] WARNING [django.request:143] Not Found: /favicon.ico
-[16/Aug/2016 19:05:19] WARNING [django.request:143] Not Found: /favicon.ico
-[16/Aug/2016 19:05:19] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[16/Aug/2016 19:05:19] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[17/Aug/2016 01:22:51] DEBUG [oauthlib.oauth2.rfc6749.endpoints.resource:74] Dispatching token_type Bearer request to <oauthlib.oauth2.rfc6749.tokens.BearerToken object at 0x7fb753140f90>.
-[17/Aug/2016 01:22:51] WARNING [django.request:143] Not Found: /favicon.ico
-[17/Aug/2016 01:40:40] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[17/Aug/2016 03:40:56] WARNING [django.request:143] Not Found: /favicon.ico
-[17/Aug/2016 03:48:50] WARNING [django.request:143] Not Found: /favicon.ico
-[17/Aug/2016 13:38:07] WARNING [django.request:143] Not Found: /favicon.ico
-[17/Aug/2016 21:46:23] WARNING [django.request:143] Not Found: /favicon.ico
-[18/Aug/2016 06:13:37] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[18/Aug/2016 06:25:52] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[18/Aug/2016 15:39:15] WARNING [django.request:143] Not Found: /favicon.ico
-[18/Aug/2016 23:48:01] WARNING [django.request:143] Not Found: /favicon.ico
-[19/Aug/2016 10:48:04] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[19/Aug/2016 13:58:43] WARNING [django.request:143] Not Found: /favicon.ico
-[19/Aug/2016 22:43:15] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[20/Aug/2016 04:47:08] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[20/Aug/2016 04:47:08] WARNING [django.request:143] Not Found: /favicon.ico
-[20/Aug/2016 04:47:09] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[20/Aug/2016 14:34:45] WARNING [django.request:143] Not Found: /favicon.ico
-[20/Aug/2016 15:22:06] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[21/Aug/2016 14:55:52] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[21/Aug/2016 15:02:01] WARNING [django.request:143] Not Found: /favicon.ico
-[21/Aug/2016 19:54:53] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[21/Aug/2016 20:47:15] WARNING [django.request:143] Not Found: /favicon.ico
-[22/Aug/2016 00:18:37] WARNING [django.request:143] Not Found: /favicon.ico
-[22/Aug/2016 02:34:02] WARNING [django.request:143] Not Found: /favicon.ico
-[22/Aug/2016 14:39:01] WARNING [django.request:143] Not Found: /favicon.ico
-[22/Aug/2016 16:06:31] WARNING [django.request:143] Not Found: /favicon.ico
-[22/Aug/2016 19:14:48] WARNING [django.request:143] Not Found: /robots.txt
-[22/Aug/2016 19:14:48] WARNING [django.request:143] Not Found: /sitemap.xml
-[23/Aug/2016 00:26:59] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[23/Aug/2016 01:08:09] WARNING [django.request:143] Not Found: /favicon.ico
-[23/Aug/2016 04:02:30] WARNING [django.request:143] Not Found: /favicon.ico
-[23/Aug/2016 04:05:05] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[23/Aug/2016 04:05:05] WARNING [django.request:143] Not Found: /favicon.ico
-[23/Aug/2016 04:05:05] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[23/Aug/2016 07:09:31] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[23/Aug/2016 12:28:41] WARNING [django.request:143] Not Found: /favicon.ico
-[23/Aug/2016 13:38:24] WARNING [django.request:143] Not Found: /favicon.ico
-[23/Aug/2016 15:40:07] WARNING [django.request:143] Not Found: /favicon.ico
-[23/Aug/2016 21:50:09] WARNING [django.request:143] Not Found: /favicon.ico
-[24/Aug/2016 00:48:13] WARNING [django.request:143] Not Found: /robots.txt
-[24/Aug/2016 00:48:13] WARNING [django.request:143] Not Found: /sitemap.xml
-[24/Aug/2016 01:58:35] WARNING [django.request:143] Not Found: /favicon.ico
-[24/Aug/2016 04:59:45] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[24/Aug/2016 14:48:37] WARNING [django.request:143] Not Found: /favicon.ico
-[24/Aug/2016 15:03:34] WARNING [django.request:143] Not Found: /favicon.ico
-[25/Aug/2016 00:08:06] WARNING [django.request:143] Not Found: /favicon.ico
-[25/Aug/2016 00:08:06] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[25/Aug/2016 00:08:06] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[25/Aug/2016 00:58:47] WARNING [django.request:143] Not Found: /favicon.ico
-[25/Aug/2016 08:03:43] WARNING [django.request:143] Not Found: /robots.txt
-[25/Aug/2016 13:58:36] WARNING [django.request:143] Not Found: /favicon.ico
-[26/Aug/2016 01:45:35] WARNING [django.request:143] Not Found: /favicon.ico
-[27/Aug/2016 04:14:04] WARNING [django.request:143] Not Found: /favicon.ico
-[27/Aug/2016 04:14:04] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[27/Aug/2016 04:14:04] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[27/Aug/2016 04:14:04] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[27/Aug/2016 04:14:04] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[27/Aug/2016 15:57:06] WARNING [django.request:143] Not Found: /favicon.ico
-[27/Aug/2016 20:01:49] WARNING [django.request:143] Not Found: /favicon.ico
-[27/Aug/2016 21:27:53] WARNING [django.request:143] Not Found: /XMLCONV
-[28/Aug/2016 01:36:59] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Aug/2016 02:11:16] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Aug/2016 02:11:16] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[28/Aug/2016 02:11:16] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[28/Aug/2016 09:44:50] WARNING [django.request:143] Not Found: /httpbin.org:443
-[28/Aug/2016 09:44:50] WARNING [django.request:143] Not Found: /CHANGELOG.txt
-[28/Aug/2016 09:44:51] WARNING [django.request:143] Not Found: /downloader/index.php
-[28/Aug/2016 09:44:51] WARNING [django.request:143] Not Found: /language/Swedish${IFS}&&echo${IFS}0eOi>W213&&tar${IFS}/string.js
-[28/Aug/2016 09:45:06] WARNING [django.request:143] Not Found: /http://httpbin.org/get
-[28/Aug/2016 09:45:06] WARNING [django.request:143] Not Found: /skin/frontend/default/default/css/styles.css
-[28/Aug/2016 09:45:06] WARNING [django.request:143] Not Found: /../../../../../../../mnt/mtd/W213
-[28/Aug/2016 09:45:06] WARNING [django.request:143] Not Found: /readme.html
-[28/Aug/2016 13:52:48] WARNING [django.request:143] Not Found: /favicon.ico
-[28/Aug/2016 21:53:36] WARNING [django.request:143] Not Found: /favicon.ico
-[29/Aug/2016 03:30:39] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Aug/2016 00:13:27] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Aug/2016 02:02:58] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Aug/2016 19:13:16] WARNING [django.request:143] Not Found: /favicon.ico
-[30/Aug/2016 19:13:16] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[30/Aug/2016 19:13:16] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[30/Aug/2016 22:44:53] WARNING [django.request:143] Not Found: /favicon.ico
-[31/Aug/2016 01:34:28] WARNING [django.request:143] Not Found: /favicon.ico
-[31/Aug/2016 05:45:43] WARNING [django.request:143] Not Found: /robots.txt
-[31/Aug/2016 08:15:03] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[31/Aug/2016 16:45:29] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[01/Sep/2016 04:46:05] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[01/Sep/2016 04:46:05] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Sep/2016 04:46:06] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[01/Sep/2016 04:46:06] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[01/Sep/2016 04:46:06] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[01/Sep/2016 04:55:23] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[01/Sep/2016 04:55:23] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Sep/2016 04:55:23] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[01/Sep/2016 05:14:40] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Sep/2016 05:20:11] WARNING [django.request:143] Not Found: /favicon.ico
-[01/Sep/2016 22:08:41] WARNING [django.request:143] Not Found: /favicon.ico
-[02/Sep/2016 14:11:52] WARNING [django.request:143] Not Found: /favicon.ico
-[02/Sep/2016 17:20:53] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[03/Sep/2016 21:55:18] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[03/Sep/2016 22:40:17] WARNING [django.request:143] Not Found: /favicon.ico
-[04/Sep/2016 19:10:37] WARNING [django.request:143] Not Found: /robots.txt
-[05/Sep/2016 13:41:48] WARNING [django.request:143] Not Found: /favicon.ico
-[06/Sep/2016 14:17:15] WARNING [django.request:143] Not Found: /favicon.ico
-[06/Sep/2016 14:41:51] WARNING [django.request:143] Not Found: /favicon.ico
-[06/Sep/2016 18:38:45] WARNING [django.request:143] Not Found: /favicon.ico
-[06/Sep/2016 21:19:18] WARNING [django.request:143] Not Found: /favicon.ico
-[06/Sep/2016 21:19:18] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[06/Sep/2016 21:19:18] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[06/Sep/2016 21:19:48] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Sep/2016 00:23:54] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Sep/2016 00:52:53] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Sep/2016 00:55:26] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Sep/2016 12:18:20] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Sep/2016 16:10:29] WARNING [django.request:143] Not Found: /favicon.ico
-[07/Sep/2016 22:10:56] WARNING [django.request:143] Not Found: /favicon.ico
-[08/Sep/2016 00:52:34] WARNING [django.request:143] Not Found: /favicon.ico
-[08/Sep/2016 02:08:30] WARNING [django.request:143] Not Found: /favicon.ico
-[08/Sep/2016 16:05:12] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[08/Sep/2016 16:56:06] WARNING [django.request:143] Not Found: /favicon.ico
-[09/Sep/2016 00:40:59] WARNING [django.request:143] Not Found: /favicon.ico
-[09/Sep/2016 00:50:01] WARNING [django.request:143] Not Found: /robots.txt
-[09/Sep/2016 00:50:01] WARNING [django.request:143] Not Found: /sitemap.xml
-[09/Sep/2016 02:20:49] WARNING [django.request:143] Not Found: /favicon.ico
-[09/Sep/2016 04:55:32] WARNING [django.request:143] Not Found: /robots.txt
-[09/Sep/2016 04:55:32] WARNING [django.request:143] Not Found: /sitemap.xml
-[09/Sep/2016 17:02:48] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[09/Sep/2016 22:58:40] WARNING [django.request:143] Not Found: /favicon.ico
-[10/Sep/2016 13:40:09] WARNING [django.request:143] Not Found: /favicon.ico
-[11/Sep/2016 01:07:27] WARNING [django.request:143] Not Found: /http://www.baidu.com/cache/global/img/gs.gif
-[11/Sep/2016 04:09:49] WARNING [django.request:143] Not Found: /favicon.ico
-[12/Sep/2016 13:49:43] WARNING [django.request:143] Not Found: /favicon.ico
-[12/Sep/2016 22:49:22] WARNING [django.request:143] Not Found: /favicon.ico
-[13/Sep/2016 01:54:49] WARNING [django.request:143] Not Found: /favicon.ico
-[13/Sep/2016 01:54:49] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[13/Sep/2016 01:54:49] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[13/Sep/2016 01:54:49] WARNING [django.request:143] Not Found: /apple-touch-icon-precomposed.png
-[13/Sep/2016 01:54:49] WARNING [django.request:143] Not Found: /apple-touch-icon.png
-[13/Sep/2016 14:37:42] WARNING [django.request:143] Not Found: /favicon.ico
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 82, in dispatch
+    response = super(HttpProxy, self).dispatch(request, *args, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/views/generic/base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 147, in post
+    return self.get_response(body=request.body, headers=headers)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 166, in get_response
+    response = urllib.request.urlopen(request)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 435, in open
+    response = meth(req, response)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 548, in http_response
+    'http', request, response, code, msg, hdrs)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 473, in error
+    return self._call_chain(*args)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 556, in http_error_default
+    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+HTTPError: HTTP Error 501: Not Implemented
+[23/Mar/2017 20:22:50] WARNING [django.request:143] Not Found: /favicon.ico

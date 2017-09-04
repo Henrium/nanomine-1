@@ -1,0 +1,107 @@
+{% extends 'nmrr/base/default.html' %}
+{% comment %}
+<!--
+################################################################################
+#
+# File Name: base_featured.html
+# Application: templates
+# Description:
+#
+# Author: Sharief Youssef
+#         sharief.youssef@nist.gov
+#
+#		  Guillaume SOUSA AMARAL
+#		  guillaume.sousa@nist.gov
+#
+# Sponsor: National Institute of Standards and Technology
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% load staticfiles %}
+
+{% block intro %}
+<style>
+    input.button-slider {
+        padding: 12px 18px;
+        font-size: 0.8em;
+        text-align: center;
+        border: 2px solid #699BBA;
+        margin: 0px 10px 0px 0;
+    }
+    input.button-slider.button-reversed {
+        border-color: #999;
+    }
+    input.button-slider i {
+        padding-right: 5px;
+    }
+</style>
+
+<div id="intro">
+    <div class="width" style="width: 1800px">
+        <div class="intro-content" style="float: left; width: 500px">
+            <h2>{{CUSTOM_TITLE}}<sup><span class="alpha">Beta</span></sup></h2>
+            <p>{{CUSTOM_SUBTITLE}}</p>
+            <p>
+                <a href="/explore/keyword" class="button button-slider"><i class="fa"></i>{{CUSTOM_EXPLORE}}</a>
+                <a href="/curate" class="button button-reversed button-slider"><i class="fa"></i>{{CUSTOM_CURATE}}</a>
+            </p>
+        </div>
+        <!--<div class="intro-content" style="width: 800">-->
+<!--            <h5>
+                Subscribe to receive updates on NanoMine:
+            </h5>
+            <form action="" method="post" role="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="input-group">-->
+                <!--<input type="text" placeholder="youremail@mail.com"  class="button button-slider" name="email">-->
+                <!--<input type="hidden" name="status" value="active">-->
+                <!--<input type="submit" class="button-slider form-button" value="Submit" style="font-family: 'Arial'">-->
+            <!--</form>-->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <div>{{ message }}</div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <br/><br/><br/><br/>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block container %}
+<section id="content" class="two-column with-left-sidebar">
+<article>
+    {% block title %}{% endblock %}
+    {% block content %}{% endblock %}
+</article>
+</section>
+<aside class="sidebar big-sidebar left-sidebar">
+    <ul>
+    <li class="color-bg">
+    <ul class="blocklist">
+    <li><a class="selected" href="/">Home Page</a></li>
+
+    <li><a href="/all-options">Services</a>
+    <ul><li><a href="/explore/keyword">{{CUSTOM_EXPLORE}}</a></li>
+    <li><a href="/curate">{{CUSTOM_CURATE}}</a></li></ul>
+    </li>
+
+    {% if user.is_authenticated %}
+    <li><a href="/dashboard">Dashboard</a></li>
+    <li><a href="/logout" class="sf-with-ul">Logout</a></li>
+    {% else %}
+    <li><a href="/login" class="sf-with-ul">Login</a></li>
+    {% endif %}
+
+    <li><a href="/help">Help</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <!-- <li><a href="/api">API</a></li> --></ul>
+    </li>
+    </ul>
+</aside>
+{% endblock %}

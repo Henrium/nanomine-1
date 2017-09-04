@@ -83,6 +83,13 @@ def notify(request):
     return HttpResponse(template.render(context))
 
 
+def csrf(request):
+    template = loader.get_template('csrf_assign.js')
+    context = RequestContext(request, {})
+            
+    return HttpResponse(template.render(context))
+
+
 ################################################################################
 #
 # Function Name: all_options(request)

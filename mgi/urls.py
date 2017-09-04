@@ -18,6 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from httpproxy.views import HttpProxy
 
 urlpatterns = patterns('',
     url(r'^$', 'mgi.views.home', name='home'),
@@ -75,8 +76,14 @@ urlpatterns = patterns('',
     url(r'^terms-of-use', 'mgi.views.terms_of_use', name='terms-of-use'),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^dashboard$', 'mgi.views.dashboard', name='dashboard'),
+    url(r'^csrf_assign.js$', 'mgi.views.csrf', name='csrf'),
 )+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+# HZ 032317 added http proxy for blazegraph
+urlpatterns += patterns('',
+    (r'^blazegraph/(?P<url>.*)$',
+        HttpProxy.as_view(base_url='http://localhost:8080/blazegraph')),
+)
 
 urlpatterns += staticfiles_urlpatterns()
 
