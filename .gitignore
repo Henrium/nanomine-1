@@ -4,4 +4,22 @@ db_test.sqlite3
 
 *.pyc
 
+descchar/media/
+descchar/RunCount.num
+descchar/run_id*
+
+dielec2d/*.num
+dielec2d/run_id*
+
+dynamfit/*.num
+dynamfit/run_id*
+dynamfit/*.str
+
+niblack/media/
+niblack/*.num
+niblack/run_id*
+
+xmlconv/*.num
+xmlconv/*.str
+
 logfile*
