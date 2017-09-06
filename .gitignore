@@ -1,10 +1,11 @@
-./data/db/*
+data/db/*
 db.sqlite3
 db_test.sqlite3
 
 mgi/settings*
 
 *.pyc
+descchar/migrations/
 
 descchar/media/
 descchar/RunCount.num
@@ -17,6 +18,7 @@ dynamfit/*.num
 dynamfit/run_id*
 dynamfit/*.str
 
+niblack/migrations
 niblack/media/
 niblack/*.num
 niblack/run_id*
