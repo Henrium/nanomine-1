@@ -93,17 +93,6 @@ interact with that element.
 	 	</table>
 	 	</div>
  	{% endfor %}
-    <h3>Built-in Datatypes</h3>
- 	<div>
- 	<table class="table table-bordered">
-		{% for type in builtinTypes %}
-		<tr>
-    		<td templateID='{{type.id}}'>{{ type.title }}</td>
-    		<td><button class="btn insert"><i class="icon-plus-sign"></i>Insert</button></td>
- 		</tr>
- 		{% endfor %}
- 	</table>
- 	</div>
  	
  	<h3>No Buckets</h3>
  	<div>
@@ -235,14 +224,6 @@ Select the new element type:
   </table>
   <div style="color:red;" id="newTemplateTypeNameError">
   </div>
-</div>
-
-<div id="dialog-validate-error" title="Validation Error" style="display:none;">
-	<p>
-		This element cannot be inserted for the following reason:
-	</p>
-	<div id="validate-error" style="color:red;">
-	</div>
 </div>
 {% endblock %}
 

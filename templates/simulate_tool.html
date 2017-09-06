@@ -1,9 +1,8 @@
 
-{% extends "mdcs/extra/one_column.html" %}
-{% load staticfiles %}
-{% load auth_extras %}
 
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+{% extends 'base_featured.html' %}
+
+{% load staticfiles %}
 
 {% comment %}
 <!-- 
@@ -20,8 +19,14 @@
 -->
 {% endcomment %}
 
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
+
 {% block title %}
-<h1><span>Material Property Simulation</span></h1>
+<h3><span>Material Property Simulation</span></h3>
+{% endblock %}
+
+{% block description%}
+We provide online version of physics-based simulation tools that take advantage of our most recent development in viscoelasticity and dielectric relaxation theories for interphase analysis in nanocomposites, statistical structure-property correlation models, as well as materials optimization methods.
 {% endblock %}
 
 {% block content%}
@@ -38,13 +43,9 @@
   }
 </style>
 
-<div class="" style="width: 850px">
-  <p class="large">We provide online version of physics-based simulation tools that take advantage of our most recent development in viscoelasticity and dielectric relaxation theories for interphase analysis in nanocomposites, statistical structure-property correlation models, as well as materials optimization methods. </p>
+<div class="left" style="width: 800px">
 
-<div class="content-separator" style="clear: both"></div>
-
-
-
+<div class="content-separator"></div>
 
 <div>
 <div class="float left" style="width: 300px">
@@ -66,7 +67,7 @@
 </div>
 
 <div class="float right" style="width: 400px">
-  <h4><span><a href="/dielec2d">Prediction of Dielectric Constant in Nanodielectrics</a></span> </h4> 
+  <h4><span><a href="/FEA2D">Prediction of Dielectric Constant in Nanodielectrics</a></span> </h4> 
   <p>This web app simulates the dielectric spectroscopy in nanocomposites with explicit implementation of microstructure dispersion as well as interphase relaxation model. This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</p>
 </div>
 </div>
@@ -87,7 +88,10 @@
 
 
 
-<div class="content-separator"></div>
 
 
-{% endblock %}<div class="content-separator"></div>
+</div>
+
+
+
+{% endblock %}

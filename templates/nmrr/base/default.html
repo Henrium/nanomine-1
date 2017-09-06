@@ -1,0 +1,179 @@
+{% extends 'commons/root.v1.html' %}
+{% load staticfiles %}
+{% comment %}
+<!--
+################################################################################
+#
+# File Name: default.html
+# Application: templates
+# Description:
+#
+# Author: Sharief Youssef
+#         sharief.youssef@nist.gov
+#
+#		  Guillaume SOUSA AMARAL
+#		  guillaume.sousa@nist.gov
+#
+# Sponsor: National Institute of Standards and Technology
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% block theme %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/nmrr/styles.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/nmrr/dialog.css' %}"/>
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+{% endblock %}
+
+{% block body %}
+<!--<style>-->
+<!--	.small {-->
+<!--    font-variant: small-caps;-->
+<!--	!important-->
+<!--}-->
+<!--</style>-->
+
+<div id="container">
+	<!-- Header -->
+    {% if not is_popup %}
+        <header>
+		<div class="width">
+		<h1>
+			<a href="/" style="font-size: 55px !important;"><span>N<span style="font-size: 45px !important;">ano</span></span><span style="color: black">M<span style="font-size: 45px !important;">ine</span></span></a>
+			<!--<a href="/"><img src="{% static 'img/NIST_logo.svg' %}" width="150"></a>-->
+			<!--<a href="/">NanoMine</a>-->
+		</h1>
+		<nav id="main">
+			<!--<ul class="sf-menu dropdown sf-js-enabled sf-shadow">-->
+			{% block menu %}{% endblock %}
+		</nav>
+		</div>
+
+		<div class="clear"></div>
+		
+<!--		<div class="navbar-header">-->
+<!--            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">-->
+<!--                <span class="icon-bar"></span>-->
+<!--                <span class="icon-bar"></span>-->
+<!--                <span class="icon-bar"></span>-->
+<!--            </button>-->
+<!--            <a class="navbar-brand" href="/">Viberr</a>-->
+<!--        </div>-->
+<!--		-->
+		</header>
+        {% block intro %}{% endblock %}
+	{% endif %}
+	<!-- END Header -->
+	<style>
+		
+		/* Common */
+		.center-wrapper {
+			width: 1100px;
+			margin: 0 auto;
+		}
+
+		/* Navigation */
+		
+		ul.tabbed {
+			display: inline;
+			margin: 0;
+			padding: 0;
+		}
+		ul.tabbed li {
+			float: left;
+			list-style: none;
+		}
+		ul.tabbed a {text-decoration: none;}
+		
+		#navigation-wrapper {background: url('/static/resources/img/navigation.gif') repeat-x left top;}
+		#navigation-wrapper-2 {background: url('/static/resources/img/navigation-wrapper-2.gif') no-repeat center top;}
+		#navigation {
+			background: url('/static/resources/img/navigation.gif') repeat-x left top;
+			min-height: 46px;
+			padding: 0 8px;
+		}
+		
+		#navigation a {
+			color: #EAE6DD;
+			display: block;
+			font-weight: bold;
+			font-size: 1.3em;
+			padding: 12px 12px 14px;
+		}
+		#navigation a:hover {color: #FFF;}
+		#navigation li.current_page_item a, #navigation li.current_page_parent a {color: #FFE;}
+		#navigation li.current_page_item a {background: url('/static/resources/img/navigation-arrow-2.gif') no-repeat center bottom;}
+		#navigation li.current_page_parent a {background: url('/static/resources/img/navigation-arrow.gif') no-repeat center bottom;}
+		
+		
+		/* Subnav */
+		
+		#subnav-wrapper {background: #E9E9E9 url('/static/resources/img/subnav-wrapper.gif') repeat-x left bottom;}
+		#subnav-wrapper-2 {background: url('/static/resources/img/subnav-wrapper-2.gif') no-repeat center bottom;}
+		#subnav {padding: 8 8px;}
+		
+		#subnav a {
+			color: #666;
+			display: block;
+			font: bold 1.1em sans-serif;
+			padding: 2px 12px;
+		}
+		#subnav a:hover {color: #111;}
+		#subnav li.current_page_item a {color: #333;}
+	</style>
+	
+	<div class="width">
+        <nav id="nmrr_admin_main_menu">
+        {% block admin_menu %}{% endblock %}
+		</nav>
+    </div>
+	
+	<div class="clear"></div>
+	
+	{% comment %}
+    <div class="width">
+		<nav id="nmrr_admin_user_menu">
+        {% block admin_submenu %}{% endblock %}
+		</nav>
+	</div>
+	<div class="clear"></div>
+	{% endcomment %}
+	
+    <div class="width"> </div>
+    <div class="clear"></div>
+
+	<!-- Content -->
+    <div id="body">
+	    <div class="width">
+            {% block container %}{% endblock %}
+            <div class="clear"></div>
+		</div>
+	</div>
+
+	<!-- END Content -->
+	{% include 'nmrr/base/footer.html' %}
+	{# % include 'nmrr/base/bottom.html' % #}
+</div>
+{% endblock %}
+
+{% block themejs %}
+<!--<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>-->
+<!--<script type="text/javascript" src="{% static 'js/superfish.js' %}"></script>-->
+<script type="text/javascript" src="{% static 'libs/superfish/1.7.6/js/superfish.js' %}"></script>
+<script type="text/javascript" src="{% static 'libs/superfish/1.7.6/js/hoverIntent.js' %}"></script>
+<!--<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>-->
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+{% endblock %}
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80515948-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

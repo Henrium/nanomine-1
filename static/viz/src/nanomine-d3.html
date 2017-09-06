@@ -1,0 +1,72 @@
+<md-toolbar class="md-primary md-hue-1" class="md-small-tall">
+    <div class="md-toolbar-tools">
+
+    <h2 md-truncate flex>{{config.title}}</h2>
+    
+    <md-button ng-click="toggleLeft()">
+      Details
+    </md-button>
+  </div>
+</md-toolbar>
+<section layout="row" flex>
+  <md-content layout-padding layout="column">
+  <md-sidenav layout="column" flex
+     class="md-sidenav-left"
+     md-component-id="left" 
+     md-whiteframe="4">
+
+      <md-input-container>
+        <label>Title</label>
+        <input ng-model="config.title">
+      </md-input-container>
+
+      <md-input-container flex >
+        <label >Y Axis</label>
+        <md-select ng-model="config.y" >
+          <md-option md-option-empty ng-value="null">None</md-option>
+          <md-option ng-repeat="item in yAttributes track by item.id" ng-value="item">
+            {{item.label}}
+          </md-option>
+        </md-select>
+
+        <md-checkbox ng-model="logy"> log </md-checkbox>
+      </md-input-container>
+
+      <md-input-container flex >
+        <label >X Axis</label>
+        <md-select ng-model="config.x">
+          <md-option md-option-empty ng-value="null">None</md-option>
+          <md-option ng-repeat="item in xAttributes track by item.id" ng-value="item">
+            {{item.label}}
+          </md-option>
+        </md-select>
+
+        <md-checkbox ng-model="logx"> log </md-checkbox>
+      </md-input-container>
+
+      <md-input-container flex >
+        <label >Color</label>
+        <md-select ng-model="config.groupBy">
+          <md-option md-option-empty ng-value="null">None</md-option>
+          <md-option ng-repeat="item in attributes | filter:{attrType:'quality'} track by item.id" ng-value="item">
+            {{item.label}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-input-container flex >
+        <label >Plot Type</label>
+        <md-select ng-model="config.chartType">
+        <md-option ng-repeat="item in chartOptions | filter:filterChartTypes track by item.name" ng-value="item">{{item.name}}</md-option>
+          
+        </md-select>
+      </md-input-container>      
+    
+  </md-sidenav>
+  </md-content>
+  <md-content flex="grow" layout="column">
+    <nvd3 options="chart" data="data"></nvd3>
+  </md-content>
+</section>
+
+<!--md-is-locked-open="true"-->

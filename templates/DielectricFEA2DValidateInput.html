@@ -1,40 +1,37 @@
-{% extends "mdcs/extra/one_column.html" %}
+{% extends "base_featured.html" %}
 {% load staticfiles %}
-{% load auth_extras %}
 
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+
 {% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab7' %}{% endblock %}
 {% block content%}
 <!--<h1>2D Dielectric Permittivity Simulation Using FEA</h1>-->
 
 <hr>
 <h3>Confirm Input Parameters</h3><br>
-{% if method == '1' %}
-{% for key, value in params %}
+{% for key, value in data1 %}
     <tr>
         <td> {{ key }}: </td> <td> {{ value }} </td> <br>
     </tr>
 {% endfor %}
-{% endif %}
-
 <br>
-{% if method == '2' %}
+{% if method == 'two' %}
     <h3>Total Free Energy for Each Dispersion Phase</h3>
-    {% for key, value in params %}
+    {% for key, value in data2 %}
     <tr>
         <td> {{ key }}: </td> <td> {{ value }} </td> K<sub>B</sub>T <br>
     </tr>
-    {% endfor %}
+{% endfor %}
     <br>
-        <div>Derived geometric phase: {{phase}}</div>
+        <div>According to energy computation, nanocomposite dispersion in your model is {{phase}}</div>
     <br>
-        <!--<h3>Reconstructed Microstructure</h3><br>-->
-        <!--<img src={{structimg}} alt="Structure image" style="width:400px"><br> -->
+        <h3>Reconstructed Microstructure</h3><br>
+        <img src={{structimg}} alt="Structure image" style="width:400px"><br> 
     <div>This result is obtained from grafted polymer nanocomposite energetics. Click <a href="http://nanomine.northwestern.edu/nanomine/PNC_calc/">here</a> for a more detailed energy calculation. </div>
 {% endif %}    
 
 
-{% if method == '1' %}
+{% if method == 'one' %}
     <h3>Microstructure in Simulation in RVE Size</h3><br>
     <p>Size length of this structure is ~ 1 &mu;m. Black: matrix. White: particles. </p>
     <img src={{binimg}} alt="Binary Image" style="width:400px"><br>
@@ -42,15 +39,11 @@
     <h3>Original TEM Image</h3><br>
     <img src={{temimg}} alt="TEM Image" style="width:400px"><br>   
 {% endif %}
-
-
 <br>
-
-<p>Click Predict Properties to start running the job. Your job ID is <strong>{{run_id}}</strong>. You can use this ID to track job progress <a href='/dielec2d/Check'>here</a>.</p>
-<input type='submit' value='Predict Properties' onclick="msg3(), window.open('/dielec2d/DielectricFEA2DRun','newwindow')">
+<input type='submit' value='Predict Properties' onclick="msg3(), window.open('/FEA2D/DielectricFEA2DRun','newwindow')">
 <br>
     <br>
-<p>Do not refresh this page. Please click <a href="/dielec2d">here</a> to submit new parameters.</p>
+<p>Do not refresh this page. Please click <a href="/FEA2D">here</a> to submit new parameters.</p>
 <script>
     function msg3() {
         alert("Your job will now be submitted.");

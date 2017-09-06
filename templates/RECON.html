@@ -1,0 +1,70 @@
+<!-- 
+################################################################################
+#
+# File Name: RECON.html
+# Application: templates
+# Description: 
+#
+# Modified by: Zijiang Yang, July 23, 2016
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>3D Descriptor based Microstructure Reconstruction</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+
+<br>
+<h3>Description</h3>
+<p>Using geometry descriptors as input, this tool predicts and outputs 3D microstructure of nanocomposites with statistically equivalent dispersion states as with the given descriptors. More technical details can be found from the reference at the bottom of the page.</p>
+<br>
+
+<form method='POST' enctype='multipart/form-data' action="{% url "RECON" %}"> {% csrf_token %}
+
+<h3>Inputs</h3><br>
+
+<p>1. Enter type:</p><input type='text' name='type' value='1' required></p>
+<p>2. Enter color:</p><input type='text' name='color' value='0' required></p>
+<p>3. Enter sphere:</p><input type='text' name='sphere' value='0' required></p>
+<p>4. Enter cutL:</p><input type='text' name='cutL' value='500' required></p>
+<p>5. Enter VF:</p><input type='text' name='VF' value='0.31' required></p>
+<p>6. Enter recon_lenth:</p><input type='text' name='recon_length' value='300' required></p>
+<p>7. Enter scale:</p><input type='text' name='scale' value='60.0/300.0' required></p>
+<p>8. Enter visualize_fine_recon:</p><input type='text' name='visualize_fine_recon' value='0' required></p>
+<p>9. Enter visualize_coarse_recon:</p><input type='text' name='visualize_coarse_recon' value='1' required></p>
+
+<p><b>10. Upload #.tif microstructure image:</b></p>
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+<p>Enter upload filename you upload (WITH extension). </p>
+<input type='text' name='datafile' required><br>
+
+<input type='submit' value='Upload' onclick="msg3()"><br><br>
+</form>
+<form>
+<b>After input all the information, please click "Run Simulation" to submit job.
+<input type='button', value='Run Simulation' onclick="window.open('/RECONRun','newwindow')"></b><br><br>
+<br>
+<p><a href="/RECONSample">Sample Result</a></p>
+</form>
+<hr>
+	<h4>Reference</h4>
+	<p>Hongyi Xu, et al.,  <i><a href="http://www.sciencedirect.com/science/article/pii/S0927025613008057">Descriptor-based methodology for statistical characterization and 3D reconstruction of microstructural materials</a></i>, Computational Materials Science (2014)</p>
+
+
+<script>
+    function msg3() {
+        alert("Your variables and file have been upload successfully, please click 'Run Simulation' button to submit your job.");
+        return true;
+    }
+</script>	
+{% endblock %}

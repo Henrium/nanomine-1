@@ -1,4 +1,4 @@
-{% extends "mdcs/extra/two_columns.html" %}
+{% extends "base.html" %}
 {% load staticfiles %}
 {% load auth_extras %}
 
@@ -41,7 +41,7 @@
    </span>
 {% endblock %}
 
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab3' %}{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='options' %}{% endblock %}
 
 {% block submenu %}	
 <ul id="subnav-tab-1" class="tabbed">
@@ -51,11 +51,6 @@
     <li>
         <div style="cursor:pointer">
             <a href="/explore/keyword">Search by Keyword</a>
-        </div>
-    </li>
-	<li>
-        <div style="cursor:pointer">
-            <a href="/oai_pmh/explore/keyword">OAI-PMH Search by Keyword</a>
         </div>
     </li>
 </ul>
@@ -196,7 +191,6 @@
 {% endblock %}
 
 {% block extrajs %}
-<script src="{% static 'js/form/choice.js' %}"></script>
 <script src="{% static 'inc/controllers/js/explore.js' %}"></script>
 <script>
 get_custom_form();

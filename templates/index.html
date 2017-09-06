@@ -21,28 +21,32 @@
 -->
 {% endcomment %}
 
+
 {% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
 
-{% block title %}	
-<div class="left" style="width: 400px">		
-    <h1><span>Polymer Nanocomposites Data Resource</span></h1>
-    <br/>
-    <p class="large">
-This system allows for the registration of materials resources, bridging the gap between existing resources and the end users. NanoMine functions as a centrally located service, making the registered information available for research to the materials community.
-<br><br>
-NSF supported the initial concept of NanoMine as a joint NU/RPI project through the CDMR program and is currently supporting a robust ontology and software framework via the DIBBS program. NIST/CHIMAD support data curation, tool development, demonstration materials design problems, and integration into the larger MGI network as well as provide backbone use of the Materials Data Curator system run by NIST.
-    </p>
-</div>
-<div class="right">
-	<img src="{% static 'img/nmhouse.tif' %}" width="380" height="400" alt="" />
-</div>
 
-<div class="middle">
-	<img src="/static/img/sponsors2.png" alt="" />
-</div>
+{% block title %}
 
-<div class="clearer">&nbsp;</div>
+<h2>Find {{CUSTOM_DATA}}</h2>
+
+<!--<div class="left" style="width: 400px">		-->
+<!--    <h1><span>{{CUSTOM_TITLE}} Curator</span></h1>-->
+<!--    <br/>-->
+<!--    <p class="large">-->
+<!--	This system allows for the curation of Material Data in a repository using predefined templates. <br/><br/>-->
+<!--    This is being developed at the National Institute of Standards and Technology and is made available to solicit comments from the Material Science community. -->
+<!--    Please do not enter any proprietary data into this system.    -->
+<!--    </p>-->
+<!--</div>-->
+<!---->
+<!---->
+<!--<div class="right">-->
+<!--	<img src="{% static 'resources/img/mgi_diagram.jpg' %}" width="262" height="260" alt="" />-->
+<!--</div>-->
+<!---->
+<!--<div class="clearer">&nbsp;</div>-->
 {% endblock %}
+
 
 {% block content %}
 <div class="separator-vertical">

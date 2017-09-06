@@ -1,0 +1,192 @@
+<!-- 
+################################################################################
+#
+# File Name: MCFEA.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, June 1, 2016
+# Updated by: Zijiang Yang, June 3, 2016
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Charge transport prediction in nanodielectrics using combined Monte Carlo and FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
+{% block content%}
+
+<p>This simulation tool models the electronic charge transport in dielectric polymers and their nanocomposites using a combined Monte Carlo (MC) and
+finite element (FE) approach. The charges are assumed to transport in the polymer by hopping among localized electronic states that are homogenously
+distributed in a 3D lattice grid with 1 nm spacing. The hopping probability between two states is described by the Miller-Abraham formula based on the
+distance and energy difference.</p><br>
+<h5>**Please input your variable step by step, then click "Validate Input".</h5>
+<h5>**Click <a href="http://nanomine.northwestern.edu/nanomine/MCFEA/media/note for each step.docx" download>here</a> to download note for each step.</h5><br>
+<form method='POST'>  {% csrf_token %}
+
+<h4>Step 1: Enter the nominal field (in V/m). </h4>
+<table border="1" style=" border:solid black; border-collapse:collapse ">
+<tr>
+<td>nominal field<br><input type='text' name='field' value='1e7' required>
+</td>
+</tr>
+</table>
+
+
+<h4>Step 2: Define the shape of the density of states function.</h4>
+<table border="1" style="border:solid black; border-collapse:collapse ">
+<td>
+
+<select name="DOS" onchange="ShapeOfDensity(this.value)" required aria-required="true">  
+<option value='' >Choose shape of density of states function</option>
+<option value="gaussian"> 1.gaussian</option>
+<option value="exponential"> 2.exponential</option>
+<option value="arbitrary"> 3.arbitrary</option>
+</select>
+
+<!--
+<button type="button" name='DOS' value='gaussian' onclick="gaussianFun()">1.gaussian</button>
+</td>
+<td>
+<button type="button" name='DOS' onclick="exponentialFun()">2.exponential</button>
+</td>
+<td>
+<button type="button" name='DOS' onclick="arbitraryFun()">3.arbitrary</button>
+</td>
+-->
+</table>
+    
+<h4>Step 3: Input parameters according to step 2.</h4>
+<table border="1" style="border:solid black; border-collapse:collapse">
+<td>
+<div id="input3">further input will be listed here...</div>
+</td>
+</table>
+
+<h4>Step 4: Choose whether to include nanoparticles (neat polymer or cmoposites)</h4>
+<table border="1" style="border:solid black; border-collapse:collapse">
+<td>
+<select name="include_NP" onchange="step4(this.value)" required aria-required="true">
+<option value=''>Choose "YES" or "NO"</option>
+<option value="YES">1. YES</option>
+<option value="NO">1. NO</option>
+</td>
+</table>
+
+<h4>Step 5: Input parameters according to step 4.</h4>
+<div id="input5">
+<table border="1" style="border:solid black; border-collapse:collapse">
+<td>
+<p>further input will be listed here...</p>
+</td>
+</table>
+</div>
+
+<h4>Step 6: Specify the data points of transport time to record and repeat times</h4>
+<table border="1" style="border:solid black; border-collapse:collapse">
+<td>Specify the data points of transport time to record<br><input type='text' name='rec_t' value='10.^[-5:0.2:3]' required></td>
+<td>Repeat time<br><input type='text' name='n' value='10' required></td>
+</table>
+
+
+<br>
+<input type='submit' value='Validate Input' onclick="window.open('/MCFEA/MCFEAValidateInput','newwindow')">
+</form>
+
+
+<script>
+function ShapeOfDensity(str) {
+	if (str == "") {
+		document.getElementById("input3").innerHTML = "";
+		return;			
+	} else if (str.localeCompare("gaussian") == 0) {
+		gaussianFun();	
+	} else if (str == "exponential") {
+		exponentialFun();
+	} else {
+		arbitraryFun();
+	}
+}
+
+function gaussianFun() {
+	var content = "<p>p(E) = 2/(sigma*sqrt(2pi))*exp(-E^2/sigma^2)</p><p>sigma = kT</p><p>Please input T (in K)</p><input type='text' name='T0' value='2600' required>";
+	document.getElementById("input3").innerHTML = content;
+	return DOS = "gaussian";
+}
+
+function exponentialFun() {
+	var content = "<p>p(E) = kT*exp(-E/kT)</p><p>Please input T (in K)</p><input type='text' name='T0' value='1300' required>";
+	document.getElementById("input3").innerHTML = content;
+}
+
+function arbitraryFun() {
+	var content = "<p>Please input the relative probability points at the energy interval from 0 to deepest energy, with uniform bin size</p><input type='text' name='probability' value='0,2,3,4,5' required><p>Please Please specify the deepest energy in (eV)</p><input type='text' name='E_range' value='-1.1' required>";
+	document.getElementById("input3").innerHTML = content;
+}
+
+function step4(str) {
+	if (str.localeCompare("YES") == 0) {
+		withNPFun();
+	} else {
+		noNPFun();
+	}
+}
+
+function withNPFun() {
+	var content = "<table border='1' style='border:solid black; border-collapse:collapse'>" +
+"<tr><td>NP energy in eV<br><input type='text' name='NP_energy' value='-1.1' required></td>" +
+"<td>the average size of the cluster (a Gaussian distribution)<br><input type='text' name='mean_num_NP' value='30' required></td>" +
+"<td>standard deviation of the distribution, uniform size if input 0<br><input type='text' name='dev' value='5'></td>" +
+"</tr><tr><td>Specify the nanoparticle radius unit as (nm)<br><input type='text' name='NP_radius' value='2.5'></td>" +
+"<td>Volume fraction<br><input type='text' name='vf' value='0.004'></td><td></td></tr>" +
+"<tr><td>Agglomerates type<br>" +
+"<select name='ttype' required>" +
+"<option value='' >Choose type</option>" +
+"<option value='round'>1. round</option>" +
+"<option value='line'>2. line</option>" +
+"<option value='sheet'>3. sheet</option></td>" +
+"<td>Whether to couple with finite element<br>" +
+"<select name='FEA' required>" +
+"<option value='' >Choose 'Yes' or 'No'</option>" +
+"<option value='YES'>1. Yes</option>" +
+"<option value='NO'>2. No</option></td><td></td></tr></table>";
+	document.getElementById("input5").innerHTML = content;	
+}
+
+function noNPFun() {
+	var content = "<table border='1' style='border:solid black; border-collapse:collapse'><tr><td>USE DEFAULT VALUE, DO NOT CHANGE<br><input type = 'text' name='NP_radius' value='2.5' disabled></td></tr></table>"
+	document.getElementById("input5").innerHTML = content;	
+}
+</script>
+
+
+
+
+
+
+<br>
+<p><a href="/MCFEA/MCFEAResultSample">Sample Result</a></p>
+
+<h5> This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</h5><br>
+
+<div class="row">
+ <div class="col-md-6">
+   <img class="featurette-image img-responsive" src="/static/resources/img/ONR.jpg"" alt="ONR_logo" width="300" height="300">
+ </div>
+</div>
+<br>
+	
+	
+	<h4>Reference</h4>
+	<p>Yanhui Huang, Linda. S. Schadler,<i><a href="http://arxiv.org/abs/1606.02683">On the Nature of High Field Charge Transport in Reinforced Silicone Dielectrics: Experiment and Simulation</a></i>, 2016</p>
+	<p>Köhler, A.; Bässler, H., <i><a href="https://books.google.com/books?hl=en&lr=&id=GXemBgAAQBAJ&oi=fnd&pg=PR9&dq=Electronic+Processes+in+Organic+Semiconductors:+An+Introduction&ots=2Os9sQifKW&sig=cGxgODnKI6Lm0Be2I5JngP4fusE#v=onepage&q=Electronic%20Processes%20in%20Organic%20Semiconductors%3A%20An%20Introduction&f=false">
+		Electronic Processes in Organic Semiconductors: An Introduction.</a></i> John Wiley & Sons: 2015.</p>
+	<p>Choulis, S. A.; Nelson, J.; Kim, Y.; Poplavskyy, D.; Kreouzis, T.; Durrant, J. R.; Bradley, D. D. C., <i><a href="http://scitation.aip.org/content/aip/journal/apl/83/18/10.1063/1.1624636">
+		Investigation of transport properties in polymer/fullerene blends using time-of-flight photocurrent measurements. </a></i>Applied Physics Letters 2003, 83 (18), 3812-3814;</p>
+	<p>Koughia, K.; Shakoor, Z.; Kasap, S. O.; Marshall, J. M., <i><a href="http://scitation.aip.org/content/aip/journal/jap/97/3/10.1063/1.1835560">
+		Density of localized electronic states in a-Se from electron time-of-flight photocurrent measurements.</a></i> Journal of Applied Physics 2005, 97 (3), 033706.</p>
+{% endblock %}

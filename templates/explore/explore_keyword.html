@@ -1,4 +1,9 @@
-{% extends "mdcs/extra/two_columns.html" %}
+{% extends "base.html" %}
+
+{% comment %}
+"nmrr/extra/small_intro.html"
+{% endcomment %}
+
 {% load staticfiles %}
 {% load auth_extras %}
 {% comment %}
@@ -32,7 +37,8 @@
 {% endblock %}
 
 {% block title %}<h1>Search by keyword</h1>{% endblock %}
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab3' %}{% endblock %}
+{% block description %}This is a description.{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='tab3' %}{% endblock %}
 {% block submenu %}	
 <ul id="subnav-tab-1" class="tabbed">
     <li>
@@ -43,10 +49,8 @@
     <li class="current_page_item">
     	<a href="/explore/keyword">Search by Keyword</a>
     </li>
-	<li>
-        <div style="cursor:pointer">
-            <a href="/oai_pmh/explore/keyword">OAI-PMH Search by Keyword</a>
-        </div>
+	<li class="">
+    	<a href="/explore/keyword">Visualization</a>
     </li>
 </ul>
 {% endblock %}
@@ -94,18 +98,13 @@
 {% block content %}
 <div id="search">
 		<div class="toolbar" style="display: block;">
-			<div class="alert alert-warning" id="banner_results_wait" style="display: none;">
-		 		<h4><i class='fa fa-circle-o-notch fa-spin fa-2x'></i>  </i>&nbsp;&nbsp;Please wait...</h4>
-    		</div>
 			<div class="alert alert-error" id="banner_errors" style="display: none;">
-				<a href="#" class="close" data-hide="alert" aria-label="close">&times;</a>
 				<h4><i class="fa fa-exclamation-circle fa-1x"></i> Error</h4>
 				<div id="btn_errors">
 				</div>
 			</div>
 			<div class="alert alert-info" id="banner_results_errors" style="display: none;">
 				<h4>
-					<a href="#" class="close" data-hide="alert" aria-label="close">&times;</a>
 					<p id="results_errors">
 					</p>
 				</h4>
@@ -124,11 +123,7 @@
         </div>
         <div id="form_result_start_current"></div>
 </div>
-<div id="results_infos" style="color:grey;float:left"></div>
-<div id="results_select" style="color:grey;display: none">
-	&nbsp; (<input id="select_all" name="select_all" class="cmn-toggle cmn-toggle-round3" type="checkbox" />
-	<label for="select_all"></label> &nbsp;Select/Unselect all)
-</div>
+<div id="results_infos" style="color:grey;"></div>
 <div class="clearer">&nbsp;</div>
 <div id="results"></div>
 {% endblock %}
@@ -158,8 +153,6 @@ Are you sure you want to delete this document?
 <script src="{% static 'libs/tags/tag-it.js' %}"></script>
 <script>
     initAutocomplete();
-    initBanner();
-    initSelectAll();
 </script>
 {% endblock %}
 

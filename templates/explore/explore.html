@@ -1,4 +1,7 @@
-{% extends "mdcs/extra/two_columns.html" %}
+{% extends "base.html" %}
+{% comment %}
+extends "mdcs/extra/two_columns.html"
+{% endcomment %}
 {% load staticfiles %}
 {% load auth_extras %}
 {% comment %}
@@ -33,7 +36,7 @@ Select a template from the following table. Once you make your selection, click 
 automatically load the appropriate form and display it on the next page.
 {% endblock %}
 
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab3' %}{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='options' %}{% endblock %}
 
 {% block submenu %}	
 <ul id="subnav-tab-1" class="tabbed">
@@ -43,11 +46,6 @@ automatically load the appropriate form and display it on the next page.
     <li>
         <div style="cursor:pointer">
             <a href="/explore/keyword">Search by Keyword</a>
-        </div>
-    </li>
-    <li>
-        <div style="cursor:pointer">
-            <a href="/oai_pmh/explore/keyword">OAI-PMH Search by Keyword</a>
         </div>
     </li>
 </ul>

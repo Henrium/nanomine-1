@@ -1,0 +1,22 @@
+{% extends "base_featured.html" %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab7' %}{% endblock %}
+{% block content%}
+
+<p> Enter job ID<br><input type='text' name='job_ID' value="{{jobid}}" required>
+</p><br>
+<p>System will run your job once computation resource is available. Please wait.</p>
+
+<META HTTP-EQUIV="refresh" CONTENT="15">
+{% if flag == 1 %}
+	<img src="http://nanomine.northwestern.edu/nanomine/DielectricFEA2D/busy.gif" alt="Busy" style="width:50px"><br>
+{% endif %}
+
+{% if flag == 0 %}
+	<meta http-equiv="refresh" content="0;URL='http://nanomine.northwestern.edu:8000/FEA2D/DielectricFEA2DRun'" />    
+{% endif %}
+
+{% endblock %}

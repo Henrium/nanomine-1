@@ -1,0 +1,98 @@
+<!-- 
+################################################################################
+#
+# File Name: dynamfit.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Sept 23, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dynamfit - Prony Series coefficient fitting</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool'}{% endblock %}
+{% block content%}
+	
+<p>Download this EXE MS Windows executible to apply Dynamfit algorithm for Prony Series coefficient fitting. </p>
+
+<p>
+    <a class="button primary big" href="http://nanomine.northwestern.edu/nanomine/dynamfit.exe">
+        <i class="icon icon-download"></i> Download
+    </a>
+</p>
+<br>
+<h3>Description</h3>
+<br>
+<p>This program fits viscoelastic mastercurve from DMA experiments by Prony Series so that the Prony Series coefficients can be used as viscoelastic properties for FEA simulation. </p>
+<br>
+<h3> Instructions </h3><br>
+<p> <b>Function Name:</b> Dynamfit</p>
+<p><b>Description:</b> Fit mastercurve (tan &#948 vs. frequency) by Prony Series</p>
+<p><b>File Name:</b> Dynamfit.exe</p>
+<p><b>Inputs:</b></p>
+<p>Type 1: Name.E_T<br>first column: Frequency<br>second column: Storage Modulus E'<br>third Column: Loss Modulus E"</p>
+
+<p>Type 2: <br>Name.XP: first column: Frequency; second column: Storage Modulus E' <br>
+Name.XPP: first column: Frequency; second column: Loss Modulus E"</p>
+
+<p><b>Outputs: </b>Prony Series Coefficients</p>
+<br>
+<p>This program begins by getting a DOS acceptable 8 char project name (#) from the input line (this name is not case sensitive). It will then read the input data file(s). These depend on the choice of the user and consider of either:</p>
+<p>1) A single file #.X_T containing three values per line (Frequency  X'  X") <br>2) Two different files, each with two values per line<br> &emsp;   a) #.XP containing (Frequency  X')<br> &emsp;    b)  #.XPP containing (Frequency  X")</p>
+
+<p>For the second case, the frequencies do not need to be identical between the files.</p>
+
+<p>The user then provides several parameters to the program in order to fit a given set of frequency domain data with a Prony series. These are:</p>
+ 
+ <p>&emsp; 1) The weighting parameter &#966 (0-1) used to weight the fits of X' and X"<br>
+ &emsp; 2) The number of Prony series terms (N; this includes the constant term) <br>
+ &emsp; 3) The value of &#947<sub>1</sub> (sets &#964<sub>min</sub>) and &#947<sub>2</sub> (sets &#964<sub>max</sub>)<br>
+ &emsp; 4) Whether sign control is to be used in finding Prony series terms (1) or not (2)<br>
+ &emsp; 5) Whether the data represents compliance (1) or modulus (2) behavior<br>
+ &emsp; 6) The number of points (U) to be used in the file describing the obtained response<br>
+
+ </p>
+
+<p>The program then solves for the linear (non-sign controlled) terms using singular value decomposition (SVD). The obtained fit is the best that can be achieved using the given RMS error function for the data set provided. If the signs of all Prony series coefficients are positive then sign control is also met. If they are not all positive and sign control is requested, the program then fits the data using the iterative sign control method. The initial guess is as specified above with a = 0.80 and b = 4 for the initial solution.  Upon completing the sign control solution, the user is given the option to choose different values for a  and b in an attempt to improve the data fit; this process can be repeated several times as desired.  Also note that for compliance data, the individual constants may all be positive yet the behavior at t = 0 can be negative (a physically unrealistic result). This occurs if the sum of the Prony series terms excluding the constant value
+(P<sub>1</sub> - P<sub>N-1</sub>)are greater than the constant term P<sub>&#8734</sub>. To check this, the program provides the behavior at t = 0; if negative, additional refinement is needed. </p>
+
+<p>Once the linear (SVD) and sign controlled (if requested) fits are obtained, the program writes three files. These consist of:</p>
+<h5>File #.XPR</h5>
+<p>
+    This file contains the Prony series terms. It consists of N lines of data with each line containing (&#947<sub>i</sub>, P-SVD<sub>i</sub>, RMS-SVD, P-Sign<sub>i</sub>, RMS-Sign), where &#947<sub>i</sub> are the relaxation times (constant term has &#947<sub>i</sub> set to 10<sup>50</sup>, P-SVD<sub>i</sub> and P-Sign<sub>i</sub>are the Prony series coefficients for the linear (SVD) and sign controlled method, respectively, and RMS-SVD  and RMS-Sign are the RMS percent errors between the obtained fit and the entire data for the linear (SVD) and sign controlled method, respectively. Note that the RMS errors are provided on every line; this is a simplification to keep all lines in the file identical in size. 
+</p>
+<h5>File #.XFF</h5>
+
+<p>
+    This file contains the predicted frequency domain response obtained by the program. It consists of U lines of data, where U is the number of points specified by the user for the response predictions. Each line contains
+    
+    (&#969<sub>i</sub>, X<sup>'</sup>-SVD<sub>i</sub>, X-SVD<sub>i</sub>, X-Sign<sub>i</sub>, X-Sign<sub>i</sub>),  where &#969<sub>i</sub> are the frequency points of evaluation (U points evenly spaced in the log domain between &#969<sub>min</sub> and &#969<sub>max</sub>,
+    </p>
+
+
+<h5>File #.XTF</h5>
+<p>
+    This file contains the predicted time domain response obtained by the program. It consists of U lines of data, where U is the number of points specified by the user for the response predictions. Each line contains (t<sub>i</sub>, X-SVD<sub>i</sub>, X-Sign<sub>i</sub>, where t<sub>i</sub> are the time points of evaluation (U points evenly spaced in the log domain between t<sub>min</sub> = 2 &#960/ &#969 <sub>min</sub>), and X-SVD<sub>i</sub> and X-Sign<sub>i</sub> are the predicted time domain values from the Prony series obtained by the linear (SVD) and sign controlled method, respectively.
+    
+</p>
+
+<p>
+	These Prony Series coefficients associated with the elastic parameters of nanoparticles are then imported into the material section of finite element simulation. 
+</p>
+
+<hr>
+	<h4>Reference</h4>
+	<p>Bradshaw et al., <i><a href="http://link.springer.com/article/10.1023/A:1009772018066">A Sign Control Method for Fitting and Interconverting Material Functions for Linearly Viscoelastic Solids</a></i>, Mechanics of Time-Dependent Materials. 1997 1(1)</p>
+	
+
+
+
+
+
+{% endblock %}

@@ -23,12 +23,12 @@
 	color:#D8D8D8;
 }
 
-input.recommended{
+.recommended input{ 
 	box-shadow: 0 0 3px blue; 
 }
 
-input.required{
-	box-shadow: 0 0 3px red;
+.required input{ 
+	box-shadow: 0 0 3px red; 
 }
 
 input{

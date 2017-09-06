@@ -1,9 +1,22 @@
-{% extends "mdcs/extra/one_column.html" %}
-{% load staticfiles %}
-{% load auth_extras %}
+<!-- 
+################################################################################
+#
+# File Name: DielectricFEA2D.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
 
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+{% extends "base_featured.html" %}
+{% load staticfiles %}
+
+
 {% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
 
 {% block content%}
 
@@ -14,7 +27,7 @@ The microstructure used in the simulation can be obtained with either existing m
 reconstructed from free energy calculation.</p><br>
 
 	
-<form action='/dielec2d/DielectricFEA2DValidateInput' method='POST'>  {% csrf_token %}
+<form method='POST'>  {% csrf_token %}
 
 <h4>Choose from list of polymers, particle, and surface treatment. </h4>
 
@@ -134,17 +147,21 @@ reconstructed from free energy calculation.</p><br>
 </tr>
 </table>
 <br>
+<!--<input type='submit' value='Validate Input' onclick="msg2(), window.open('/DielectricFEA2DValidateInput','newwindow')">-->
+<input type='submit' value='Validate Input' onclick="window.open('/FEA2D/DielectricFEA2DValidateInput','newwindow')">
 
-<!--<input type='submit' value='Validate Input' onclick="window.open('/dielec2d/DielectricFEA2DValidateInput','newwindow')">-->
-<input type='submit' value='Validate Input'>
 </form>
 
 <br>
-<p><a href="/DielectricFEA2DResultSample">Sample Result</a></p>
+<p><a href="/FEA2D/DielectricFEA2DResultSample">Sample Result</a></p>
 
 <h5> This project is in collaboration with Rensselaer Polytechnic Institute and supported by Office of Naval Research (ONR).</h5><br>
 
-
+<div class="row">
+ <div class="col-md-6">
+   <img class="featurette-image img-responsive" src="/static/resources/img/ONR.jpg"" alt="ONR_logo" width="300" height="300">
+ </div>
+</div>
 <br>
 	
 	

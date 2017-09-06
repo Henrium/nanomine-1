@@ -1,0 +1,65 @@
+<!-- 
+################################################################################
+#
+# File Name: RECONCheck.html
+# Application: templates
+# Description: 
+#
+#
+# Modified by: Zijiang Yang, July 24, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>3D descriptor_based microstructure characterization and reconstruction</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+
+<h3>Check Job Progress </h3><br>
+
+<form method='POST'> {% csrf_token %}
+<p>Enter job ID<br><input type='text' name='job_ID' value="{{defaultID}}" required></p>
+<input type='submit' value='Check Progress' >
+<br><br>
+</form>
+
+{% if finish == 0 %}
+	<p>Simulation may take about a hour. Please wait.</p>
+	<img src="http://nanomine.northwestern.edu/nanomine/DielectricFEA2D/busy.gif" alt="Busy" style="width:50px"><br>
+{% endif %}
+
+{% if finish == 1 %}
+	<h4>Your job has been completed.</h4><br>
+
+	<h5>Click <a href="{{ out1 }}" download>here</a> to download output data 1.</h5>
+	<h5>Click <a href="{{ out2 }}" download>here</a> to download output data 2.</h5>
+	<h5>Click <a href="{{ out3 }}" download>here</a> to download output data 3.</h5>
+    {% if type == 1 %}    
+        <h5>Click <a href="{{ out4 }}" download>here</a> to download output data 4.</h5>
+    {% endif %}
+    <h5>out5</h5><img src="{{ out5 }}"><br>
+	<h5>Click <a href="{{ out6 }}" download>here</a> to download output data 6.</h5>
+	<h5>Click <a href="{{ out7 }}" download>here</a> to download output data 7.</h5>
+	<h5>Click <a href="{{ out8 }}" download>here</a> to download output data 8.</h5>
+<!--
+    {% if fine == 1 %}    
+        <h5>Plot1 <img src="{{ plot1 }}"><br>
+    {% endif %}
+    {% if coarse == 1 %}    
+        <h5>Plot2 <img src="{{ plot2 }}"><br>
+    {% endif %}
+-->
+{% endif %}
+{% endblock %}
+
+
+
+
+
+
+

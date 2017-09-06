@@ -1,0 +1,55 @@
+<!-- 
+################################################################################
+#
+# File Name: Two_pt_MCR_landing.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Two point Microstructure Characterization and Reconstruction</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+	
+
+<h3>Results</h3>
+<br>	
+<div>
+<script language="JavaScript">
+  function processForm()
+  {
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+    l = unescape(temp[1]);
+    //alert(l); //Dialog with the text you put on the textbox
+    var target = document.createElement("IMG");
+    target.setAttribute("src","http://129.105.90.149/nm/Two_pt_MCR/"+l+"/200by200.jpg");
+    target.setAttribute("title","Target Microstructure");
+    document.body.appendChild(target);
+    var Reconstruct = document.createElement("IMG");
+    Reconstruct.setAttribute("src","http://129.105.90.149/nm/Two_pt_MCR/"+l+"/YT method_carbonate.jpg");
+    document.body.appendChild(Reconstruct);
+  }
+  processForm();
+</script>
+</div>
+
+
+<hr>
+	<h4>Reference</h4>
+	<p> MD Rintoul and S Torquato, <i><a href="http://chemists.princeton.edu/torquato/files/publications/papers/paper-134.pdf">Reconstruction of the structure of dispersions</a></i>, Journal of Colloid and Interface Science, 186, 467-476 (1997)</p>
+	<p>Liu, Y., Greene, M.S., Chen, W., Dikin, D., Liu, W.K., <i><a href="http://www.sciencedirect.com/science/article/pii/S0010448512000681">Computational Microstructure Characterization and Reconstruction for Stochastic Multiscale Design</a></i>, Computer Aided Design, 45 (1), 65-76, 2013 </p>
+
+
+{% endblock %}
+</body>
+</html>
