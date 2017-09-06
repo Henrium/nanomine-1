@@ -1,2 +1,0 @@
-""" List renderer test suites
-"""
