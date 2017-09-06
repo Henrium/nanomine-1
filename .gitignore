@@ -2,6 +2,8 @@
 db.sqlite3
 db_test.sqlite3
 
+mgi/settings*
+
 *.pyc
 
 descchar/media/
