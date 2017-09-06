@@ -1,41 +1,39 @@
-{% extends "mdcs/extra/one_column.html" %}
+<!-- 
+################################################################################
+#
+# File Name: niblack.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'nmrr/extra/small_intro.html' %}
 {% load staticfiles %}
-{% load auth_extras %}
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
-{% block title %}<h1><span>Dynamic Binarization Job Checker</span></h1>{% endblock %}
+
+
+{% block title %}<h1><span>Dynamic Binarization</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
 {% block content%}
 
 <h4>Dynamic Binarization</h4>
 
-<p>Enter the Job Id that you want to look up:</p>
-<form method='POST'>  {% csrf_token %}
-  Job ID: <input type="text" name="job_id" value={{ job_id_init }}><br>
-  <input type="submit" value="Submit" >
-
-  <br>
-{% if job_found %}
-<hr>
+<!--display file name from .mat-->
 <p>Image file:  {{ fname }}</p>
 <p>Current binarization window size: {{win_size}} pixels</p>
 <p>Raw image size: {{img_pix_size}} pixels</p>
-
 <!--display JPG from apache path-->
-<img src= {{ url_before }} height="300" width="300">
-<img src= {{ url_after }} height="300" width="300">
+<img src= 'http://129.105.90.149/nm/NBbefore.jpg' style="max-height:300px; max-width:300px" />
+<img src= 'http://129.105.90.149/nm/NBafter.jpg' style="max-height:300px; max-width:300px" />
+<p> </p>
 
-<hr>
-  Enter Pixel Size to Adjust: <input type="text" name="val_adjust" value=''><br>
-  <input type="submit" value="Submit" >
-  
-{% else %}
-<br>
-	<p>Job ID not found. Please verify number entered or submit a new job <a href="/niblack">here</a>.</p>
-    
-{% endif %}
-
-
-
-
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Run" />
 </form>
 
 

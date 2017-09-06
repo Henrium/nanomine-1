@@ -1,4 +1,4 @@
-{% extends "mdcs/extra/two_columns.html" %}
+{% extends "base.html" %}
 {% load staticfiles %}
 {% load auth_extras %}
 {% comment %}
@@ -19,6 +19,8 @@
 #
 ################################################################################
 -->
+<!--{% extends "mdcs/extra/two_columns.html" %}-->
+<!--{% extends "base.html" %}-->
 {% endcomment %}
 
 {% block title %}<h1>Select Template</h1>{% endblock %}
@@ -28,7 +30,7 @@ Select a template from the following table. Once you make your selection, start 
 automatically load the appropriate form and display it on the next page.
 {% endblock %}
 
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab2' %}{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='options' %}{% endblock %}
 {% block submenu %}
 <ul class="tabbed">
   <li class="current_page_item"><a href="/curate/select-template">Select Template</a></li>
@@ -132,12 +134,6 @@ automatically load the appropriate form and display it on the next page.
 
 {% block popups %}
 <div id="dialog-message" title="Template Loaded" style="display:none;">
-    <div class="alert alert-danger" id="banner_errors" style="display: none;">
-        <a href="#" class="close" data-hide="alert" aria-label="close">&times;</a>
-     	<h4><i class="fa fa-exclamation-circle fa-1x"></i> Error</h4>
-        <div id="form_start_errors">
-        </div>
-    </div>
 	<p>
 	  Please choose one of the following options to start curating data: 
 	</p>
@@ -145,6 +141,9 @@ automatically load the appropriate form and display it on the next page.
         {% csrf_token %}
         <div id="form_start_content"></div>
     </form>
+	<div id="form_start_errors" style="color:red;">
+	
+	</div>
 </div>
 
 <div id="dialog-error-message" title="No template selected" style="display:none;">
@@ -174,7 +173,6 @@ automatically load the appropriate form and display it on the next page.
 <script src="{% static 'inc/controllers/js/curate.js' %}"></script>
 <script>
     loadTemplateSelectionControllers();
-    initBanner();
 </script>
 {% endblock %}
 

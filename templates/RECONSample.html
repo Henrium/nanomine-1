@@ -1,0 +1,39 @@
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>3D descriptor_based microstructure characterization and reconstruction</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+    
+<hr>
+
+<h3>Sample Result</h3><br>
+<h4>Input Parameters: </h4><br>
+<p>type: 1</p>
+<p>color: 0</p>
+<p>sphere: 0</p>
+<p>cutL: 500</p>
+<p>VF: 0.31</p>
+<p>recon_length: 300</p>
+<p>scale: 60.0/300.0</p>
+<p>visualize_fine_recon: 0</p>
+<p>visualize_coarse_recon: 1</p>
+<p>microstructure image</p>
+<img src="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122.tif">
+<br>
+<h4>Outputs</h4>
+<p>output image 1</p>
+<img src="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_GB_double_filter.tif">
+<p>output image 2</p>
+<img src="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_visualize_coarse_recon.jpg">
+<h4>Click <a href="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_3D_recon.mat" download>here</a> to download output data 1.</h4>
+<h4>Click <a href="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_3D_recon_3D_geometry.mat" download>here</a> to download output data 2.</h4>
+<h4>Click <a href="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_3D_recon_3D_orinatation.mat" download>here</a> to download output data 3.</h4>
+<h4>Click <a href="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_3D_recon_center_list.mat" download>here</a> to download output data 4.</h4>
+<h4>Click <a href="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_coarsen_recon.mat" download>here</a> to download output data 5.</h4>
+<h4>Click <a href="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_GB_double_filter_2D_results.mat" download>here</a> to download output data 6.</h4>
+<h4>Click <a href="http://nanomine.northwestern.edu/nanomine/RECON/example/GP_testImage20140122_GB_double_filter_3D_results.mat" download>here</a> to download output data 7.</h4>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Charge transport prediction in nanodielectrics using combined Monte Carlo and FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
+{% block content%}
+    
+<hr>
+
+<h3>Sample Result</h3><br>
+<h4>Input Parameters: </h4><br>
+<p>Nominal field: 1e7</p>
+<p>Shape of density of states function: exponential</p>
+<p>Temperature: 1300</p>
+<p>Whether to include nanoparticles: Yes</p>
+<p>NP particle energy (eV): -1.1</p>
+<p>Size of the cluster, mean value: 30</p>
+<p>Standard deviation of the cluster size: 5</p>
+<p>Type of the cluster shape: line</p>
+<p>NP radius (nm): 2.5</p>
+<p>Volume fraction: 4e-3</p>
+<p>Whether to couple finite element to calculate field distribution: No</p>
+<p>Data points of transport time to record: 10.^[-5:0.2:3]</p>
+<p>Repeat time: 10</p>
+<br>
+    <h4>Energy histgram</h4>
+    <!--<div class="row">-->
+        <div class="col-lg-4">
+            <img src="http://nanomine.northwestern.edu/nanomine/MCFEA/media/energy_hist.jpg">
+        </div>
+    <!--</div>-->
+    <h4>Traveling distance</h4>
+    <!--<div class="row">-->
+        <div class="col-lg-4">
+            <img src="http://nanomine.northwestern.edu/nanomine/MCFEA/media/travel_distance.jpg">
+        </div>
+    <h4>Click <a href="http://nanomine.northwestern.edu/nanomine/MCFEA/media/output.csv" download>here</a> to download output data.</h4>
+    <p>The output file is a M+1 by N data sheet: the first row records N time points (predefined by users), and rest M rows record the traveling
+    distance charge carrier at each time point (M carriers in total). The transport behavior of charge mobility and transient distance can be extracted
+    from the data.</p>
+
+{% endblock %}

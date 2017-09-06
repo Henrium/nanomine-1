@@ -60,12 +60,7 @@
 										<span onclick="showModuleManager(event)" style="cursor:pointer;">																								
 											<xsl:value-of select="name(.)" />
 										</span>
-									</xsl:when>
-									<xsl:when test="contains(name(.),'key')">
-										<span onclick="showAutoKeyManager(event)" style="cursor:pointer;">
-											<xsl:value-of select="name(.)" />
-										</span>
-									</xsl:when>
+									</xsl:when>							
 									<xsl:otherwise>
 										<span>
 											<xsl:value-of select="name(.)" />
@@ -112,12 +107,7 @@
 										<span onclick="showModuleManager(event)" style="cursor:pointer;">																								
 											<xsl:value-of select="name(.)" />
 										</span>
-									</xsl:when>
-									<xsl:when test="contains(name(.),'key')">
-										<span onclick="showAutoKeyManager(event)" style="cursor:pointer;">
-											<xsl:value-of select="name(.)" />
-										</span>
-									</xsl:when>
+									</xsl:when>	
 									<xsl:when test="contains(name(.),'enumeration')">
 										<span>
 											<xsl:value-of select="name(.)" />

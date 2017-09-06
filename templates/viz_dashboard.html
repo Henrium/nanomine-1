@@ -1,0 +1,70 @@
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+{% load auth_extras %}
+{% comment %}
+<!--
+################################################################################
+#
+# File Name: viz_dashboard.html
+# Application: templates
+# Description:
+#
+
+#
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% block menu %}
+{% include 'menu.html' with active_tab='home' %}
+{% endblock %}
+
+{% block title %}
+<h2>Visualization Dashboard</h2>
+{% endblock %}
+
+{% block theme %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/nmrr/styles.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/nmrr/dialog.css' %}"/>
+
+<link rel="stylesheet" href="/static/viz/components/bootstrap/dist/css/bootstrap.css" />
+<!--<link rel="stylesheet" href="/static/viz/components/nvd3/build/nv.d3.css" />-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.3/nv.d3.min.css"/>
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+<link rel="stylesheet" href="/static/viz/src/custom.css">
+
+{% endblock %}
+
+{% block content %}
+
+<body ng-app="nanomine">
+  <script src="/static/viz/components/jquery/dist/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="/static/viz/components/d3/d3.js"></script>
+    <script src="/static/viz/components/nvd3/build/nv.d3.js"></script>
+    <script src="/static/viz/components/angular-nvd3/dist/angular-nvd3.js"></script>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.3/nv.d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.7/angular-nvd3.min.js"></script>-->
+
+
+    <script src="/static/viz/src/nanomine-d3.js"></script>
+
+<div ng-controller="NanomineVizController" >
+  <nanomine-d3 config="config"></nanomine-d3> 
+</div>
+
+</body>
+
+{% endblock %}

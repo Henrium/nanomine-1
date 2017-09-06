@@ -1,0 +1,29 @@
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>AUTOFIT</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+    
+<hr>
+
+<h3>Sample Result</h3><br>
+<h4>Input shown as following: </h4><br>
+<p>Actual length: 600</p>
+<p>Dimension to pixel: 400.0/240.0</p>
+<p>vf_expt: 0.01</p>
+<p>Click <a href="http://nanomine.northwestern.edu/nanomine/AUTOFIT/example/binary_image.mat" download>here</a> to download binary .mat file</p>
+<p>Click <a href="http://nanomine.northwestern.edu/nanomine/AUTOFIT/example/experimentReal.csv" download>here</a> to download Epsilon prime experimental data file</p>
+<p>Click <a href="http://nanomine.northwestern.edu/nanomine/AUTOFIT/example/experimentImag.csv" download>here</a> to download Epsilon double prime experimental data file</p>
+<br>
+    <h4>Comparison of Epsilon prime</h4>
+        <div class="col-lg-4">
+            <img src="http://nanomine.northwestern.edu/nanomine/AUTOFIT/example/E.png" style="width:450px">
+        </div>
+    <h4>Comparison of Epsilon double prime</h4>
+        <div class="col-lg-4">
+            <img src="http://nanomine.northwestern.edu/nanomine/AUTOFIT/example/EE.png" style="width:450px">
+        </div>
+    <h4>Click <a href="http://nanomine.northwestern.edu/nanomine/AUTOFIT/example/validation.csv" download>here</a> to download output data.</h4>
+{% endblock %}

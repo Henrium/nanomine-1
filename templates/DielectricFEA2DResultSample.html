@@ -1,0 +1,39 @@
+{% extends "base_featured.html" %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dielectric Permittivity 2D FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab7' %}{% endblock %}
+{% block content%}
+    
+<!--<h1>2D Dielectric Permittivity Simulation Using FEA</h1>-->
+
+<hr>
+
+<h3>Sample Result</h3><br>
+<h4>Materials Selected:</h4>
+<p>Polymer: epoxy</p>
+<p>Particle: silica</p>
+<p>Surface treatment: PGMA-terthiophene</p>
+<p>Volume Fraction: 1%</p>
+
+<br>
+    <h4>Particle Distribution (white: filler, black: matrix)</h4>
+    <!--<div class="row">-->
+        <div class="col-lg-4">
+            <img src="http://nanomine.northwestern.edu/nanomine/DielectricFEA2D/bin.jpg" alt="Binary Image" style="width:300px">
+        </div>
+    <!--</div>-->
+    <h4>Electric Field Distribution </h4>
+    <!--<div class="row">-->
+        <div class="col-lg-4">
+            <img src="http://nanomine.northwestern.edu/nanomine/DielectricFEA2D/Efield.jpg" alt="Binary Image" style="width:500px">
+        </div>
+    <h4>Complex Dielectric Spectroscopy from Simulation </h4>
+    <!--<div class="row">-->
+        <div class="col-lg-8">
+            <img src="http://nanomine.northwestern.edu/nanomine/DielectricFEA2D/epsilon_real.jpg" alt="Binary Image" style="width:400px">
+            <img src="http://nanomine.northwestern.edu/nanomine/DielectricFEA2D/epsilon_imag.jpg" alt="Binary Image" style="width:400px">        
+        </div>
+        
+{% endblock %}

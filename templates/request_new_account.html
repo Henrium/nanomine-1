@@ -1,4 +1,4 @@
-{% extends "mdcs/extra/one_column.html" %}
+{% extends "base_featured.html" %}
 {% load staticfiles %}
 
 {% comment %}
@@ -22,14 +22,14 @@
 {% endcomment %}
 
 {% block title %}<h1><span>Request New Account</span></h1>{% endblock %}
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='request' %}{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='request' %}{% endblock %}
 
 {% block content%}
 <div id="main" style="margin-left:20px;">
 Use the following form to request an user account on the {{CUSTOM_TITLE}} Curation System.
 	<div>
 		<br/>
-		<form action="/request-new-account" method="post">
+		<form action="/request-new-account" method="post" onsubmit="return validateRequest()">
 		 	{% csrf_token %}
 		    {{ form }}
 		    <br/>

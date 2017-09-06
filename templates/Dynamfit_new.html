@@ -1,0 +1,87 @@
+<!-- 
+################################################################################
+#
+# File Name: Dynamfit_new.html
+# Application: templates
+# Description: 
+#
+# Modified by: Zijiang Yang, June 07, 2016
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Dynamfit - Prony Series coefficient fitting</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+
+<br>
+<h3>Description</h3>
+<br>
+<p>This program fits viscoelastic mastercurve from DMA experiments by Prony Series so that the Prony Series coefficients can be used as viscoelastic properties for FEA simulation. </p>
+<br>
+<h3> Instructions </h3><br>
+<p> <b>Function Name:</b> Dynamfit</p>
+<p><b>Description:</b> Fit mastercurve (tan &#948 vs. frequency) by Prony Series</p><br>
+
+<form method='POST' enctype='multipart/form-data' action="{% url "dynamfit" %}"> {% csrf_token %}
+
+<h3>Inputs</h3><br>
+
+<p><b>1. Upload #.X_T file containing three values per line (Frequency X' X'') and the filename must be upper case:</b></p>
+<!--
+<input type='file' name='files' id='files'><br>
+-->
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+<p>Enter upper case of upload filename you upload. </p>
+<input type='text' name='datafile' required><br>
+
+<p><b>2. Factor For Weighting X' and X'' data:</b></p>
+<p>0.0 Means Consider Only X'' Data</p>
+<p>2.0 Means Consider Only X' Data</p>
+<p>1.0 Means Weight Evenly X' and X''<p>
+<p>All Other Values Represent Uneven Weighting</p>
+<p>Enter the weighting parameter you wish to use:</p><input type='text' name='weight' value='1.0' required></p>
+
+<p><b>3. Standard deviation (enter "1" or "2"): </b></p>
+<p>use the data point values (1) or unity (2):</p><input type='text' name='std' value='1' required></p>
+
+<p><b>4. Enter the number of elements to use (should larger than 2 and should NOT be too large):</b></p>
+<input type='text' name='NumEle' value='20' required>
+
+<p><b>5. Enter (1) for compliance, (2) for modulus:</b></p><input type='text' name='mtd' value='2' required><br><br>
+<!--
+<input type='submit' value='Run' onclick="window.open('/dynamfit/DynamfitRun','newwindow')">
+-->
+<p><input type='submit' value='Run'> Please wait about 1 minute to run the simulation</p>
+</form>
+<form>
+<b>After simulation is finished, you can download you result</b>
+<input type='button' value='Download result' onClick="window.open('/DynamfitRun','newwindow')"><br><br>
+<h4>For very beginner, please click <input type='button' value='example of dynamfit' onClick="window.open('/DynamfitExample','newwindow')"> to get familiar with this tool.</h4><br>
+<h3>For advanced use, please click <a href="http://nanomine.northwestern.edu/nanomine/Dynamfit/dynamfit.exe" download>here</a> to download the program.</h3>
+</form>
+
+<hr>
+	<h4>Reference</h4>
+	<p>Bradshaw et al., <i><a href="http://link.springer.com/article/10.1023/A:1009772018066">A Sign Control Method for Fitting and Interconverting Material Functions for Linearly Viscoelastic Solids</a></i>, Mechanics of Time-Dependent Materials. 1997 1(1)</p>
+	
+
+{% endblock %}
+
+<script>
+function myFunction(File){
+	var x = File.value;
+	document.getElementById("myFile").value = x;
+}
+</script>
+

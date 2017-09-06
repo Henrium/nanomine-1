@@ -1,0 +1,45 @@
+<!--################################################################################
+#
+# File Name: Two_pt_MCR.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html'%}
+{% load staticfiles %}
+{% load  auth_extras %}
+
+{% block title %}<h1><span>Microstructure Characterization and Reconstruction - Correlation Function Approach</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+
+<h3>Image Submitted</h3>
+<br>
+	<p>Your Image has been successfully submitted for reconstruction. You will receive an email with a unique Job ID when the reconstruction is complete.</p>
+    <p> Use the Job ID to view/download the reconstructed image available <i><a href="http://nanomine.northwestern.edu:8001/Two_pt_MCR_CheckResult">here
+    </a><i></p>
+<br>
+    <a href='http://nanomine.northwestern.edu:8001/Two_pt_MCR'>Return to Two point Microstructure Characterization and Reconstruction Homepage</a>
+<br>
+    <a href='http://nanomine.northwestern.edu:8001/'>Return to NanoMine Homepage</a>    
+
+
+<hr>
+	<h4>Reference</h4>
+	<p> MD Rintoul and S Torquato, <i><a href="http://chemists.princeton.edu/torquato/files/publications/papers/paper-134.pdf">
+       Reconstruction of the structure of dispersions</a></i>, Journal of Colloid and Interface Science, 186, 467-476 (1997)</p>
+	<p>Liu, Y., Greene, M.S., Chen, W., Dikin, D., Liu, W.K., <i><a href="http://www.sciencedirect.com/science/article/pii/S0010448512000681">
+       Computational Microstructure Characterization and Reconstruction for Stochastic Multiscale Design</a></i>, 
+       Computer Aided Design, 45 (1), 65-76, 2013 </p>
+</hr>
+
+
+{%endblock%}    
+</body>
+</html>

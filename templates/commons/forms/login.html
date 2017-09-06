@@ -20,10 +20,7 @@
 <div style="margin-left:20px;">
 
 {% if form.errors %}
-    <div class="alert alert-error" id="banner_errors" style="display: block;">
-    <h4><i class="fa fa-exclamation-circle fa-1x"></i> </h4>
-    <p>Your username and password didn't match. Please try again.</p>
-</div>
+<p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
 <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
@@ -35,21 +32,13 @@
 </tr>
 <tr>
 <td>{{ form.password.label_tag }}</td>
-<td>
-    <div>{{ form.password }}
-    {% if USE_EMAIL %}
-        <a href="{% url 'password_reset' %}">Forgot password?</a>
-    {% endif %}
-    </div>
-</td>
+<td><div>{{ form.password }}</div></td>
 </tr>
 <tr>
 <td></td>
 <td><button class="btn" type="submit" value="login">Login</button></td>
 </tr>
 </table>
-
-
 
 <input type="hidden" name="next" value="{{ next }}" />
 </form>

@@ -11,13 +11,12 @@
 ################################################################################
 -->
 
-{% extends "mdcs/extra/one_column.html" %}
+{% extends 'base_featured.html' %}
 {% load staticfiles %}
-{% load auth_extras %}
 
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
 	
-{% block title %}<h1><span>Statistical Learning and Analysis Module Tools</span></h1>
+{% block title %}<h3><span>Statistical Learning and Analysis Module Tools</span></h3>
 
 {% endblock %}
 
@@ -35,7 +34,7 @@
   }
 </style>
 
-<div class="" style="width: 850px">
+<div class="" style="width: 900px">
   <p class="large">Statistical learning and analysis modules include web and downloadable packages that can be used to pre-process and analyze structure and material property data. Each of the modules will specify required format of input and output data, and provide a brief introduction of mechanism of the algorithm. </p>
 
 <div class="content-separator" style="clear: both"></div>
@@ -117,5 +116,12 @@
 
 <div class="content-separator"></div>
 
+<div class="float right" style="width: 400px">
+  <h4><span><a href="/Two_pt_MCR">Microstructure Characterization and Reconstruction -Correlation Function Approach</a></span> </h4> 
+  <p>This algorithm uses 2 point Correlation to create a statistically equivalent recontruction of a binarized microstructure image. </p>
+</div>
+</div>
+
+<div class="content-separator"></div>
 
 {% endblock %}

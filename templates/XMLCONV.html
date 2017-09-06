@@ -1,0 +1,66 @@
+<!-- 
+################################################################################
+#
+# File Name: XMLCONV.html
+# Application: templates
+# Description: 
+#
+# Modified by: Zijiang Yang, Aug. 17, 2016
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Data Uploader</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+
+
+<br>
+<h3>Description</h3>
+<br>
+<p>Instead of using the online data curation form where you enter individual fields and values, you can consolidate all your data for a given sample into a single Excel spreadsheet and upload using just one-click. </p>
+<br>
+
+<p>Step 1: Click <a href="http://nanomine.northwestern.edu/nanomine/XMLCONV/template.xlsx" download>here</a> to download the blank MS Excel template.
+ (Click <a href="http://nanomine.northwestern.edu/nanomine/XMLCONV/example.xlsx" download>here</a> to see an example)</p>
+<p>Step 2: Change the file name and fill in all the sections properly.</p>
+<p>Step 3: Upload the Excel file and all related image files, then click Run to save your data into database.</p>
+
+<form method='POST' enctype='multipart/form-data'> {% csrf_token %}
+
+<h3>Inputs</h3><br>
+
+<p>Upload files:</b>
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+<p>Enter excel file name (WITH extension) you upload. </p>
+<input type='text' name='excel_file' value='example.xlsx' required><br>
+<p>Enter image file name (WITH extension) you upload, separated by semicolon. Leave it blank if no image file upload.</p>
+<input type='text' name='img_file' value=''><br>
+<p><input type='submit' value='Submit' onclick="msg3()"></p>
+</form>
+
+<!--
+<form>
+<b>After upload files, please click "Submit" to save your data into database.</b>
+<input type='button', value='Submit' onclick="window.open('/XMLCONVRun','newwindow')"><br><br>
+
+</form>
+-->
+
+<script>
+    function msg3() {
+        alert("Your data has been saved into database and you can use searching function to view your data.");
+        return true;
+    }
+</script>	
+{% endblock %}
