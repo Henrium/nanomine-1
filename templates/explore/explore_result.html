@@ -9,20 +9,12 @@
     <div id="{{id}}" name="result">
 	<input type='checkbox' name='checks' result_id='{{id}}'/>
     <span class='expand' style='cursor:pointer;' onclick='showhideResults(event);'></span>
-
-    <span style='font-weight:bold;'>
-    {% if is_remote != 'True' %}
-        <a href="/explore/detail_result?id={{id}}" class="url">{{title}}</a>
-    {% else %}
-        <a href="/explore/detail_view_remote?id={{id}}&remote={{instance_name}}" class="url">{{title}}</a>
+    <span style='font-weight:bold;'><a href="/explore/detail_result?id={{id}}">{{title}}</a></span> <span style='color:grey;'>{{template_name}}</span>
+    {% if canEdit %}
+    <a href="/curate/enter-data?id={{id}}"><span class="icon edit"></span></a>
     {% endif %}
-    </span> <span style='color:grey;'>{{template_name}}</span>
-
-    {% if canEdit and modification and is_remote != 'True' %}
-        <a href="/curate/enter-data?id={{id}}"><span class="icon edit"></span></a>
-    {% endif %}
-    {% if canDelete and modification and is_remote != 'True' %}
-        <span class="icon invalid" onclick="deleteResult('{{id}}')"></span>
+    {% if canDelete %}
+    <span class="icon invalid" onclick="deleteResult('{{id}}')"></span>
     {% endif %}
     <div class='xmlResult' readonly='true' style='display:none;'>
     	{% autoescape off %}

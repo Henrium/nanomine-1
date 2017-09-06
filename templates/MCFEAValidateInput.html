@@ -1,0 +1,35 @@
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Charge transport prediction in nanodielectrics using combined Monte Carlo and FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
+{% block content %}
+
+<h3>Confirm Input Parameters</h3>
+<table border="1" style="width:50%; border:solid black; border-collapse:collapse">
+{% for key, value in data1 %}
+<tr><td>{{ key }}:</td><td>{{ value }}</td><br><tr>
+{% endfor %}
+{% for key, value in data2 %}
+<tr><td>{{ key }}:</td><td>{{ value }}</td><br><tr>
+{% endfor %}
+{% for key, value in data3 %}
+<tr><td>{{ key }}:</td><td>{{ value }}</td><br><tr>
+{% endfor %}
+<br>
+</table>
+
+<br>
+<input type='submit' value='Predict Properties' onclick="sub(), window.open('/MCFEA/MCFEARun','newwindow')">
+<br><br>
+<p>Do not refresh this page. Please click <a href="/MCFEA">here</a> to submit new parameters.</p>
+
+<script>
+function sub() {
+	alert("Your job will be submitted.");
+	return true;
+}
+</script>
+
+{% endblock %}

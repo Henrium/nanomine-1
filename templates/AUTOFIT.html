@@ -1,0 +1,80 @@
+<!-- 
+################################################################################
+#
+# File Name: AUTOFIT.html
+# Application: templates
+# Description: 
+#
+# Modified by: Zijiang Yang, July 20, 2016
+# Customized for NanoMine
+#
+################################################################################
+-->
+
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Automatic Fitting of Interphase Relaxation Model in Nanocomposites</span></h1>{% endblock %}
+{% block menu %}{% include 'nmrr/menus/main.html' with active_tab='tab8' %}{% endblock %}
+{% block content%}
+
+
+<br>
+<h3>Description</h3>
+<br>
+<p>This algorithm derives interphase relaxation properties in nanocomposites using an inverse method that starts from composite properties and microstructure. It integrates finite element analysis and metamodeling optimization that predicts the interphase properties that results in minimal error between simulated properties from FEA and experimental composite properties. Under robustness testing.</p>
+<br>
+
+
+
+<form method='POST' enctype='multipart/form-data'> {% csrf_token %}
+
+<h3>Inputs</h3><br>
+
+<p>Upload three files:</b>
+<p>(1) binary .mat file containing microstructure information</p>
+<p>(2) Epsilon prime of experimental data (.csv) file containing microstructure information</p>
+<p>(3) Upload Epsilon double prime of experimental data (.csv) file containing microstructure information</p>
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+<!--
+<input type="file" name="file">
+-->
+<p>Enter binary file name (WITHOUT extension) you upload. </p>
+<input type='text' name='binary_file' value='binary_image' required><br>
+<p>Enter Epsilon prime experimental data file name (WITH extension) you upload. </p>
+<input type='text' name='real_file' value='sample_real.csv' required><br>
+<p>Enter Epsilon double prime experimental data file name (WITH extension) you upload. </p>
+<input type='text' name='img_file' value='sample_imag.csv' required><br>
+
+<p>Enter actualLength:</p><input type='text' name='actuallength' value='600' required></p>
+<p>Enter dimension to pixel:</p><input type='text' name='DiToPi' value='400.0/240.0' required></p>
+<p>Enter vf_expt:</p><input type='text' name='vf_expt' value='0.01' required><br>
+
+<p><input type='submit' value='Upload files and inputs' onclick="msg3()"></p>
+</form>
+
+<form>
+<b>After input all the information, please click "Run Simulation" to submit job.</b>
+<input type='button', value='Run Simulation' onclick="window.open('/AUTOFITRun','newwindow')"><br><br>
+<br>
+<p><a href="/AUTOFITSample">Sample Result</a></p>
+</form>
+
+<hr>
+	<h4>Reference</h4>
+	<p>Wang, Y et al. Manuscript under preparation</p>
+	
+<script>
+    function msg3() {
+        alert("Your variables and file have been upload successfully, please click 'Run Simulation' button to submit your job.");
+        return true;
+    }
+</script>	
+{% endblock %}
+

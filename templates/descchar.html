@@ -1,9 +1,22 @@
-{% extends "mdcs/extra/one_column.html" %}
-{% load staticfiles %}
-{% load auth_extras %}
+<!-- 
+################################################################################
+#
+# File Name: descchar.html
+# Application: templates
+# Description: 
+#
+# Modified by: He Zhao, Aug 17, 2015
+# Customized for NanoMine
+#
+################################################################################
+-->
 
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
 {% block title %}<h1><span>Descriptor Characterization</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
 {% block content%}
 	
 
@@ -17,16 +30,29 @@
 </div>-->
 <h3>Description</h3>
 <br>
-	<p>Statisical analysis of microstructural dispersion. </p>
+	<p>You can upload a binary image file and obtain statistical descriptors of the microstructure. This tool is currently implemented as part of the NanoMine prototype analysis tools. You do not have to log in to use this feature. </p>
 
 <h4>Instructions</h4>
 
-<p>Step One: upload one .MAT file below. Note: the microstructure should be stored as a single MAT file that contains a 2-dimensional matrix of the binary image named 'img_out'. 0 should be assigned for the matrix while 1 for fillers. </p>
-<p>Step Two: after uploading the file, click 'Run' below. You will see a pop-up alert of your run number, which can be used to track job process. If the file structure is valid, the page will be shown as 'loading', which indicates that the program is running. </p>
-<p>Step Three: the image will be uploaded to the server and processing will start.</p>
+<p>Step One: upload binary image file below. Note: the image file should be stored as a single MAT file (MATLAB data file) that contains a 2-dimensional matrix named 'img_out'. </p>
+<p>Step Two: after uploading the file, click 'Run' below. If the file structure is valid, the page will be shown as 'loading', which indicates that the program is running. </p>
+<p>Step Three: when the program finished, your uploaded file will be shown at the bottom of the list under 'Existing Image Files'. </p>
 <p>Step Four: to view descriptor results, click 'View Image and Result'. If incorrect image is shown, refresh the pop-up
 'page. If you click this button without uploading an image, results from a previous run will be shown. </p>
+<p>Note: multiple failed jobs (mostly caused by invalid file format) will cause the backend program to stall. Refresh the page or contact admin if correct results cannot be obtained after several trials. </p>
 <br>
+
+<h5>Existing image files:</h5>
+<!-- List of uploaded documents -->
+{% if documents %}
+	<ul>
+	{% for document in documents %}
+		<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No documents.</p>
+{% endif %}
 
 <!-- Upload form. Note enctype attribute! -->
 <form action="{% url "descchar" %}" method="post" enctype="multipart/form-data">
@@ -37,24 +63,17 @@
 		{{ form.docfile.errors }}
 		{{ form.docfile }}
 	</p>
-	<p><input type="submit" value="Run" onclick="msg3();"></p>
+	<p><input type="submit" value="Run" /></p>
 </form>
 
 <form> 
-	<INPUT type="button" value="Job Checker" onClick="window.open('/descchar_view','newwindow')">
-<!--,'width=800,height=800'-->
+	<INPUT type="button" value="View image and result" onClick="window.open('/descchar_view','newwindow','width=800,height=800')"> 
 </form>
 
 <hr>
 	
 	
-<h4>Reference</h4>
-<p>Hongyi Xu, et al., <i><a href="http://www.sciencedirect.com/science/article/pii/S0927025613008057">Descriptor-based methodology for statistical characterization and 3D reconstruction of microstructural materials</a></i>, Computational Materials Science (2014)</p>
-<script>
-    function msg3() {
-        alert("Your unique job ID for this image is {{run_count}}. If you have selected a local file, your image is now being uploaded. Image processing starts after this pop-up windows is closed, and will finish when page loading is done. You can check the status of this job at the 'Job Checker' from this page.");
-		return true;
-    }
-</script>
+	<h4>Reference</h4>
+	<p>Hongyi Xu, et al., <i><a href="http://www.sciencedirect.com/science/article/pii/S0927025613008057">Descriptor-based methodology for statistical characterization and 3D reconstruction of microstructural materials</a></i>, Computational Materials Science (2014)</p>
 	
 {% endblock %}

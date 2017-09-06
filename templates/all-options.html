@@ -1,4 +1,4 @@
-{% extends "mdcs/extra/one_column.html" %}
+{% extends "base_featured.html" %}
 {% load staticfiles %}
 {% load auth_extras %}
 {% comment %}
@@ -19,18 +19,24 @@
 #
 ################################################################################
 -->
+"mdcs/extra/one_column.html" --> base_featured.html
+{% extends "mdcs/extra/one_column.html" %}
+{% extends "base_featured.html" %}
+
 {% endcomment %}
 
-{% block title %}<h1>All Options</h1>{% endblock %}
-{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='options' %}{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='options' %}{% endblock %}
+}
+{% block title %}<h3>All Options</h3>{% endblock %}
 
 {% block content %}
-<div class="left" style="width: 350px">
+<div style="width: 800px">
+<div class="left" style="width: 350px; float: left">
 	{% if user|has_perm:'explore.explore_access' %}
 	<div class="clearer">&nbsp;</div>
 	<br/>
 	<img src="{% static 'resources/img/edit-big.png' %}" width="64" height="64" alt="" class="left bordered" />
-	<h3><a href="curate">Curate your {{CUSTOM_DATA}}</a></h3>
+	<h4><a href="curate">Curate your {{CUSTOM_DATA}}</a></h4>
 	<p>Click here to select a form template and then fill out the corresponding form.</p>
 	<div class="clearer">&nbsp;</div>
 	{% endif %}
@@ -39,23 +45,23 @@
 	<div class="clearer">&nbsp;</div>
 	<br/>
 	<img src="{% static 'resources/img/edit-big.png' %}" width="64" height="64" alt="" class="left bordered" />
-	<h3><a href="compose">Compose a template</a></h3>
+	<h4><a href="compose">Compose a template</a></h4>
 	<p>Click here to compose your own template.</p>
 	<div class="clearer">&nbsp;</div>
 	{% endif %}
 </div>
 
-<div class="right" style="width: 350px">
+<div class="right" style="width: 350px; float: right">
 	{% if user|has_perm:'compose.compose_access' %}
     <div class="clearer">&nbsp;</div>
 	<br/>
 	<img src="{% static 'resources/img/search-big.png' %}" width="64" height="64" alt="" class="left bordered" />
-	<h3><a href="explore">Explore the repository</a></h3>
+	<h4><a href="explore">Explore the repository</a></h4>
 	<p>Click here to search for {{CUSTOM_DATA}} in the repository using flexible queries.</p>
 	<div class="clearer">&nbsp;</div>
 	{% endif %}
 </div>
-
+</div>
 <div class="clearer">&nbsp;</div>
 
 {% endblock %}

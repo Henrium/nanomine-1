@@ -1,0 +1,13 @@
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Charge transport prediction in nanodielectrics using combined Monte Carlo and FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
+{% block content%}
+
+<h3>System busy. Please re-submit your job later. </h3><br>
+
+<p>All computation resource is currently being used. Please re-submit your job <a href="/MCFEA">here</a> later. We apologize for the inconvenience. </p>
+
+{% endblock %}

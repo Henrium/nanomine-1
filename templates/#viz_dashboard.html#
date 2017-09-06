@@ -1,0 +1,78 @@
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+{% load auth_extras %}
+{% comment %}
+<!--
+################################################################################
+#
+# File Name: viz_dashboard.html
+# Application: templates
+# Description:
+#
+
+#
+#
+################################################################################
+-->
+{% endcomment %}
+
+{% block menu %}
+{% include 'menu.html' with active_tab='home' %}
+{% endblock %}
+
+{% block title %}
+<h2>Visualization Dashboard</h2>
+{% endblock %}
+
+{% block theme %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/nmrr/styles.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/nmrr/dialog.css' %}"/>
+
+<link rel="stylesheet" href="/static/viz/components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="/static/viz/components/angular-dashboard-framework/dist/angular-dashboard-framework.css" />
+<link rel="stylesheet" href="/static/viz/components/nvd3/build/nv.d3.css" />
+
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+{% endblock %}
+
+{% block content %}
+    <script type="text/javascript" src="/static/viz/components/adf-structures-base/dist/adf-structures-base.min.js"></script>
+<div ng-app="nanomine">
+
+    <div class="container" ng-controller="dashboardController">
+      <adf-dashboard name="widgetSampleDashboard" structure="6-6" adf-model="dashboard.model" />
+    </div>
+
+    <!-- bower:js -->
+    <script src="/static/viz/components/jquery/dist/jquery.js"></script>
+    <script src="/static/viz/components/angular/angular.js"></script>
+    <script src="/static/viz/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/static/viz/components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/static/viz/components/Sortable/Sortable.js"></script>
+    <script src="/static/viz/components/Sortable/ng-sortable.js"></script>
+    <script src="/static/viz/components/Sortable/knockout-sortable.js"></script>
+    <script src="/static/viz/components/Sortable/react-sortable-mixin.js"></script>
+    <script src="/static/viz/components/angular-dashboard-framework/dist/angular-dashboard-framework-tpls.js"></script>
+    <script src="/static/viz/components/d3/d3.js"></script>
+    <script src="/static/viz/components/nvd3/build/nv.d3.js"></script>
+    <script src="/static/viz/components/angular-nvd3/dist/angular-nvd3.js"></script>
+    <script src="/static/viz/components/adf-structures-base/dist/adf-structures-base.js"></script>
+    <script src="/static/viz/components/adf-widget-linklist/dist/adf-widget-linklist.js"></script>
+    <script src="/static/viz/components/showdown/src/showdown.js"></script>
+    <script src="/static/viz/components/angular-markdown-directive/markdown.js"></script>
+    <script src="/static/viz/components/adf-widget-markdown/dist/adf-widget-markdown.js"></script>
+    <script src="/static/viz/components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="/static/viz/src/nanomine-d3.js"></script>
+    <script src="/static/viz/src/nanomine-app.js"></script>
+    <!-- endinject -->
+  
+</div>
+
+
+{% endblock %}
+
+

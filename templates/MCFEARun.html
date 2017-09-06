@@ -1,0 +1,15 @@
+{% extends 'nmrr/extra/small_intro.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Charge transport prediction in nanodielectrics using combined Monte Carlo and FEA</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='simulate_tool' %}{% endblock %}
+{% block content%}
+
+<h3>Your job has now been submitted. </h3><br>
+
+<p>Your job ID is: {{jobid}}. Please save it for future reference. </p>
+<p>Your job may be currently running or queued. Check the status of your job at: <a href="/MCFEA/MCFEACheckProgress" > Job Progress Checking Tool </a></p>
+<p>Do not refresh this page. Otherwise your job will be re-submitted. Please click <a href="/MCFEA">here</a> to submit new parameters for a new job.</p>
+
+{% endblock %}

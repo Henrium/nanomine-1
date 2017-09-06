@@ -1,0 +1,52 @@
+{% extends 'nmrr/base/default.html' %}
+{% load staticfiles %}
+{% load auth_extras %}
+
+{% block intro %}
+<style>
+    input.button-slider {
+        padding: 12px 18px;
+        font-size: 0.8em;
+        text-align: center;
+        border: 2px solid #699BBA;
+        margin: 0px 10px 0px 0;
+    }
+    input.button-slider.button-reversed {
+        border-color: #999;
+    }
+    input.button-slider i {
+        padding-right: 5px;
+    }
+</style>
+
+<div id="intro">
+    <div class="intro-content" style="width: 800">
+            <h5>
+                Coming soon! Subscribe to receive updates on NanoMine:
+            </h5>
+            <!--<form action="#" method="get" role="form">-->
+            <!--    <div class="input-group">-->
+            <!--        <input type="text" placeholder="youremail@mail.com"  class="button button-slider">-->
+            <!--        <a href="/" class="button button-slider"><i class="fa"></i>Subscribe</a>-->
+            <!--    </div>-->
+            <!--</form>-->
+            <form action="" method="post" role="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!--<div class="input-group">-->
+                <input type="text" placeholder="youremail@mail.com"  class="button button-slider" name="email">
+                <input type="hidden" name="status" value="active">
+                <input type="submit" class="button-slider form-button" value="Submit" style="font-family: 'Arial'">
+            </form>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <div>{{ message }}</div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <h5>Contact <a href='mailto:nanominenu@gmail.com'>NanoMine team</a> if you would like to try our prototype site.</h5>
+            </div>
+
+            </div>
+{% endblock %}
