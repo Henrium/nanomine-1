@@ -1,0 +1,60 @@
+{% extends "mdcs/extra/one_column.html" %}
+{% load staticfiles %}
+{% load auth_extras %}
+
+{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+{% block title %}<h1><span>Descriptor Characterization</span></h1>{% endblock %}
+{% block content%}
+	
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<!--<div class="jumbotron">
+	<div class="container">
+	<h1>Module: microstructure descriptor characterization</h1>
+	<p>This demonstration shows the feature to upload a binary image file for material microstructure and concurrently characterize microstructure information. The algorithm used in this module is based on Xu, et al 2014. Click button below for more information. </p>
+	<p><a class="btn btn-primary btn-lg" href="http://www.sciencedirect.com/science/article/pii/S0927025613008057" role="button">Learn more &raquo;</a></p>
+	</div>
+</div>-->
+<h3>Description</h3>
+<br>
+	<p>Statisical analysis of microstructural dispersion. </p>
+
+<h4>Instructions</h4>
+
+<p>Step One: upload one .MAT file below. Note: the microstructure should be stored as a single MAT file that contains a 2-dimensional matrix of the binary image named 'img_out'. 0 should be assigned for the matrix while 1 for fillers. </p>
+<p>Step Two: after uploading the file, click 'Run' below. You will see a pop-up alert of your run number, which can be used to track job process. If the file structure is valid, the page will be shown as 'loading', which indicates that the program is running. </p>
+<p>Step Three: the image will be uploaded to the server and processing will start.</p>
+<p>Step Four: to view descriptor results, click 'View Image and Result'. If incorrect image is shown, refresh the pop-up
+'page. If you click this button without uploading an image, results from a previous run will be shown. </p>
+<br>
+
+<!-- Upload form. Note enctype attribute! -->
+<form action="{% url "descchar" %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+	<p><input type="submit" value="Run" onclick="msg3();"></p>
+</form>
+
+<form> 
+	<INPUT type="button" value="Job Checker" onClick="window.open('/descchar_view','newwindow')">
+<!--,'width=800,height=800'-->
+</form>
+
+<hr>
+	
+	
+<h4>Reference</h4>
+<p>Hongyi Xu, et al., <i><a href="http://www.sciencedirect.com/science/article/pii/S0927025613008057">Descriptor-based methodology for statistical characterization and 3D reconstruction of microstructural materials</a></i>, Computational Materials Science (2014)</p>
+<script>
+    function msg3() {
+        alert("Your unique job ID for this image is {{run_count}}. If you have selected a local file, your image is now being uploaded. Image processing starts after this pop-up windows is closed, and will finish when page loading is done. You can check the status of this job at the 'Job Checker' from this page.");
+		return true;
+    }
+</script>
+	
+{% endblock %}

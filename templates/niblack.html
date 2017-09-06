@@ -1,0 +1,45 @@
+{% extends "mdcs/extra/one_column.html" %}
+{% load staticfiles %}
+{% load auth_extras %}
+{% block menu %}{% include 'mdcs/menus/main.html' with active_tab='tab1' %}{% endblock %}
+{% block title %}<h1><span>Dynamic Binarization</span></h1>{% endblock %}
+{% block content%}
+
+<h3>Description</h3>
+<br>
+<p>Upload a grayscale micrograph image in TIF format and perform dynamic niblack binarization with user input local window size.</p>
+	
+<br>
+<p>File name should be in upper case, including extension (e.g., EXAMPLE.TIF).</p>
+
+<!-- Upload form. Note enctype attribute! -->
+<form action="{% url "niblack" %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+	<p><input type="submit" value="Run" onclick="msg3();"></p>
+</form>
+
+<form> 
+	<INPUT type="button" value="See Results" onClick="window.open('/niblack_view','newwindow')"> 
+</form>
+
+<hr>
+	<h4>Reference</h4>
+	<p>Khurshid, Khurram, et al., <i><a href="http://spie.org/Publications/Proceedings/Paper/10.1117/12.805827">Comparison of Niblack inspired Binarization methods for ancient documents</a></i>, SPIE Electronic Imaging. International Society for Optics and Photonics, 2009.</p>
+	<p>Add Irene paper..</p>
+
+
+<script>
+
+function msg3() {
+	alert("Your unique job ID for this image is {{run_count}}. If you have selected a local file, your image is now being uploaded. Processing starts after this pop-up windows is closed, and will finish when page loading is done. This usually takes about a few seconds. You can check the status of this job at the 'Job Checker' from this page.");
+	return true;
+    }
+
+</script>
+{% endblock %}
