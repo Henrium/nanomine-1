@@ -1,0 +1,63 @@
+<!-- 
+################################################################################
+#
+# File Name: Two_pt_MCR_landing.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Microstructure Characterization - Correlation Function Approach</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+
+<h3>Description</h3>
+<br>
+	<p>Upload a binarized image in JPEG format / ZIP file containing set of images (all in JPEG format) and click "Characterize".</p>
+	<h4> Input Options:</h4>
+        <p> NOTE: Images must be binarized.</p>
+	<p> 1) Single JPEG image (Download <a href='http://129.105.90.149/nm/Two_pt_MCR/Input Samples/Option1.zip'>Sample</a>) </p>
+	<p> 2) Single image in .mat format : The .mat file must contain ONLY ONE variable named "Input" - which contains pixel values(only 0 or 1)(Download <a href='http://129.105.90.149/nm/Two_pt_MCR/Input Samples/Option2.zip'>Sample</a>)</p>
+	<p> 3) Multiple JPEGs in ZIP File: Submit a ZIP file containing multiple JPEG images of same size (in pixels). DO NOT ZIP the folder containing images; select all images and ZIP them directly.(Download <a href='http://129.105.90.149/nm/Two_pt_MCR/Input Samples/Option3.zip'>Sample</a>) </p>
+
+    <!-- Upload form. Note enctype attribute! -->
+<form action="{% url "Two_pt_MCR_Characterize" %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+    <p> {{form.email_id.label_tag}}
+        {{form.email_id}}
+    </p>
+    <p>	{{form.correlation_choice.label_tag}}
+	{{form.correlation_choice}}
+        <a onClick="window.open('/MCR_Correlation_Fundamentals','newwindow','width=800,height=800')">What is a Correlation Function?</a>
+    </p>
+    <p> {{form.Characterize_input_type.label_tag}}
+        {{form.Characterize_input_type}}
+    </p>
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}
+	</p>
+	<p><input type="submit" value="Characterize" /></p>
+</form>
+    
+
+<hr>
+	<h4>Reference</h4>
+	<p> MD Rintoul and S Torquato, <i><a href="http://chemists.princeton.edu/torquato/files/publications/papers/paper-134.pdf">Reconstruction of the structure of dispersions</a></i>, Journal of Colloid and Interface Science, 186, 467-476 (1997)</p>
+	<p>Liu, Y., Greene, M.S., Chen, W., Dikin, D., Liu, W.K., <i><a href="http://www.sciencedirect.com/science/article/pii/S0010448512000681">Computational Microstructure Characterization and Reconstruction for Stochastic Multiscale Design</a></i>, Computer Aided Design, 45 (1), 65-76, 2013 </p>
+
+
+{% endblock %}
+</body>
+</html>

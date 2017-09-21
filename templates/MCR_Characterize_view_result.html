@@ -1,0 +1,110 @@
+<!-- 
+################################################################################
+#
+# File Name: Two_pt_MCR_landing.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Microstructure Characterization</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+	
+
+<h3>Results</h3>
+<br>
+
+<style>
+div.target {
+	position: relative;
+	left: 100px;
+	top: 40px;
+	width: 500px;
+	height: 500px;
+}
+
+div.correlation {
+	position: absolute;
+        left: 650px;
+	top: -10px;
+	width: 500px;
+	height: 500px;
+}
+
+
+</style>
+
+<body>
+</body>
+
+<div class ="target">
+<h3> Input Image </h3>
+<script language="JavaScript">
+  function Target()
+  {
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+    l = unescape(temp[1]);
+    //alert(l); //Dialog with the text you put on the textbox
+    var target = document.createElement("IMG");
+    target.setAttribute("src","http://129.105.90.149/nm/Two_pt_MCR/Characterization/"+l+"/Input1.jpg");
+    target.setAttribute("title","Input Microstructure");
+    target.setAttribute("width", "350");
+    target.setAttribute("height", "350");
+    target.style.position="absolute";
+    //target.style.left = '100px';
+    target.style.left = '150px';
+    target.style.marginTop = '-740px' 
+    document.body.append(target);
+  }
+  Target();
+</script>
+
+
+<div class ="correlation">
+<h3> Correlation </h3><a id ="myAnchor" download> Download </a>
+<script>
+  function Reconstruct()
+  {
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+    l = unescape(temp[1]);
+    var Reconstruct = document.createElement("IMG");
+    var image_name = "http://129.105.90.149/nm/Two_pt_MCR/Characterization/"+l+"/Correlation.jpg";
+    Reconstruct.setAttribute("src",image_name);
+    Reconstruct.setAttribute("width", "500");
+    Reconstruct.setAttribute("height", "500");
+    Reconstruct.style.position = 'absolute';
+    Reconstruct.style.left = '700px';
+    Reconstruct.style.marginTop = '-740px';
+    document.body.append(Reconstruct);
+    var image_downld = "http://129.105.90.149/nm/Two_pt_MCR/Characterization/"+l+"/Results.zip";
+    document.getElementById("myAnchor").setAttribute("href",image_downld);
+    //var title = document.createTextNode("Correlation");
+    //document.body.appendChild(title);
+  }
+  Reconstruct();
+</script>
+</div>
+
+</div>
+<p></p>
+<hr>
+	<h4>Reference</h4>
+	<p> MD Rintoul and S Torquato, <i><a href="http://chemists.princeton.edu/torquato/files/publications/papers/paper-134.pdf">Reconstruction of the structure of dispersions</a></i>, Journal of Colloid and Interface Science, 186, 467-476 (1997)</p>
+	<p>Liu, Y., Greene, M.S., Chen, W., Dikin, D., Liu, W.K., <i><a href="http://www.sciencedirect.com/science/article/pii/S0010448512000681">Computational Microstructure Characterization and Reconstruction for Stochastic Multiscale Design</a></i>, Computer Aided Design, 45 (1), 65-76, 2013 </p>
+
+
+{% endblock %}
+</body>
+</html>
