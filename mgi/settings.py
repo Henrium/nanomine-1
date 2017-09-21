@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'AUTOFIT',
     'RECON',
     'XMLCONV',
+    'Two_pt_MCR',
     # HZ
     'signups',
     # HZ 032317

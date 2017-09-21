@@ -52,10 +52,22 @@ urlpatterns = patterns('',
     url(r'^RECONCheck$', 'RECON.views.check', name='RECON_check'),
     url(r'^RECONSample$', 'RECON.views.sample', name='RECON_sample'),
     url(r'^XMLCONV/', 'XMLCONV.views.home', name='XMLCONV'),
+    url(r'^Two_pt_MCR/','Two_pt_MCR.views.landing',name='Two_pt_MCR'),
+    url(r'^Two_pt_MCR_Image_Submission','Two_pt_MCR.views.submit_image',name='Two_pt_MCR_Image_Submission'),
+    url(r'^Two_pt_MCR_CheckResult','Two_pt_MCR.views.checkResult',name='Two_pt_MCR_CheckResult'),
+    url(r'^Two_pt_MCR_view_result','Two_pt_MCR.views.viewResult',name='Two_pt_MCR_view_result'),
+    url(r'^Two_pt_MCR_submission_notify','Two_pt_MCR.views.submission_notify',name='Two_pt_MCR_submission_notify'),
+    url(r'^Two_pt_MCR_Characterize','Two_pt_MCR.views.Characterize',name='Two_pt_MCR_Characterize'),
+    url(r'^MCR_Characterize_Choice','Two_pt_MCR.views.Characterize_Choice',name='Characterize_Choice'),
+    url(r'^MCR_Characterize_Check_Result','Two_pt_MCR.views.Characterize_Check_Result',name='Characterize_Check_Result'),
+    url(r'^MCR_Characterize_view_result','Two_pt_MCR.views.Characterize_view_result',name='Characterize_view_result'),
+    url(r'^MCR_Reconstruction_Choice','Two_pt_MCR.views.Reconstruction_Choice',name='Reconstruction_Choice'),
+    url(r'^MCR_Correlation_Fundamentals','Two_pt_MCR.views.Correlation_Fundamentals',name='Correlation_Fundamentals'),
+    url(r'^SDF_Characterize','Two_pt_MCR.views.SDF',name='SDF_Characterize'),
+    url(r'^SDF_Reconstruction','Two_pt_MCR.views.SDF',name='SDF_Reconstruction'),
     # search
     url(r'^search/', 'search.views.index', name='search'),
     url(r'^notify/', 'mgi.views.notify', name='notify'),
-    ###    
     
     url(r'^rest/', include('api.urls')),
     url(r'^modules/', include('modules.urls')),
@@ -76,7 +88,9 @@ urlpatterns = patterns('',
     url(r'^terms-of-use', 'mgi.views.terms_of_use', name='terms-of-use'),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^dashboard$', 'mgi.views.dashboard', name='dashboard'),
+    # 032317
     url(r'^csrf_assign.js$', 'mgi.views.csrf', name='csrf'),
+    url(r'^viz_dashboard$', 'mgi.views.viz_dashboard', name='viz_dashboard'),
 )+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # HZ 032317 added http proxy for blazegraph

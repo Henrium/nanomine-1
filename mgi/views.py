@@ -89,6 +89,12 @@ def csrf(request):
             
     return HttpResponse(template.render(context))
 
+def viz_dashboard(request):
+    template = loader.get_template('viz_dashboard.html')
+    context = RequestContext(request, {
+        '': '',
+    })
+    return HttpResponse(template.render(context))
 
 ################################################################################
 #

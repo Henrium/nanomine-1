@@ -1,103 +1,36 @@
-[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] GET http://localhost:8080/blazegraph/namespace?describe-each-named-graph=false
-[23/Mar/2017 20:15:22] DEBUG [httpproxy.views:170] Response body: 
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-
-<rdf:Description rdf:nodeID="node1bbu6fn0ox52">
-	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<title xmlns="http://purl.org/dc/terms/">kb</title>
-	<Namespace xmlns="http://www.bigdata.com/rdf#/features/KB/">kb</Namespace>
-	<sparqlEndpoint xmlns="http://rdfs.org/ns/void#" rdf:resource="http://localhost:8080/blazegraph/namespace/kb/sparql"/>
-	<uriRegexPattern xmlns="http://rdfs.org/ns/void#">^.*</uriRegexPattern>
-</rdf:Description>
-
-</rdf:RDF>
-[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] POST http://localhost:8080/blazegraph/namespace/kb/sparql
-[23/Mar/2017 20:15:22] ERROR [django.request:231] Internal Server Error: /namespace/kb/sparql
+[20/Sep/2017 19:25:38] WARNING [django.request:143] Not Found: /favicon.ico
+[20/Sep/2017 19:27:38] WARNING [django.request:99] Forbidden (CSRF token missing or incorrect.): /login
+[20/Sep/2017 20:48:09] ERROR [django.request:231] Internal Server Error: /Two_pt_MCR_Characterize
+Traceback (most recent call last):
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/middleware/common.py", line 72, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 614, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 489, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 340, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/home/NANOMINE/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/NANOMINE/Develop/mdcs/Two_pt_MCR/views.py", line 140
+    os.system('matlab -nodesktop -nodisplay -nosplash -r "cd /home/NANOMINE/Develop/mdcs/Two_pt_MCR/mfiles;Characterize("'+str(user_name)+'",'"+str(input_type)+'",'"+str(correlation_choice)+'");exit"')
+                                                                                                                                                                                                        ^
+SyntaxError: EOL while scanning string literal
+[20/Sep/2017 20:49:34] ERROR [django.request:231] Internal Server Error: /Two_pt_MCR_Characterize
 Traceback (most recent call last):
   File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 82, in dispatch
-    response = super(HttpProxy, self).dispatch(request, *args, **kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/views/generic/base.py", line 87, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 147, in post
-    return self.get_response(body=request.body, headers=headers)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 166, in get_response
-    response = urllib.request.urlopen(request)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 154, in urlopen
-    return opener.open(url, data, timeout)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 435, in open
-    response = meth(req, response)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 548, in http_response
-    'http', request, response, code, msg, hdrs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 473, in error
-    return self._call_chain(*args)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 407, in _call_chain
-    result = func(*args)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 556, in http_error_default
-    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
-HTTPError: HTTP Error 501: Not Implemented
-[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] GET http://localhost:8080/blazegraph/namespace?describe-each-named-graph=false
-[23/Mar/2017 20:15:22] DEBUG [httpproxy.views:170] Response body: 
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-
-<rdf:Description rdf:nodeID="node1bbu6fn0ox53">
-	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<title xmlns="http://purl.org/dc/terms/">kb</title>
-	<Namespace xmlns="http://www.bigdata.com/rdf#/features/KB/">kb</Namespace>
-	<sparqlEndpoint xmlns="http://rdfs.org/ns/void#" rdf:resource="http://localhost:8080/blazegraph/namespace/kb/sparql"/>
-	<uriRegexPattern xmlns="http://rdfs.org/ns/void#">^.*</uriRegexPattern>
-</rdf:Description>
-
-</rdf:RDF>
-[23/Mar/2017 20:15:22] WARNING [django.request:143] Not Found: /status
-[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] GET http://localhost:8080/blazegraph/namespace?describe-each-named-graph=false
-[23/Mar/2017 20:15:22] DEBUG [httpproxy.views:170] Response body: 
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-
-<rdf:Description rdf:nodeID="node1bbu6fn0ox54">
-	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-	<title xmlns="http://purl.org/dc/terms/">kb</title>
-	<Namespace xmlns="http://www.bigdata.com/rdf#/features/KB/">kb</Namespace>
-	<sparqlEndpoint xmlns="http://rdfs.org/ns/void#" rdf:resource="http://localhost:8080/blazegraph/namespace/kb/sparql"/>
-	<uriRegexPattern xmlns="http://rdfs.org/ns/void#">^.*</uriRegexPattern>
-</rdf:Description>
-
-</rdf:RDF>
-[23/Mar/2017 20:15:22] INFO [httpproxy.views:160] POST http://localhost:8080/blazegraph/namespace/kb/sparql
-[23/Mar/2017 20:15:22] ERROR [django.request:231] Internal Server Error: /namespace/kb/sparql
-Traceback (most recent call last):
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 82, in dispatch
-    response = super(HttpProxy, self).dispatch(request, *args, **kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/django/views/generic/base.py", line 87, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 147, in post
-    return self.get_response(body=request.body, headers=headers)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/site-packages/httpproxy/views.py", line 166, in get_response
-    response = urllib.request.urlopen(request)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 154, in urlopen
-    return opener.open(url, data, timeout)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 435, in open
-    response = meth(req, response)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 548, in http_response
-    'http', request, response, code, msg, hdrs)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 473, in error
-    return self._call_chain(*args)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 407, in _call_chain
-    result = func(*args)
-  File "/home/NANOMINE/anaconda2/lib/python2.7/urllib2.py", line 556, in http_error_default
-    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
-HTTPError: HTTP Error 501: Not Implemented
-[23/Mar/2017 20:22:50] WARNING [django.request:143] Not Found: /favicon.ico
+  File "/home/NANOMINE/Develop/mdcs/Two_pt_MCR/views.py", line 138, in Characterize
+    print matlab_input
+NameError: global name 'matlab_input' is not defined
+[20/Sep/2017 21:31:51] WARNING [django.request:143] Not Found: /favicon.ico

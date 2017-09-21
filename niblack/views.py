@@ -15,27 +15,27 @@ def home(request):
 	if request.user.is_authenticated():
 	    # Handle file upload
 	    if request.method == 'POST':
-		form = DocumentForm(request.POST, request.FILES)
-		if form.is_valid():
-		    newdoc = Document(docfile = request.FILES['docfile'])
-		    newdoc.save()
-		    
-		    # Initialize adjust value and window size
-		    f = open('./niblack/mfiles/adjust', 'w')
-		    s = str('0')
-		    f.write(s)
-		    f.close()
-		    f = open('./niblack/mfiles/winsize', 'w')
-		    w = str('60')
-		    f.write(w)
-		    f.close()            
-		    # Run MATLAB when file is valid
-		    os.system('matlab -nodesktop -nodisplay -nojvm -nosplash -r "cd niblack/mfiles;run_niblack;exit"')
-		    os.system('mv ./niblack/media/documents/jpg/NBbefore.jpg /var/www/html/nm/NBbefore.jpg')
-		    os.system('mv ./niblack/media/documents/jpg/NBafter.jpg /var/www/html/nm/NBafter.jpg')
-		    
-		    # Redirect to the document list after POST
-		    return HttpResponseRedirect(reverse('niblack.views.home'))
+			form = DocumentForm(request.POST, request.FILES)
+			if form.is_valid():
+				newdoc = Document(docfile = request.FILES['docfile'])
+				newdoc.save()
+				
+				# Initialize adjust value and window size
+				f = open('./niblack/mfiles/adjust', 'w')
+				s = str('0')
+				f.write(s)
+				f.close()
+				f = open('./niblack/mfiles/winsize', 'w')
+				w = str('60')
+				f.write(w)
+				f.close()            
+				# Run MATLAB when file is valid
+				os.system('matlab -nodesktop -nodisplay -nojvm -nosplash -r "cd niblack/mfiles;run_niblack;exit"')
+				os.system('mv ./niblack/media/documents/jpg/NBbefore.jpg /var/www/html/nm/NBbefore.jpg')
+				os.system('mv ./niblack/media/documents/jpg/NBafter.jpg /var/www/html/nm/NBafter.jpg')
+				
+				# Redirect to the document list after POST
+				return HttpResponseRedirect(reverse('niblack.views.home'))
 	    else:
 		form = DocumentForm() # A empty, unbound form
 
