@@ -9,3 +9,5 @@ logfile.*
 
 ./niblack/media
 ./niblack/mfiles/niblack/imgs
+
+*.pyc
