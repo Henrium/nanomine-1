@@ -1,0 +1,83 @@
+<!-- 
+################################################################################
+#
+# File Name: Two_pt_MCR.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Microstructure Characterization and Reconstruction - Correlation Function Approach</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+	
+
+<h3>Description</h3>
+<br>
+	<p>Upload a grayscale micrograph image in JPEG format and Reconstruct a statistically equivalent image. </p>
+
+<!--<h3>Existing image files:</h3>-->
+<!-- List of uploaded documents -->
+<!--{% if documents %}
+	<ul>
+	{% for document in documents %}
+		<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No documents.</p>
+{% endif %}-->
+
+<!-- Upload form. Note enctype attribute! -->
+<form action="{% url "Two_pt_MCR_Image_Submission" %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>
+	<p> {{ form.email_id.label_tag }} </p>
+                {{ form.email_id }}
+        </p>
+        <p>
+        <p> {{ form.num_recon.label_tag }} </p>
+               {{ form.num_recon }}    
+        </p>
+	<p></p>
+	<p>
+	<p> {{form.correlation_choice.label_tag}} </p>
+		{{form.correlation_choice}}
+	<a onClick="window.open('/MCR_Correlation_Fundamentals','newwindow','width=800,height=800')">What is a Correlation Function?</a>
+	</p>
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }} </p>
+	<p>
+		{{ form.docfile.errors }}
+		{{ form.docfile }}		
+	</p>
+	<p><input type="submit" value="Run"  onclick = "myFunction()"/></p>
+	<script>
+		function myFunction() {
+    		//alert("Image Submission Successful! You will receive an email after the recostruction is complete. You may close this page now.");
+		var url = "http://nanomine.northwestern.edu/Two_pt_MCR_submission_notify";
+		var link = document.createElement('a');
+		link.href = url;
+		document.body.appendChild(link);
+		}
+	</script>
+</form>
+
+<hr>
+	<h4>Reference</h4>
+	<p> MD Rintoul and S Torquato, <i><a href="http://chemists.princeton.edu/torquato/files/publications/papers/paper-134.pdf">Reconstruction of the structure of dispersions</a></i>, Journal of Colloid and Interface Science, 186, 467-476 (1997)</p>
+	<p>Liu, Y., Greene, M.S., Chen, W., Dikin, D., Liu, W.K., <i><a href="http://www.sciencedirect.com/science/article/pii/S0010448512000681">Computational Microstructure Characterization and Reconstruction for Stochastic Multiscale Design</a></i>, Computer Aided Design, 45 (1), 65-76, 2013 </p>
+
+
+{% endblock %}
+</body>
+</html>

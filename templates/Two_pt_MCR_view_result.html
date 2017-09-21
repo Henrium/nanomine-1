@@ -1,0 +1,136 @@
+<!-- 
+################################################################################
+#
+# File Name: Two_pt_MCR_landing.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Microstructure Characterization and Reconstruction - Correlation Function Approach</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+	
+
+<h3>Results</h3>
+<br>
+
+<style>
+div.target {
+	position: relative;
+	left: 20px;
+	top: 40px;
+	width: 500px;
+	height: 500px;
+}
+
+div.reconstruct {
+	position: absolute;
+        left: 400px;
+	top: -10px;
+	width: 500px;
+	height: 500px;
+}
+
+div.correlation {
+	position: absolute;
+	left: 800px;
+	top: -10px;
+	width: 500px;
+	height:500px;
+}
+
+</style>
+
+<body>
+</body>
+
+<div class ="target">
+<h4> Target Image </h4>
+<script language="JavaScript">
+  function Target()
+  {
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+    l = unescape(temp[1]);
+    //alert(l); //Dialog with the text you put on the textbox
+    var target = document.createElement("IMG");
+    target.setAttribute("src","http://129.105.90.149/nm/Two_pt_MCR/Reconstruction/"+l+"/Target.jpg");
+    target.setAttribute("title","Target Microstructure");
+    target.setAttribute("width", "300");
+    target.setAttribute("height", "300");
+    //target.setAttribute("position","left=300px; top=300px");
+    target.style.marginLeft = '50px';
+    target.style.marginTop = '-740px' 
+    document.body.append(target);
+  }
+  Target();
+</script>
+
+
+<div class ="reconstruct">
+<h4> Reconstructed Image </h4><a id ="myAnchor" download> Download </a>
+<script>
+  function Reconstruct()
+  {
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+    l = unescape(temp[1]);
+    var Reconstruct = document.createElement("IMG");
+    var image_name = "http://129.105.90.149/nm/Two_pt_MCR/Reconstruction/"+l+"/Reconstruct1.jpg";
+    Reconstruct.setAttribute("src",image_name);
+    Reconstruct.setAttribute("width", "300");
+    Reconstruct.setAttribute("height", "300");
+    Reconstruct.style.position = 'absolute';
+    Reconstruct.style.marginLeft = '125px';
+    Reconstruct.style.marginTop = '-740px';
+    document.body.append(Reconstruct);
+    var image_downld = "http://129.105.90.149/nm/Two_pt_MCR/Reconstruction/"+l+"/Results.zip";
+    document.getElementById("myAnchor").setAttribute("href",image_downld);
+  }
+  Reconstruct();
+</script>
+</div>
+
+
+<div class="correlation">
+<h4>Autocorrelation Comparison</h4>
+<script>
+  function view_S2()
+  {
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+    l = unescape(temp[1]);
+    var Correlation_image = document.createElement("IMG");
+    var image_name = "http://129.105.90.149/nm/Two_pt_MCR/Reconstruction/"+l+"/Autocorrelation_Comparison.jpg";
+    Correlation_image.setAttribute("src",image_name);
+    Correlation_image.setAttribute("width","450");
+    Correlation_image.setAttribute("height","450");
+    Correlation_image.style.position = 'absolute';
+    Correlation_image.style.marginLeft = '500px';
+    Correlation_image.style.marginTop = '-760px';
+    document.body.append(Correlation_image);
+  }
+  view_S2();
+</script>
+</div>
+</div>
+<p></p>
+<hr>
+	<h4>Reference</h4>
+	<p> MD Rintoul and S Torquato, <i><a href="http://chemists.princeton.edu/torquato/files/publications/papers/paper-134.pdf">Reconstruction of the structure of dispersions</a></i>, Journal of Colloid and Interface Science, 186, 467-476 (1997)</p>
+	<p>Liu, Y., Greene, M.S., Chen, W., Dikin, D., Liu, W.K., <i><a href="http://www.sciencedirect.com/science/article/pii/S0010448512000681">Computational Microstructure Characterization and Reconstruction for Stochastic Multiscale Design</a></i>, Computer Aided Design, 45 (1), 65-76, 2013 </p>
+
+
+{% endblock %}
+</body>
+</html>

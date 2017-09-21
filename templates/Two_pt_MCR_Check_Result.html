@@ -1,0 +1,42 @@
+<!-- 
+################################################################################
+#
+# File Name: Two_pt_MCR_Check_Result.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Microstructure Characterization and Reconstruction - Correlation Function Approach</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+	
+
+<h3>Enter Job ID (sent via email)</h3>
+<br>	
+<div>
+<form action="Two_pt_MCR_view_result.html" method="GET">
+   <input type="text" id="foo" name="foo">
+   <input type="submit" value="Send" name="submit" id="submit">
+</form>
+</div>
+
+
+<hr>
+	<h4>Reference</h4>
+	<p> MD Rintoul and S Torquato, <i><a href="http://chemists.princeton.edu/torquato/files/publications/papers/paper-134.pdf">Reconstruction of the structure of dispersions</a></i>, Journal of Colloid and Interface Science, 186, 467-476 (1997)</p>
+	<p>Liu, Y., Greene, M.S., Chen, W., Dikin, D., Liu, W.K., <i><a href="http://www.sciencedirect.com/science/article/pii/S0010448512000681">Computational Microstructure Characterization and Reconstruction for Stochastic Multiscale Design</a></i>, Computer Aided Design, 45 (1), 65-76, 2013 </p>
+
+
+{% endblock %}
+</body>
+</html>

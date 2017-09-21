@@ -1,0 +1,64 @@
+<!-- 
+################################################################################
+#
+# File Name: Two_pt_MCR_landing.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html' %}
+{% load staticfiles %}
+
+
+{% block title %}<h1><span>Microstructure Characterization and Reconstruction</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+	
+
+<!--<h3>Description</h3>-->
+<br>
+	<p>This page allows you to characterize and recontruct images of polymer nanocomposites. Please click on the appropriate button.</p>
+
+<h3> STEP 1: Image Binarization </h3>
+<div>
+	<p>Characterization and Reconstruction algorithms work with binarized images. If you want to binarize grayscale SEM/TEM images, use our <a href='http://nanomine.northwestern.edu:8001/niblack'>Niblack Binarizarion</a> webtool.<p>
+	<input type="button" onclick="location.href='http://nanomine.northwestern.edu:8001/niblack';" value="Binarize Image" />
+</div>
+
+<h3> STEP 2: Image Characterization </h3>
+<div>
+	<p>Upload a binarized microstructure image / set of images and obtain characterization data of your choice.</p>
+	<input type="button" onclick="location.href='http://nanomine.northwestern.edu:8001/MCR_Characterize_Choice';" value="Characterize Image" />
+</div>
+
+<h3> STEP 3: Image Reconstruction </h3>
+<div>
+	<p> Upload a binary microstructure image / set of images and obtain 2D/3D reconstructions using method of your choice.</p>
+	<input type="button" onclick="location.href='http://nanomine.northwestern.edu:8001/MCR_Reconstruction_Choice';" value="Reconstruct Image" />
+</div>
+<!--
+<div>
+<input type="button" onclick="location.href='http://nanomine.northwestern.edu:8001/Two_pt_MCR_Image_Submission';" value="Submit Image for Reconstruction" />
+</div>
+<br/> <br/>
+
+<div>
+<input type="button" onclick="location.href='http://nanomine.northwestern.edu:8001/Two_pt_MCR_CheckResult';" value="Check Results for previous submissions" />
+</div>
+-->
+
+<hr>
+	<h4>Reference</h4>
+	<p> MD Rintoul and S Torquato, <i><a href="http://chemists.princeton.edu/torquato/files/publications/papers/paper-134.pdf">Reconstruction of the structure of dispersions</a></i>, Journal of Colloid and Interface Science, 186, 467-476 (1997)</p>
+	<p>Liu, Y., Greene, M.S., Chen, W., Dikin, D., Liu, W.K., <i><a href="http://www.sciencedirect.com/science/article/pii/S0010448512000681">Computational Microstructure Characterization and Reconstruction for Stochastic Multiscale Design</a></i>, Computer Aided Design, 45 (1), 65-76, 2013 </p>
+
+
+{% endblock %}
+</body>
+</html>
