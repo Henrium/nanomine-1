@@ -1,0 +1,10 @@
+Subject: Characterization complete for Job ID: 22371942024220.8084
+
+Greeting from NanoMine!
+
+You are receiving this email because you had submitted an image for characterization using 2 point correlation.The characterization process is complete and you may view the images at : http://nanomine.northwestern.edu:8001/MCR_Characterize_Check_Result
+
+Best Wishes,
+NanoMine Team.
+
+***DO NOT REPLY TO THIS EMAIL***

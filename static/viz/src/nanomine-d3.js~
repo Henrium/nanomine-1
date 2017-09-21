@@ -1,0 +1,1026 @@
+'use strict';
+
+String.prototype.unCamelCase = function(){
+    return this
+    // insert a space between lower & upper
+	.replace(/([a-z])([A-Z])/g, '$1 $2')
+    // space before last upper in a sequence followed by lower
+	.replace(/\b([A-Z]+)([A-Z])([a-z])/, '$1 $2$3')
+    // uppercase the first character
+	.replace(/^./, function(str){ return str.toUpperCase(); })
+}
+
+var nanomineD3 = angular.module('nanomine', ['nvd3', 'ngMaterial']);
+var v;
+
+nanomineD3.controller("NanomineVizController", ['$scope', function($scope) {
+    $scope.config = {
+        title: "New Visualization"
+    };
+}]);
+
+nanomineD3.value('nanomineEndpoint', "http://nanomine.northwestern.edu:8001/blazegraph/sparql");
+
+function appendTransform(defaults, transform) {
+
+  // We can't guarantee that the default transformation is an array
+  defaults = angular.isArray(defaults) ? defaults : [defaults];
+
+  // Append the new transformation to the defaults
+  return defaults.concat(transform);
+}
+
+nanomineD3.factory('conf', function() {
+    var config = {
+        endpoint : "http://nanomine.northwestern.edu:8001/blazegraph/sparql"
+    };
+    return config;
+})
+
+nanomineD3.factory('sparqlValuesBinder', function() {
+    function sparqlValuesBinder(objects, keys) {
+        var values = 'VALUES (' + keys.map(function(d) { return "?"+d[1]}).join(" ") +') { \n';
+        console.log(objects);
+
+        //console.log("1234567890");
+        
+        values = values + objects.map(function(o) {
+            var value = "(" + keys.map(function(key) {
+                if (!o[key[0]]) return "UNDEF";
+                return "<" + o[key[0]] + ">";
+            }).join(" ") + ")";
+            return value;
+        }).join("\n") + ' }';
+        return values;
+    }
+    return sparqlValuesBinder;
+});
+
+
+nanomineD3.factory('loadData', ['$http', 'conf', '$q', function($http, conf, $q) {
+    var query = 'prefix nanomine: <http://nanomine.tw.rpi.edu/ns/>\n\
+prefix sio: <http://semanticscience.org/resource/>\n\
+prefix prov: <http://www.w3.org/ns/prov#>\n\
+select distinct ?composite ?ParticleType ?ParticleTypeLabel ?PolymerType ?PolymerTypeLabel ?SurfaceTreatmentType ?SurfaceTreatmentTypeLabel ?type ?materialType ?value ?unit ?generalization where {\n\
+  {\n\
+    ?p sio:hasRole [ a ?materialType ; sio:inRelationTo ?composite].\n\
+  } union {\n\
+    ?p a nanomine:PolymerNanocomposite.\n\
+  }\n\
+  ?p sio:hasAttribute ?attr.\n\
+  ?attr a ?type.\n\
+  ?attr sio:hasValue ?value.\n\
+  optional {\n\
+    ?attr sio:hasUnit ?unit.\n\
+  }\n\
+  ?composite a nanomine:PolymerNanocomposite.\n\
+  ?composite prov:specializationOf?/sio:hasComponentPart?/sio:isSurroundedBy? ?p.\n\
+  optional {\n\
+    ?composite prov:specializationOf ?generalization.\n\
+  }\n\
+  optional {\n\
+    ?composite prov:specializationOf?/sio:hasComponentPart ?filler.\n\
+    ?filler a ?ParticleType; sio:hasRole [a nanomine:Filler].\n\
+    ?ParticleType rdfs:label ?ParticleTypeLabel.\n\
+  }\n\
+  optional {\n\
+    ?composite prov:specializationOf?/sio:hasComponentPart ?matrix.\n\
+    ?matrix a ?PolymerType; sio:hasRole [a nanomine:Matrix].\n\
+    ?PolymerType rdfs:label ?PolymerTypeLabel.\n\
+  }\n\
+  optional {\n\
+    ?composite prov:specializationOf?/sio:hasComponentPart/sio:isSurroundedBy ?surfaceTreatment.\n\
+    ?surfaceTreatment a ?SurfaceTreatmentType; sio:hasRole [a nanomine:SurfaceTreatment].\n\
+    ?SurfaceTreatmentType rdfs:label ?SurfaceTreatmentTypeLabel.\n\
+  }\n\
+}';
+    var cache = {};
+    var nm = "http://nanomine.tw.rpi.edu/ns/";
+
+    function getUnit(unit, label) {
+        if (!cache[unit]) {
+            cache[unit] = {
+                uri: unit,
+                label: label
+            }
+        }
+        return cache[unit];
+    }
+    
+    function getComposite(uri) {
+        if (!cache[uri]) {
+            cache[uri] = {
+                uri : uri,
+                "http://nanomine.tw.rpi.edu/ns/PolymerNanocomposite" : {},
+                "http://nanomine.tw.rpi.edu/ns/Particle": {},
+                "http://nanomine.tw.rpi.edu/ns/Polymer" : {},
+                "http://nanomine.tw.rpi.edu/ns/SurfaceTreatment" : {},
+                rows : []
+            };
+        }
+        return cache[uri];
+    };
+    function fn(vizconfig) {
+        var values = 'VALUES (?materialType ?type) { \n';
+        var dimensions = ['x','y', 'size'];
+        var hasBindings = false;
+        dimensions.forEach(function(dim) {
+            if (vizconfig[dim]) {
+                console.log(vizconfig[dim]);
+                hasBindings = true;
+                values = values + "( <"+vizconfig[dim].materialType+"> <"+vizconfig[dim].type+"> )\n";
+            }
+        });
+        values = values + ' }';
+        var q = query + values;
+        if (!hasBindings) {
+            var result = [];
+            result.config = vizconfig;
+            var p = $q(function(resolve, reject) { resolve(result)});
+            return p;
+        }
+        return $http
+            .get(conf.endpoint, {
+                params : {query : q, output: 'json'},
+                responseType: 'json'})
+            .then(function(data) {
+                return $q(function( resolve, reject) {
+                    var composites = {};
+                    data.data.results.bindings.forEach(function(row) {
+                        if (row.materialType.value == "http://localhost:8080/blazegraph/undefined") {
+                            row.materialType.value = "http://nanomine.tw.rpi.edu/ns/PolymerNanocomposite";
+                        }
+                        if (row.value.value == "None") return;
+                        var composite = getComposite(row.composite.value);
+                        ['Particle','SurfaceTreatment','Polymer'].forEach(function(t) {
+                            if (row[t+'Type'] && !composite[nm+t].type ) {
+                                composite[nm+t].type = {uri: row[t+'Type']};
+                                if (row[t+'TypeLabel']) {
+                                    composite[nm+t].type.label = row[t+'TypeLabel'].value;
+                                } else {
+                                    composite[nm+t].type.label = row[t+'Type'].value.split('/').slice(-1)[0].unCamelCase();
+                                }
+                            }
+                        });
+                        if (row.value.datatype == "xsd:decimal" || row.value.datatype == "xsd:double" || row.value.datatype == "xsd:float") {
+                            row.value.value = parseFloat(row.value.value);
+                        }
+                        composite[row.materialType.value][row.type.value] = row.value;
+                        if (row.unit && row.unitLabel) {
+                            var unit = getUnit(row.unit.value, row.unitLabel.value);
+                            composite[row.materialType.value][row.type.value].unit = unit;
+                        }
+                        if (row.generalization) {
+                            composite.generalization = row.generalization.value;
+                        }
+                        composite.rows.push(row);
+                        composites[row.composite.value] = composite;
+                    });
+                    var groupMap = {}, result = [];
+                    console.log(composites);
+                    result.config = vizconfig;
+                    d3.values(composites).forEach(function(composite) {
+                        var groupBy = {
+                            label: "",
+                            uri: "None"
+                        };
+                        if (composite.generalization) {
+                            groupBy.uri = composite.generalization;
+                        }
+                        if (vizconfig.groupBy != null) {
+                            composite[vizconfig.groupBy.materialType][vizconfig.groupBy.type];
+                            if (!groupBy || !groupBy.uri) {
+                                groupBy = {
+                                    label: "",
+                                    uri: "None"
+                                };
+                            }
+                        }
+                        if (!groupMap[groupBy.uri]) {
+                            var v1 = groupBy.uri.split("/");
+                            groupMap[groupBy.uri] = {
+                                key : v1[4],
+                                group: groupBy,
+                                values: []
+                            };
+                            result.push(groupMap[groupBy.uri]);
+                        }
+                        var value = {
+                            entity : composite
+                        }
+                        var complete = true;
+                        dimensions.forEach(function(dim) {
+                            if (vizconfig[dim]) {
+                                if (composite[vizconfig[dim].materialType][vizconfig[dim].type]) {
+                                    value[dim] = composite[vizconfig[dim].materialType][vizconfig[dim].type].value;
+                                    vizconfig[dim].unit = composite[vizconfig[dim].materialType][vizconfig[dim].type].unit;
+                                } else {
+                                    complete = false;
+                                }
+                            }
+                        });
+                        if (complete) {
+                            //console.log(value);
+                            groupMap[groupBy.uri].values.push(value);
+
+                            result.forEach(function(group) {
+                                group.values = group.values.sort(function(a, b) { return d3.ascending(a.x, b.x)});
+                            })
+                        }
+                    });
+                    
+                    console.log(result);
+                    resolve(result);
+                });
+            });
+    }
+    return fn;
+}]);
+
+nanomineD3.factory('loadAttributes', ['$http', 'conf', '$q', "sparqlValuesBinder", function($http, conf, $q, sparqlValuesBinder) {
+    var unconstrainedQuery = 'prefix nanomine: <http://nanomine.tw.rpi.edu/ns/>\n\
+prefix sio: <http://semanticscience.org/resource/>\n\
+prefix prov: <http://www.w3.org/ns/prov#>\n\
+select distinct ?type (count(?c) as ?count) (sample(?label) as ?label) ?materialType (sample(?materialTypeLabel) as ?materialTypeLabel) ?unit (sample(?unitLabel) as ?unitLabel) where {\n\
+  ?c a nanomine:PolymerNanocomposite.\n\
+  ?c prov:specializationOf?/sio:hasComponentPart?/sio:isSurroundedBy? ?p.\n\
+  optional {\n\
+    ?p sio:hasRole [ a ?materialType ; sio:inRelationTo ?composite].\n\
+    optional { ?materialType rdfs:label ?materialTypeLabel }\n\
+  }\n\
+  ?p sio:hasAttribute ?attr.\n\
+  ?attr a ?type.\n\
+  ?attr sio:hasValue ?value.\n\
+  optional { ?attr sio:hasUnit ?unit. ?unit rdfs:label ?unitLabel}\n\
+  optional { ?type rdfs:label ?label}\n\
+} group by ?type ?materialType ?unit order by desc(?count)';
+
+    var constrainedQuery = 'prefix nanomine: <http://nanomine.tw.rpi.edu/ns/>\n\
+prefix sio: <http://semanticscience.org/resource/>\n\
+prefix prov: <http://www.w3.org/ns/prov#>\n\
+select distinct ?type (count(?c) as ?count) (sample(?label) as ?label) ?materialType (sample(?materialTypeLabel) as ?materialTypeLabel) ?unit (sample(?unitLabel) as ?unitLabel) where {\n\
+  ?c a nanomine:PolymerNanocomposite.\n\
+  ?c prov:specializationOf?/sio:hasComponentPart?/sio:isSurroundedBy? ?p.\n\
+  optional{\n\
+    ?p sio:hasRole [ a ?materialType ; sio:inRelationTo ?composite].\n\
+    optional { ?materialType rdfs:label ?materialTypeLabel }\n\
+  }\n\
+  ?p sio:hasAttribute ?attr.\n\
+  ?attr a ?type.\n\
+  ?attr sio:hasValue ?value.\n\
+  optional { ?attr sio:hasUnit ?unit. ?unit rdfs:label ?unitLabel}\n\
+  optional { ?type rdfs:label ?label}\n\
+  ?c prov:specializationOf?/sio:hasComponentPart?/sio:isSurroundedBy? [\n\
+    a ?selectedMaterialType; sio:hasAttribute [a ?selectedType]\n\
+  ].\n\
+} group by ?type ?materialType ?unit order by desc(?count)';
+    function fn(otherVariable) {
+        var query = unconstrainedQuery;
+        console.log(otherVariable);
+        if (otherVariable) {
+            query = constrainedQuery + sparqlValuesBinder([otherVariable],
+                                                          [['materialType','selectedMaterialType'],['type','selectedType']]);
+        }
+        console.log(query);
+        return $http.get(conf.endpoint, {params : {query : query, output: 'json'}, responseType: 'json'})
+            .then(function(data) {
+                return $q(function( resolve, reject) {
+                    var result = data.data.results.bindings.map(function(row) {
+                        var attr = {
+                            type : row.type.value,
+                            typeLabel : row.label.value,
+                            count: row.count.value,
+                            id: row.type.value,
+                            label: row.label.value,
+                            attrType: "quantity"
+                        }
+                        if (row.materialType) {
+                            attr.materialType = row.materialType.value;
+                            attr.materialTypeLabel = row.materialTypeLabel.value;
+                            attr.id = attr.materialType + " " + attr.id;
+                            attr.label = attr.materialTypeLabel + " " + attr.label;
+                        } else {
+                            attr.materialType = "http://nanomine.tw.rpi.edu/ns/PolymerNanocomposite";
+                        }
+                        if (row.unit) {
+                            attr.unit = row.unit.value;
+                            attr.unitLabel = row.unitLabel.value;
+                            attr.id = attr.id + " " + attr.unit;
+                        }
+                        if (attr.unitLabel) attr.label = attr.label + " in " + attr.unitLabel;
+                        attr.label = attr.label + " (" + attr.count + ")";
+                        return attr;
+                    });
+                    
+                    [["http://nanomine.tw.rpi.edu/ns/PolymerNanocomposite", "Polymer Nanocomposite"],
+                     ["http://nanomine.tw.rpi.edu/ns/Particle", "Particle"],
+                     ["http://nanomine.tw.rpi.edu/ns/Polymer", "Polymer"],
+                     ["http://nanomine.tw.rpi.edu/ns/SurfaceTreatment", "Surface Treatment"]]
+                        .forEach(function(row) {
+                            result.push({
+                                id : [row[0] , 'type'].join(" "),
+                                type : 'type',
+                                typeLabel : "Type",
+                                materialType: row[0],
+                                materialTypeLabel: row[1],
+                                attrType: "quality",
+                                label: row[1] + " Type"
+                            });
+                        });
+
+                    resolve(result);
+                });
+            });
+    }
+    return fn;
+}]);
+
+nanomineD3.factory("chartOptions",function() {
+    
+    var options = [
+        {
+            'name' : "Scatter Chart",
+            'show' : function(config, data) {
+                var result = config.x != null && config.y != null;
+                result = result && config.x.attrType == "quantity" && config.y.attrType == "quantity";
+                return result;
+            },
+            'chart' : {
+                "type": "scatterChart",
+                "height": 450,
+                "color": d3.scale.category20b().range(),             
+  				
+                
+
+                "scatter": {
+                    "onlyCircles": false
+                },
+                "showDistX": true,
+                "showDistY": true,
+                "duration": 350,
+
+                "xAxis": {
+                    "axisLabel": "",
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                        //var result = options[0].chart.xScale.tickFormat(1,d3.format(",d"))(d);
+                        //return result;
+                    }
+                },
+                "yAxis": {
+                    "axisLabel": "",
+                    "axisLabelDistance": -5,
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                        //var result = options[0].chart.yScale.tickFormat(1,d3.format(",d"))(d);
+                        //return result;
+                    }
+                },
+                "zoom": {
+                    "enabled": true,
+                    "scaleExtent": [ 1, 10 ],
+                    "useFixedDomain": true,
+                    "useNiceScale": false,
+                    "horizontalOff": false,
+                    "verticalOff": false,
+                    "unzoomEventType": "dblclick.zoom"
+                }
+            }
+        },
+        {
+            'name' : "Profile",
+            'show' : function(config, data) {
+                var result = config.x != null && config.y != null;
+                result = result && config.x.attrType == "quantity" && config.y.attrType == "quantity";
+                return result;
+            },
+            'chart' : {
+                "type": "lineChart",
+                "height": 450,
+                "color": d3.scale.category20b().range(),
+                "showDistX": true,
+                "showDistY": true,
+                "duration": 350,
+                "xAxis": {
+                    "axisLabel": "",
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d, 2);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                    }
+                },
+                "yAxis": {
+                    "axisLabel": "",
+                    "axisLabelDistance": -5,
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d, 2);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                    }
+                },
+                "zoom": {
+                    "enabled": true,
+                    "scaleExtent": [ 1, 10 ],
+                    "useFixedDomain": true,
+                    "useNiceScale": false,
+                    "horizontalOff": false,
+                    "verticalOff": false,
+                    "unzoomEventType": "dblclick.zoom"
+                }
+            }
+        }
+    ];
+    return options;
+});
+
+
+/*nanomineD3.factory("chartlogOptions",function() {
+    
+    var options = [
+        {
+            'name' : "Scatter Chart",
+            'show' : function(config, data) {
+                var result = config.x != null && config.y != null;
+                result = result && config.x.attrType == "quantity" && config.y.attrType == "quantity";
+                return result;
+            },
+            'chart' : {
+                "type": "scatterChart",
+                "height": 450,
+                "color": d3.scale.category20b().range(),
+               
+               "yScale": d3.scale.log(),
+               "xScale": d3.scale.log(),
+
+                "scatter": {
+                    "onlyCircles": false
+                },
+                "showDistX": true,
+                "showDistY": true,
+                "duration": 350,
+
+                "xAxis": {
+                    "axisLabel": " ",
+                    "tickFormat": function (d) {
+                        //var prefix = d3.formatPrefix(d);
+                        //return prefix.scale(d) + " " + prefix.symbol;
+                        var result = options[0].chart.xScale.tickFormat(1,d3.format(",d"))(d);
+                        return result;
+                    }
+                },
+                "yAxis": {
+                    "axisLabel": " ",
+                    "axisLabelDistance": -5,
+                    "tickFormat": function (d) {
+                        //var prefix = d3.formatPrefix(d);
+                        //return prefix.scale(d) + " " + prefix.symbol;
+                        var result = options[0].chart.yScale.tickFormat(1,d3.format(",d"))(d);
+                        return result;
+                    }
+                },
+                "zoom": {
+                    "enabled": true,
+                    "scaleExtent": [ 1, 10 ],
+                    "useFixedDomain": true,
+                    "useNiceScale": false,
+                    "horizontalOff": false,
+                    "verticalOff": false,
+                    "unzoomEventType": "dblclick.zoom"
+                }
+            }
+        },
+        {
+            'name' : "Profile",
+            'show' : function(config, data) {
+                var result = config.x != null && config.y != null;
+                result = result && config.x.attrType == "quantity" && config.y.attrType == "quantity";
+                return result;
+            },
+            'chart' : {
+                "type": "lineChart",
+                "height": 450,
+                "color": d3.scale.category20b().range(),
+
+               
+               "yScale": d3.scale.log(),
+               "xScale": d3.scale.log(),
+               
+                "showDistX": true,
+                "showDistY": true,
+                "duration": 350,
+                "xAxis": {
+                    "axisLabel": "",
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                    }
+                },
+                "yAxis": {
+                    "axisLabel": "",
+                    "axisLabelDistance": -5,
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                    }
+                },
+                "zoom": {
+                    "enabled": true,
+                    "scaleExtent": [ 1, 10 ],
+                    "useFixedDomain": true,
+                    "useNiceScale": false,
+                    "horizontalOff": false,
+                    "verticalOff": false,
+                    "unzoomEventType": "dblclick.zoom"
+                }
+            }
+        }
+    ];
+    return options;
+});
+
+nanomineD3.factory("chartlogxOptions",function() {
+    
+    var options = [
+        {
+            'name' : "Scatter Chart",
+            'show' : function(config, data) {
+                var result = config.x != null && config.y != null;
+                result = result && config.x.attrType == "quantity" && config.y.attrType == "quantity";
+                return result;
+            },
+            'chart' : {
+                "type": "scatterChart",
+                "height": 450,
+                "color": d3.scale.category20b().range(),
+               
+               "xScale": d3.scale.log(),
+
+                "scatter": {
+                    "onlyCircles": false
+                },
+                "showDistX": true,
+                "showDistY": true,
+                "duration": 350,
+
+                "xAxis": {
+                    "axisLabel": " ",
+                    "tickFormat": function (d) {
+                        //var prefix = d3.formatPrefix(d,2);
+                        var result = options[0].chart.xScale.tickFormat(1,d3.format(",d"))(d);
+                        return result;
+
+                    }
+                },
+                "yAxis": {
+                    "axisLabel": " ",
+                    "axisLabelDistance": -5,
+                    "tickFormat": function (d) {
+                    	var result = options[0].chart.yScale.tickFormat(1,d3.format(",d"))(d);
+                        return result;
+                    }
+                },
+                "zoom": {
+                    "enabled": true,
+                    "scaleExtent": [ 1, 10 ],
+                    "useFixedDomain": true,
+                    "useNiceScale": false,
+                    "horizontalOff": false,
+                    "verticalOff": false,
+                    "unzoomEventType": "dblclick.zoom"
+                }
+            }
+        },
+        {
+            'name' : "Profile",
+            'show' : function(config, data) {
+                var result = config.x != null && config.y != null;
+                result = result && config.x.attrType == "quantity" && config.y.attrType == "quantity";
+                return result;
+            },
+            'chart' : {
+                "type": "lineChart",
+                "height": 450,
+                "color": d3.scale.category20b().range(),
+ 
+               "xScale": d3.scale.log(),
+               
+                "showDistX": true,
+                "showDistY": true,
+                "duration": 350,
+                "xAxis": {
+                    "axisLabel": "",
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                    }
+                },
+                "yAxis": {
+                    "axisLabel": "",
+                    "axisLabelDistance": -5,
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                    }
+                },
+                "zoom": {
+                    "enabled": true,
+                    "scaleExtent": [ 1, 10 ],
+                    "useFixedDomain": true,
+                    "useNiceScale": false,
+                    "horizontalOff": false,
+                    "verticalOff": false,
+                    "unzoomEventType": "dblclick.zoom"
+                }
+            }
+        }
+    ];
+    return options;
+});
+
+nanomineD3.factory("chartlogyOptions",function() {
+    
+    var options = [
+        {
+            'name' : "Scatter Chart",
+            'show' : function(config, data) {
+                var result = config.x != null && config.y != null;
+                result = result && config.x.attrType == "quantity" && config.y.attrType == "quantity";
+                return result;
+            },
+            'chart' : {
+                "type": "scatterChart",
+                "height": 450,
+                "color": d3.scale.category20b().range(),
+               
+               "yScale": d3.scale.log(),
+               
+
+                "scatter": {
+                    "onlyCircles": false
+                },
+                "showDistX": true,
+                "showDistY": true,
+                "duration": 350,
+
+                "xAxis": {
+                    "axisLabel": " ",
+                    "tickFormat": function (d) {
+                    	var result = options[0].chart.xScale.tickFormat(1,d3.format(",d"))(d);
+                        return result;
+                    }
+                    
+                },
+                "yAxis": {
+                    "axisLabel": " ",
+                    "axisLabelDistance": -5,
+                    "tickFormat": function (d) {
+                    	var result = options[0].chart.yScale.tickFormat(1,d3.format(",d"))(d);
+                        return result;
+                    }
+                },
+                "zoom": {
+                    "enabled": true,
+                    "scaleExtent": [ 1, 10 ],
+                    "useFixedDomain": true,
+                    "useNiceScale": false,
+                    "horizontalOff": false,
+                    "verticalOff": false,
+                    "unzoomEventType": "dblclick.zoom"
+                }
+            }
+        },
+        {
+            'name' : "Profile",
+            'show' : function(config, data) {
+                var result = config.x != null && config.y != null;
+                result = result && config.x.attrType == "quantity" && config.y.attrType == "quantity";
+                return result;
+            },
+            'chart' : {
+                "type": "lineChart",
+                "height": 450,
+                "color": d3.scale.category20b().range(),
+
+               
+               "yScale": d3.scale.log(),
+               
+               
+                "showDistX": true,
+                "showDistY": true,
+                "duration": 350,
+                "xAxis": {
+                    "axisLabel": "",
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                    }
+                },
+                "yAxis": {
+                    "axisLabel": "",
+                    "axisLabelDistance": -5,
+                    "tickFormat": function (d) {
+                        var prefix = d3.formatPrefix(d);
+                        return prefix.scale(d) + " " + prefix.symbol;
+                    }
+                },
+                "zoom": {
+                    "enabled": true,
+                    "scaleExtent": [ 1, 10 ],
+                    "useFixedDomain": true,
+                    "useNiceScale": false,
+                    "horizontalOff": false,
+                    "verticalOff": false,
+                    "unzoomEventType": "dblclick.zoom"
+                }
+            }
+        }
+    ];
+    return options;
+});*/
+
+
+nanomineD3.directive("nanomineD3",['loadData', 'loadAttributes', 'chartOptions', '$mdSidenav',
+                                   function(loadData, loadAttributes, chartOptions, $mdSidenav) {
+    return {
+     
+        restrict: "E",
+        scope: {
+            config: "="
+        },
+        
+        templateUrl: '/static/viz/src/nanomine-d3.html',
+        link: function (scope, element, attrs) {
+
+        	scope.toggleLeft = function() {
+            	$mdSidenav('left').toggle();
+        	};
+
+	        scope.isOpenLeft = function(){
+		    	return $mdSidenav('left').isOpen();
+		    };
+
+		    /*scope.cbx = function() {
+	    	        
+
+        if(!(scope.logx))
+	    	{
+            console.log("%c hey YES, logX!", 'color: red');
+
+
+            scope.data = [];
+            scope.chart = {};
+            //scope.chartOptions = chartOptions;
+            scope.chartlogxOptions = chartlogxOptions;
+
+            //console.log(scope.chartOptions.options.name);
+
+            scope.filterChartTypes = function(chartType) {
+                return chartType.show(scope.config, scope.data);
+            }
+            scope.$watchCollection("config",function() {
+                if (scope.config.chartType == null) return;
+                jQuery.extend(true, scope.chart, scope.config.chartType);
+
+                loadData(scope.config).then(function(data) {
+                    scope.data = data;
+                    if (data.config.x)
+                        scope.chart.chart.xAxis.axisLabel = "log " + data.config.x.label;
+                    if (data.config.y)
+                        scope.chart.chart.yAxis.axisLabel = data.config.y.label;
+                });
+            });
+            loadAttributes().then(function(attributes) {
+                scope.attributes = attributes;
+                scope.xAttributes = attributes;
+                scope.yAttributes = attributes;
+            });
+            scope.$watch("config.x",function(attr) {
+                loadAttributes(scope.config.x).then(function(attributes) {
+                    scope.yAttributes = attributes;
+                    console.log("Setting new y attributes", attributes);
+                });
+            });
+            scope.$watch("config.y",function(attr) {
+                loadAttributes(scope.config.y).then(function(attributes) {
+                    scope.xAttributes = attributes;
+                    console.log("Setting new x attributes", attributes);
+                });
+            });
+          }
+
+          if(((scope.logx))||((scope.logy)))
+	    	{
+            console.log("%c hey YES, log!", 'color: red');
+
+
+            scope.data = [];
+            scope.chart = {};
+            //scope.chartOptions = chartOptions;
+            scope.chartlogOptions = chartlogOptions;
+
+            //console.log(scope.chartOptions.options.name);
+
+            scope.filterChartTypes = function(chartType) {
+                return chartType.show(scope.config, scope.data);
+            }
+            scope.$watchCollection("config",function() {
+                if (scope.config.chartType == null) return;
+                jQuery.extend(true, scope.chart, scope.config.chartType);
+
+                loadData(scope.config).then(function(data) {
+                    scope.data = data;
+                    if (data.config.x)
+                        scope.chart.chart.xAxis.axisLabel = "log " + data.config.x.label;
+                    if (data.config.y)
+                        scope.chart.chart.yAxis.axisLabel = "log " + data.config.y.label;
+                });
+            });
+            loadAttributes().then(function(attributes) {
+                scope.attributes = attributes;
+                scope.xAttributes = attributes;
+                scope.yAttributes = attributes;
+            });
+            scope.$watch("config.x",function(attr) {
+                loadAttributes(scope.config.x).then(function(attributes) {
+                    scope.yAttributes = attributes;
+                    console.log("Setting new y attributes", attributes);
+                });
+            });
+            scope.$watch("config.y",function(attr) {
+                loadAttributes(scope.config.y).then(function(attributes) {
+                    scope.xAttributes = attributes;
+                    console.log("Setting new x attributes", attributes);
+                });
+            });
+          }
+
+         }
+
+        scope.cby = function() {
+        	if(!(scope.logy))
+	    	{
+            console.log("%c hey YES, logY!", 'color: red');
+
+
+            scope.data = [];
+            scope.chart = {};
+            //scope.chartOptions = chartOptions;
+            scope.chartlogyOptions = chartlogyOptions;
+
+            //console.log(scope.chartOptions.options.name);
+
+            scope.filterChartTypes = function(chartType) {
+                return chartType.show(scope.config, scope.data);
+            }
+            scope.$watchCollection("config",function() {
+                if (scope.config.chartType == null) return;
+                jQuery.extend(true, scope.chart, scope.config.chartType);
+
+                loadData(scope.config).then(function(data) {
+                    scope.data = data;
+                    if (data.config.x)
+                        scope.chart.chart.xAxis.axisLabel = data.config.x.label;
+                    if (data.config.y)
+                        scope.chart.chart.yAxis.axisLabel = "log " + data.config.y.label;
+                });
+            });
+            loadAttributes().then(function(attributes) {
+                scope.attributes = attributes;
+                scope.xAttributes = attributes;
+                scope.yAttributes = attributes;
+            });
+            scope.$watch("config.x",function(attr) {
+                loadAttributes(scope.config.x).then(function(attributes) {
+                    scope.yAttributes = attributes;
+                    console.log("Setting new y attributes", attributes);
+                });
+            });
+            scope.$watch("config.y",function(attr) {
+                loadAttributes(scope.config.y).then(function(attributes) {
+                    scope.xAttributes = attributes;
+                    console.log("Setting new x attributes", attributes);
+                });
+            });
+          }
+
+          if((scope.logx)||(scope.logy))
+	    	{
+            console.log("%c hey YES, log!", 'color: red');
+
+
+            scope.data = [];
+            scope.chart = {};
+            //scope.chartOptions = chartOptions;
+            scope.chartlogOptions = chartlogOptions;
+
+            //console.log(scope.chartOptions.options.name);
+
+            scope.filterChartTypes = function(chartType) {
+                return chartType.show(scope.config, scope.data);
+            }
+            scope.$watchCollection("config",function() {
+                if (scope.config.chartType == null) return;
+                jQuery.extend(true, scope.chart, scope.config.chartType);
+
+                loadData(scope.config).then(function(data) {
+                    scope.data = data;
+                    if (data.config.x)
+                        scope.chart.chart.xAxis.axisLabel = "log " + data.config.x.label;
+                    if (data.config.y)
+                        scope.chart.chart.yAxis.axisLabel = "log " + data.config.y.label;
+                });
+            });
+            loadAttributes().then(function(attributes) {
+                scope.attributes = attributes;
+                scope.xAttributes = attributes;
+                scope.yAttributes = attributes;
+            });
+            scope.$watch("config.x",function(attr) {
+                loadAttributes(scope.config.x).then(function(attributes) {
+                    scope.yAttributes = attributes;
+                    console.log("Setting new y attributes", attributes);
+                });
+            });
+            scope.$watch("config.y",function(attr) {
+                loadAttributes(scope.config.y).then(function(attributes) {
+                    scope.xAttributes = attributes;
+                    console.log("Setting new x attributes", attributes);
+                });
+            });
+          }
+
+        }*/
+
+      
+            
+            //console.log("%c hey NO log!", 'color: red');
+
+
+            scope.data = [];
+            scope.chart = {};
+            scope.chartOptions = chartOptions;
+
+            scope.filterChartTypes = function(chartType) {
+                return chartType.show(scope.config, scope.data);
+            }
+            scope.$watchCollection("config",function() {
+                if (scope.config.chartType == null) return;
+                jQuery.extend(true, scope.chart, scope.config.chartType);
+
+                loadData(scope.config).then(function(data) {
+                    scope.data = data;
+                    if (data.config.x)
+                        scope.chart.chart.xAxis.axisLabel = data.config.x.label;
+                    if (data.config.y)
+                        scope.chart.chart.yAxis.axisLabel = data.config.y.label;
+                });
+            });
+            loadAttributes().then(function(attributes) {
+                scope.attributes = attributes;
+                scope.xAttributes = attributes;
+                scope.yAttributes = attributes;
+            });
+            scope.$watch("config.x",function(attr) {
+                loadAttributes(scope.config.x).then(function(attributes) {
+                    scope.yAttributes = attributes;
+                    console.log("Setting new y attributes", attributes);
+                });
+            });
+            scope.$watch("config.y",function(attr) {
+                loadAttributes(scope.config.y).then(function(attributes) {
+                    scope.xAttributes = attributes;
+                    console.log("Setting new x attributes", attributes);
+                });
+            });
+
+            scope.$watch("logx", function() {
+    			if (scope.logx)
+    				{
+    					console.log("%cYes log X",'color: red');
+    					scope.chart.chart.xScale = d3.scale.log();
+    				}
+    			else
+    				scope.chart.chart.xScale = d3.scale.linear();
+    				
+    			 
+			});
+
+			//scope.chart.chart.xScale = d3.scale.linear();
+            
+            	scope.$watch("logy", function() {
+    			if (scope.logy)
+    				{
+    					console.log("%cYes log Y",'color: red');
+    					scope.chart.chart.yScale = d3.scale.log();
+    				}
+    			else
+    				scope.chart.chart.yScale = d3.scale.linear();
+    			
+			});
+
+            //scope.chart.chart.yScale = d3.scale.linear();
+        }
+       }
+    
+
+}]);

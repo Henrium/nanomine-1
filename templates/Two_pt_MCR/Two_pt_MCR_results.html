@@ -1,0 +1,80 @@
+<!--################################################################################
+#
+# File Name: Two_pt_MCR.html
+# Application: templates
+# Description: 
+#
+# Modified by: Akshay Iyer, July 7, 2017
+# Customized for NanoMine
+#
+################################################################################
+-->
+<html>
+<body>
+{% extends 'base_featured.html'%}
+{% load staticfiles %}
+{% load  auth_extras %}
+
+{% block title %}<h1><span>Two point Microstructure Characterization and Reconstruction</span></h1>{% endblock %}
+{% block menu %}{% include 'menu.html' with active_tab='stats_tool' %}{% endblock %}
+{% block content%}
+
+
+
+<script>
+function myTime() {
+    var d = new Date();
+    var Y= d.getFullYear();
+    var M=d.getMonth()+1;
+    var D=d.getDate();
+    var H=d.getHours();
+    var Min=d.getMinutes();
+}
+</script>
+	
+
+<h3>Results</h3>
+<br>
+	<p>The target and reconstruction images are shown below. You can download the reconstructed image in .jpg format by clicking the link below.</p>
+</br>
+
+<style>
+div.target {
+	position: relative;
+	left: 30px;
+	top: 40px;
+	width: 500px;
+	height: 500px;
+}
+
+div.reconstruct {
+	position: absolute;
+        left: 500px;
+	top: 0px;
+	width: 500px;
+	height: 500px;
+}
+
+</style>
+
+<div class="target">    
+    <h4> Target Image </h4> 
+    <img src = {%static 'Two_pt_MCR/target.jpg'%} style="width=300px;height=300px;">
+
+<div class="reconstruct">
+    <h4> Reconstruction </h4>
+    <img src = {%static 'Two_pt_MCR/RImg3.jpg'%} style="width=100px; height=100px;">
+    <a href = {%static '200by200.jpg'%} download> Download </a>
+</div>
+</div>
+
+<hr>
+	<h4>Reference</h4>
+	<p>Jiao, Yang, et al., <i><a href="http://link.springer.com/article/10.1186/2193-9772-3-3">Three dimensional modeling of complex
+    heterogeneous materials via statistical microstructural descriptors</a></i>, Integrating Materials and Manufacturing Innovation, 2014</p>
+</hr>
+
+
+{%endblock%}    
+</body>
+</html>
