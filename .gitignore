@@ -1,13 +1,4 @@
-./db.sqlite3
-./*.log
-./logfile.*
-
-./data
-./AUTOFIT/src_code
-
-./MCFEA/src_modified_2
-
-./niblack/media
-./niblack/mfiles/niblack/imgs
-
+db.sqlite3
+*.log
+logfile.*
 *.pyc
