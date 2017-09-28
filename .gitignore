@@ -1,6 +1,6 @@
-db.sqlite3
-*.log
-logfile.*
+./db.sqlite3
+./*.log
+./logfile.*
 
 ./data
 ./AUTOFIT/src_code
